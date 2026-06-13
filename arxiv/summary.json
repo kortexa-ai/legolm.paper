@@ -1,0 +1,1295 @@
+{
+  "metadata": {
+    "benchmark_steps": 300,
+    "checkpoint": "/home/francip/src/legolm-paper/checkpoints/experiments/mini-base.pt",
+    "composition_eval_mode": "conditioned",
+    "composition_steps_per_brick": 150,
+    "created_at": "2026-06-09T21:23:02.723901",
+    "eval_tokens": 32768,
+    "lr": 0.001,
+    "max_eval_items": 64,
+    "n_prefix": 8,
+    "output_dir": "/home/francip/src/legolm-paper/results/arxiv-v2-20260609-212302",
+    "prefix_lr": 0.001,
+    "probe_max_items_per_activity": 32,
+    "probe_seed": null,
+    "quick": false,
+    "rank": 4,
+    "repro_seeds": [
+      42,
+      1042,
+      2042
+    ],
+    "seed": 42,
+    "sensor_limit": 64,
+    "suite": "all",
+    "target": "all",
+    "task_modalities": [
+      "imu",
+      "audio"
+    ],
+    "task_steps": 600
+  },
+  "results": {
+    "bridge-audio": {
+      "group": "benchmark",
+      "name": "bridge-audio",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.1900484561920166,
+        "examples_seen": 2400,
+        "experiment": "bridge-audio",
+        "final": 1.9629129351720729,
+        "improvement": 0.0024942582736107166,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.941008606116712,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.553261518478394,
+        "trainable_params": 84345472
+      }
+    },
+    "bridge-imu": {
+      "group": "benchmark",
+      "name": "bridge-imu",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.196915626525879,
+        "examples_seen": 2400,
+        "experiment": "bridge-imu",
+        "final": 1.9627934776070384,
+        "improvement": 0.0026137158386452253,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.924207269103121,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.61643123626709,
+        "trainable_params": 84329088
+      }
+    },
+    "bridge-vision": {
+      "group": "benchmark",
+      "name": "bridge-vision",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.2450227737426758,
+        "examples_seen": 2400,
+        "experiment": "bridge-vision",
+        "final": 1.962279095032974,
+        "improvement": 0.003128098412709557,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.84611721037532,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.91318392753601,
+        "trainable_params": 84345472
+      }
+    },
+    "compose-A": {
+      "group": "composition",
+      "name": "compose-A",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "audio"
+        ],
+        "eval_elapsed_s": 1.2045338153839111,
+        "eval_mode": "conditioned",
+        "examples_seen": 1200,
+        "experiment": "compose-A",
+        "final": 1.9643640783957708,
+        "improvement": 0.001043115049912835,
+        "lr": 0.001,
+        "steps": 150,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.902532191337222,
+        "tokens_seen": 153600,
+        "train_elapsed_s": 16.849138736724854
+      }
+    },
+    "compose-AI": {
+      "group": "composition",
+      "name": "compose-AI",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "audio",
+          "imu"
+        ],
+        "eval_elapsed_s": 1.2039506435394287,
+        "eval_mode": "conditioned",
+        "examples_seen": 2400,
+        "experiment": "compose-AI",
+        "final": 1.963795181796397,
+        "improvement": 0.0016120116492865932,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.917197912642498,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.642855405807495
+      }
+    },
+    "compose-I": {
+      "group": "composition",
+      "name": "compose-I",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "imu"
+        ],
+        "eval_elapsed_s": 1.200477123260498,
+        "eval_mode": "conditioned",
+        "examples_seen": 1200,
+        "experiment": "compose-I",
+        "final": 1.9648407910106986,
+        "improvement": 0.0005664024349849583,
+        "lr": 0.001,
+        "steps": 150,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.878458980576438,
+        "tokens_seen": 153600,
+        "train_elapsed_s": 16.894823789596558
+      }
+    },
+    "compose-V": {
+      "group": "composition",
+      "name": "compose-V",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "vision"
+        ],
+        "eval_elapsed_s": 1.2444586753845215,
+        "eval_mode": "conditioned",
+        "examples_seen": 1200,
+        "experiment": "compose-V",
+        "final": 1.9632826251467193,
+        "improvement": 0.0021245682989643466,
+        "lr": 0.001,
+        "steps": 150,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.735937700991151,
+        "tokens_seen": 153600,
+        "train_elapsed_s": 17.170452117919922
+      }
+    },
+    "compose-VA": {
+      "group": "composition",
+      "name": "compose-VA",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "vision",
+          "audio"
+        ],
+        "eval_elapsed_s": 1.2526195049285889,
+        "eval_mode": "conditioned",
+        "examples_seen": 2400,
+        "experiment": "compose-VA",
+        "final": 1.9638568372915655,
+        "improvement": 0.0015503561541181377,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.813310875097919,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 34.03942108154297
+      }
+    },
+    "compose-VAI": {
+      "group": "composition",
+      "name": "compose-VAI",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "vision",
+          "audio",
+          "imu"
+        ],
+        "eval_elapsed_s": 1.251988410949707,
+        "eval_mode": "conditioned",
+        "examples_seen": 3600,
+        "experiment": "compose-VAI",
+        "final": 1.964122165159989,
+        "improvement": 0.001285028285694656,
+        "lr": 0.001,
+        "steps": 450,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.83354333065482,
+        "tokens_seen": 460800,
+        "train_elapsed_s": 50.942185163497925
+      }
+    },
+    "compose-VI": {
+      "group": "composition",
+      "name": "compose-VI",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "bricks": [
+          "vision",
+          "imu"
+        ],
+        "eval_elapsed_s": 1.2867565155029297,
+        "eval_mode": "conditioned",
+        "examples_seen": 2400,
+        "experiment": "compose-VI",
+        "final": 1.9635705903355503,
+        "improvement": 0.001836603110133339,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_brick": 150,
+        "steps_per_second": 8.819997858456178,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 34.0136137008667
+      }
+    },
+    "constant-audio": {
+      "group": "controls",
+      "name": "constant-audio",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.1772937774658203,
+        "examples_seen": 2400,
+        "experiment": "constant-audio",
+        "final": 1.9627404650507423,
+        "improvement": 0.002666728394941309,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.950293260191412,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.518454790115356,
+        "trainable_params": 84345472
+      }
+    },
+    "constant-imu": {
+      "group": "controls",
+      "name": "constant-imu",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.246100664138794,
+        "examples_seen": 2400,
+        "experiment": "constant-imu",
+        "final": 1.96241796193262,
+        "improvement": 0.002989231513063517,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.961836582106688,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.47528123855591,
+        "trainable_params": 84329088
+      }
+    },
+    "constant-vision": {
+      "group": "controls",
+      "name": "constant-vision",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.203437328338623,
+        "examples_seen": 2400,
+        "experiment": "constant-vision",
+        "final": 1.9630572246184317,
+        "improvement": 0.0023499688272519137,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.936532674650707,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.570066928863525,
+        "trainable_params": 84345472
+      }
+    },
+    "diversity-imu-l0.00": {
+      "group": "diversity",
+      "name": "diversity-imu-l0.00",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.213937520980835,
+        "examples_seen": 2400,
+        "experiment": "diversity-imu-l0.00",
+        "final": 1.9627934776070384,
+        "heldout_probe": {
+          "activity_centroid_pair_cosines": {
+            "laying <-> sitting": 0.972530722618103,
+            "laying <-> standing": 0.9658608436584473,
+            "laying <-> walking": 0.9612730741500854,
+            "laying <-> walking downstairs": 0.968384861946106,
+            "laying <-> walking upstairs": 0.9487876892089844,
+            "sitting <-> standing": 0.9936957955360413,
+            "sitting <-> walking": 0.9725217223167419,
+            "sitting <-> walking downstairs": 0.9817250370979309,
+            "sitting <-> walking upstairs": 0.963482141494751,
+            "standing <-> walking": 0.9520554542541504,
+            "standing <-> walking downstairs": 0.9682706594467163,
+            "standing <-> walking upstairs": 0.9395890235900879,
+            "walking <-> walking downstairs": 0.9900427460670471,
+            "walking <-> walking upstairs": 0.9901333451271057,
+            "walking downstairs <-> walking upstairs": 0.986199140548706
+          },
+          "activity_counts": {
+            "laying": 32,
+            "sitting": 32,
+            "standing": 32,
+            "walking": 32,
+            "walking downstairs": 32,
+            "walking upstairs": 32
+          },
+          "cross_input_cosine_mean": 0.9668492674827576,
+          "max_items_per_activity": 32,
+          "motion_cluster_centroid_cosine_mean": 0.9887917637825012,
+          "motion_vs_still_centroid_cosine_mean": 0.9617876013120016,
+          "paper_pairs": {
+            "sitting <-> standing": 0.9936957359313965,
+            "walking <-> sitting": 0.9725213050842285,
+            "walking <-> standing": 0.9520556926727295,
+            "walking <-> walking upstairs": 0.9901336431503296,
+            "walking downstairs <-> laying": 0.9683851003646851
+          },
+          "probe_dataset": "uci-har-test",
+          "selected_examples": 192,
+          "selection_seed": 42,
+          "still_cluster_centroid_cosine_mean": 0.9773624539375305,
+          "within_activity_cosine_mean": {
+            "laying": 0.994033932685852,
+            "sitting": 0.9885802865028381,
+            "standing": 0.9901408553123474,
+            "walking": 0.9918530583381653,
+            "walking downstairs": 0.9905759692192078,
+            "walking upstairs": 0.9920120239257812
+          }
+        },
+        "improvement": 0.0026137158386452253,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "paper_summary": {
+          "bpb_improvement": 0.0026137158386452253,
+          "cross_input_cosine_mean": 0.9668492674827576,
+          "lambda": 0.0
+        },
+        "steps": 300,
+        "steps_per_second": 8.91295834985739,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.65885806083679,
+        "trainable_params": 84329088
+      }
+    },
+    "diversity-imu-l0.01": {
+      "group": "diversity",
+      "name": "diversity-imu-l0.01",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.01,
+        "eval_elapsed_s": 1.199620008468628,
+        "examples_seen": 2400,
+        "experiment": "diversity-imu-l0.01",
+        "final": 1.9633733490819867,
+        "heldout_probe": {
+          "activity_centroid_pair_cosines": {
+            "laying <-> sitting": 0.9779267311096191,
+            "laying <-> standing": 0.8814280033111572,
+            "laying <-> walking": 0.8774515390396118,
+            "laying <-> walking downstairs": 0.9126128554344177,
+            "laying <-> walking upstairs": 0.864946722984314,
+            "sitting <-> standing": 0.904860258102417,
+            "sitting <-> walking": 0.9121206402778625,
+            "sitting <-> walking downstairs": 0.9314470887184143,
+            "sitting <-> walking upstairs": 0.8779908418655396,
+            "standing <-> walking": 0.991084635257721,
+            "standing <-> walking downstairs": 0.9900726079940796,
+            "standing <-> walking upstairs": 0.9912833571434021,
+            "walking <-> walking downstairs": 0.9930893182754517,
+            "walking <-> walking upstairs": 0.9847595691680908,
+            "walking downstairs <-> walking upstairs": 0.9854316711425781
+          },
+          "activity_counts": {
+            "laying": 32,
+            "sitting": 32,
+            "standing": 32,
+            "walking": 32,
+            "walking downstairs": 32,
+            "walking upstairs": 32
+          },
+          "cross_input_cosine_mean": 0.9184881448745728,
+          "max_items_per_activity": 32,
+          "motion_cluster_centroid_cosine_mean": 0.9877602458000183,
+          "motion_vs_still_centroid_cosine_mean": 0.9276677436298795,
+          "paper_pairs": {
+            "sitting <-> standing": 0.9048604369163513,
+            "walking <-> sitting": 0.9121207594871521,
+            "walking <-> standing": 0.9910844564437866,
+            "walking <-> walking upstairs": 0.9847591519355774,
+            "walking downstairs <-> laying": 0.9126120805740356
+          },
+          "probe_dataset": "uci-har-test",
+          "selected_examples": 192,
+          "selection_seed": 42,
+          "still_cluster_centroid_cosine_mean": 0.921405017375946,
+          "within_activity_cosine_mean": {
+            "laying": 0.9903621077537537,
+            "sitting": 0.9526950716972351,
+            "standing": 0.9335052967071533,
+            "walking": 0.9805256724357605,
+            "walking downstairs": 0.9694393277168274,
+            "walking upstairs": 0.9721753597259521
+          }
+        },
+        "improvement": 0.002033844363696913,
+        "last_diversity": 0.9003838300704956,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "paper_summary": {
+          "bpb_improvement": 0.002033844363696913,
+          "cross_input_cosine_mean": 0.9184881448745728,
+          "lambda": 0.01
+        },
+        "steps": 300,
+        "steps_per_second": 8.744837648135531,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 34.30595421791077,
+        "trainable_params": 84329088
+      }
+    },
+    "diversity-imu-l0.05": {
+      "group": "diversity",
+      "name": "diversity-imu-l0.05",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.05,
+        "eval_elapsed_s": 1.2106919288635254,
+        "examples_seen": 2400,
+        "experiment": "diversity-imu-l0.05",
+        "final": 1.9645662044285246,
+        "heldout_probe": {
+          "activity_centroid_pair_cosines": {
+            "laying <-> sitting": 0.9928374886512756,
+            "laying <-> standing": -0.2002905011177063,
+            "laying <-> walking": 0.9878533482551575,
+            "laying <-> walking downstairs": 0.9877563118934631,
+            "laying <-> walking upstairs": 0.9449866414070129,
+            "sitting <-> standing": -0.1234600692987442,
+            "sitting <-> walking": 0.9953638911247253,
+            "sitting <-> walking downstairs": 0.9840877652168274,
+            "sitting <-> walking upstairs": 0.9659607410430908,
+            "standing <-> walking": -0.09612313657999039,
+            "standing <-> walking downstairs": -0.26138901710510254,
+            "standing <-> walking upstairs": 0.11388194561004639,
+            "walking <-> walking downstairs": 0.9827463626861572,
+            "walking <-> walking upstairs": 0.9751288890838623,
+            "walking downstairs <-> walking upstairs": 0.9228416085243225
+          },
+          "activity_counts": {
+            "laying": 32,
+            "sitting": 32,
+            "standing": 32,
+            "walking": 32,
+            "walking downstairs": 32,
+            "walking upstairs": 32
+          },
+          "cross_input_cosine_mean": 0.6470522284507751,
+          "max_items_per_activity": 32,
+          "motion_cluster_centroid_cosine_mean": 0.9602389335632324,
+          "motion_vs_still_centroid_cosine_mean": 0.6247087708777852,
+          "paper_pairs": {
+            "sitting <-> standing": -0.12346012890338898,
+            "walking <-> sitting": 0.9953638315200806,
+            "walking <-> standing": -0.09612304717302322,
+            "walking <-> walking upstairs": 0.9751299023628235,
+            "walking downstairs <-> laying": 0.98775714635849
+          },
+          "probe_dataset": "uci-har-test",
+          "selected_examples": 192,
+          "selection_seed": 42,
+          "still_cluster_centroid_cosine_mean": 0.2230289727449417,
+          "within_activity_cosine_mean": {
+            "laying": 0.9820410013198853,
+            "sitting": 0.8197901844978333,
+            "standing": 0.6290198564529419,
+            "walking": 0.942461371421814,
+            "walking downstairs": 0.9914149641990662,
+            "walking upstairs": 0.9045781493186951
+          }
+        },
+        "improvement": 0.0008409890171590106,
+        "last_diversity": 0.5919972658157349,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "paper_summary": {
+          "bpb_improvement": 0.0008409890171590106,
+          "cross_input_cosine_mean": 0.6470522284507751,
+          "lambda": 0.05
+        },
+        "steps": 300,
+        "steps_per_second": 8.726342590103672,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 34.37866401672363,
+        "trainable_params": 84329088
+      }
+    },
+    "diversity-imu-l0.10": {
+      "group": "diversity",
+      "name": "diversity-imu-l0.10",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.1,
+        "eval_elapsed_s": 1.1973676681518555,
+        "examples_seen": 2400,
+        "experiment": "diversity-imu-l0.10",
+        "final": 1.9645348578975088,
+        "heldout_probe": {
+          "activity_centroid_pair_cosines": {
+            "laying <-> sitting": -0.6626764535903931,
+            "laying <-> standing": 0.8681640625,
+            "laying <-> walking": 0.029321379959583282,
+            "laying <-> walking downstairs": -0.20137517154216766,
+            "laying <-> walking upstairs": 0.6949917078018188,
+            "sitting <-> standing": -0.23202383518218994,
+            "sitting <-> walking": 0.7144416570663452,
+            "sitting <-> walking downstairs": 0.8616539835929871,
+            "sitting <-> walking upstairs": 0.059671275317668915,
+            "standing <-> walking": 0.48628395795822144,
+            "standing <-> walking downstairs": 0.26534879207611084,
+            "standing <-> walking upstairs": 0.945374071598053,
+            "walking <-> walking downstairs": 0.9460520148277283,
+            "walking <-> walking upstairs": 0.7210688591003418,
+            "walking downstairs <-> walking upstairs": 0.5323225855827332
+          },
+          "activity_counts": {
+            "laying": 32,
+            "sitting": 32,
+            "standing": 32,
+            "walking": 32,
+            "walking downstairs": 32,
+            "walking upstairs": 32
+          },
+          "cross_input_cosine_mean": 0.4420812129974365,
+          "max_items_per_activity": 32,
+          "motion_cluster_centroid_cosine_mean": 0.7331478595733643,
+          "motion_vs_still_centroid_cosine_mean": 0.4284124488217963,
+          "paper_pairs": {
+            "sitting <-> standing": -0.232024148106575,
+            "walking <-> sitting": 0.7144411206245422,
+            "walking <-> standing": 0.4862842559814453,
+            "walking <-> walking upstairs": 0.7210688591003418,
+            "walking downstairs <-> laying": -0.2013750523328781
+          },
+          "probe_dataset": "uci-har-test",
+          "selected_examples": 192,
+          "selection_seed": 42,
+          "still_cluster_centroid_cosine_mean": -0.008845408447086811,
+          "within_activity_cosine_mean": {
+            "laying": 0.910983145236969,
+            "sitting": 0.6976396441459656,
+            "standing": 0.6364441514015198,
+            "walking": 0.7602652311325073,
+            "walking downstairs": 0.8360823392868042,
+            "walking upstairs": 0.7296008467674255
+          }
+        },
+        "improvement": 0.0008723355481747852,
+        "last_diversity": 0.29320353269577026,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "paper_summary": {
+          "bpb_improvement": 0.0008723355481747852,
+          "cross_input_cosine_mean": 0.4420812129974365,
+          "lambda": 0.1
+        },
+        "steps": 300,
+        "steps_per_second": 8.734212460443885,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 34.34768748283386,
+        "trainable_params": 84329088
+      }
+    },
+    "diversity-imu-l0.20": {
+      "group": "diversity",
+      "name": "diversity-imu-l0.20",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.2,
+        "eval_elapsed_s": 1.1982851028442383,
+        "examples_seen": 2400,
+        "experiment": "diversity-imu-l0.20",
+        "final": 1.9653890501773574,
+        "heldout_probe": {
+          "activity_centroid_pair_cosines": {
+            "laying <-> sitting": 0.9889929294586182,
+            "laying <-> standing": -0.7170383930206299,
+            "laying <-> walking": 0.989288330078125,
+            "laying <-> walking downstairs": 0.9953625798225403,
+            "laying <-> walking upstairs": 0.9537286758422852,
+            "sitting <-> standing": -0.6221951842308044,
+            "sitting <-> walking": 0.9969656467437744,
+            "sitting <-> walking downstairs": 0.9923529624938965,
+            "sitting <-> walking upstairs": 0.983231782913208,
+            "standing <-> walking": -0.645258367061615,
+            "standing <-> walking downstairs": -0.7043886184692383,
+            "standing <-> walking upstairs": -0.4842483103275299,
+            "walking <-> walking downstairs": 0.9961456060409546,
+            "walking <-> walking upstairs": 0.9760438203811646,
+            "walking downstairs <-> walking upstairs": 0.9589306116104126
+          },
+          "activity_counts": {
+            "laying": 32,
+            "sitting": 32,
+            "standing": 32,
+            "walking": 32,
+            "walking downstairs": 32,
+            "walking upstairs": 32
+          },
+          "cross_input_cosine_mean": 0.5492709279060364,
+          "max_items_per_activity": 32,
+          "motion_cluster_centroid_cosine_mean": 0.9770399928092957,
+          "motion_vs_still_centroid_cosine_mean": 0.4530041284031338,
+          "paper_pairs": {
+            "sitting <-> standing": -0.6221954822540283,
+            "walking <-> sitting": 0.9969660043716431,
+            "walking <-> standing": -0.6452585458755493,
+            "walking <-> walking upstairs": 0.9760433435440063,
+            "walking downstairs <-> laying": 0.9953627586364746
+          },
+          "probe_dataset": "uci-har-test",
+          "selected_examples": 192,
+          "selection_seed": 42,
+          "still_cluster_centroid_cosine_mean": -0.11674689501523972,
+          "within_activity_cosine_mean": {
+            "laying": 0.996645450592041,
+            "sitting": 0.7704281806945801,
+            "standing": 0.5425234436988831,
+            "walking": 0.9736484289169312,
+            "walking downstairs": 0.996354341506958,
+            "walking upstairs": 0.9106816649436951
+          }
+        },
+        "improvement": 1.8143268326165085e-05,
+        "last_diversity": 0.5318914651870728,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "paper_summary": {
+          "bpb_improvement": 1.8143268326165085e-05,
+          "cross_input_cosine_mean": 0.5492709279060364,
+          "lambda": 0.2
+        },
+        "steps": 300,
+        "steps_per_second": 8.740779665076793,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 34.32188105583191,
+        "trainable_params": 84329088
+      }
+    },
+    "prefix-audio-8tok": {
+      "group": "prefix",
+      "name": "prefix-audio-8tok",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "eval_elapsed_s": 0.2205047607421875,
+        "examples_seen": 2400,
+        "experiment": "prefix-audio-8tok",
+        "final": 1.9702931926784741,
+        "improvement": -0.004885999232790539,
+        "lr": 0.001,
+        "n_prefix": 8,
+        "params": 2101248,
+        "steps": 300,
+        "steps_per_second": 124.61437903318452,
+        "tokens_seen": 288000,
+        "train_elapsed_s": 2.4074268341064453
+      }
+    },
+    "prefix-imu-8tok": {
+      "group": "prefix",
+      "name": "prefix-imu-8tok",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "eval_elapsed_s": 0.21625661849975586,
+        "examples_seen": 2400,
+        "experiment": "prefix-imu-8tok",
+        "final": 1.9702478809494388,
+        "improvement": -0.004840687503755214,
+        "lr": 0.001,
+        "n_prefix": 8,
+        "params": 1052672,
+        "steps": 300,
+        "steps_per_second": 124.57036141200398,
+        "tokens_seen": 288000,
+        "train_elapsed_s": 2.4082775115966797
+      }
+    },
+    "prefix-vision-8tok": {
+      "group": "prefix",
+      "name": "prefix-vision-8tok",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "eval_elapsed_s": 0.263826847076416,
+        "examples_seen": 2400,
+        "experiment": "prefix-vision-8tok",
+        "final": 1.970077315885769,
+        "improvement": -0.004670122440085356,
+        "lr": 0.001,
+        "n_prefix": 8,
+        "params": 2101248,
+        "steps": 300,
+        "steps_per_second": 108.85804234099633,
+        "tokens_seen": 288000,
+        "train_elapsed_s": 2.755882740020752
+      }
+    },
+    "random-audio": {
+      "group": "controls",
+      "name": "random-audio",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.2019023895263672,
+        "examples_seen": 2400,
+        "experiment": "random-audio",
+        "final": 1.9647633407518401,
+        "improvement": 0.000643852693843483,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.933926727812603,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.579859018325806,
+        "trainable_params": 84345472
+      }
+    },
+    "random-imu": {
+      "group": "controls",
+      "name": "random-imu",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.2003040313720703,
+        "examples_seen": 2400,
+        "experiment": "random-imu",
+        "final": 1.965320351929603,
+        "improvement": 8.684151608062685e-05,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.936851550819151,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.56886911392212,
+        "trainable_params": 84329088
+      }
+    },
+    "random-vision": {
+      "group": "controls",
+      "name": "random-vision",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.2994818687438965,
+        "examples_seen": 2400,
+        "experiment": "random-vision",
+        "final": 1.9644318902590594,
+        "improvement": 0.000975303186624199,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.831858797530963,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.967934370040894,
+        "trainable_params": 84345472
+      }
+    },
+    "repro-audio": {
+      "group": "repro",
+      "name": "repro-audio",
+      "result": {
+        "experiment": "repro-audio",
+        "mean_improvement": 0.0025932486874736447,
+        "modality": "audio",
+        "runs": [
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.2039039134979248,
+            "examples_seen": 2400,
+            "experiment": "bridge-audio",
+            "final": 1.9629129351720729,
+            "improvement": 0.0024942582736107166,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.902882597793699,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 33.696951150894165,
+            "trainable_params": 84345472
+          },
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.193246841430664,
+            "examples_seen": 2400,
+            "experiment": "bridge-audio",
+            "final": 1.9627236106296106,
+            "improvement": 0.002683582816072949,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.879962741580888,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 33.78392553329468,
+            "trainable_params": 84345472
+          },
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.210289478302002,
+            "examples_seen": 2400,
+            "experiment": "bridge-audio",
+            "final": 1.9628052884729463,
+            "improvement": 0.002601904972737268,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.900252168265979,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 33.706910133361816,
+            "trainable_params": 84345472
+          }
+        ],
+        "seeds": [
+          42,
+          1042,
+          2042
+        ],
+        "std_improvement": 7.753340807057449e-05
+      }
+    },
+    "repro-imu": {
+      "group": "repro",
+      "name": "repro-imu",
+      "result": {
+        "experiment": "repro-imu",
+        "mean_improvement": 0.002662920991677605,
+        "modality": "imu",
+        "runs": [
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.2096529006958008,
+            "examples_seen": 2400,
+            "experiment": "bridge-imu",
+            "final": 1.9627934776070384,
+            "improvement": 0.0026137158386452253,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.89702077891356,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 33.71915245056152,
+            "trainable_params": 84329088
+          },
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.210078477859497,
+            "examples_seen": 2400,
+            "experiment": "bridge-imu",
+            "final": 1.9626731826710093,
+            "improvement": 0.002734010774674278,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.896978253096117,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 33.719313621520996,
+            "trainable_params": 84329088
+          },
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.2124958038330078,
+            "examples_seen": 2400,
+            "experiment": "bridge-imu",
+            "final": 1.9627661570839703,
+            "improvement": 0.0026410363617133115,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.875863309479387,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 33.79952907562256,
+            "trainable_params": 84329088
+          }
+        ],
+        "seeds": [
+          42,
+          1042,
+          2042
+        ],
+        "std_improvement": 5.149058606557136e-05
+      }
+    },
+    "repro-vision": {
+      "group": "repro",
+      "name": "repro-vision",
+      "result": {
+        "experiment": "repro-vision",
+        "mean_improvement": 0.0027598606634951692,
+        "modality": "vision",
+        "runs": [
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.254488468170166,
+            "examples_seen": 2400,
+            "experiment": "bridge-vision",
+            "final": 1.962279095032974,
+            "improvement": 0.003128098412709557,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.807904105886097,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 34.06031632423401,
+            "trainable_params": 84345472
+          },
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.2499125003814697,
+            "examples_seen": 2400,
+            "experiment": "bridge-vision",
+            "final": 1.9625416049719664,
+            "improvement": 0.0028655884737172066,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.767482419848482,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 34.21734833717346,
+            "trainable_params": 84345472
+          },
+          {
+            "baseline": 1.9654071934456836,
+            "diversity_weight": 0.0,
+            "eval_elapsed_s": 1.2587316036224365,
+            "examples_seen": 2400,
+            "experiment": "bridge-vision",
+            "final": 1.9631212983416249,
+            "improvement": 0.002285895104058744,
+            "last_diversity": 0.0,
+            "lora_dim": 327680,
+            "lr": 0.001,
+            "steps": 300,
+            "steps_per_second": 8.786588930566259,
+            "tokens_seen": 307200,
+            "train_elapsed_s": 34.14294242858887,
+            "trainable_params": 84345472
+          }
+        ],
+        "seeds": [
+          42,
+          1042,
+          2042
+        ],
+        "std_improvement": 0.0003518620758823496
+      }
+    },
+    "shuffled-audio": {
+      "group": "controls",
+      "name": "shuffled-audio",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.1934230327606201,
+        "examples_seen": 2400,
+        "experiment": "shuffled-audio",
+        "final": 1.9624205506722985,
+        "improvement": 0.0029866427733851175,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.943492440382496,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.54394292831421,
+        "trainable_params": 84345472
+      }
+    },
+    "shuffled-imu": {
+      "group": "controls",
+      "name": "shuffled-imu",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.2239296436309814,
+        "examples_seen": 2400,
+        "experiment": "shuffled-imu",
+        "final": 1.9632994781871898,
+        "improvement": 0.0021077152584938474,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.926563796575078,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.60755681991577,
+        "trainable_params": 84329088
+      }
+    },
+    "shuffled-vision": {
+      "group": "controls",
+      "name": "shuffled-vision",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "diversity_weight": 0.0,
+        "eval_elapsed_s": 1.2545421123504639,
+        "examples_seen": 2400,
+        "experiment": "shuffled-vision",
+        "final": 1.9651070038829268,
+        "improvement": 0.00030018956275679187,
+        "last_diversity": 0.0,
+        "lora_dim": 327680,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 8.83753976033995,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 33.946099042892456,
+        "trainable_params": 84345472
+      }
+    },
+    "static-lora-audio": {
+      "group": "benchmark",
+      "name": "static-lora-audio",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "eval_elapsed_s": 0.25647616386413574,
+        "examples_seen": 2400,
+        "experiment": "static-lora-audio",
+        "final": 1.9621379534940642,
+        "improvement": 0.0032692399516194293,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 71.41631930213912,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 4.200720548629761,
+        "trainable_params": 327680
+      }
+    },
+    "static-lora-imu": {
+      "group": "benchmark",
+      "name": "static-lora-imu",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "eval_elapsed_s": 0.2491776943206787,
+        "examples_seen": 2400,
+        "experiment": "static-lora-imu",
+        "final": 1.9621379534940642,
+        "improvement": 0.0032692399516194293,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 73.17292477011253,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 4.099877119064331,
+        "trainable_params": 327680
+      }
+    },
+    "static-lora-vision": {
+      "group": "benchmark",
+      "name": "static-lora-vision",
+      "result": {
+        "baseline": 1.9654071934456836,
+        "eval_elapsed_s": 0.2529120445251465,
+        "examples_seen": 2400,
+        "experiment": "static-lora-vision",
+        "final": 1.9621379534940642,
+        "improvement": 0.0032692399516194293,
+        "lr": 0.001,
+        "steps": 300,
+        "steps_per_second": 73.15235667578204,
+        "tokens_seen": 307200,
+        "train_elapsed_s": 4.101029872894287,
+        "trainable_params": 327680
+      }
+    },
+    "task-audio": {
+      "group": "task",
+      "name": "task-audio",
+      "result": {
+        "experiment": "task-audio",
+        "modality": "audio",
+        "results": {
+          "no_bridge": {
+            "avg_rank": 25.28125,
+            "count": 64,
+            "examples_seen": 0,
+            "lr": 0.001,
+            "rank1": 0.03125,
+            "steps": 0,
+            "top2": 0.046875,
+            "train_elapsed_s": 0.0
+          },
+          "random": {
+            "avg_rank": 24.921875,
+            "count": 64,
+            "examples_seen": 2400,
+            "lr": 0.001,
+            "rank1": 0.03125,
+            "steps": 600,
+            "top2": 0.0625,
+            "train_elapsed_s": 28.67600178718567
+          },
+          "shuffled": {
+            "avg_rank": 25.359375,
+            "count": 64,
+            "examples_seen": 2400,
+            "lr": 0.001,
+            "rank1": 0.015625,
+            "steps": 600,
+            "top2": 0.046875,
+            "train_elapsed_s": 28.721107482910156
+          },
+          "true": {
+            "avg_rank": 9.96875,
+            "count": 64,
+            "examples_seen": 2400,
+            "lr": 0.001,
+            "rank1": 0.328125,
+            "steps": 600,
+            "top2": 0.53125,
+            "train_elapsed_s": 28.458457946777344
+          }
+        }
+      }
+    },
+    "task-imu": {
+      "group": "task",
+      "name": "task-imu",
+      "result": {
+        "experiment": "task-imu",
+        "modality": "imu",
+        "results": {
+          "no_bridge": {
+            "avg_rank": 3.53125,
+            "count": 64,
+            "examples_seen": 0,
+            "lr": 0.001,
+            "rank1": 0.171875,
+            "steps": 0,
+            "top2": 0.328125,
+            "train_elapsed_s": 0.0
+          },
+          "random": {
+            "avg_rank": 3.390625,
+            "count": 64,
+            "examples_seen": 2400,
+            "lr": 0.001,
+            "rank1": 0.15625,
+            "steps": 600,
+            "top2": 0.3125,
+            "train_elapsed_s": 28.41554284095764
+          },
+          "shuffled": {
+            "avg_rank": 3.5,
+            "count": 64,
+            "examples_seen": 2400,
+            "lr": 0.001,
+            "rank1": 0.15625,
+            "steps": 600,
+            "top2": 0.3125,
+            "train_elapsed_s": 28.52102494239807
+          },
+          "true": {
+            "avg_rank": 1.234375,
+            "count": 64,
+            "examples_seen": 2400,
+            "lr": 0.001,
+            "rank1": 0.796875,
+            "steps": 600,
+            "top2": 0.984375,
+            "train_elapsed_s": 28.343341588974
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "count": 35,
+    "groups": {
+      "benchmark": [
+        "static-lora-audio",
+        "bridge-audio",
+        "static-lora-vision",
+        "bridge-vision",
+        "static-lora-imu",
+        "bridge-imu"
+      ],
+      "composition": [
+        "compose-V",
+        "compose-A",
+        "compose-I",
+        "compose-VA",
+        "compose-VI",
+        "compose-AI",
+        "compose-VAI"
+      ],
+      "controls": [
+        "shuffled-audio",
+        "shuffled-vision",
+        "shuffled-imu",
+        "random-audio",
+        "random-vision",
+        "random-imu",
+        "constant-audio",
+        "constant-vision",
+        "constant-imu"
+      ],
+      "diversity": [
+        "diversity-imu-l0.00",
+        "diversity-imu-l0.01",
+        "diversity-imu-l0.05",
+        "diversity-imu-l0.10",
+        "diversity-imu-l0.20"
+      ],
+      "prefix": [
+        "prefix-audio-8tok",
+        "prefix-vision-8tok",
+        "prefix-imu-8tok"
+      ],
+      "repro": [
+        "repro-audio",
+        "repro-vision",
+        "repro-imu"
+      ],
+      "task": [
+        "task-imu",
+        "task-audio"
+      ]
+    }
+  }
+}
