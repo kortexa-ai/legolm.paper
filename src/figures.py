@@ -72,7 +72,17 @@ def blank(title: str, subtitle: str = "") -> tuple[Image.Image, ImageDraw.ImageD
     return img, draw
 
 
-def axes(draw: ImageDraw.ImageDraw, ymin: float, ymax: float, ylabel: str) -> None:
+def vertical_text(img: Image.Image, xy: tuple[int, int], content: str, size: int = 28, fill: str = PALETTE["gray"]) -> None:
+    """Rotated y-axis label; the horizontal version clipped at the canvas edge."""
+    f = font(size)
+    x0, y0, x1, y1 = f.getbbox(content)
+    label = Image.new("RGBA", (x1 - x0 + 4, y1 - y0 + 4), (255, 255, 255, 0))
+    ImageDraw.Draw(label).text((-x0 + 2, -y0 + 2), content, fill=fill, font=f)
+    label = label.rotate(90, expand=True)
+    img.paste(label, (xy[0] - label.width // 2, xy[1] - label.height // 2), label)
+
+
+def axes(img: Image.Image, draw: ImageDraw.ImageDraw, ymin: float, ymax: float, ylabel: str) -> None:
     draw.line((PLOT_LEFT, PLOT_TOP, PLOT_LEFT, PLOT_BOTTOM), fill=PALETTE["dark"], width=4)
     draw.line((PLOT_LEFT, PLOT_BOTTOM, PLOT_RIGHT, PLOT_BOTTOM), fill=PALETTE["dark"], width=4)
     for i in range(6):
@@ -81,7 +91,7 @@ def axes(draw: ImageDraw.ImageDraw, ymin: float, ymax: float, ylabel: str) -> No
         val = ymin + frac * (ymax - ymin)
         draw.line((PLOT_LEFT - 10, y, PLOT_RIGHT, y), fill=PALETTE["light_gray"], width=2)
         text(draw, (PLOT_LEFT - 20, y), f"{val:.4f}", 24, fill=PALETTE["gray"], anchor="rm")
-    text(draw, (55, (PLOT_TOP + PLOT_BOTTOM) // 2), ylabel, 28, fill=PALETTE["gray"], anchor="mm")
+    vertical_text(img, (45, (PLOT_TOP + PLOT_BOTTOM) // 2), ylabel, 28)
 
 
 def bar_chart(path: Path, title: str, subtitle: str, labels: list[str], values: list[float], colors: list[str], ylabel: str = "BPB improvement ↑", zero: bool = True) -> None:
@@ -91,7 +101,7 @@ def bar_chart(path: Path, title: str, subtitle: str, labels: list[str], values: 
     ymax = max(finite) * 1.15 if max(finite) > 0 else max(finite) * 0.85
     if ymax == ymin:
         ymax = ymin + 1
-    axes(draw, ymin, ymax, ylabel)
+    axes(img, draw, ymin, ymax, ylabel)
     span = ymax - ymin
     n = len(values)
     slot = (PLOT_RIGHT - PLOT_LEFT) / max(1, n)
@@ -117,7 +127,7 @@ def line_chart(path: Path, title: str, subtitle: str, xs: list[float], ys: list[
     pad = (ymax - ymin) * 0.15 or 1.0
     ymin -= pad
     ymax += pad
-    axes(draw, ymin, ymax, ylabel)
+    axes(img, draw, ymin, ymax, ylabel)
     xmin, xmax = min(xs), max(xs)
     points = []
     for x, yv in zip(xs, ys):
@@ -143,6 +153,20 @@ def _has_results(payload: dict[str, Any], prefix: str, modalities: list[str]) ->
     return any(improvement(payload, f"{prefix}-{m}") is not None for m in modalities)
 
 
+def rounding_note(labels: list[str], values: list[float]) -> str:
+    """Bar heights are exact means while labels round to 4 decimals; when two
+    bars share a label but not a height, say so instead of looking sloppy."""
+    ties = {}
+    for label, value in zip(labels, values):
+        ties.setdefault(f"{value:+.4f}", []).append((label.replace(chr(10), " "), value))
+    for group in ties.values():
+        if len(group) > 1 and len({v for _, v in group}) > 1:
+            spread = max(v for _, v in group) - min(v for _, v in group)
+            names = " vs ".join(name for name, _ in group)
+            return f"\nLabels round to 4 decimals; bar heights are exact ({names} differ by {spread:.0e})"
+    return ""
+
+
 def main_benchmark(payload: dict[str, Any], out: Path) -> None:
     modalities = ["audio", "vision", "imu"]
     labels = ["Static\nLoRA", "Conditional\nbridge", "Shuffled\nfeatures", "Random\nfeatures"]
@@ -156,7 +180,9 @@ def main_benchmark(payload: dict[str, Any], out: Path) -> None:
     for prefix in names:
         vals = [improvement(payload, f"{prefix}-{m}") for m in modalities]
         values.append(mean([v for v in vals if v is not None]))
-    bar_chart(out / "paper_main_benchmark.png", "Bridge and baseline BPB improvements", "Mean across audio, vision, and IMU; regenerated from summary.json", labels, values, colors)
+    subtitle = "Mean across audio, vision, and IMU; regenerated from summary.json"
+    subtitle += rounding_note(labels, values)
+    bar_chart(out / "paper_main_benchmark.png", "Bridge and baseline BPB improvements", subtitle, labels, values, colors)
 
 
 def feature_controls(payload: dict[str, Any], out: Path) -> None:
@@ -169,7 +195,9 @@ def feature_controls(payload: dict[str, Any], out: Path) -> None:
         prefixes.insert(3, "constant")
         colors.insert(3, PALETTE["purple"])
     values = [mean([v for v in [improvement(payload, f"{p}-{m}") for m in modalities] if v is not None]) for p in prefixes]
-    bar_chart(out / "paper_feature_controls.png", "Feature controls separate capacity from conditioning", "BPB alone is not sufficient evidence of semantic conditioning", labels, values, colors)
+    subtitle = "BPB alone is not sufficient evidence of semantic conditioning"
+    subtitle += rounding_note(labels, values)
+    bar_chart(out / "paper_feature_controls.png", "Feature controls separate capacity from conditioning", subtitle, labels, values, colors)
 
 
 def composition(payload: dict[str, Any], out: Path) -> None:
@@ -195,7 +223,7 @@ def diversity(payload: dict[str, Any], out: Path) -> None:
     pairs = sorted(zip(xs, ys))
     if pairs:
         xs, ys = map(list, zip(*pairs))
-        line_chart(out / "paper_diversity_ablation.png", "Diversity regularization reduces weight collapse", "Lower cross-input cosine means more input-dependent generated LoRA weights", xs, ys, "Cross-input cosine ↓", "Diversity weight λ")
+        line_chart(out / "paper_diversity_ablation.png", "Moderate diversity regularization reduces weight collapse", "Lower cross-input cosine means more input-dependent generated LoRA weights", xs, ys, "Cross-input cosine ↓", "Diversity weight λ")
 
 
 def reproducibility(payload: dict[str, Any], out: Path) -> None:
@@ -208,7 +236,7 @@ def reproducibility(payload: dict[str, Any], out: Path) -> None:
             stds.append(float(res["std_improvement"]))
     img, draw = blank("Reproducibility across random seeds", "Mean ± std BPB improvement across seeds 42, 1042, and 2042")
     ymax = max([m + s for m, s in zip(means, stds)] + [1e-6]) * 1.25
-    axes(draw, 0.0, ymax, "BPB improvement ↑")
+    axes(img, draw, 0.0, ymax, "BPB improvement ↑")
     slot = (PLOT_RIGHT - PLOT_LEFT) / max(1, len(means))
     for i, (label, val, sd) in enumerate(zip(labels, means, stds)):
         cx = int(PLOT_LEFT + slot * (i + 0.5))

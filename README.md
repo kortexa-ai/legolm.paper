@@ -11,7 +11,8 @@ rendered from a bundled result artifact.
 
 **The headline result is a clean dissociation.** Measured by validation
 bits-per-byte, conditioning contributes nothing — a capacity-matched bridge fed
-a constant feature vector matches the true-feature bridge exactly. Measured by
+a constant feature vector matches the true-feature bridge to within the
+per-seed spread. Measured by
 task-aligned probes, conditioning is decisive — true sensor features lift
 rank-1 label accuracy to 0.80 on six-way IMU activities (chance 0.17) and 0.33
 on fifty-way audio events (chance 0.02), while shuffled, random, and
@@ -19,7 +20,7 @@ no-bridge controls all sit at chance. Aggregate language-modeling metrics are
 the wrong instrument for detecting sensor conditioning. Diversity
 regularization governs the failure mode: unregularized hypernetworks collapse
 to input-independent weights, and at long training budgets that collapse
-erases task-level conditioning entirely.
+can erase task-level conditioning.
 
 ## Reproduce
 

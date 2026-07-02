@@ -207,6 +207,61 @@ def stats(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def diversity_facts(payload: dict[str, Any]) -> dict[str, Any] | None:
+    """Sweep facts for the diversity narrative, so monotonicity claims can
+    never outrun the table."""
+    items = []
+    for name, entry in payload.get("results", {}).items():
+        if name.startswith("diversity-imu-l"):
+            res = entry["result"]
+            probe = res.get("heldout_probe") or {}
+            cosine = probe.get("cross_input_cosine_mean", res.get("last_diversity"))
+            if cosine is not None:
+                items.append((float(res["diversity_weight"]), float(cosine), res.get("improvement")))
+    if not items:
+        return None
+    items.sort()
+    best_lam, best_cos, _ = min(items, key=lambda item: item[1])
+    max_lam, max_cos, max_imp = items[-1]
+    zero_imp = next((imp for lam, _, imp in items if lam == 0.0), None)
+    return {
+        "best_lam": best_lam,
+        "best_cos": best_cos,
+        "max_lam": max_lam,
+        "max_cos": max_cos,
+        "max_imp": max_imp,
+        "zero_imp": zero_imp,
+        "monotonic": best_lam == max_lam,
+    }
+
+
+def diversity_paragraph(payload: dict[str, Any]) -> str:
+    facts = diversity_facts(payload)
+    if not facts:
+        return ""
+    if facts["monotonic"]:
+        shape = (
+            rf"Moderate diversity penalties reduce this collapse and make generated LoRA weights more "
+            rf"input-dependent, with cross-input cosine decreasing through the largest tested weight "
+            rf"($\lambda={facts['max_lam']:.2f}$, cosine {fmt(facts['max_cos'])})."
+        )
+    else:
+        shape = (
+            rf"Moderate diversity penalties reduce this collapse and make generated LoRA weights more "
+            rf"input-dependent, with the lowest cross-input cosine at $\lambda={facts['best_lam']:.2f}$ "
+            rf"({fmt(facts['best_cos'])}); the effect is not monotonic at the largest tested weight "
+            rf"($\lambda={facts['max_lam']:.2f}$ reverses to {fmt(facts['max_cos'])} while remaining far "
+            rf"below the unregularized value)."
+        )
+    cost = (
+        rf"The largest tested penalty eliminates the BPB gain ({fmt(facts['max_imp'], sign=True)} at "
+        rf"$\lambda={facts['max_lam']:.2f}$, down from {fmt(facts['zero_imp'], sign=True)} at $\lambda=0$): forcing "
+        rf"input-dependent weight generation removes the text-loss gain, reinforcing the capacity/conditioning "
+        rf"decomposition --- the BPB improvement and input-dependent sensor use are separable objectives."
+    )
+    return shape + " " + cost
+
+
 def scaling_section(payload: dict[str, Any], scaling: dict[str, Any] | None) -> str:
     """Budget-scaling robustness subsection, rendered only when a second
     (higher-budget) artifact is provided. Entirely data-driven."""
@@ -230,7 +285,7 @@ def scaling_section(payload: dict[str, Any], scaling: dict[str, Any] | None) -> 
 \label{{sec:scaling}}
 To test whether the qualitative picture is an artifact of short training, we repeated the full suite at {factor}$\times$ the step budget ({smd.get('benchmark_steps')} benchmark steps, {smd.get('task_steps')} task-probe steps) with a {smd.get('eval_tokens')}-token eval stream. The BPB ordering is preserved as every condition improves: static LoRA {fmt(big['static'], sign=True)} (from {fmt(base['static'], sign=True)}), conditional bridge {fmt(big['bridge'], sign=True)} (from {fmt(base['bridge'], sign=True)}), constant features {fmt(big['constant'], sign=True)}, shuffled {fmt(big['shuffled'], sign=True)}, random {fmt(big['random'], sign=True)}; the conditioning contribution measured by BPB remains indistinguishable from zero. Prefix tuning's degradation shrinks toward neutrality ({fmt(base['prefix'], sign=True)} to {fmt(big['prefix'], sign=True)}) without ever helping.
 
-The task probes expose a boundary that short budgets hide. The audio probe strengthens with optimization (rank-1 {fmt(base['task_audio_true_rank1'], 2)} to {fmt(big['task_audio_true_rank1'], 2)}, controls still at chance), but the IMU probe collapses: at {smd.get('task_steps')} steps the true-feature bridge becomes behaviorally indistinguishable from the zero-LoRA condition (rank-1 {fmt(big['task_imu_true_rank1'], 2)}, equal to no-bridge), having scored {fmt(base['task_imu_true_rank1'], 2)} at {bmd.get('task_steps')} steps. The diversity sweep at this budget shows the same mechanism: $\lambda=0.01$ no longer prevents weight collapse (cross-input cosine {fmt(weak, 2)}) while $\lambda \ge 0.05$ still does ({fmt(strong, 2)}). Prolonged unregularized training drives the hypernetwork toward input-independent output, and the collapse threshold moves with optimization length --- the failure mode this paper documents is not confined to a corner of the BPB table.
+The task probes expose a boundary that short budgets hide. The audio probe strengthens with optimization (rank-1 {fmt(base['task_audio_true_rank1'], 2)} to {fmt(big['task_audio_true_rank1'], 2)}, controls still at chance), but the IMU probe collapses: at {smd.get('task_steps')} steps the true-feature bridge becomes behaviorally indistinguishable from the zero-LoRA condition (rank-1 {fmt(big['task_imu_true_rank1'], 2)}, equal to no-bridge), having scored {fmt(base['task_imu_true_rank1'], 2)} at {bmd.get('task_steps')} steps. The diversity sweep at this budget shows the same mechanism with a shifted threshold: $\lambda=0.01$, which at the standard budget only mildly reduced collapse, leaves generated weights fully collapsed here (cross-input cosine {fmt(weak, 2)}), while $\lambda=0.05$ still yields input-dependent weights (cross-input cosine {fmt(strong, 2)}). Prolonged unregularized training drives the hypernetwork toward input-independent output, and the collapse threshold moves with optimization length --- the failure mode this paper documents is not confined to a corner of the BPB table.
 """
 
 
@@ -255,7 +310,16 @@ def repro_command(payload: dict[str, Any]) -> str:
         if value is not None:
             parts.append(f"{flag} {value}")
     parts.append("--output-dir results/<run>")
-    return " ".join(parts)
+    # Wrap with shell continuations so the verbatim block fits the page.
+    lines, line = [], parts[0]
+    for part in parts[1:]:
+        if len(line) + 1 + len(part) > 60:
+            lines.append(line)
+            line = "  " + part
+        else:
+            line += " " + part
+    lines.append(line)
+    return " \\\n".join(lines)
 
 
 def metadata_sentence(payload: dict[str, Any]) -> str:
@@ -289,6 +353,8 @@ def write_tex(payload: dict[str, Any], out_dir: Path, scaling: dict[str, Any] | 
             break
     facts = model_facts(payload)
     st = stats(payload)
+    bc_diff = abs((st["bridge"] or 0.0) - (st["constant"] or 0.0))
+    seed = payload.get("metadata", {}).get("seed", 42)
     scaling_ref = r" (Section~\ref{sec:scaling})" if scaling else ""
     created = payload.get("metadata", {}).get("created_at", str(date.today()))[:10]
     tex = rf"""
@@ -321,7 +387,7 @@ def write_tex(payload: dict[str, Any], out_dir: Path, scaling: dict[str, Any] | 
 \maketitle
 
 \begin{{abstract}}
-We study how to extend frozen language models with new sensors without retraining them, and show that standard language-modeling scores cannot tell whether the sensor is genuinely used --- separating real sensing from added capacity takes task-level tests. Our mechanism, a conditional LoRA bridge, maps frozen sensor-encoder features to per-input Low-Rank Adaptation (LoRA) parameters that are injected into a frozen transformer without changing base model weights. On a controlled {facts['params_m']:.1f}M-parameter Qwen-style language model, we evaluate dynamic bridges alongside static LoRA, shuffled-, random-, and constant-feature controls, prefix tuning, composition tests, task-aligned ranking probes, and seed-stability checks, all under one fixed-step runner. The decomposition is sharp. Measured by validation bits-per-byte, conditioning contributes nothing: a capacity-matched bridge fed one constant feature vector matches the true-feature bridge, and static LoRA beats both. Measured by task-aligned probes, conditioning is decisive: with true features the frozen model ranks the correct sensor label first {fmt(st['task_imu_true_rank1'], 2)} of the time on six-way IMU activities and {fmt(st['task_audio_true_rank1'], 2)} on fifty-way audio events, while shuffled features, random features, and the unconditioned model all sit at chance. Aggregate language-modeling metrics are therefore the wrong instrument for detecting sensor conditioning. Diversity regularization governs the central failure mode: without it, generated weights collapse toward input-independence --- and at sufficiently long training budgets this collapse erases the task-level conditioning entirely. Prefix tuning, the token-space alternative, only degrades the frozen model. These results support weight-space modulation as a viable modular interface between independently trained sensor encoders and frozen language models, with bridge compression and regularized long-horizon training as the open problems.
+We study how to extend frozen language models with new sensors without retraining them, and show that standard language-modeling scores cannot tell whether the sensor is genuinely used --- separating real sensing from added capacity takes task-level tests. Our mechanism, a conditional LoRA bridge, maps frozen sensor-encoder features to per-input Low-Rank Adaptation (LoRA) parameters that are injected into a frozen transformer without changing base model weights. On a controlled {facts['params_m']:.1f}M-parameter Qwen-style language model, we evaluate conditional bridges alongside static LoRA, shuffled-, random-, and constant-feature controls, prefix tuning, composition tests, task-aligned ranking probes, and seed-stability checks, all under one fixed-step runner. The decomposition is sharp. Measured by validation bits-per-byte, conditioning contributes nothing: a capacity-matched bridge fed one constant feature vector matches the true-feature bridge, and static LoRA beats both. Measured by task-aligned probes, conditioning is decisive: with true features the frozen model ranks the correct sensor label first {fmt(st['task_imu_true_rank1'], 2)} of the time on six-way IMU activities and {fmt(st['task_audio_true_rank1'], 2)} on fifty-way audio events, while shuffled features, random features, and the unconditioned model all sit at chance. Aggregate language-modeling metrics are therefore the wrong instrument for detecting sensor conditioning. Diversity regularization governs the central failure mode: without it, generated weights collapse toward input-independence, and long training budgets can erase task-level conditioning. Prefix tuning, the token-space alternative conditioned on the same sensor features, only degrades the frozen model. These results support weight-space modulation as a viable modular interface between independently trained sensor encoders and frozen language models, with bridge compression and regularized long-horizon training as the open problems.
 \end{{abstract}}
 
 \section{{Introduction}}
@@ -334,7 +400,7 @@ Contributions:
   \item A controlled, fully reproducible evaluation harness for conditional LoRA bridges across vision, audio, and IMU features: fixed step counts, a shared eval stream, three-seed checks, and every table and number in this manuscript rendered from a single bundled result artifact.
   \item A capacity/conditioning decomposition via controls. A constant-feature bridge isolates trainable capacity; it matches the true-feature bridge on BPB ({fmt(st['constant'], sign=True)} vs.\ {fmt(st['bridge'], sign=True)}), showing that aggregate language-modeling gains carry no evidence of sensor conditioning.
   \item Task-aligned probes that detect conditioning decisively where BPB cannot: true features lift rank-1 label accuracy to {fmt(st['task_imu_true_rank1'], 2)} (IMU, chance 0.17) and {fmt(st['task_audio_true_rank1'], 2)} (audio, chance 0.02) while every control stays at chance.
-  \item A characterization of hypernetwork weight collapse: diversity regularization makes generated weights input-dependent, and at long training budgets unregularized bridges collapse to input-independence, erasing task-level conditioning{scaling_ref}.
+  \item A characterization of hypernetwork weight collapse: diversity regularization makes generated weights input-dependent, and prolonged unregularized training can erase task-level conditioning --- the collapse threshold moves with the training budget{scaling_ref}.
 \end{{itemize}}
 
 \section{{Method}}
@@ -356,22 +422,22 @@ A bridge can minimize text loss while emitting nearly identical LoRA weights for
 \[
   \mathcal{{L}}_\text{{div}} = \frac{{1}}{{N(N-1)}} \sum_{{i \ne j}} \cos(w_i, w_j).
 \]
-Lower cosine similarity indicates more input-dependent generated weights.
+The training objective is $\mathcal{{L}} = \mathcal{{L}}_\text{{text}} + \lambda\,\mathcal{{L}}_\text{{div}}$, and Section~\ref{{sec:diversity}} sweeps the diversity weight $\lambda$. Lower cosine similarity indicates more input-dependent generated weights.
 
 \section{{Experimental Setup}}
 The primary metric is validation bits-per-byte (BPB) on held-out text; lower BPB is better, and tables report improvement relative to the frozen baseline. Every condition is evaluated on the same fixed {payload.get("metadata", {}).get("eval_tokens") or "32{,}768"}-token validation stream, so all reported deltas are paired comparisons; the absolute BPB level would shift by roughly $\pm 0.02$ under an independent eval sample of the same size. BPB gives a stable language-modeling measurement, but it is not sufficient evidence of semantic sensor use. We therefore include shuffled-feature, random-feature, and constant-feature controls, task-aligned ranking probes, composition tests, and held-out weight-space structure probes.
 
-{metadata_sentence(payload)} The result artifact is the summary JSON consumed by the figure and manuscript renderers.
+{metadata_sentence(payload)} Benchmark, control, and task bridges train without a diversity penalty ($\lambda = 0$); Section~\ref{{sec:diversity}} sweeps $\lambda$. The result artifact is the summary JSON consumed by the figure and manuscript renderers.
 
 \section{{Results}}
 \subsection{{Bridge and baseline comparison}}
 Table~\ref{{tab:main}} and Figure~\ref{{fig:main}} summarize BPB improvements across modalities. Static LoRA measures the gain from fixed low-rank adaptation; the constant-feature bridge is the capacity-matched control (the full hypernetwork trains, but its input never varies); random features test stochastic conditioning; shuffled features map sensor indices through a fixed derangement.
 
-The BPB outcome is unambiguous and deliberately deflationary. Static LoRA is the best text adapter ({fmt(st['static'], sign=True)} mean): direct optimization beats hypernetwork-mediated optimization when only text quality matters. The conditional bridge ({fmt(st['bridge'], sign=True)}) is statistically inseparable from the constant-feature control ({fmt(st['constant'], sign=True)}) --- the bridge's entire BPB gain is explained by its trainable capacity, with no measurable contribution from the sensor signal. We note that in this pipeline text batches and sensor draws are sampled independently, so there is no semantic sensor--text alignment for the shuffled control to destroy; shuffled ({fmt(st['shuffled'], sign=True)}) functions as a seed-noise sanity check here, and the semantically meaningful shuffled control appears in the task probes below, where features are label-paired.
+The BPB outcome is unambiguous and deliberately deflationary. Static LoRA is the best text adapter ({fmt(st['static'], sign=True)} mean): direct optimization beats hypernetwork-mediated optimization when only text quality matters. The conditional bridge ({fmt(st['bridge'], sign=True)}) is indistinguishable from the constant-feature control ({fmt(st['constant'], sign=True)}); their unrounded means differ by {bc_diff:.5f}, below the per-seed spread of Table~\ref{{tab:repro}} --- the bridge's entire BPB gain is explained by its trainable capacity, with no measurable contribution from the sensor signal. We note that in this pipeline text batches and sensor draws are sampled independently, so there is no semantic sensor--text alignment for the shuffled control to destroy; shuffled ({fmt(st['shuffled'], sign=True)}) functions as a seed-noise sanity check here, and the semantically meaningful shuffled control appears in the task probes below, where features are label-paired.
 
 \begin{{table}}[t]
 \centering
-\caption{{BPB improvement relative to the frozen mini-model baseline. Positive values are better. Static LoRA consumes no sensor input, so its per-modality cells repeat the same seeded modality-independent run.}}
+\caption{{BPB improvement relative to the frozen mini-model baseline. Positive values are better. Values are from the seed-{seed} run; Table~\ref{{tab:repro}} reports the three-seed spread. Static LoRA consumes no sensor input, so its per-modality cells repeat the same seeded modality-independent run; prefix tuning consumes per-modality sensor features projected into prefix tokens, so its cells differ across modalities.}}
 \label{{tab:main}}
 \begin{{tabular}}{{lrrrr}}
 \toprule
@@ -385,19 +451,19 @@ Method & Audio & Vision & IMU & Mean \\
 \begin{{figure}}[t]
 \centering
 \includegraphics[width=0.82\linewidth]{{paper_main_benchmark.png}}
-\caption{{Mean BPB improvement across audio, vision, and IMU. The controls show that capacity and regularization explain part of the bridge gain.}}
+\caption{{Mean BPB improvement across audio, vision, and IMU. Bar heights are unrounded means, so bars whose labels round to the same value can differ slightly: the bridge and constant-feature control differ by {bc_diff:.5f}, below the per-seed spread of Table~\ref{{tab:repro}} --- the bridge's gain is explained by trainable capacity, not sensor conditioning.}}
 \label{{fig:main}}
 \end{{figure}}
 
-Prefix tuning, the token-space alternative, degrades BPB ({fmt(st['prefix'], sign=True)} mean): inserting learned continuous tokens shifts the position distribution a frozen small model was trained under, and within this budget the prefix never recovers the loss it induces, let alone improves on the baseline. The contrast with the uniformly positive weight-space rows is the practical takeaway --- for frozen small models, weight modulation is the conditioning path that does no harm.
+Prefix tuning, the token-space alternative --- conditioned on the same frozen sensor features, projected into {payload.get("metadata", {}).get("n_prefix", 8)} continuous prefix tokens, which is why its per-modality cells differ where static LoRA's repeat --- degrades BPB ({fmt(st['prefix'], sign=True)} mean): inserting learned continuous tokens shifts the position distribution a frozen small model was trained under, and within this budget the prefix never recovers the loss it induces, let alone improves on the baseline. The contrast with the uniformly positive weight-space rows is the practical takeaway --- for frozen small models, weight modulation is the only tested conditioning path that does not degrade BPB at this budget.
 
 \subsection{{Feature controls}}
-Figure~\ref{{fig:controls}} restates the interpretation problem visually: true, shuffled, and constant features achieve nearly identical BPB, so BPB is measuring bridge capacity, not semantic sensor conditioning. Any claim of genuine conditioning must therefore rest on probes that are sensitive to per-input behavior --- the task-aligned probes below and the weight-space structure analysis of Section~\ref{{sec:diversity}}.
+Figure~\ref{{fig:controls}} restates the interpretation problem visually: true and constant features achieve nearly identical BPB, so BPB is measuring bridge capacity, not semantic sensor conditioning. Any claim of genuine conditioning must therefore rest on probes that are sensitive to per-input behavior --- the task-aligned probes below and the weight-space structure analysis of Section~\ref{{sec:diversity}}.
 
 \begin{{figure}}[t]
 \centering
 \includegraphics[width=0.82\linewidth]{{paper_feature_controls.png}}
-\caption{{Feature controls for the bridge. Shuffled features remove sensor alignment; random features test stochastic conditioning.}}
+\caption{{Feature controls for the bridge. True and constant features reach nearly identical BPB, so BPB measures bridge capacity rather than semantic sensor use; shuffled features act as a seed-noise check in this pipeline, and random features test stochastic conditioning.}}
 \label{{fig:controls}}
 \end{{figure}}
 
@@ -406,7 +472,7 @@ Independently trained bridges can be averaged in LoRA space. Table~\ref{{tab:com
 
 \begin{{table}}[t]
 \centering
-\caption{{Conditioned additive merge of independently trained bridges.}}
+\caption{{Additive merge of independently trained bridges under per-input conditioning: each bridge generates weights from its own sensor stream, and the generated vectors are averaged per input.}}
 \label{{tab:composition}}
 \begin{{tabular}}{{lrrrr}}
 \toprule
@@ -426,7 +492,7 @@ Active modalities & Count & Baseline & Final & $\Delta$ BPB \\
 
 \subsection{{Diversity and weight-space structure}}
 \label{{sec:diversity}}
-Table~\ref{{tab:diversity}} and Figure~\ref{{fig:diversity}} measure the generated-weight collapse directly. With no regularization, cross-input cosine similarity is close to one. Increasing the diversity penalty reduces this collapse and makes generated LoRA weights more input-dependent, although the BPB improvement may trade off against weight-space diversity.
+Table~\ref{{tab:diversity}} and Figure~\ref{{fig:diversity}} measure the generated-weight collapse directly. With no regularization, cross-input cosine similarity is close to one. {diversity_paragraph(payload)}
 
 \begin{{table}}[t]
 \centering
@@ -444,7 +510,7 @@ $\lambda$ & $\Delta$ BPB & Cross-input cosine & Motion/still cosine \\
 \begin{{figure}}[t]
 \centering
 \includegraphics[width=0.82\linewidth]{{paper_diversity_ablation.png}}
-\caption{{Diversity regularization reduces generated-weight collapse across IMU inputs.}}
+\caption{{Moderate diversity regularization reduces generated-weight collapse across IMU inputs.}}
 \label{{fig:diversity}}
 \end{{figure}}
 
@@ -487,13 +553,13 @@ Modality & Mean $\Delta$ BPB & Per-seed $\Delta$ BPB \\
 \end{{figure}}
 {scaling_section(payload, scaling)}
 \section{{Related Work}}
-LoRA \cite{{hu2021lora}} and adapter methods \cite{{houlsby2019adapters}} adapt frozen transformers \cite{{vaswani2017attention}} with a small number of trainable parameters. Prefix tuning \cite{{li2021prefixtuning}} adapts models by prepending continuous tokens; in our experiments token-space conditioning only degrades a frozen small model trained without prefixes. Hypernetworks \cite{{ha2016hypernetworks}} generate weights for another network; shared hypernetwork adapters \cite{{mahabadi2021hyperformer}} apply the idea to multi-task adaptation, and HyperTuning \cite{{phang2022hypertuning}} generates parameter-efficient adaptations from task descriptions with a frozen base model. Our setting differs in that the conditioning signal is a continuous sensor stream rather than a task identifier or instruction text, and the generated weights change per input at evaluation time. Composing the resulting adaptations connects to weight-space model editing and merging \cite{{ilharco2023task}}, where interference between added task vectors is a known obstacle --- consistent with the sub-additive composition we observe. Multimodal systems such as Flamingo \cite{{alayrac2022flamingo}} and LLaVA \cite{{liu2023llava}} integrate external modalities through architectures and training recipes designed for paired data; conditional LoRA bridges instead test a modular interface in which independently trained sensor encoders condition a frozen language model through generated low-rank weight updates. Sensor data come from ESC-50 \cite{{piczak2015esc}} and UCI-HAR \cite{{anguita2013uci}}.
+LoRA \cite{{hu2021lora}} and adapter methods \cite{{houlsby2019adapters}} adapt frozen transformers \cite{{vaswani2017attention}} with a small number of trainable parameters. Prefix tuning \cite{{li2021prefixtuning}} adapts models by prepending continuous tokens; in our experiments token-space conditioning --- a prefix generated from the same frozen sensor features the bridge consumes --- only degrades a frozen small model trained without prefixes. Hypernetworks \cite{{ha2016hypernetworks}} generate weights for another network; shared hypernetwork adapters \cite{{mahabadi2021hyperformer}} apply the idea to multi-task adaptation, and HyperTuning \cite{{phang2022hypertuning}} generates parameter-efficient adaptations from task descriptions with a frozen base model. Our setting differs in that the conditioning signal is a continuous sensor stream rather than a task identifier or instruction text, and the generated weights change per input at evaluation time. Composing the resulting adaptations connects to weight-space model editing and merging \cite{{ilharco2023task}}, where interference between added task vectors is a known obstacle --- consistent with the sub-additive composition we observe. Multimodal systems such as Flamingo \cite{{alayrac2022flamingo}} and LLaVA \cite{{liu2023llava}} integrate external modalities through architectures and training recipes designed for paired data; conditional LoRA bridges instead test a modular interface in which independently trained sensor encoders condition a frozen language model through generated low-rank weight updates. Sensor data come from ESC-50 \cite{{piczak2015esc}} and UCI-HAR \cite{{anguita2013uci}}.
 
 \section{{Limitations}}
-The bridge is large relative to the base model ({st['bridge_params'] / 1e6:.1f}M trainable parameters generating a {st['lora_dim']:,}-dimensional LoRA vector for a {facts['params_m']:.1f}M-parameter LM), so bridge compression is a central requirement for scaling this interface, not a footnote. All results are on one small base model trained on one corpus; the mechanism findings (capacity/conditioning dissociation, collapse, prefix degradation) are the claims we expect to transfer, not the specific deltas. The task probes use a single prompt template per modality and modest eval subsets. The budget-scaling run shows that probe outcomes can depend strongly on training length, so conclusions drawn at any single budget --- including ours --- should be read against that section. Composition of independently trained bridges remains sub-additive, and we do not yet offer a fix.
+The bridge is large relative to the base model ({st['bridge_params'] / 1e6:.1f}M trainable parameters generating a {st['lora_dim']:,}-dimensional LoRA vector for a {facts['params_m']:.1f}M-parameter LM), so bridge compression is a central requirement for scaling this interface, not a footnote. All results are on one small base model trained on one corpus; the mechanism findings (capacity/conditioning dissociation, collapse) are the claims we expect to transfer, not the specific deltas --- and scale-dependent results such as the prefix degradation should be re-established per model. The task probes use a single prompt template per modality and modest eval subsets. The budget-scaling run shows that probe outcomes can depend strongly on training length, so conclusions drawn at any single budget --- including ours --- should be read against that section. Composition of independently trained bridges remains sub-additive, and we do not yet offer a fix.
 
 \section{{Conclusion}}
-Conditional LoRA bridges connect frozen sensor encoders to frozen language models through generated low-rank weight updates. Our controlled study yields one sharp methodological result and one mechanism result. Methodologically, aggregate language-modeling metrics cannot detect sensor conditioning: a capacity-matched constant-feature control reproduces the bridge's entire BPB gain, while task-aligned probes show decisive input-dependence under exactly the same training. Mechanistically, hypernetwork collapse is the failure mode that governs whether conditioning exists at all: diversity regularization creates input-dependent weight structure, and prolonged unregularized training destroys it along with the task-level conditioning it supports. Weight-space modulation does no harm where token-space injection degrades the frozen model. Future work should compress the bridge (the interface's scaling bottleneck), make composition constructive rather than interfering, and extend the probe suite beyond single-template ranking.
+Conditional LoRA bridges connect frozen sensor encoders to frozen language models through generated low-rank weight updates. Our controlled study yields one sharp methodological result and one mechanism result. Methodologically, aggregate language-modeling metrics cannot detect sensor conditioning: a capacity-matched constant-feature control reproduces the bridge's entire BPB gain, while task-aligned probes show decisive input-dependence under exactly the same training. Mechanistically, hypernetwork collapse is the failure mode that governs whether conditioning exists at all: diversity regularization creates input-dependent weight structure, and prolonged unregularized training destroys it along with the task-level conditioning it supports. Under the standard BPB benchmark, weight-space modulation avoids the degradation token-space injection inflicts on this frozen small model; sustaining task-level conditioning over long budgets requires budget-aware validation, and our weight-space results point to diversity regularization as the mitigation to test at the task level. Future work should compress the bridge (the interface's scaling bottleneck), make composition constructive rather than interfering, and extend the probe suite beyond single-template ranking.
 
 \section*{{Reproducibility Statement}}
 The paper artifacts are generated from a single summary JSON emitted by the repository runner. The exact command that produced the bundled artifact, reconstructed from its recorded metadata, is:
