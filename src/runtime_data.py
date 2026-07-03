@@ -14,6 +14,8 @@ DEFAULT_NUM_TRAIN_SHARDS = int(os.environ.get("AUTORESEARCH_NUM_TRAIN_SHARDS", 3
 CACHE_DIR = os.path.join(os.path.expanduser("~"), ".cache", "autoresearch")
 DATA_DIR = os.path.join(CACHE_DIR, "data")
 TOKENIZER_DIR = os.path.join(CACHE_DIR, "tokenizer")
+# Re-pointed at load time when an hf:<model-id> base model is configured.
+ACTIVE_TOKENIZER_DIR = TOKENIZER_DIR
 MAX_SHARD = 6542
 VAL_SHARD = MAX_SHARD
 VAL_FILENAME = f"shard_{VAL_SHARD:05d}.parquet"
@@ -53,7 +55,8 @@ class Tokenizer:
         self.bos_token_id = enc.encode_single_token("<|reserved_0|>")
 
     @classmethod
-    def from_directory(cls, tokenizer_dir=TOKENIZER_DIR):
+    def from_directory(cls, tokenizer_dir=None):
+        tokenizer_dir = tokenizer_dir or ACTIVE_TOKENIZER_DIR
         with open(os.path.join(tokenizer_dir, "tokenizer.pkl"), "rb") as f:
             enc = pickle.load(f)
         return cls(enc)
@@ -82,7 +85,7 @@ class Tokenizer:
 
 
 def get_token_bytes(device="cpu"):
-    path = os.path.join(TOKENIZER_DIR, "token_bytes.pt")
+    path = os.path.join(ACTIVE_TOKENIZER_DIR, "token_bytes.pt")
     with open(path, "rb") as f:
         return torch.load(f, map_location=device)
 

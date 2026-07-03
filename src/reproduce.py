@@ -383,7 +383,14 @@ def main() -> None:
     normalize_args(args)
     # Self-heal a stale token_bytes.pt (e.g. after a git pull without setup.sh) so
     # BPB denominators always match the shipped tokenizer.
-    ensure_tokenizer()
+    if args.checkpoint.startswith("hf:"):
+        if __package__ in (None, ""):
+            from src.runtime_lfm import configure_tokenizer
+        else:
+            from .runtime_lfm import configure_tokenizer
+        configure_tokenizer(args.checkpoint[len("hf:"):])
+    else:
+        ensure_tokenizer()
     output_dir = build_output_dir(args)
     results_dir = output_dir / "results"
     logs_dir = output_dir / "logs"

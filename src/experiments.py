@@ -151,6 +151,8 @@ def _mean_pairwise_cosine(vectors: list[torch.Tensor]) -> float:
 
 
 def _forward_with_prefix(raw_model, prefix_tokens: torch.Tensor, text_ids: torch.Tensor) -> torch.Tensor:
+    if hasattr(raw_model, "forward_with_prefix"):
+        return raw_model.forward_with_prefix(prefix_tokens, text_ids)
     batch_size, text_len = text_ids.size()
     n_prefix = prefix_tokens.size(1)
     cos_sin = raw_model.cos[:, : text_len + n_prefix], raw_model.sin[:, : text_len + n_prefix]
@@ -937,7 +939,11 @@ def run_task_eval(
     seed_everything(seed)
     task_data = load_task_dataset(modality, device)
     tokenizer = Tokenizer.from_directory()
-    prompt_ids = tokenizer.encode(task_data.prompt_template)
+    # HF base models (e.g. LFM) are trained with BOS at sequence start and are
+    # far off-distribution without it; score prompt+label under the model's
+    # natural document convention. The mini path stays BOS-free as published.
+    scoring_bos = tokenizer.get_bos_token_id() if str(checkpoint).startswith("hf:") else None
+    prompt_ids = tokenizer.encode(task_data.prompt_template, prepend=scoring_bos)
 
     results = {}
     conditions = {
@@ -981,7 +987,7 @@ def run_task_eval(
                     feature = _task_feature_for_condition(cond_mode, own_feature, alt_feature)
                     weight_vector = bridge(feature)[0]
                     apply_hypernet_weights(model, weight_vector, rank, target)
-                    ids = tokenizer.encode(task_data.prompt_template + label)
+                    ids = tokenizer.encode(task_data.prompt_template + label, prepend=scoring_bos)
                     x = torch.tensor([ids[:-1]], dtype=torch.long, device=device)
                     y = torch.tensor([ids[1:]], dtype=torch.long, device=device)
                     loss_total = loss_total + model(x, y)
@@ -1014,7 +1020,7 @@ def run_task_eval(
 
             scored = []
             for category in task_data.categories:
-                full_ids = tokenizer.encode(task_data.prompt_template + category)
+                full_ids = tokenizer.encode(task_data.prompt_template + category, prepend=scoring_bos)
                 context_ids, label_ids = _split_label_ids(prompt_ids, full_ids)
                 scored.append((category, _score_label(model, tokenizer, context_ids, label_ids)))
             scored.sort(key=lambda item: item[1], reverse=True)

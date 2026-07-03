@@ -57,6 +57,10 @@ def autocast_for(device_type: str):
 
 
 def load_lm(checkpoint_path: str | Path = DEFAULT_MINI_CHECKPOINT):
+    if isinstance(checkpoint_path, str) and checkpoint_path.startswith("hf:"):
+        from .runtime_lfm import load_hf_lm
+
+        return load_hf_lm(checkpoint_path[len("hf:"):])
     checkpoint_path = assert_materialized_asset(checkpoint_path)
     ckpt = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     config = QwenConfig(**ckpt["config"])

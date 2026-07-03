@@ -89,6 +89,11 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
 
+    if args.checkpoint.startswith("hf:"):
+        from .runtime_lfm import configure_tokenizer
+
+        configure_tokenizer(args.checkpoint[len("hf:"):])
+
     if args.command == "static-lora":
         result = run_static_lora(
             modality=args.modality,

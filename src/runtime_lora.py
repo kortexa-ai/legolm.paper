@@ -36,6 +36,8 @@ def apply_lora(model, rank, target="attn", alpha=None):
     """
     lora_modules = []
     raw = model._orig_mod if hasattr(model, "_orig_mod") else model
+    if hasattr(raw, "apply_lora_targets"):
+        return raw.apply_lora_targets(rank, target, alpha)
 
     for block in raw.transformer.h:
         if target in ("attn", "all"):
