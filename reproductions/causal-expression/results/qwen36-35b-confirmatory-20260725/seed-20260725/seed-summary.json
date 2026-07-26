@@ -1,0 +1,118 @@
+{
+  "memory": {
+    "cuda_allocated_gib": 64.625,
+    "cuda_free_gib": 27.825,
+    "cuda_peak_allocated_gib": 64.902,
+    "cuda_peak_reserved_gib": 66.252,
+    "cuda_reserved_gib": 66.252,
+    "cuda_total_gib": 94.962,
+    "device": "cuda",
+    "rss_gib": 2.687,
+    "system_available_gib": 117.086
+  },
+  "seed": 20260725,
+  "stage_h": {
+    "checkpoint": "seed-20260725/stage-h-prefix.pt",
+    "metrics": {
+      "goodwill": {
+        "absolute_center_drift_fraction": null,
+        "center_drift": null,
+        "explicit_span": 0.656911076977849,
+        "generated_span": 0.13920050114393234,
+        "prompts": 8,
+        "relative_span": 0.21190158915317875,
+        "signed_prompts": 5,
+        "specific_prompts": 8,
+        "strict_center_prompts": null,
+        "wrong_axis_relative_shift": 0.030357314842988
+      },
+      "patience": {
+        "absolute_center_drift_fraction": null,
+        "center_drift": null,
+        "explicit_span": 0.7065711859613657,
+        "generated_span": 0.11620259284973145,
+        "prompts": 8,
+        "relative_span": 0.1644598522534221,
+        "signed_prompts": 7,
+        "specific_prompts": 4,
+        "strict_center_prompts": null,
+        "wrong_axis_relative_shift": 0.0757016132416979
+      },
+      "warmth": {
+        "absolute_center_drift_fraction": null,
+        "center_drift": null,
+        "explicit_span": 0.7722129616886377,
+        "generated_span": 0.5512434374541044,
+        "prompts": 8,
+        "relative_span": 0.71384898312076,
+        "signed_prompts": 8,
+        "specific_prompts": 8,
+        "strict_center_prompts": null,
+        "wrong_axis_relative_shift": 0.030502227204512015
+      }
+    },
+    "responses": "seed-20260725/stage-h-responses.json",
+    "screen": "seed-20260725/stage-h-screen.json",
+    "warmth_sweep": "seed-20260725/stage-h-warmth-sweep.json",
+    "warmth_sweep_metrics": {
+      "center_drift_fraction": 0.3155363511375188,
+      "direction_only_relative_span": 0.001402295950691164,
+      "direction_only_span": 0.0010828711092472076,
+      "explicit_span": 0.7722129616886377,
+      "state_attribution": {
+        "state_+0": 0.2695825397968292,
+        "state_+0.25": 0.12799658253788948,
+        "state_+0.5": 0.0808916836977005,
+        "state_+0.75": 0.14367793127894402,
+        "state_+1": 0.09237514436244965,
+        "state_-0.25": -0.4532890375703573,
+        "state_-0.5": -0.4345525112003088,
+        "state_-0.75": -0.4356364831328392,
+        "state_-1": -0.4588682930916548
+      }
+    }
+  },
+  "stage_i": {
+    "checkpoint": "seed-20260725/stage-i-prefix.pt",
+    "metrics": {
+      "goodwill": {
+        "absolute_center_drift_fraction": 0.19567594659545867,
+        "center_drift": -0.12854169681668282,
+        "explicit_span": 0.656911076977849,
+        "generated_span": 0.16265149787068367,
+        "prompts": 8,
+        "relative_span": 0.24760047983810793,
+        "signed_prompts": 7,
+        "specific_prompts": 6,
+        "strict_center_prompts": 4,
+        "wrong_axis_relative_shift": 0.014190910717715659
+      },
+      "patience": {
+        "absolute_center_drift_fraction": 0.08275718744687202,
+        "center_drift": -0.058473844081163406,
+        "explicit_span": 0.7065711859613657,
+        "generated_span": 0.1374792531132698,
+        "prompts": 8,
+        "relative_span": 0.1945724023917202,
+        "signed_prompts": 7,
+        "specific_prompts": 2,
+        "strict_center_prompts": 4,
+        "wrong_axis_relative_shift": 0.09011452985284342
+      },
+      "warmth": {
+        "absolute_center_drift_fraction": 0.022127261986510705,
+        "center_drift": -0.01708695851266384,
+        "explicit_span": 0.7722129616886377,
+        "generated_span": 0.1407535970211029,
+        "prompts": 8,
+        "relative_span": 0.182273030892035,
+        "signed_prompts": 7,
+        "specific_prompts": 8,
+        "strict_center_prompts": 4,
+        "wrong_axis_relative_shift": 0.01797553616101679
+      }
+    },
+    "responses": "seed-20260725/stage-i-responses.json",
+    "screen": "seed-20260725/stage-i-screen.json"
+  }
+}

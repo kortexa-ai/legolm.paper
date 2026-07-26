@@ -1,0 +1,2196 @@
+{
+  "axes": [
+    "warmth",
+    "patience",
+    "goodwill"
+  ],
+  "created_at": 1785029140.524223,
+  "evaluation": {
+    "dev": {
+      "goodwill": {
+        "causal_span": 0.3493843078613281,
+        "details": [
+          {
+            "causal_span": 0.2569584846496582,
+            "neutral": {
+              "margin": 0.2395007610321045,
+              "mean_nll": 3.1434444189071655,
+              "negative_nll": 3.2631947994232178,
+              "positive_nll": 3.0236940383911133
+            },
+            "pair_id": "dev-merge-conflict-goodwill",
+            "prefix_negative": {
+              "margin": 0.21314549446105957,
+              "mean_nll": 3.053524136543274,
+              "negative_nll": 3.1600968837738037,
+              "positive_nll": 2.946951389312744
+            },
+            "prefix_positive": {
+              "margin": 0.4701039791107178,
+              "mean_nll": 3.132994055747986,
+              "negative_nll": 3.3680460453033447,
+              "positive_nll": 2.897942066192627
+            },
+            "wrong_axis_positive": {
+              "margin": 0.36684107780456543,
+              "mean_nll": 3.056177496910095,
+              "negative_nll": 3.239598035812378,
+              "positive_nll": 2.8727569580078125
+            }
+          },
+          {
+            "causal_span": 0.44181013107299805,
+            "neutral": {
+              "margin": 0.060785531997680664,
+              "mean_nll": 3.0399662256240845,
+              "negative_nll": 3.070358991622925,
+              "positive_nll": 3.009573459625244
+            },
+            "pair_id": "dev-backup-restore-goodwill",
+            "prefix_negative": {
+              "margin": -0.0062711238861083984,
+              "mean_nll": 3.003113627433777,
+              "negative_nll": 2.9999780654907227,
+              "positive_nll": 3.006249189376831
+            },
+            "prefix_positive": {
+              "margin": 0.43553900718688965,
+              "mean_nll": 3.0142122507095337,
+              "negative_nll": 3.2319817543029785,
+              "positive_nll": 2.796442747116089
+            },
+            "wrong_axis_positive": {
+              "margin": 0.376192569732666,
+              "mean_nll": 2.91912841796875,
+              "negative_nll": 3.107224702835083,
+              "positive_nll": 2.731032133102417
+            }
+          }
+        ],
+        "directional_success_rate": 1.0,
+        "negative_gain_from_off": 0.04670596122741699,
+        "neutral": {
+          "margin": 0.15014314651489258,
+          "mean_nll": 3.091705322265625,
+          "negative_nll": 3.1667768955230713,
+          "positive_nll": 3.0166337490081787
+        },
+        "positive_gain_from_off": 0.30267834663391113,
+        "prefix_negative": {
+          "margin": 0.10343718528747559,
+          "mean_nll": 3.0283188819885254,
+          "negative_nll": 3.080037474632263,
+          "positive_nll": 2.9766002893447876
+        },
+        "prefix_positive": {
+          "margin": 0.4528214931488037,
+          "mean_nll": 3.0736031532287598,
+          "negative_nll": 3.3000138998031616,
+          "positive_nll": 2.847192406654358
+        },
+        "wrong_axis": "warmth",
+        "wrong_axis_gain_from_off": 0.22137367725372314,
+        "wrong_axis_positive": {
+          "margin": 0.3715168237686157,
+          "mean_nll": 2.9876529574394226,
+          "negative_nll": 3.1734113693237305,
+          "positive_nll": 2.8018945455551147
+        }
+      },
+      "patience": {
+        "causal_span": 0.12252187728881836,
+        "details": [
+          {
+            "causal_span": 0.06810450553894043,
+            "neutral": {
+              "margin": 0.4006617069244385,
+              "mean_nll": 3.038164734840393,
+              "negative_nll": 3.2384955883026123,
+              "positive_nll": 2.837833881378174
+            },
+            "pair_id": "dev-merge-conflict-patience",
+            "prefix_negative": {
+              "margin": 0.3608081340789795,
+              "mean_nll": 2.8837581872940063,
+              "negative_nll": 3.064162254333496,
+              "positive_nll": 2.7033541202545166
+            },
+            "prefix_positive": {
+              "margin": 0.4289126396179199,
+              "mean_nll": 2.903515577316284,
+              "negative_nll": 3.117971897125244,
+              "positive_nll": 2.689059257507324
+            },
+            "wrong_axis_positive": {
+              "margin": 0.45110225677490234,
+              "mean_nll": 3.056011438369751,
+              "negative_nll": 3.281562566757202,
+              "positive_nll": 2.8304603099823
+            }
+          },
+          {
+            "causal_span": 0.1769392490386963,
+            "neutral": {
+              "margin": 0.3687472343444824,
+              "mean_nll": 3.085714101791382,
+              "negative_nll": 3.270087718963623,
+              "positive_nll": 2.9013404846191406
+            },
+            "pair_id": "dev-backup-restore-patience",
+            "prefix_negative": {
+              "margin": 0.43015265464782715,
+              "mean_nll": 2.9975112676620483,
+              "negative_nll": 3.212587594985962,
+              "positive_nll": 2.7824349403381348
+            },
+            "prefix_positive": {
+              "margin": 0.6070919036865234,
+              "mean_nll": 3.0230164527893066,
+              "negative_nll": 3.3265624046325684,
+              "positive_nll": 2.719470500946045
+            },
+            "wrong_axis_positive": {
+              "margin": 0.5159256458282471,
+              "mean_nll": 3.0286108255386353,
+              "negative_nll": 3.286573648452759,
+              "positive_nll": 2.7706480026245117
+            }
+          }
+        ],
+        "directional_success_rate": 1.0,
+        "negative_gain_from_off": -0.010775923728942871,
+        "neutral": {
+          "margin": 0.38470447063446045,
+          "mean_nll": 3.0619394183158875,
+          "negative_nll": 3.2542916536331177,
+          "positive_nll": 2.8695871829986572
+        },
+        "positive_gain_from_off": 0.13329780101776123,
+        "prefix_negative": {
+          "margin": 0.3954803943634033,
+          "mean_nll": 2.9406347274780273,
+          "negative_nll": 3.138374924659729,
+          "positive_nll": 2.7428945302963257
+        },
+        "prefix_positive": {
+          "margin": 0.5180022716522217,
+          "mean_nll": 2.9632660150527954,
+          "negative_nll": 3.2222671508789062,
+          "positive_nll": 2.7042648792266846
+        },
+        "wrong_axis": "goodwill",
+        "wrong_axis_gain_from_off": 0.09880948066711426,
+        "wrong_axis_positive": {
+          "margin": 0.4835139513015747,
+          "mean_nll": 3.042311131954193,
+          "negative_nll": 3.2840681076049805,
+          "positive_nll": 2.8005541563034058
+        }
+      },
+      "warmth": {
+        "causal_span": 0.4903750419616699,
+        "details": [
+          {
+            "causal_span": 0.38727474212646484,
+            "neutral": {
+              "margin": 0.09019684791564941,
+              "mean_nll": 2.984446167945862,
+              "negative_nll": 3.0295445919036865,
+              "positive_nll": 2.939347743988037
+            },
+            "pair_id": "dev-merge-conflict-warmth",
+            "prefix_negative": {
+              "margin": -0.21388936042785645,
+              "mean_nll": 3.112281918525696,
+              "negative_nll": 3.0053372383117676,
+              "positive_nll": 3.219226598739624
+            },
+            "prefix_positive": {
+              "margin": 0.1733853816986084,
+              "mean_nll": 2.891405463218689,
+              "negative_nll": 2.978098154067993,
+              "positive_nll": 2.8047127723693848
+            },
+            "wrong_axis_positive": {
+              "margin": 0.13452792167663574,
+              "mean_nll": 2.890140175819397,
+              "negative_nll": 2.957404136657715,
+              "positive_nll": 2.822876214981079
+            }
+          },
+          {
+            "causal_span": 0.593475341796875,
+            "neutral": {
+              "margin": 0.34159183502197266,
+              "mean_nll": 2.9884088039398193,
+              "negative_nll": 3.1592047214508057,
+              "positive_nll": 2.817612886428833
+            },
+            "pair_id": "dev-backup-restore-warmth",
+            "prefix_negative": {
+              "margin": -0.07388639450073242,
+              "mean_nll": 2.979430913925171,
+              "negative_nll": 2.9424877166748047,
+              "positive_nll": 3.016374111175537
+            },
+            "prefix_positive": {
+              "margin": 0.5195889472961426,
+              "mean_nll": 2.846442461013794,
+              "negative_nll": 3.1062369346618652,
+              "positive_nll": 2.5866479873657227
+            },
+            "wrong_axis_positive": {
+              "margin": 0.3698420524597168,
+              "mean_nll": 2.9226362705230713,
+              "negative_nll": 3.1075572967529297,
+              "positive_nll": 2.737715244293213
+            }
+          }
+        ],
+        "directional_success_rate": 1.0,
+        "negative_gain_from_off": 0.35978221893310547,
+        "neutral": {
+          "margin": 0.21589434146881104,
+          "mean_nll": 2.9864274859428406,
+          "negative_nll": 3.094374656677246,
+          "positive_nll": 2.878480315208435
+        },
+        "positive_gain_from_off": 0.13059282302856445,
+        "prefix_negative": {
+          "margin": -0.14388787746429443,
+          "mean_nll": 3.0458564162254333,
+          "negative_nll": 2.973912477493286,
+          "positive_nll": 3.1178003549575806
+        },
+        "prefix_positive": {
+          "margin": 0.3464871644973755,
+          "mean_nll": 2.8689239621162415,
+          "negative_nll": 3.042167544364929,
+          "positive_nll": 2.6956803798675537
+        },
+        "wrong_axis": "patience",
+        "wrong_axis_gain_from_off": 0.036290645599365234,
+        "wrong_axis_positive": {
+          "margin": 0.25218498706817627,
+          "mean_nll": 2.906388223171234,
+          "negative_nll": 3.0324807167053223,
+          "positive_nll": 2.780295729637146
+        }
+      }
+    },
+    "test": {
+      "goodwill": {
+        "causal_span": 0.44947633147239685,
+        "details": [
+          {
+            "causal_span": 0.5145881175994873,
+            "neutral": {
+              "margin": -0.10482645034790039,
+              "mean_nll": 2.8752081394195557,
+              "negative_nll": 2.8227949142456055,
+              "positive_nll": 2.927621364593506
+            },
+            "pair_id": "test-repeat-config-goodwill",
+            "prefix_negative": {
+              "margin": -0.1657700538635254,
+              "mean_nll": 2.9965269565582275,
+              "negative_nll": 2.913641929626465,
+              "positive_nll": 3.0794119834899902
+            },
+            "prefix_positive": {
+              "margin": 0.3488180637359619,
+              "mean_nll": 2.8053516149520874,
+              "negative_nll": 2.9797606468200684,
+              "positive_nll": 2.6309425830841064
+            },
+            "wrong_axis_positive": {
+              "margin": 0.11053967475891113,
+              "mean_nll": 2.735659956932068,
+              "negative_nll": 2.7909297943115234,
+              "positive_nll": 2.6803901195526123
+            }
+          },
+          {
+            "causal_span": 0.7441408634185791,
+            "neutral": {
+              "margin": 0.13726568222045898,
+              "mean_nll": 3.5798869132995605,
+              "negative_nll": 3.64851975440979,
+              "positive_nll": 3.511254072189331
+            },
+            "pair_id": "test-crash-loop-goodwill",
+            "prefix_negative": {
+              "margin": -0.005895137786865234,
+              "mean_nll": 3.6318624019622803,
+              "negative_nll": 3.6289148330688477,
+              "positive_nll": 3.634809970855713
+            },
+            "prefix_positive": {
+              "margin": 0.7382457256317139,
+              "mean_nll": 3.522309899330139,
+              "negative_nll": 3.891432762145996,
+              "positive_nll": 3.1531870365142822
+            },
+            "wrong_axis_positive": {
+              "margin": 0.22578763961791992,
+              "mean_nll": 3.533015727996826,
+              "negative_nll": 3.645909547805786,
+              "positive_nll": 3.420121908187866
+            }
+          },
+          {
+            "causal_span": 0.6385493278503418,
+            "neutral": {
+              "margin": -0.07155513763427734,
+              "mean_nll": 2.5672671794891357,
+              "negative_nll": 2.531489610671997,
+              "positive_nll": 2.6030447483062744
+            },
+            "pair_id": "test-deadline-plan-goodwill",
+            "prefix_negative": {
+              "margin": -0.305652379989624,
+              "mean_nll": 2.594068169593811,
+              "negative_nll": 2.441241979598999,
+              "positive_nll": 2.746894359588623
+            },
+            "prefix_positive": {
+              "margin": 0.3328969478607178,
+              "mean_nll": 2.471195340156555,
+              "negative_nll": 2.637643814086914,
+              "positive_nll": 2.3047468662261963
+            },
+            "wrong_axis_positive": {
+              "margin": 0.03954172134399414,
+              "mean_nll": 2.5359582901000977,
+              "negative_nll": 2.5557291507720947,
+              "positive_nll": 2.5161874294281006
+            }
+          },
+          {
+            "causal_span": 0.7085213661193848,
+            "neutral": {
+              "margin": 0.08850932121276855,
+              "mean_nll": 3.213189721107483,
+              "negative_nll": 3.257444381713867,
+              "positive_nll": 3.1689350605010986
+            },
+            "pair_id": "test-code-review-goodwill",
+            "prefix_negative": {
+              "margin": -0.10594725608825684,
+              "mean_nll": 3.1321862936019897,
+              "negative_nll": 3.0792126655578613,
+              "positive_nll": 3.185159921646118
+            },
+            "prefix_positive": {
+              "margin": 0.6025741100311279,
+              "mean_nll": 3.0731409788131714,
+              "negative_nll": 3.3744280338287354,
+              "positive_nll": 2.7718539237976074
+            },
+            "wrong_axis_positive": {
+              "margin": 0.38367438316345215,
+              "mean_nll": 3.012336850166321,
+              "negative_nll": 3.204174041748047,
+              "positive_nll": 2.8204996585845947
+            }
+          },
+          {
+            "causal_span": 0.1734628677368164,
+            "neutral": {
+              "margin": 0.15801143646240234,
+              "mean_nll": 2.2651913166046143,
+              "negative_nll": 2.3441970348358154,
+              "positive_nll": 2.186185598373413
+            },
+            "pair_id": "test-do-it-repeat-goodwill",
+            "prefix_negative": {
+              "margin": 0.10403704643249512,
+              "mean_nll": 2.3046523332595825,
+              "negative_nll": 2.35667085647583,
+              "positive_nll": 2.252633810043335
+            },
+            "prefix_positive": {
+              "margin": 0.2774999141693115,
+              "mean_nll": 2.175857663154602,
+              "negative_nll": 2.314607620239258,
+              "positive_nll": 2.0371077060699463
+            },
+            "wrong_axis_positive": {
+              "margin": 0.26027703285217285,
+              "mean_nll": 2.1741729974746704,
+              "negative_nll": 2.304311513900757,
+              "positive_nll": 2.044034481048584
+            }
+          },
+          {
+            "causal_span": 0.31741809844970703,
+            "neutral": {
+              "margin": 0.005285739898681641,
+              "mean_nll": 2.4356064796447754,
+              "negative_nll": 2.438249349594116,
+              "positive_nll": 2.4329636096954346
+            },
+            "pair_id": "test-user-insult-goodwill",
+            "prefix_negative": {
+              "margin": 0.08477163314819336,
+              "mean_nll": 2.3907761573791504,
+              "negative_nll": 2.433161973953247,
+              "positive_nll": 2.3483903408050537
+            },
+            "prefix_positive": {
+              "margin": 0.4021897315979004,
+              "mean_nll": 2.2899515628814697,
+              "negative_nll": 2.49104642868042,
+              "positive_nll": 2.0888566970825195
+            },
+            "wrong_axis_positive": {
+              "margin": 0.16934871673583984,
+              "mean_nll": 2.3574130535125732,
+              "negative_nll": 2.442087411880493,
+              "positive_nll": 2.2727386951446533
+            }
+          },
+          {
+            "causal_span": 0.37343716621398926,
+            "neutral": {
+              "margin": 0.025574445724487305,
+              "mean_nll": 2.8945614099502563,
+              "negative_nll": 2.9073486328125,
+              "positive_nll": 2.8817741870880127
+            },
+            "pair_id": "test-user-praise-goodwill",
+            "prefix_negative": {
+              "margin": -0.06789708137512207,
+              "mean_nll": 2.8411725759506226,
+              "negative_nll": 2.8072240352630615,
+              "positive_nll": 2.8751211166381836
+            },
+            "prefix_positive": {
+              "margin": 0.3055400848388672,
+              "mean_nll": 2.8889994621276855,
+              "negative_nll": 3.041769504547119,
+              "positive_nll": 2.736229419708252
+            },
+            "wrong_axis_positive": {
+              "margin": 0.05456280708312988,
+              "mean_nll": 2.847350001335144,
+              "negative_nll": 2.874631404876709,
+              "positive_nll": 2.820068597793579
+            }
+          },
+          {
+            "causal_span": 0.12569284439086914,
+            "neutral": {
+              "margin": -0.07257616519927979,
+              "mean_nll": 1.8250518441200256,
+              "negative_nll": 1.7887637615203857,
+              "positive_nll": 1.8613399267196655
+            },
+            "pair_id": "test-user-gratitude-goodwill",
+            "prefix_negative": {
+              "margin": -0.11934959888458252,
+              "mean_nll": 1.7687334418296814,
+              "negative_nll": 1.7090586423873901,
+              "positive_nll": 1.8284082412719727
+            },
+            "prefix_positive": {
+              "margin": 0.006343245506286621,
+              "mean_nll": 1.9156710505485535,
+              "negative_nll": 1.9188426733016968,
+              "positive_nll": 1.9124994277954102
+            },
+            "wrong_axis_positive": {
+              "margin": -0.017268657684326172,
+              "mean_nll": 1.7874209880828857,
+              "negative_nll": 1.7787866592407227,
+              "positive_nll": 1.7960553169250488
+            }
+          }
+        ],
+        "directional_success_rate": 1.0,
+        "negative_gain_from_off": 0.09342396259307861,
+        "neutral": {
+          "margin": 0.020711109042167664,
+          "mean_nll": 2.706995375454426,
+          "negative_nll": 2.7173509299755096,
+          "positive_nll": 2.696639820933342
+        },
+        "positive_gain_from_off": 0.35605236887931824,
+        "prefix_negative": {
+          "margin": -0.07271285355091095,
+          "mean_nll": 2.707497291266918,
+          "negative_nll": 2.6711408644914627,
+          "positive_nll": 2.7438537180423737
+        },
+        "prefix_positive": {
+          "margin": 0.3767634779214859,
+          "mean_nll": 2.642809696495533,
+          "negative_nll": 2.831191435456276,
+          "positive_nll": 2.45442795753479
+        },
+        "wrong_axis": "warmth",
+        "wrong_axis_gain_from_off": 0.13259680569171906,
+        "wrong_axis_positive": {
+          "margin": 0.15330791473388672,
+          "mean_nll": 2.6229159832000732,
+          "negative_nll": 2.6995699405670166,
+          "positive_nll": 2.54626202583313
+        }
+      },
+      "patience": {
+        "causal_span": 0.14887520670890808,
+        "details": [
+          {
+            "causal_span": 0.26982951164245605,
+            "neutral": {
+              "margin": 0.40779685974121094,
+              "mean_nll": 2.8704590797424316,
+              "negative_nll": 3.074357509613037,
+              "positive_nll": 2.666560649871826
+            },
+            "pair_id": "test-repeat-config-patience",
+            "prefix_negative": {
+              "margin": 0.2412881851196289,
+              "mean_nll": 2.8535571098327637,
+              "negative_nll": 2.974201202392578,
+              "positive_nll": 2.732913017272949
+            },
+            "prefix_positive": {
+              "margin": 0.511117696762085,
+              "mean_nll": 2.782347321510315,
+              "negative_nll": 3.0379061698913574,
+              "positive_nll": 2.5267884731292725
+            },
+            "wrong_axis_positive": {
+              "margin": 0.2674427032470703,
+              "mean_nll": 2.887836217880249,
+              "negative_nll": 3.021557569503784,
+              "positive_nll": 2.754114866256714
+            }
+          },
+          {
+            "causal_span": 0.03579449653625488,
+            "neutral": {
+              "margin": 0.38645339012145996,
+              "mean_nll": 3.4731003046035767,
+              "negative_nll": 3.6663269996643066,
+              "positive_nll": 3.2798736095428467
+            },
+            "pair_id": "test-crash-loop-patience",
+            "prefix_negative": {
+              "margin": 0.3582785129547119,
+              "mean_nll": 3.4813226461410522,
+              "negative_nll": 3.660461902618408,
+              "positive_nll": 3.3021833896636963
+            },
+            "prefix_positive": {
+              "margin": 0.3940730094909668,
+              "mean_nll": 3.434164047241211,
+              "negative_nll": 3.6312005519866943,
+              "positive_nll": 3.2371275424957275
+            },
+            "wrong_axis_positive": {
+              "margin": 0.48355913162231445,
+              "mean_nll": 3.5061874389648438,
+              "negative_nll": 3.747967004776001,
+              "positive_nll": 3.2644078731536865
+            }
+          },
+          {
+            "causal_span": 0.18947267532348633,
+            "neutral": {
+              "margin": 0.4518570899963379,
+              "mean_nll": 2.7326483726501465,
+              "negative_nll": 2.9585769176483154,
+              "positive_nll": 2.5067198276519775
+            },
+            "pair_id": "test-deadline-plan-patience",
+            "prefix_negative": {
+              "margin": 0.3602883815765381,
+              "mean_nll": 2.6576606035232544,
+              "negative_nll": 2.8378047943115234,
+              "positive_nll": 2.4775164127349854
+            },
+            "prefix_positive": {
+              "margin": 0.5497610569000244,
+              "mean_nll": 2.638924241065979,
+              "negative_nll": 2.913804769515991,
+              "positive_nll": 2.364043712615967
+            },
+            "wrong_axis_positive": {
+              "margin": 0.4942762851715088,
+              "mean_nll": 2.666108250617981,
+              "negative_nll": 2.9132463932037354,
+              "positive_nll": 2.4189701080322266
+            }
+          },
+          {
+            "causal_span": 0.15763592720031738,
+            "neutral": {
+              "margin": 0.4506256580352783,
+              "mean_nll": 3.212581992149353,
+              "negative_nll": 3.437894821166992,
+              "positive_nll": 2.987269163131714
+            },
+            "pair_id": "test-code-review-patience",
+            "prefix_negative": {
+              "margin": 0.4167163372039795,
+              "mean_nll": 3.02471125125885,
+              "negative_nll": 3.23306941986084,
+              "positive_nll": 2.8163530826568604
+            },
+            "prefix_positive": {
+              "margin": 0.5743522644042969,
+              "mean_nll": 3.125331163406372,
+              "negative_nll": 3.4125072956085205,
+              "positive_nll": 2.8381550312042236
+            },
+            "wrong_axis_positive": {
+              "margin": 0.45516085624694824,
+              "mean_nll": 3.1030579805374146,
+              "negative_nll": 3.3306384086608887,
+              "positive_nll": 2.8754775524139404
+            }
+          },
+          {
+            "causal_span": 0.10594558715820312,
+            "neutral": {
+              "margin": 0.17397451400756836,
+              "mean_nll": 2.448066473007202,
+              "negative_nll": 2.5350537300109863,
+              "positive_nll": 2.361079216003418
+            },
+            "pair_id": "test-do-it-repeat-patience",
+            "prefix_negative": {
+              "margin": 0.12131643295288086,
+              "mean_nll": 2.4138848781585693,
+              "negative_nll": 2.4745430946350098,
+              "positive_nll": 2.353226661682129
+            },
+            "prefix_positive": {
+              "margin": 0.22726202011108398,
+              "mean_nll": 2.349367141723633,
+              "negative_nll": 2.462998151779175,
+              "positive_nll": 2.235736131668091
+            },
+            "wrong_axis_positive": {
+              "margin": 0.22022390365600586,
+              "mean_nll": 2.4287755489349365,
+              "negative_nll": 2.5388875007629395,
+              "positive_nll": 2.3186635971069336
+            }
+          },
+          {
+            "causal_span": 0.17313051223754883,
+            "neutral": {
+              "margin": 0.4713156223297119,
+              "mean_nll": 2.4405678510665894,
+              "negative_nll": 2.6762256622314453,
+              "positive_nll": 2.2049100399017334
+            },
+            "pair_id": "test-user-insult-patience",
+            "prefix_negative": {
+              "margin": 0.36275315284729004,
+              "mean_nll": 2.449074625968933,
+              "negative_nll": 2.630451202392578,
+              "positive_nll": 2.267698049545288
+            },
+            "prefix_positive": {
+              "margin": 0.5358836650848389,
+              "mean_nll": 2.3977097272872925,
+              "negative_nll": 2.665651559829712,
+              "positive_nll": 2.129767894744873
+            },
+            "wrong_axis_positive": {
+              "margin": 0.4744107723236084,
+              "mean_nll": 2.4353471994400024,
+              "negative_nll": 2.6725525856018066,
+              "positive_nll": 2.1981418132781982
+            }
+          },
+          {
+            "causal_span": 0.15665507316589355,
+            "neutral": {
+              "margin": 0.6127376556396484,
+              "mean_nll": 3.016791343688965,
+              "negative_nll": 3.323160171508789,
+              "positive_nll": 2.7104225158691406
+            },
+            "pair_id": "test-user-praise-patience",
+            "prefix_negative": {
+              "margin": 0.5851378440856934,
+              "mean_nll": 2.9347050189971924,
+              "negative_nll": 3.227273941040039,
+              "positive_nll": 2.6421360969543457
+            },
+            "prefix_positive": {
+              "margin": 0.7417929172515869,
+              "mean_nll": 3.017590641975403,
+              "negative_nll": 3.3884871006011963,
+              "positive_nll": 2.6466941833496094
+            },
+            "wrong_axis_positive": {
+              "margin": 0.5069019794464111,
+              "mean_nll": 3.008815884590149,
+              "negative_nll": 3.2622668743133545,
+              "positive_nll": 2.7553648948669434
+            }
+          },
+          {
+            "causal_span": 0.10253787040710449,
+            "neutral": {
+              "margin": 0.031034469604492188,
+              "mean_nll": 2.090519905090332,
+              "negative_nll": 2.106037139892578,
+              "positive_nll": 2.075002670288086
+            },
+            "pair_id": "test-user-gratitude-patience",
+            "prefix_negative": {
+              "margin": 0.06058001518249512,
+              "mean_nll": 1.9898496866226196,
+              "negative_nll": 2.020139694213867,
+              "positive_nll": 1.959559679031372
+            },
+            "prefix_positive": {
+              "margin": 0.1631178855895996,
+              "mean_nll": 1.994579553604126,
+              "negative_nll": 2.076138496398926,
+              "positive_nll": 1.9130206108093262
+            },
+            "wrong_axis_positive": {
+              "margin": 0.13930273056030273,
+              "mean_nll": 2.078028917312622,
+              "negative_nll": 2.1476802825927734,
+              "positive_nll": 2.0083775520324707
+            }
+          }
+        ],
+        "directional_success_rate": 1.0,
+        "negative_gain_from_off": 0.05992954969406128,
+        "neutral": {
+          "margin": 0.3732244074344635,
+          "mean_nll": 2.7855919152498245,
+          "negative_nll": 2.9722041189670563,
+          "positive_nll": 2.5989797115325928
+        },
+        "positive_gain_from_off": 0.0889456570148468,
+        "prefix_negative": {
+          "margin": 0.3132948577404022,
+          "mean_nll": 2.7255957275629044,
+          "negative_nll": 2.8822431564331055,
+          "positive_nll": 2.5689482986927032
+        },
+        "prefix_positive": {
+          "margin": 0.4621700644493103,
+          "mean_nll": 2.7175017297267914,
+          "negative_nll": 2.9485867619514465,
+          "positive_nll": 2.4864166975021362
+        },
+        "wrong_axis": "goodwill",
+        "wrong_axis_gain_from_off": 0.006935387849807739,
+        "wrong_axis_positive": {
+          "margin": 0.38015979528427124,
+          "mean_nll": 2.764269679784775,
+          "negative_nll": 2.9543495774269104,
+          "positive_nll": 2.574189782142639
+        }
+      },
+      "warmth": {
+        "causal_span": 0.40755845606327057,
+        "details": [
+          {
+            "causal_span": 0.4839513301849365,
+            "neutral": {
+              "margin": 0.2900099754333496,
+              "mean_nll": 2.710725784301758,
+              "negative_nll": 2.8557307720184326,
+              "positive_nll": 2.565720796585083
+            },
+            "pair_id": "test-repeat-config-warmth",
+            "prefix_negative": {
+              "margin": -0.06821155548095703,
+              "mean_nll": 2.754599094390869,
+              "negative_nll": 2.7204933166503906,
+              "positive_nll": 2.7887048721313477
+            },
+            "prefix_positive": {
+              "margin": 0.4157397747039795,
+              "mean_nll": 2.603584885597229,
+              "negative_nll": 2.8114547729492188,
+              "positive_nll": 2.3957149982452393
+            },
+            "wrong_axis_positive": {
+              "margin": 0.3610267639160156,
+              "mean_nll": 2.6636154651641846,
+              "negative_nll": 2.8441288471221924,
+              "positive_nll": 2.4831020832061768
+            }
+          },
+          {
+            "causal_span": 0.4551680088043213,
+            "neutral": {
+              "margin": 0.2869572639465332,
+              "mean_nll": 3.331332206726074,
+              "negative_nll": 3.474810838699341,
+              "positive_nll": 3.1878535747528076
+            },
+            "pair_id": "test-crash-loop-warmth",
+            "prefix_negative": {
+              "margin": -0.024825572967529297,
+              "mean_nll": 3.361116886138916,
+              "negative_nll": 3.3487040996551514,
+              "positive_nll": 3.3735296726226807
+            },
+            "prefix_positive": {
+              "margin": 0.430342435836792,
+              "mean_nll": 3.3128384351730347,
+              "negative_nll": 3.5280096530914307,
+              "positive_nll": 3.0976672172546387
+            },
+            "wrong_axis_positive": {
+              "margin": 0.3958473205566406,
+              "mean_nll": 3.2867989540100098,
+              "negative_nll": 3.48472261428833,
+              "positive_nll": 3.0888752937316895
+            }
+          },
+          {
+            "causal_span": 0.367983341217041,
+            "neutral": {
+              "margin": 0.16824746131896973,
+              "mean_nll": 2.5828434228897095,
+              "negative_nll": 2.6669671535491943,
+              "positive_nll": 2.4987196922302246
+            },
+            "pair_id": "test-deadline-plan-warmth",
+            "prefix_negative": {
+              "margin": 0.009258508682250977,
+              "mean_nll": 2.5513836145401,
+              "negative_nll": 2.5560128688812256,
+              "positive_nll": 2.5467543601989746
+            },
+            "prefix_positive": {
+              "margin": 0.377241849899292,
+              "mean_nll": 2.501766562461853,
+              "negative_nll": 2.690387487411499,
+              "positive_nll": 2.313145637512207
+            },
+            "wrong_axis_positive": {
+              "margin": 0.2598552703857422,
+              "mean_nll": 2.4419357776641846,
+              "negative_nll": 2.5718634128570557,
+              "positive_nll": 2.3120081424713135
+            }
+          },
+          {
+            "causal_span": 0.6353976726531982,
+            "neutral": {
+              "margin": 0.1783125400543213,
+              "mean_nll": 3.119995951652527,
+              "negative_nll": 3.2091522216796875,
+              "positive_nll": 3.030839681625366
+            },
+            "pair_id": "test-code-review-warmth",
+            "prefix_negative": {
+              "margin": -0.15316319465637207,
+              "mean_nll": 3.03976047039032,
+              "negative_nll": 2.963178873062134,
+              "positive_nll": 3.116342067718506
+            },
+            "prefix_positive": {
+              "margin": 0.48223447799682617,
+              "mean_nll": 2.893691301345825,
+              "negative_nll": 3.1348085403442383,
+              "positive_nll": 2.652574062347412
+            },
+            "wrong_axis_positive": {
+              "margin": 0.32478928565979004,
+              "mean_nll": 2.9613252878189087,
+              "negative_nll": 3.1237199306488037,
+              "positive_nll": 2.7989306449890137
+            }
+          },
+          {
+            "causal_span": 0.17573976516723633,
+            "neutral": {
+              "margin": 0.17645692825317383,
+              "mean_nll": 2.2702133655548096,
+              "negative_nll": 2.3584418296813965,
+              "positive_nll": 2.1819849014282227
+            },
+            "pair_id": "test-do-it-repeat-warmth",
+            "prefix_negative": {
+              "margin": 0.01633286476135254,
+              "mean_nll": 2.341403365135193,
+              "negative_nll": 2.349569797515869,
+              "positive_nll": 2.3332369327545166
+            },
+            "prefix_positive": {
+              "margin": 0.19207262992858887,
+              "mean_nll": 2.2041622400283813,
+              "negative_nll": 2.300198554992676,
+              "positive_nll": 2.108125925064087
+            },
+            "wrong_axis_positive": {
+              "margin": 0.17289996147155762,
+              "mean_nll": 2.2104533910751343,
+              "negative_nll": 2.296903371810913,
+              "positive_nll": 2.1240034103393555
+            }
+          },
+          {
+            "causal_span": 0.45842957496643066,
+            "neutral": {
+              "margin": 0.16893792152404785,
+              "mean_nll": 2.3768805265426636,
+              "negative_nll": 2.4613494873046875,
+              "positive_nll": 2.2924115657806396
+            },
+            "pair_id": "test-user-insult-warmth",
+            "prefix_negative": {
+              "margin": -0.0677022933959961,
+              "mean_nll": 2.4815707206726074,
+              "negative_nll": 2.4477195739746094,
+              "positive_nll": 2.5154218673706055
+            },
+            "prefix_positive": {
+              "margin": 0.39072728157043457,
+              "mean_nll": 2.2610617876052856,
+              "negative_nll": 2.456425428390503,
+              "positive_nll": 2.0656981468200684
+            },
+            "wrong_axis_positive": {
+              "margin": 0.2641165256500244,
+              "mean_nll": 2.263086438179016,
+              "negative_nll": 2.3951447010040283,
+              "positive_nll": 2.131028175354004
+            }
+          },
+          {
+            "causal_span": 0.4088857173919678,
+            "neutral": {
+              "margin": 0.21994709968566895,
+              "mean_nll": 2.926037907600403,
+              "negative_nll": 3.0360114574432373,
+              "positive_nll": 2.8160643577575684
+            },
+            "pair_id": "test-user-praise-warmth",
+            "prefix_negative": {
+              "margin": 0.04323172569274902,
+              "mean_nll": 2.93185293674469,
+              "negative_nll": 2.9534687995910645,
+              "positive_nll": 2.9102370738983154
+            },
+            "prefix_positive": {
+              "margin": 0.4521174430847168,
+              "mean_nll": 2.8220033645629883,
+              "negative_nll": 3.0480620861053467,
+              "positive_nll": 2.59594464302063
+            },
+            "wrong_axis_positive": {
+              "margin": 0.31485915184020996,
+              "mean_nll": 2.839789032936096,
+              "negative_nll": 2.997218608856201,
+              "positive_nll": 2.682359457015991
+            }
+          },
+          {
+            "causal_span": 0.2749122381210327,
+            "neutral": {
+              "margin": 0.012881875038146973,
+              "mean_nll": 1.9458940625190735,
+              "negative_nll": 1.952335000038147,
+              "positive_nll": 1.939453125
+            },
+            "pair_id": "test-user-gratitude-warmth",
+            "prefix_negative": {
+              "margin": -0.06995737552642822,
+              "mean_nll": 1.8876095414161682,
+              "negative_nll": 1.852630853652954,
+              "positive_nll": 1.9225882291793823
+            },
+            "prefix_positive": {
+              "margin": 0.2049548625946045,
+              "mean_nll": 1.909467339515686,
+              "negative_nll": 2.0119447708129883,
+              "positive_nll": 1.8069899082183838
+            },
+            "wrong_axis_positive": {
+              "margin": 0.08624577522277832,
+              "mean_nll": 1.8642311096191406,
+              "negative_nll": 1.9073539972305298,
+              "positive_nll": 1.8211082220077515
+            }
+          }
+        ],
+        "directional_success_rate": 1.0,
+        "negative_gain_from_off": 0.2270984947681427,
+        "neutral": {
+          "margin": 0.18771888315677643,
+          "mean_nll": 2.6579904034733772,
+          "negative_nll": 2.7518498450517654,
+          "positive_nll": 2.564130961894989
+        },
+        "positive_gain_from_off": 0.18045996129512787,
+        "prefix_negative": {
+          "margin": -0.03937961161136627,
+          "mean_nll": 2.668662078678608,
+          "negative_nll": 2.648972272872925,
+          "positive_nll": 2.688351884484291
+        },
+        "prefix_positive": {
+          "margin": 0.3681788444519043,
+          "mean_nll": 2.5635719895362854,
+          "negative_nll": 2.7476614117622375,
+          "positive_nll": 2.3794825673103333
+        },
+        "wrong_axis": "patience",
+        "wrong_axis_gain_from_off": 0.08473612368106842,
+        "wrong_axis_positive": {
+          "margin": 0.27245500683784485,
+          "mean_nll": 2.5664044320583344,
+          "negative_nll": 2.7026319354772568,
+          "positive_nll": 2.430176928639412
+        }
+      }
+    }
+  },
+  "format": "stage-h-teacher-forced-screen-repro-v1",
+  "geometry": {
+    "max_abs_axis_cosine": 0.04839616268873215,
+    "max_pole_token_norm": 0.8170785307884216,
+    "mean_abs_axis_cosine": 0.026841452345252037,
+    "mean_pole_token_norm": 0.6902428865432739
+  },
+  "memory": {
+    "cuda_allocated_gib": 64.624,
+    "cuda_free_gib": 28.379,
+    "cuda_peak_allocated_gib": 64.868,
+    "cuda_peak_reserved_gib": 65.699,
+    "cuda_reserved_gib": 65.699,
+    "cuda_total_gib": 94.962,
+    "device": "cuda",
+    "rss_gib": 2.639,
+    "system_available_gib": 117.144
+  },
+  "prefix_tokens": 8,
+  "seed": 20260724,
+  "training_history": [
+    {
+      "anchor_loss": 0.0,
+      "axis": "patience",
+      "desired_nll": 3.19095516204834,
+      "desired_tokens": 55,
+      "diversity_loss": 0.0004540141671895981,
+      "geometry": {
+        "max_abs_axis_cosine": 0.1339290291070938,
+        "max_pole_token_norm": 0.6384915709495544,
+        "mean_abs_axis_cosine": 0.06251238286495209,
+        "mean_pole_token_norm": 0.5483269095420837
+      },
+      "grad_norm": 2.503033399581909,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.963,
+        "cuda_peak_allocated_gib": 64.84,
+        "cuda_peak_reserved_gib": 65.115,
+        "cuda_reserved_gib": 65.115,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.609,
+        "system_available_gib": 117.086
+      },
+      "pair_id": "fit-dns-patience",
+      "rejected_nll": 3.0104944705963135,
+      "rejected_tokens": 70,
+      "sign": -1,
+      "step": 1,
+      "training_margin": -0.18046069145202637
+    },
+    {
+      "anchor_loss": 0.008580799214541912,
+      "axis": "patience",
+      "desired_nll": 2.794520854949951,
+      "desired_tokens": 57,
+      "diversity_loss": 0.0065916599705815315,
+      "geometry": {
+        "max_abs_axis_cosine": 0.04372811317443848,
+        "max_pole_token_norm": 0.6413860321044922,
+        "mean_abs_axis_cosine": 0.027402210980653763,
+        "mean_pole_token_norm": 0.5514916181564331
+      },
+      "grad_norm": 3.4545533657073975,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.756,
+        "cuda_peak_allocated_gib": 64.848,
+        "cuda_peak_reserved_gib": 65.322,
+        "cuda_reserved_gib": 65.322,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.06
+      },
+      "pair_id": "fit-api-401-patience",
+      "rejected_nll": 2.653486490249634,
+      "rejected_tokens": 72,
+      "sign": -1,
+      "step": 2,
+      "training_margin": -0.14103436470031738
+    },
+    {
+      "anchor_loss": 0.012760581448674202,
+      "axis": "patience",
+      "desired_nll": 2.718689441680908,
+      "desired_tokens": 79,
+      "diversity_loss": 0.0009762168629094958,
+      "geometry": {
+        "max_abs_axis_cosine": 0.0703551173210144,
+        "max_pole_token_norm": 0.6428579688072205,
+        "mean_abs_axis_cosine": 0.02938564121723175,
+        "mean_pole_token_norm": 0.5543672442436218
+      },
+      "grad_norm": 2.4138271808624268,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.065
+      },
+      "pair_id": "fit-deployment-startup-patience",
+      "rejected_nll": 2.8564138412475586,
+      "rejected_tokens": 64,
+      "sign": 1,
+      "step": 3,
+      "training_margin": 0.1377243995666504
+    },
+    {
+      "anchor_loss": 0.018629226833581924,
+      "axis": "warmth",
+      "desired_nll": 2.600424289703369,
+      "desired_tokens": 58,
+      "diversity_loss": 0.0017053864430636168,
+      "geometry": {
+        "max_abs_axis_cosine": 0.08988697826862335,
+        "max_pole_token_norm": 0.6496785879135132,
+        "mean_abs_axis_cosine": 0.039402544498443604,
+        "mean_pole_token_norm": 0.5579237937927246
+      },
+      "grad_norm": 3.671053647994995,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.048
+      },
+      "pair_id": "fit-api-401-warmth",
+      "rejected_nll": 2.5175273418426514,
+      "rejected_tokens": 72,
+      "sign": -1,
+      "step": 4,
+      "training_margin": -0.08289694786071777
+    },
+    {
+      "anchor_loss": 0.02822616882622242,
+      "axis": "patience",
+      "desired_nll": 2.680394172668457,
+      "desired_tokens": 71,
+      "diversity_loss": 0.002835963387042284,
+      "geometry": {
+        "max_abs_axis_cosine": 0.07159470021724701,
+        "max_pole_token_norm": 0.6586905121803284,
+        "mean_abs_axis_cosine": 0.03284966200590134,
+        "mean_pole_token_norm": 0.5619118213653564
+      },
+      "grad_norm": 2.540041208267212,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.057
+      },
+      "pair_id": "fit-slow-query-patience",
+      "rejected_nll": 2.9288277626037598,
+      "rejected_tokens": 56,
+      "sign": 1,
+      "step": 5,
+      "training_margin": 0.24843358993530273
+    },
+    {
+      "anchor_loss": 0.0394769012928009,
+      "axis": "goodwill",
+      "desired_nll": 2.9318602085113525,
+      "desired_tokens": 57,
+      "diversity_loss": 0.0018346486613154411,
+      "geometry": {
+        "max_abs_axis_cosine": 0.07164046913385391,
+        "max_pole_token_norm": 0.6671282649040222,
+        "mean_abs_axis_cosine": 0.03347669541835785,
+        "mean_pole_token_norm": 0.5659224987030029
+      },
+      "grad_norm": 4.93946647644043,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.073
+      },
+      "pair_id": "fit-dns-goodwill",
+      "rejected_nll": 3.227172613143921,
+      "rejected_tokens": 51,
+      "sign": 1,
+      "step": 6,
+      "training_margin": 0.29531240463256836
+    },
+    {
+      "anchor_loss": 0.05367204174399376,
+      "axis": "goodwill",
+      "desired_nll": 3.597994565963745,
+      "desired_tokens": 54,
+      "diversity_loss": 0.0018569317180663347,
+      "geometry": {
+        "max_abs_axis_cosine": 0.07093975692987442,
+        "max_pole_token_norm": 0.6749851107597351,
+        "mean_abs_axis_cosine": 0.03337278589606285,
+        "mean_pole_token_norm": 0.5703107714653015
+      },
+      "grad_norm": 2.5248944759368896,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.072
+      },
+      "pair_id": "fit-memory-growth-goodwill",
+      "rejected_nll": 3.449553966522217,
+      "rejected_tokens": 60,
+      "sign": -1,
+      "step": 7,
+      "training_margin": -0.14844059944152832
+    },
+    {
+      "anchor_loss": 0.06970042735338211,
+      "axis": "goodwill",
+      "desired_nll": 3.0975306034088135,
+      "desired_tokens": 51,
+      "diversity_loss": 0.001827820553444326,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06988469511270523,
+        "max_pole_token_norm": 0.6822749972343445,
+        "mean_abs_axis_cosine": 0.03295615315437317,
+        "mean_pole_token_norm": 0.5749474763870239
+      },
+      "grad_norm": 1.5530095100402832,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.081
+      },
+      "pair_id": "fit-dns-goodwill",
+      "rejected_nll": 2.932176351547241,
+      "rejected_tokens": 57,
+      "sign": -1,
+      "step": 8,
+      "training_margin": -0.16535425186157227
+    },
+    {
+      "anchor_loss": 0.08685797452926636,
+      "axis": "goodwill",
+      "desired_nll": 3.2157185077667236,
+      "desired_tokens": 60,
+      "diversity_loss": 0.0017757820896804333,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06803939491510391,
+        "max_pole_token_norm": 0.689022421836853,
+        "mean_abs_axis_cosine": 0.032279156148433685,
+        "mean_pole_token_norm": 0.579742968082428
+      },
+      "grad_norm": 1.7927192449569702,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.097
+      },
+      "pair_id": "fit-memory-growth-goodwill",
+      "rejected_nll": 3.5425007343292236,
+      "rejected_tokens": 54,
+      "sign": 1,
+      "step": 9,
+      "training_margin": 0.3267822265625
+    },
+    {
+      "anchor_loss": 0.10481046140193939,
+      "axis": "goodwill",
+      "desired_nll": 2.4892096519470215,
+      "desired_tokens": 59,
+      "diversity_loss": 0.0016887725796550512,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06602983176708221,
+        "max_pole_token_norm": 0.6952566504478455,
+        "mean_abs_axis_cosine": 0.031409092247486115,
+        "mean_pole_token_norm": 0.5845887660980225
+      },
+      "grad_norm": 1.768460750579834,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.104
+      },
+      "pair_id": "fit-api-401-goodwill",
+      "rejected_nll": 2.8252053260803223,
+      "rejected_tokens": 53,
+      "sign": 1,
+      "step": 10,
+      "training_margin": 0.3359956741333008
+    },
+    {
+      "anchor_loss": 0.12336182594299316,
+      "axis": "patience",
+      "desired_nll": 2.8841302394866943,
+      "desired_tokens": 64,
+      "diversity_loss": 0.0015921446029096842,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06399121135473251,
+        "max_pole_token_norm": 0.7009888887405396,
+        "mean_abs_axis_cosine": 0.030707087367773056,
+        "mean_pole_token_norm": 0.5892994999885559
+      },
+      "grad_norm": 4.779747009277344,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.108
+      },
+      "pair_id": "fit-deployment-startup-patience",
+      "rejected_nll": 2.6994762420654297,
+      "rejected_tokens": 79,
+      "sign": -1,
+      "step": 11,
+      "training_margin": -0.18465399742126465
+    },
+    {
+      "anchor_loss": 0.1416340470314026,
+      "axis": "warmth",
+      "desired_nll": 2.4314045906066895,
+      "desired_tokens": 72,
+      "diversity_loss": 0.0015027066692709923,
+      "geometry": {
+        "max_abs_axis_cosine": 0.062394533306360245,
+        "max_pole_token_norm": 0.7067685127258301,
+        "mean_abs_axis_cosine": 0.030229970812797546,
+        "mean_pole_token_norm": 0.5937371253967285
+      },
+      "grad_norm": 1.3053609132766724,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.122
+      },
+      "pair_id": "fit-api-401-warmth",
+      "rejected_nll": 2.822218179702759,
+      "rejected_tokens": 58,
+      "sign": 1,
+      "step": 12,
+      "training_margin": 0.39081358909606934
+    },
+    {
+      "anchor_loss": 0.15882666409015656,
+      "axis": "warmth",
+      "desired_nll": 2.8035061359405518,
+      "desired_tokens": 70,
+      "diversity_loss": 0.0014361485373228788,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06162795051932335,
+        "max_pole_token_norm": 0.7124732732772827,
+        "mean_abs_axis_cosine": 0.03017779253423214,
+        "mean_pole_token_norm": 0.5982360243797302
+      },
+      "grad_norm": 1.1108149290084839,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.126
+      },
+      "pair_id": "fit-dns-warmth",
+      "rejected_nll": 3.17254376411438,
+      "rejected_tokens": 56,
+      "sign": 1,
+      "step": 13,
+      "training_margin": 0.3690376281738281
+    },
+    {
+      "anchor_loss": 0.1766453981399536,
+      "axis": "warmth",
+      "desired_nll": 2.552152156829834,
+      "desired_tokens": 71,
+      "diversity_loss": 0.001408792450092733,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06129942834377289,
+        "max_pole_token_norm": 0.7180196046829224,
+        "mean_abs_axis_cosine": 0.03028024360537529,
+        "mean_pole_token_norm": 0.602807879447937
+      },
+      "grad_norm": 0.9602615833282471,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.134
+      },
+      "pair_id": "fit-slow-query-warmth",
+      "rejected_nll": 2.765476703643799,
+      "rejected_tokens": 57,
+      "sign": 1,
+      "step": 14,
+      "training_margin": 0.21332454681396484
+    },
+    {
+      "anchor_loss": 0.19499638676643372,
+      "axis": "patience",
+      "desired_nll": 2.735273599624634,
+      "desired_tokens": 73,
+      "diversity_loss": 0.0014002807438373566,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06094901263713837,
+        "max_pole_token_norm": 0.722515344619751,
+        "mean_abs_axis_cosine": 0.03032052144408226,
+        "mean_pole_token_norm": 0.6074333190917969
+      },
+      "grad_norm": 3.319491386413574,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.145
+      },
+      "pair_id": "fit-failing-test-patience",
+      "rejected_nll": 3.078887939453125,
+      "rejected_tokens": 58,
+      "sign": 1,
+      "step": 15,
+      "training_margin": 0.3436143398284912
+    },
+    {
+      "anchor_loss": 0.21399983763694763,
+      "axis": "goodwill",
+      "desired_nll": 2.6085991859436035,
+      "desired_tokens": 58,
+      "diversity_loss": 0.0013895770534873009,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06070072576403618,
+        "max_pole_token_norm": 0.7267798185348511,
+        "mean_abs_axis_cosine": 0.03038739040493965,
+        "mean_pole_token_norm": 0.6121108531951904
+      },
+      "grad_norm": 1.7457728385925293,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.156
+      },
+      "pair_id": "fit-slow-query-goodwill",
+      "rejected_nll": 3.0413599014282227,
+      "rejected_tokens": 52,
+      "sign": 1,
+      "step": 16,
+      "training_margin": 0.43276071548461914
+    },
+    {
+      "anchor_loss": 0.23328809440135956,
+      "axis": "warmth",
+      "desired_nll": 2.671830177307129,
+      "desired_tokens": 57,
+      "diversity_loss": 0.0013833342818543315,
+      "geometry": {
+        "max_abs_axis_cosine": 0.06023117154836655,
+        "max_pole_token_norm": 0.7308035492897034,
+        "mean_abs_axis_cosine": 0.03035133145749569,
+        "mean_pole_token_norm": 0.6167328953742981
+      },
+      "grad_norm": 8.24910831451416,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.158
+      },
+      "pair_id": "fit-slow-query-warmth",
+      "rejected_nll": 2.760350227355957,
+      "rejected_tokens": 71,
+      "sign": -1,
+      "step": 17,
+      "training_margin": 0.08852005004882812
+    },
+    {
+      "anchor_loss": 0.2521424889564514,
+      "axis": "patience",
+      "desired_nll": 2.8104279041290283,
+      "desired_tokens": 70,
+      "diversity_loss": 0.0013677248498424888,
+      "geometry": {
+        "max_abs_axis_cosine": 0.05970083549618721,
+        "max_pole_token_norm": 0.7339195013046265,
+        "mean_abs_axis_cosine": 0.030382147058844566,
+        "mean_pole_token_norm": 0.6213576793670654
+      },
+      "grad_norm": 2.2194840908050537,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.152
+      },
+      "pair_id": "fit-dns-patience",
+      "rejected_nll": 3.2226297855377197,
+      "rejected_tokens": 55,
+      "sign": 1,
+      "step": 18,
+      "training_margin": 0.4122018814086914
+    },
+    {
+      "anchor_loss": 0.2711361050605774,
+      "axis": "goodwill",
+      "desired_nll": 2.6746017932891846,
+      "desired_tokens": 60,
+      "diversity_loss": 0.0013528693234547973,
+      "geometry": {
+        "max_abs_axis_cosine": 0.059583887457847595,
+        "max_pole_token_norm": 0.7368236184120178,
+        "mean_abs_axis_cosine": 0.030685869976878166,
+        "mean_pole_token_norm": 0.6259161829948425
+      },
+      "grad_norm": 2.815124750137329,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.141
+      },
+      "pair_id": "fit-failing-test-goodwill",
+      "rejected_nll": 3.1226537227630615,
+      "rejected_tokens": 54,
+      "sign": 1,
+      "step": 19,
+      "training_margin": 0.44805192947387695
+    },
+    {
+      "anchor_loss": 0.2898508906364441,
+      "axis": "warmth",
+      "desired_nll": 2.922734022140503,
+      "desired_tokens": 73,
+      "diversity_loss": 0.0013592124450951815,
+      "geometry": {
+        "max_abs_axis_cosine": 0.05888374149799347,
+        "max_pole_token_norm": 0.7395236492156982,
+        "mean_abs_axis_cosine": 0.03084569424390793,
+        "mean_pole_token_norm": 0.6303739547729492
+      },
+      "grad_norm": 3.475900411605835,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.534,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.545,
+        "cuda_reserved_gib": 65.545,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.15
+      },
+      "pair_id": "fit-memory-growth-warmth",
+      "rejected_nll": 3.4740753173828125,
+      "rejected_tokens": 59,
+      "sign": 1,
+      "step": 20,
+      "training_margin": 0.5513412952423096
+    },
+    {
+      "anchor_loss": 0.30843856930732727,
+      "axis": "goodwill",
+      "desired_nll": 3.0059239864349365,
+      "desired_tokens": 54,
+      "diversity_loss": 0.0013447366654872894,
+      "geometry": {
+        "max_abs_axis_cosine": 0.057826001197099686,
+        "max_pole_token_norm": 0.742027759552002,
+        "mean_abs_axis_cosine": 0.03069150447845459,
+        "mean_pole_token_norm": 0.6347622871398926
+      },
+      "grad_norm": 1.7503784894943237,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.151
+      },
+      "pair_id": "fit-failing-test-goodwill",
+      "rejected_nll": 2.8523738384246826,
+      "rejected_tokens": 60,
+      "sign": -1,
+      "step": 21,
+      "training_margin": -0.1535501480102539
+    },
+    {
+      "anchor_loss": 0.3267790973186493,
+      "axis": "patience",
+      "desired_nll": 3.0830085277557373,
+      "desired_tokens": 73,
+      "diversity_loss": 0.0013108800631016493,
+      "geometry": {
+        "max_abs_axis_cosine": 0.056787457317113876,
+        "max_pole_token_norm": 0.744452714920044,
+        "mean_abs_axis_cosine": 0.03038681112229824,
+        "mean_pole_token_norm": 0.6391185522079468
+      },
+      "grad_norm": 5.373274803161621,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.151
+      },
+      "pair_id": "fit-memory-growth-patience",
+      "rejected_nll": 3.6092660427093506,
+      "rejected_tokens": 58,
+      "sign": 1,
+      "step": 22,
+      "training_margin": 0.5262575149536133
+    },
+    {
+      "anchor_loss": 0.34483760595321655,
+      "axis": "patience",
+      "desired_nll": 3.019256591796875,
+      "desired_tokens": 58,
+      "diversity_loss": 0.0012731051538139582,
+      "geometry": {
+        "max_abs_axis_cosine": 0.055786389857530594,
+        "max_pole_token_norm": 0.7507200241088867,
+        "mean_abs_axis_cosine": 0.030099943280220032,
+        "mean_pole_token_norm": 0.6433753371238708
+      },
+      "grad_norm": 6.497957229614258,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.146
+      },
+      "pair_id": "fit-failing-test-patience",
+      "rejected_nll": 2.7008538246154785,
+      "rejected_tokens": 73,
+      "sign": -1,
+      "step": 23,
+      "training_margin": -0.3184027671813965
+    },
+    {
+      "anchor_loss": 0.36274847388267517,
+      "axis": "warmth",
+      "desired_nll": 2.5834131240844727,
+      "desired_tokens": 73,
+      "diversity_loss": 0.0012377251405268908,
+      "geometry": {
+        "max_abs_axis_cosine": 0.055094968527555466,
+        "max_pole_token_norm": 0.7567147612571716,
+        "mean_abs_axis_cosine": 0.029775267466902733,
+        "mean_pole_token_norm": 0.6474941968917847
+      },
+      "grad_norm": 3.9542410373687744,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.149
+      },
+      "pair_id": "fit-failing-test-warmth",
+      "rejected_nll": 3.011340618133545,
+      "rejected_tokens": 59,
+      "sign": 1,
+      "step": 24,
+      "training_margin": 0.42792749404907227
+    },
+    {
+      "anchor_loss": 0.3801058232784271,
+      "axis": "warmth",
+      "desired_nll": 2.5161545276641846,
+      "desired_tokens": 79,
+      "diversity_loss": 0.0012090791715309024,
+      "geometry": {
+        "max_abs_axis_cosine": 0.05436873808503151,
+        "max_pole_token_norm": 0.7624078392982483,
+        "mean_abs_axis_cosine": 0.029507985338568687,
+        "mean_pole_token_norm": 0.6515171527862549
+      },
+      "grad_norm": 5.276106357574463,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.151
+      },
+      "pair_id": "fit-deployment-startup-warmth",
+      "rejected_nll": 2.823286771774292,
+      "rejected_tokens": 65,
+      "sign": 1,
+      "step": 25,
+      "training_margin": 0.3071322441101074
+    },
+    {
+      "anchor_loss": 0.39696675539016724,
+      "axis": "warmth",
+      "desired_nll": 3.000112295150757,
+      "desired_tokens": 56,
+      "diversity_loss": 0.0011821012012660503,
+      "geometry": {
+        "max_abs_axis_cosine": 0.053628504276275635,
+        "max_pole_token_norm": 0.7677828073501587,
+        "mean_abs_axis_cosine": 0.02914995700120926,
+        "mean_pole_token_norm": 0.6554601192474365
+      },
+      "grad_norm": 5.999488353729248,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.15
+      },
+      "pair_id": "fit-dns-warmth",
+      "rejected_nll": 2.9300436973571777,
+      "rejected_tokens": 70,
+      "sign": -1,
+      "step": 26,
+      "training_margin": -0.0700685977935791
+    },
+    {
+      "anchor_loss": 0.41357412934303284,
+      "axis": "patience",
+      "desired_nll": 2.997354507446289,
+      "desired_tokens": 56,
+      "diversity_loss": 0.001151720411144197,
+      "geometry": {
+        "max_abs_axis_cosine": 0.05292356014251709,
+        "max_pole_token_norm": 0.7728331685066223,
+        "mean_abs_axis_cosine": 0.028693702071905136,
+        "mean_pole_token_norm": 0.6593084335327148
+      },
+      "grad_norm": 13.9193696975708,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.143
+      },
+      "pair_id": "fit-slow-query-patience",
+      "rejected_nll": 2.7190818786621094,
+      "rejected_tokens": 71,
+      "sign": -1,
+      "step": 27,
+      "training_margin": -0.2782726287841797
+    },
+    {
+      "anchor_loss": 0.4294610619544983,
+      "axis": "goodwill",
+      "desired_nll": 2.7617878913879395,
+      "desired_tokens": 60,
+      "diversity_loss": 0.0011191682424396276,
+      "geometry": {
+        "max_abs_axis_cosine": 0.052049703896045685,
+        "max_pole_token_norm": 0.7774948477745056,
+        "mean_abs_axis_cosine": 0.028387706726789474,
+        "mean_pole_token_norm": 0.6630222797393799
+      },
+      "grad_norm": 2.2604475021362305,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.144
+      },
+      "pair_id": "fit-deployment-startup-goodwill",
+      "rejected_nll": 2.626450538635254,
+      "rejected_tokens": 66,
+      "sign": -1,
+      "step": 28,
+      "training_margin": -0.13533735275268555
+    },
+    {
+      "anchor_loss": 0.44511011242866516,
+      "axis": "warmth",
+      "desired_nll": 2.7090821266174316,
+      "desired_tokens": 59,
+      "diversity_loss": 0.0010872709099203348,
+      "geometry": {
+        "max_abs_axis_cosine": 0.05145762115716934,
+        "max_pole_token_norm": 0.7818407416343689,
+        "mean_abs_axis_cosine": 0.028270035982131958,
+        "mean_pole_token_norm": 0.6666905283927917
+      },
+      "grad_norm": 5.367339611053467,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.144
+      },
+      "pair_id": "fit-failing-test-warmth",
+      "rejected_nll": 2.809037685394287,
+      "rejected_tokens": 73,
+      "sign": -1,
+      "step": 29,
+      "training_margin": 0.09995555877685547
+    },
+    {
+      "anchor_loss": 0.4604017734527588,
+      "axis": "patience",
+      "desired_nll": 2.421151638031006,
+      "desired_tokens": 72,
+      "diversity_loss": 0.0010690935887396336,
+      "geometry": {
+        "max_abs_axis_cosine": 0.050887446850538254,
+        "max_pole_token_norm": 0.785880982875824,
+        "mean_abs_axis_cosine": 0.02822905033826828,
+        "mean_pole_token_norm": 0.6702804565429688
+      },
+      "grad_norm": 26.740982055664062,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.146
+      },
+      "pair_id": "fit-api-401-patience",
+      "rejected_nll": 2.892810583114624,
+      "rejected_tokens": 57,
+      "sign": 1,
+      "step": 30,
+      "training_margin": 0.47165894508361816
+    },
+    {
+      "anchor_loss": 0.47536060214042664,
+      "axis": "patience",
+      "desired_nll": 3.505397319793701,
+      "desired_tokens": 58,
+      "diversity_loss": 0.0010542802046984434,
+      "geometry": {
+        "max_abs_axis_cosine": 0.05034325271844864,
+        "max_pole_token_norm": 0.7896275520324707,
+        "mean_abs_axis_cosine": 0.028074240311980247,
+        "mean_pole_token_norm": 0.6737679839134216
+      },
+      "grad_norm": 7.693885803222656,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.149
+      },
+      "pair_id": "fit-memory-growth-patience",
+      "rejected_nll": 3.0923879146575928,
+      "rejected_tokens": 73,
+      "sign": -1,
+      "step": 31,
+      "training_margin": -0.4130094051361084
+    },
+    {
+      "anchor_loss": 0.490054726600647,
+      "axis": "warmth",
+      "desired_nll": 3.197406530380249,
+      "desired_tokens": 59,
+      "diversity_loss": 0.0010367002105340362,
+      "geometry": {
+        "max_abs_axis_cosine": 0.04967433959245682,
+        "max_pole_token_norm": 0.7930940985679626,
+        "mean_abs_axis_cosine": 0.027748961001634598,
+        "mean_pole_token_norm": 0.6771236658096313
+      },
+      "grad_norm": 3.8687021732330322,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.149
+      },
+      "pair_id": "fit-memory-growth-warmth",
+      "rejected_nll": 3.365757465362549,
+      "rejected_tokens": 73,
+      "sign": -1,
+      "step": 32,
+      "training_margin": 0.1683509349822998
+    },
+    {
+      "anchor_loss": 0.5044115781784058,
+      "axis": "goodwill",
+      "desired_nll": 2.791137456893921,
+      "desired_tokens": 53,
+      "diversity_loss": 0.0010106605477631092,
+      "geometry": {
+        "max_abs_axis_cosine": 0.04910214990377426,
+        "max_pole_token_norm": 0.7962552309036255,
+        "mean_abs_axis_cosine": 0.027399495244026184,
+        "mean_pole_token_norm": 0.6804040670394897
+      },
+      "grad_norm": 2.17392897605896,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.149
+      },
+      "pair_id": "fit-api-401-goodwill",
+      "rejected_nll": 2.6802916526794434,
+      "rejected_tokens": 59,
+      "sign": -1,
+      "step": 33,
+      "training_margin": -0.11084580421447754
+    },
+    {
+      "anchor_loss": 0.5186847448348999,
+      "axis": "goodwill",
+      "desired_nll": 2.4595417976379395,
+      "desired_tokens": 66,
+      "diversity_loss": 0.000986388768069446,
+      "geometry": {
+        "max_abs_axis_cosine": 0.048797957599163055,
+        "max_pole_token_norm": 0.8015445470809937,
+        "mean_abs_axis_cosine": 0.027119500562548637,
+        "mean_pole_token_norm": 0.6836878061294556
+      },
+      "grad_norm": 2.539116621017456,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.154
+      },
+      "pair_id": "fit-deployment-startup-goodwill",
+      "rejected_nll": 2.8697330951690674,
+      "rejected_tokens": 60,
+      "sign": 1,
+      "step": 34,
+      "training_margin": 0.41019129753112793
+    },
+    {
+      "anchor_loss": 0.5328772068023682,
+      "axis": "warmth",
+      "desired_nll": 2.5271079540252686,
+      "desired_tokens": 65,
+      "diversity_loss": 0.0009705198463052511,
+      "geometry": {
+        "max_abs_axis_cosine": 0.04866939038038254,
+        "max_pole_token_norm": 0.8091561198234558,
+        "mean_abs_axis_cosine": 0.027012452483177185,
+        "mean_pole_token_norm": 0.686955451965332
+      },
+      "grad_norm": 3.3530173301696777,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.155
+      },
+      "pair_id": "fit-deployment-startup-warmth",
+      "rejected_nll": 2.7803492546081543,
+      "rejected_tokens": 79,
+      "sign": -1,
+      "step": 35,
+      "training_margin": 0.25324130058288574
+    },
+    {
+      "anchor_loss": 0.5474485754966736,
+      "axis": "goodwill",
+      "desired_nll": 2.858689308166504,
+      "desired_tokens": 52,
+      "diversity_loss": 0.0009642575751058757,
+      "geometry": {
+        "max_abs_axis_cosine": 0.04839616268873215,
+        "max_pole_token_norm": 0.8170785307884216,
+        "mean_abs_axis_cosine": 0.026841452345252037,
+        "mean_pole_token_norm": 0.6902428865432739
+      },
+      "grad_norm": 2.960559129714966,
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 28.532,
+        "cuda_peak_allocated_gib": 64.868,
+        "cuda_peak_reserved_gib": 65.547,
+        "cuda_reserved_gib": 65.547,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.638,
+        "system_available_gib": 117.156
+      },
+      "pair_id": "fit-slow-query-goodwill",
+      "rejected_nll": 2.902310848236084,
+      "rejected_tokens": 58,
+      "sign": -1,
+      "step": 36,
+      "training_margin": 0.04362154006958008
+    }
+  ]
+}

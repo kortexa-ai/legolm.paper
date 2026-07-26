@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/home/francip/src/legolm-paper/reproductions/causal-expression/.venv/bin/causal-expression",
+    "reproduce",
+    "--suite",
+    "full",
+    "--seeds",
+    "20260724,20260725,20260726",
+    "--device",
+    "cuda",
+    "--output-dir",
+    "results/qwen36-35b-confirmatory-20260725"
+  ],
+  "created_at": 1785029048.7787933,
+  "cuda_version": "13.0",
+  "cudnn_version": 92000,
+  "data": {
+    "axes": 3,
+    "cases": 16,
+    "dev_cases": 2,
+    "fit_cases": 6,
+    "pairs": 48,
+    "sha256": "85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346",
+    "test_cases": 8
+  },
+  "device": "cuda",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "hostname": "smarty",
+  "model": {
+    "model_id": "Qwen/Qwen3.6-35B-A3B",
+    "name": "qwen36-35b",
+    "paper_target": true,
+    "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "stream_to_cuda": true
+  },
+  "packages": {
+    "accelerate": "1.14.0",
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.2",
+    "torch": "2.12.0",
+    "transformers": "5.12.1"
+  },
+  "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+  "python": "3.14.3 (main, Mar 24 2026, 22:50:36) [Clang 22.1.1 ]",
+  "repository_commit": "788db5488111b124dfe9b06b7db3ac158f86828d"
+}

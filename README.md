@@ -22,6 +22,24 @@ regularization governs the failure mode: unregularized hypernetworks collapse
 to input-independent weights, and at long training budgets that collapse
 can erase task-level conditioning.
 
+## Qwen 3.6 causal-expression study
+
+This repository also contains the clean reproduction for **"Eight Soft Tokens
+Can Change a Frozen Model's Tone."** It freezes `Qwen/Qwen3.6-35B-A3B`, trains
+eight continuous input embeddings, and audits complete responses under
+positive, negative, regular-model, explicit-instruction, and wrong-axis
+conditions.
+
+Across three fresh seeds, the warmth writer reaches 71.4% of the response span
+caused by visible style instructions. All 24 held-out comparisons have the
+intended sign and beat the wrong-axis shift. The shared-center extension does
+not pass: patience stops at 19.5% against a 20% rule, and its nominal neutral
+center drifts on every axis.
+
+- Paper: [`causal-expression-paper/main.pdf`](causal-expression-paper/main.pdf)
+- Method, code, tests, raw responses, and figures:
+  [`reproductions/causal-expression/`](reproductions/causal-expression/)
+
 ## Reproduce
 
 ```bash

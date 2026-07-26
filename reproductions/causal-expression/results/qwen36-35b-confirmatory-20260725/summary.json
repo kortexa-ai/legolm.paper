@@ -1,0 +1,841 @@
+{
+  "config": {
+    "max_context_tokens": 512,
+    "max_new_tokens": 96,
+    "max_score_seq_len": 512,
+    "max_train_seq_len": 256,
+    "stage_h_steps": 36,
+    "stage_i_neutral_steps": 18,
+    "stage_i_pole_steps": 36,
+    "suite": "full",
+    "test_case_limit": null
+  },
+  "consolidated": {
+    "decisions": {
+      "stage_h_warmth": {
+        "passed": true,
+        "relative_span_median_at_least_0.60": true,
+        "signed_at_least_21_of_24": true,
+        "specific_at_least_21_of_24": true
+      },
+      "stage_i_neutral_center": {
+        "axis_passes": {
+          "goodwill": false,
+          "patience": false,
+          "warmth": false
+        },
+        "passed": false
+      },
+      "stage_i_patience": {
+        "exceeds_stage_h": true,
+        "passed": false,
+        "relative_span_median_at_least_0.20": false
+      }
+    },
+    "stage_h": {
+      "goodwill": {
+        "generated_span": {
+          "maximum": 0.13920050114393234,
+          "mean": 0.1041963988294204,
+          "median": 0.09629019536077976,
+          "minimum": 0.07709849998354912,
+          "sample_stdev": 0.031796944460069095
+        },
+        "per_seed": [
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.07709849998354912,
+            "prompts": 8,
+            "relative_span": 0.11736520007889724,
+            "signed_prompts": 8,
+            "specific_prompts": 5,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.012770311181169912
+          },
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.13920050114393234,
+            "prompts": 8,
+            "relative_span": 0.21190158915317875,
+            "signed_prompts": 5,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.030357314842988
+          },
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.09629019536077976,
+            "prompts": 8,
+            "relative_span": 0.14658025832623714,
+            "signed_prompts": 7,
+            "specific_prompts": 4,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.11021744182300078
+          }
+        ],
+        "relative_span": {
+          "maximum": 0.21190158915317875,
+          "mean": 0.15861568251943772,
+          "median": 0.14658025832623714,
+          "minimum": 0.11736520007889724,
+          "sample_stdev": 0.04840372704073201
+        },
+        "signed_prompts": 20,
+        "specific_prompts": 17,
+        "total_prompts": 24
+      },
+      "patience": {
+        "generated_span": {
+          "maximum": 0.11620259284973145,
+          "mean": 0.07980714614192645,
+          "median": 0.10991166904568672,
+          "minimum": 0.013307176530361176,
+          "sample_stdev": 0.05767649780743802
+        },
+        "per_seed": [
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.10991166904568672,
+            "prompts": 8,
+            "relative_span": 0.15555639860425405,
+            "signed_prompts": 8,
+            "specific_prompts": 5,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.0990983077479257
+          },
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.11620259284973145,
+            "prompts": 8,
+            "relative_span": 0.1644598522534221,
+            "signed_prompts": 7,
+            "specific_prompts": 4,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.0757016132416979
+          },
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.013307176530361176,
+            "prompts": 8,
+            "relative_span": 0.018833454851764637,
+            "signed_prompts": 6,
+            "specific_prompts": 1,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.10937970577795499
+          }
+        ],
+        "relative_span": {
+          "maximum": 0.1644598522534221,
+          "mean": 0.11294990190314692,
+          "median": 0.15555639860425405,
+          "minimum": 0.018833454851764637,
+          "sample_stdev": 0.08162871477551546
+        },
+        "signed_prompts": 21,
+        "specific_prompts": 10,
+        "total_prompts": 24
+      },
+      "warmth": {
+        "generated_span": {
+          "maximum": 0.5584598202258348,
+          "mean": 0.4915776178240776,
+          "median": 0.5512434374541044,
+          "minimum": 0.36502959579229355,
+          "sample_stdev": 0.10965318260403895
+        },
+        "per_seed": [
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.5584598202258348,
+            "prompts": 8,
+            "relative_span": 0.7231940512946352,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.07751848028595064
+          },
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.5512434374541044,
+            "prompts": 8,
+            "relative_span": 0.71384898312076,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.030502227204512015
+          },
+          {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.36502959579229355,
+            "prompts": 8,
+            "relative_span": 0.4727058647061098,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.02369684102204803
+          }
+        ],
+        "relative_span": {
+          "maximum": 0.7231940512946352,
+          "mean": 0.636582966373835,
+          "median": 0.71384898312076,
+          "minimum": 0.4727058647061098,
+          "sample_stdev": 0.1419986299689333
+        },
+        "signed_prompts": 24,
+        "specific_prompts": 24,
+        "total_prompts": 24
+      }
+    },
+    "stage_i": {
+      "goodwill": {
+        "absolute_center_drift_fraction": {
+          "maximum": 0.35482252459675867,
+          "mean": 0.2948765087515101,
+          "median": 0.33413105506231294,
+          "minimum": 0.19567594659545867,
+          "sample_stdev": 0.0865309070617614
+        },
+        "generated_span": {
+          "maximum": 0.16265149787068367,
+          "mean": 0.10319102431337039,
+          "median": 0.08248065412044525,
+          "minimum": 0.06444092094898224,
+          "sample_stdev": 0.05227828354077207
+        },
+        "per_seed": [
+          {
+            "absolute_center_drift_fraction": 0.33413105506231294,
+            "center_drift": -0.21949439123272896,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.08248065412044525,
+            "prompts": 8,
+            "relative_span": 0.12555832442330164,
+            "signed_prompts": 6,
+            "specific_prompts": 6,
+            "strict_center_prompts": 1,
+            "wrong_axis_relative_shift": 0.056590872615936996
+          },
+          {
+            "absolute_center_drift_fraction": 0.19567594659545867,
+            "center_drift": -0.12854169681668282,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.16265149787068367,
+            "prompts": 8,
+            "relative_span": 0.24760047983810793,
+            "signed_prompts": 7,
+            "specific_prompts": 6,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.014190910717715659
+          },
+          {
+            "absolute_center_drift_fraction": 0.35482252459675867,
+            "center_drift": -0.23308684676885605,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.06444092094898224,
+            "prompts": 8,
+            "relative_span": 0.09809687065324853,
+            "signed_prompts": 5,
+            "specific_prompts": 6,
+            "strict_center_prompts": 0,
+            "wrong_axis_relative_shift": 0.0305224974066811
+          }
+        ],
+        "relative_span": {
+          "maximum": 0.24760047983810793,
+          "mean": 0.1570852249715527,
+          "median": 0.12555832442330164,
+          "minimum": 0.09809687065324853,
+          "sample_stdev": 0.0795819790119552
+        },
+        "signed_prompts": 18,
+        "specific_prompts": 18,
+        "strict_center_prompts": 5,
+        "total_prompts": 24
+      },
+      "patience": {
+        "absolute_center_drift_fraction": {
+          "maximum": 0.16106349955361784,
+          "mean": 0.12305264461006811,
+          "median": 0.12533724682971445,
+          "minimum": 0.08275718744687202,
+          "sample_stdev": 0.039203114473422666
+        },
+        "generated_span": {
+          "maximum": 0.1566828116774559,
+          "mean": 0.13935809458295503,
+          "median": 0.1374792531132698,
+          "minimum": 0.12391221895813942,
+          "sample_stdev": 0.016465888094633292
+        },
+        "per_seed": [
+          {
+            "absolute_center_drift_fraction": 0.12533724682971445,
+            "center_drift": -0.08855968713760376,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.12391221895813942,
+            "prompts": 8,
+            "relative_span": 0.17537117479471453,
+            "signed_prompts": 7,
+            "specific_prompts": 6,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.06603090091929927
+          },
+          {
+            "absolute_center_drift_fraction": 0.08275718744687202,
+            "center_drift": -0.058473844081163406,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.1374792531132698,
+            "prompts": 8,
+            "relative_span": 0.1945724023917202,
+            "signed_prompts": 7,
+            "specific_prompts": 2,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.09011452985284342
+          },
+          {
+            "absolute_center_drift_fraction": 0.16106349955361784,
+            "center_drift": -0.11380282789468765,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.1566828116774559,
+            "prompts": 8,
+            "relative_span": 0.22175092162054721,
+            "signed_prompts": 8,
+            "specific_prompts": 4,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.1404985312855306
+          }
+        ],
+        "relative_span": {
+          "maximum": 0.22175092162054721,
+          "mean": 0.1972314996023273,
+          "median": 0.1945724023917202,
+          "minimum": 0.17537117479471453,
+          "sample_stdev": 0.023303933732069314
+        },
+        "signed_prompts": 22,
+        "specific_prompts": 12,
+        "strict_center_prompts": 12,
+        "total_prompts": 24
+      },
+      "warmth": {
+        "absolute_center_drift_fraction": {
+          "maximum": 0.2016164642254382,
+          "mean": 0.13131692009331197,
+          "median": 0.17020703406798704,
+          "minimum": 0.022127261986510705,
+          "sample_stdev": 0.09585626820304484
+        },
+        "generated_span": {
+          "maximum": 0.621465252712369,
+          "mean": 0.36403208039700985,
+          "median": 0.3298773914575577,
+          "minimum": 0.1407535970211029,
+          "sample_stdev": 0.24216901342197486
+        },
+        "per_seed": [
+          {
+            "absolute_center_drift_fraction": 0.2016164642254382,
+            "center_drift": -0.1556908469647169,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.621465252712369,
+            "prompts": 8,
+            "relative_span": 0.8047847984231953,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": 7,
+            "wrong_axis_relative_shift": 0.03150322899988414
+          },
+          {
+            "absolute_center_drift_fraction": 0.022127261986510705,
+            "center_drift": -0.01708695851266384,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.1407535970211029,
+            "prompts": 8,
+            "relative_span": 0.182273030892035,
+            "signed_prompts": 7,
+            "specific_prompts": 8,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.01797553616101679
+          },
+          {
+            "absolute_center_drift_fraction": 0.17020703406798704,
+            "center_drift": -0.13143607787787914,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.3298773914575577,
+            "prompts": 8,
+            "relative_span": 0.42718447866531256,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": 1,
+            "wrong_axis_relative_shift": 0.06055681440654508
+          }
+        ],
+        "relative_span": {
+          "maximum": 0.8047847984231953,
+          "mean": 0.47141410266018097,
+          "median": 0.42718447866531256,
+          "minimum": 0.182273030892035,
+          "sample_stdev": 0.31360392202225074
+        },
+        "signed_prompts": 23,
+        "specific_prompts": 24,
+        "strict_center_prompts": 12,
+        "total_prompts": 24
+      }
+    }
+  },
+  "created_at": 1785033783.7204711,
+  "elapsed_seconds": 4734.933276176453,
+  "environment": {
+    "command": [
+      "/home/francip/src/legolm-paper/reproductions/causal-expression/.venv/bin/causal-expression",
+      "reproduce",
+      "--suite",
+      "full",
+      "--seeds",
+      "20260724,20260725,20260726",
+      "--device",
+      "cuda",
+      "--output-dir",
+      "results/qwen36-35b-confirmatory-20260725"
+    ],
+    "created_at": 1785029048.7787933,
+    "cuda_version": "13.0",
+    "cudnn_version": 92000,
+    "data": {
+      "axes": 3,
+      "cases": 16,
+      "dev_cases": 2,
+      "fit_cases": 6,
+      "pairs": 48,
+      "sha256": "85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346",
+      "test_cases": 8
+    },
+    "device": "cuda",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "hostname": "smarty",
+    "model": {
+      "model_id": "Qwen/Qwen3.6-35B-A3B",
+      "name": "qwen36-35b",
+      "paper_target": true,
+      "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+      "stream_to_cuda": true
+    },
+    "packages": {
+      "accelerate": "1.14.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.4.2",
+      "torch": "2.12.0",
+      "transformers": "5.12.1"
+    },
+    "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+    "python": "3.14.3 (main, Mar 24 2026, 22:50:36) [Clang 22.1.1 ]",
+    "repository_commit": "788db5488111b124dfe9b06b7db3ac158f86828d"
+  },
+  "figures": {
+    "neutral_anchor": "figures/neutral-anchor.png",
+    "relative_spans": "figures/relative-spans.png",
+    "six_pole_radar": "figures/six-pole-radar.png",
+    "warmth_sweeps": "figures/warmth-sweeps.png"
+  },
+  "format": "causal-expression-confirmatory-repro-v1",
+  "memory": {
+    "cuda_allocated_gib": 64.623,
+    "cuda_free_gib": 27.825,
+    "cuda_peak_allocated_gib": 64.902,
+    "cuda_peak_reserved_gib": 66.252,
+    "cuda_reserved_gib": 66.252,
+    "cuda_total_gib": 94.962,
+    "device": "cuda",
+    "rss_gib": 2.687,
+    "system_available_gib": 117.113
+  },
+  "profile": {
+    "model_id": "Qwen/Qwen3.6-35B-A3B",
+    "name": "qwen36-35b",
+    "paper_target": true,
+    "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "stream_to_cuda": true
+  },
+  "scientific_target": true,
+  "seed_records": [
+    {
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 27.825,
+        "cuda_peak_allocated_gib": 64.902,
+        "cuda_peak_reserved_gib": 66.252,
+        "cuda_reserved_gib": 66.252,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.686,
+        "system_available_gib": 117.107
+      },
+      "seed": 20260724,
+      "stage_h": {
+        "checkpoint": "seed-20260724/stage-h-prefix.pt",
+        "metrics": {
+          "goodwill": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.07709849998354912,
+            "prompts": 8,
+            "relative_span": 0.11736520007889724,
+            "signed_prompts": 8,
+            "specific_prompts": 5,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.012770311181169912
+          },
+          "patience": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.10991166904568672,
+            "prompts": 8,
+            "relative_span": 0.15555639860425405,
+            "signed_prompts": 8,
+            "specific_prompts": 5,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.0990983077479257
+          },
+          "warmth": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.5584598202258348,
+            "prompts": 8,
+            "relative_span": 0.7231940512946352,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.07751848028595064
+          }
+        },
+        "responses": "seed-20260724/stage-h-responses.json",
+        "screen": "seed-20260724/stage-h-screen.json",
+        "warmth_sweep": "seed-20260724/stage-h-warmth-sweep.json",
+        "warmth_sweep_metrics": {
+          "center_drift_fraction": 0.343868078386482,
+          "direction_only_relative_span": 0.010088512101648682,
+          "direction_only_span": 0.007790479809045792,
+          "explicit_span": 0.7722129616886377,
+          "state_attribution": {
+            "state_+0": 0.29146066680550575,
+            "state_+0.25": 0.22363562881946564,
+            "state_+0.5": 0.14223159477114677,
+            "state_+0.75": 0.16408627107739449,
+            "state_+1": 0.12405039742588997,
+            "state_-0.25": -0.25616814009845257,
+            "state_-0.5": -0.4701752234250307,
+            "state_-0.75": -0.39413229934871197,
+            "state_-1": -0.4344094227999449
+          }
+        }
+      },
+      "stage_i": {
+        "checkpoint": "seed-20260724/stage-i-prefix.pt",
+        "metrics": {
+          "goodwill": {
+            "absolute_center_drift_fraction": 0.33413105506231294,
+            "center_drift": -0.21949439123272896,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.08248065412044525,
+            "prompts": 8,
+            "relative_span": 0.12555832442330164,
+            "signed_prompts": 6,
+            "specific_prompts": 6,
+            "strict_center_prompts": 1,
+            "wrong_axis_relative_shift": 0.056590872615936996
+          },
+          "patience": {
+            "absolute_center_drift_fraction": 0.12533724682971445,
+            "center_drift": -0.08855968713760376,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.12391221895813942,
+            "prompts": 8,
+            "relative_span": 0.17537117479471453,
+            "signed_prompts": 7,
+            "specific_prompts": 6,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.06603090091929927
+          },
+          "warmth": {
+            "absolute_center_drift_fraction": 0.2016164642254382,
+            "center_drift": -0.1556908469647169,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.621465252712369,
+            "prompts": 8,
+            "relative_span": 0.8047847984231953,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": 7,
+            "wrong_axis_relative_shift": 0.03150322899988414
+          }
+        },
+        "responses": "seed-20260724/stage-i-responses.json",
+        "screen": "seed-20260724/stage-i-screen.json"
+      }
+    },
+    {
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 27.825,
+        "cuda_peak_allocated_gib": 64.902,
+        "cuda_peak_reserved_gib": 66.252,
+        "cuda_reserved_gib": 66.252,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.687,
+        "system_available_gib": 117.086
+      },
+      "seed": 20260725,
+      "stage_h": {
+        "checkpoint": "seed-20260725/stage-h-prefix.pt",
+        "metrics": {
+          "goodwill": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.13920050114393234,
+            "prompts": 8,
+            "relative_span": 0.21190158915317875,
+            "signed_prompts": 5,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.030357314842988
+          },
+          "patience": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.11620259284973145,
+            "prompts": 8,
+            "relative_span": 0.1644598522534221,
+            "signed_prompts": 7,
+            "specific_prompts": 4,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.0757016132416979
+          },
+          "warmth": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.5512434374541044,
+            "prompts": 8,
+            "relative_span": 0.71384898312076,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.030502227204512015
+          }
+        },
+        "responses": "seed-20260725/stage-h-responses.json",
+        "screen": "seed-20260725/stage-h-screen.json",
+        "warmth_sweep": "seed-20260725/stage-h-warmth-sweep.json",
+        "warmth_sweep_metrics": {
+          "center_drift_fraction": 0.3155363511375188,
+          "direction_only_relative_span": 0.001402295950691164,
+          "direction_only_span": 0.0010828711092472076,
+          "explicit_span": 0.7722129616886377,
+          "state_attribution": {
+            "state_+0": 0.2695825397968292,
+            "state_+0.25": 0.12799658253788948,
+            "state_+0.5": 0.0808916836977005,
+            "state_+0.75": 0.14367793127894402,
+            "state_+1": 0.09237514436244965,
+            "state_-0.25": -0.4532890375703573,
+            "state_-0.5": -0.4345525112003088,
+            "state_-0.75": -0.4356364831328392,
+            "state_-1": -0.4588682930916548
+          }
+        }
+      },
+      "stage_i": {
+        "checkpoint": "seed-20260725/stage-i-prefix.pt",
+        "metrics": {
+          "goodwill": {
+            "absolute_center_drift_fraction": 0.19567594659545867,
+            "center_drift": -0.12854169681668282,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.16265149787068367,
+            "prompts": 8,
+            "relative_span": 0.24760047983810793,
+            "signed_prompts": 7,
+            "specific_prompts": 6,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.014190910717715659
+          },
+          "patience": {
+            "absolute_center_drift_fraction": 0.08275718744687202,
+            "center_drift": -0.058473844081163406,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.1374792531132698,
+            "prompts": 8,
+            "relative_span": 0.1945724023917202,
+            "signed_prompts": 7,
+            "specific_prompts": 2,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.09011452985284342
+          },
+          "warmth": {
+            "absolute_center_drift_fraction": 0.022127261986510705,
+            "center_drift": -0.01708695851266384,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.1407535970211029,
+            "prompts": 8,
+            "relative_span": 0.182273030892035,
+            "signed_prompts": 7,
+            "specific_prompts": 8,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.01797553616101679
+          }
+        },
+        "responses": "seed-20260725/stage-i-responses.json",
+        "screen": "seed-20260725/stage-i-screen.json"
+      }
+    },
+    {
+      "memory": {
+        "cuda_allocated_gib": 64.625,
+        "cuda_free_gib": 27.825,
+        "cuda_peak_allocated_gib": 64.902,
+        "cuda_peak_reserved_gib": 66.252,
+        "cuda_reserved_gib": 66.252,
+        "cuda_total_gib": 94.962,
+        "device": "cuda",
+        "rss_gib": 2.687,
+        "system_available_gib": 117.117
+      },
+      "seed": 20260726,
+      "stage_h": {
+        "checkpoint": "seed-20260726/stage-h-prefix.pt",
+        "metrics": {
+          "goodwill": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.09629019536077976,
+            "prompts": 8,
+            "relative_span": 0.14658025832623714,
+            "signed_prompts": 7,
+            "specific_prompts": 4,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.11021744182300078
+          },
+          "patience": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.013307176530361176,
+            "prompts": 8,
+            "relative_span": 0.018833454851764637,
+            "signed_prompts": 6,
+            "specific_prompts": 1,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.10937970577795499
+          },
+          "warmth": {
+            "absolute_center_drift_fraction": null,
+            "center_drift": null,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.36502959579229355,
+            "prompts": 8,
+            "relative_span": 0.4727058647061098,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": null,
+            "wrong_axis_relative_shift": 0.02369684102204803
+          }
+        },
+        "responses": "seed-20260726/stage-h-responses.json",
+        "screen": "seed-20260726/stage-h-screen.json",
+        "warmth_sweep": "seed-20260726/stage-h-warmth-sweep.json",
+        "warmth_sweep_metrics": {
+          "center_drift_fraction": 0.006950123486452247,
+          "direction_only_relative_span": 0.006309236690434033,
+          "direction_only_span": 0.0048720743507146835,
+          "explicit_span": 0.7722129616886377,
+          "state_attribution": {
+            "state_+0": 0.031288255006074905,
+            "state_+0.25": 0.1470538154244423,
+            "state_+0.5": 0.3027458116412163,
+            "state_+0.75": 0.3081694208085537,
+            "state_+1": 0.33001137897372246,
+            "state_-0.25": 0.0012620091438293457,
+            "state_-0.5": -0.06842663884162903,
+            "state_-0.75": -0.07391513884067535,
+            "state_-1": -0.03501821681857109
+          }
+        }
+      },
+      "stage_i": {
+        "checkpoint": "seed-20260726/stage-i-prefix.pt",
+        "metrics": {
+          "goodwill": {
+            "absolute_center_drift_fraction": 0.35482252459675867,
+            "center_drift": -0.23308684676885605,
+            "explicit_span": 0.656911076977849,
+            "generated_span": 0.06444092094898224,
+            "prompts": 8,
+            "relative_span": 0.09809687065324853,
+            "signed_prompts": 5,
+            "specific_prompts": 6,
+            "strict_center_prompts": 0,
+            "wrong_axis_relative_shift": 0.0305224974066811
+          },
+          "patience": {
+            "absolute_center_drift_fraction": 0.16106349955361784,
+            "center_drift": -0.11380282789468765,
+            "explicit_span": 0.7065711859613657,
+            "generated_span": 0.1566828116774559,
+            "prompts": 8,
+            "relative_span": 0.22175092162054721,
+            "signed_prompts": 8,
+            "specific_prompts": 4,
+            "strict_center_prompts": 4,
+            "wrong_axis_relative_shift": 0.1404985312855306
+          },
+          "warmth": {
+            "absolute_center_drift_fraction": 0.17020703406798704,
+            "center_drift": -0.13143607787787914,
+            "explicit_span": 0.7722129616886377,
+            "generated_span": 0.3298773914575577,
+            "prompts": 8,
+            "relative_span": 0.42718447866531256,
+            "signed_prompts": 8,
+            "specific_prompts": 8,
+            "strict_center_prompts": 1,
+            "wrong_axis_relative_shift": 0.06055681440654508
+          }
+        },
+        "responses": "seed-20260726/stage-i-responses.json",
+        "screen": "seed-20260726/stage-i-screen.json"
+      }
+    }
+  ],
+  "seeds": [
+    20260724,
+    20260725,
+    20260726
+  ]
+}
