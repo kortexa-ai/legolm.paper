@@ -22,6 +22,28 @@ regularization governs the failure mode: unregularized hypernetworks collapse
 to input-independent weights, and at long training budgets that collapse
 can erase task-level conditioning.
 
+## Qwen 3.6 J-space spectrum study
+
+The repository contains the clean reproduction for **"The Latent Geometry of
+Meh."** It fits twelve signed residual-stream read directions from pole-token
+logit gradients, then measures a lexically disjoint social atlas under three
+system prompts.
+
+Both Qwen 3.6 models place `meh` far from neutral and give it a strong
+low-engagement coordinate. The confirmatory 35B MoE run orients all twelve
+held-out axes but fails its frozen boredom-adjacency rule: discouragement is
+nearest at layer 35. The dense 27B extension places `meh` nearest to boredom.
+The two twelve-coordinate centroids have cosine 0.951, while the nearest label
+changes across models and residual depth.
+
+- Paper: [`jspace-spectrum-paper/main.pdf`](jspace-spectrum-paper/main.pdf)
+- Method, code, tests, raw token measurements, figures, and findings:
+  [`reproductions/jspace-spectrum/`](reproductions/jspace-spectrum/)
+- Interactive 35B replay:
+  [`jspace-spectrum.html`](reproductions/jspace-spectrum/results/qwen36-35b-confirmatory-20260725/jspace-spectrum.html)
+- Interactive 27B replay:
+  [`jspace-spectrum.html`](reproductions/jspace-spectrum/results/qwen36-27b-extension-20260725/jspace-spectrum.html)
+
 ## Qwen 3.6 causal-expression study
 
 This repository also contains the clean reproduction for **"Eight Soft Tokens

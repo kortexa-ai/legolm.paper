@@ -1,0 +1,175 @@
+{
+  "comparison": {
+    "families": [
+      {
+        "cosine": 0.918515,
+        "group": "agreement",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.96364,
+        "group": "amusement",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.947177,
+        "group": "apology",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.973546,
+        "group": "complaint",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.971272,
+        "group": "confusion",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.953502,
+        "group": "disagreement",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.976776,
+        "group": "dismissal",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.951589,
+        "group": "encouragement",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.954859,
+        "group": "farewell",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.967072,
+        "group": "gratitude",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.942265,
+        "group": "greeting",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.971835,
+        "group": "insult",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.951207,
+        "group": "meh",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.885268,
+        "group": "neutral",
+        "sign_agreement": 0.833333
+      },
+      {
+        "cosine": 0.964375,
+        "group": "praise",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.954853,
+        "group": "refusal",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.963629,
+        "group": "relief",
+        "sign_agreement": 0.833333
+      },
+      {
+        "cosine": 0.928721,
+        "group": "repetition",
+        "sign_agreement": 0.916667
+      },
+      {
+        "cosine": 0.9629,
+        "group": "request",
+        "sign_agreement": 1.0
+      },
+      {
+        "cosine": 0.909874,
+        "group": "surprise",
+        "sign_agreement": 0.833333
+      },
+      {
+        "cosine": 0.928986,
+        "group": "uncertainty",
+        "sign_agreement": 0.916667
+      }
+    ],
+    "family_cosine_median": 0.954853,
+    "family_sign_agreement_mean": 0.940476,
+    "meh": {
+      "cosine": 0.951207,
+      "group": "meh",
+      "sign_agreement": 1.0
+    }
+  },
+  "extension": {
+    "model": {
+      "minimum_cuda_free_gib": 85.0,
+      "minimum_system_available_gib": 100.0,
+      "model_id": "Qwen/Qwen3.6-27B",
+      "name": "qwen36-27b",
+      "paper_target": true,
+      "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+      "source_layer": 55,
+      "target_layer": 63,
+      "trace_layers": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27,
+        31,
+        35,
+        39,
+        43,
+        47,
+        51,
+        55,
+        59,
+        63
+      ]
+    },
+    "summary": "results/qwen36-27b-extension-20260725/summary.json"
+  },
+  "format": "jspace-spectrum-model-comparison-v1",
+  "reference": {
+    "model": {
+      "minimum_cuda_free_gib": 85.0,
+      "minimum_system_available_gib": 100.0,
+      "model_id": "Qwen/Qwen3.6-35B-A3B",
+      "name": "qwen36-35b",
+      "paper_target": true,
+      "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+      "source_layer": 35,
+      "target_layer": 39,
+      "trace_layers": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27,
+        31,
+        35,
+        39
+      ]
+    },
+    "summary": "results/qwen36-35b-confirmatory-20260725/summary.json"
+  }
+}

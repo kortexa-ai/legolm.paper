@@ -1,0 +1,351 @@
+\ifdefined\XeTeXrevision\else\pdfoutput=1\fi
+\documentclass[10pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\textfraction}{0.08}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={The Latent Geometry of Meh},
+  pdfauthor={Franci Penov},
+}
+\graphicspath{{../reproductions/jspace-spectrum/results/qwen36-35b-confirmatory-20260725/figures/}}
+\newcommand{\moemodel}{Qwen3.6-35B-A3B}
+\newcommand{\densemodel}{Qwen3.6-27B}
+\newcommand{\code}[1]{\texttt{#1}}
+\title{The Latent Geometry of ``Meh''}
+\author{Franci Penov \\ kortexa.ai \\ \texttt{francip@kortexa.ai}}
+\date{2026-07-25}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Where does a one-word social response sit inside a language model? We fit
+twelve signed residual-stream read directions in two Qwen~3.6 checkpoints,
+using gradients of positive-minus-negative pole-token logits over eight neutral
+prompts. The 96 held-out landmark utterances and 126-item social atlas contain
+none of the 144 pole words. On the confirmatory \moemodel{} run, all twelve
+landmark means have the intended orientation and ten have positive 95\% lower
+bounds. The centroid of six variants of \emph{meh} has engagement
+$-4.94$ calibrated units, with a 95\% interval of $[-5.77,-3.73]$, and lies
+5.98 units from neutral. Its nearest held-out landmark is discouragement,
+which fails a frozen boredom-adjacency rule. A descriptive \densemodel{}
+extension reproduces the twelve-coordinate profile: the two \emph{meh}
+centroids have cosine 0.951 and agree in sign on every coordinate. Boredom is
+nearest in the dense model. The nearest label also changes through residual
+depth in both models. The targeted J-space slice gives \emph{meh} a
+stable low-engagement direction, while its categorical address depends on
+model and layer.
+\end{abstract}
+
+\section{Introduction}
+
+\emph{Meh} carries more social information than its length suggests. It can
+signal boredom, discouragement, dismissal, low effort, or amused detachment.
+Those readings overlap, and a single conversational setting can shift their
+balance. This makes the word a compact test for whether a residual-space map
+captures a directional profile or assigns a fixed category.
+
+The Jacobian lens maps intermediate activations into token-indexed directions
+defined by their average linearized effect on later output logits
+\cite{gurnee2026verbalizable}. Its full J-space is a sparse, nonnegative frame
+built from those directions. The method can expose concepts that do not appear
+in the model's output, and its readouts change across layers.
+
+We study twelve output-defined directions chosen to cover a social and
+affective spectrum. The axes run from warmth to hostility, trust to
+wariness, affiliation to distance, playfulness to formality, ease to tension,
+care to indifference, engagement to boredom, patience to annoyance, efficacy
+to frustration, social safety to hurt or defensiveness, goodwill to resentment,
+and hope to discouragement. Each direction comes from pole-token gradients.
+Neutral messages set its location and scale.
+
+The evaluation separates the words used to define the directions from the
+utterances used to test them. It also records a complete token-by-layer replay,
+runs three system prompts, and freezes four decisions before the 35B
+confirmatory run. The 27B dense checkpoint supplies a model-architecture
+comparison with the same data and analysis.
+
+\section{Relation to prior methods}
+
+Linear probes can recover interpretable structure from language-model
+activations, but probe performance alone does not show that the model uses the
+measured feature \cite{hewitt2019probes}. Held-out transfer and intervention
+tests have provided stronger evidence for linear directions in settings such
+as factual truth \cite{marks2024truth}. Tuned lenses learn a separate map from
+each layer to the output distribution \cite{belrose2023tuned}. The Jacobian
+lens instead uses the downstream derivative, giving the direction a local
+causal interpretation with respect to output logits
+\cite{gurnee2026verbalizable}.
+
+Activation additions use related residual directions to alter generated text
+\cite{subramani2022steering,turner2024activation}. Emotion representations have
+also been causally linked to output and alignment behavior in Claude Sonnet
+4.5 \cite{sofroniew2026emotion}. Our runner only reads activations. It does not
+intervene or decode responses, so its results establish geometry rather than a
+causal effect on behavior.
+
+\section{Method}
+
+\subsection{A targeted Jacobian readout}
+
+For axis $a$, let $P_a$ and $N_a$ be the resolved single-token IDs for six
+positive and six negative pole words. Capitalized and space-prefixed tokenizer
+forms are included when they remain single tokens. For source residual
+activation $h_{\ell,t}$ and target-layer logits $z$, the read direction is
+\begin{equation}
+  v_a =
+  \mathbb{E}_{x,t,t'\geq t}
+  \nabla_{h_{\ell,t}}
+  \left[
+    \frac{1}{|P_a|}\sum_{p\in P_a} z_{p,t'}
+    -
+    \frac{1}{|N_a|}\sum_{n\in N_a} z_{n,t'}
+  \right].
+\end{equation}
+The expectation is estimated over valid positions in eight neutral prompts.
+The first eight positions are excluded and sequences are capped at 96 tokens.
+All model weights remain frozen.
+
+For system prompt $s$ and traced layer $j$, 24 neutral calibration messages
+give a coordinate-wise center $\mu_{a,s,j}$ and population standard deviation
+$\sigma_{a,s,j}$. The calibrated coordinate of user token $t$ is
+\begin{equation}
+  c_{a,s,j,t} =
+  \frac{\langle h_{j,t},v_a\rangle-\mu_{a,s,j}}
+       {\sigma_{a,s,j}}.
+\end{equation}
+An utterance coordinate is the mean over its user-content tokens. The token
+span is recovered by comparing chat templates with an empty and populated user
+turn, which removes role markers, assistant headers, and template newlines.
+
+This construction is a targeted J-space readout. It does not estimate the full
+$d\times d$ averaged Jacobian, rank the full vocabulary, or solve the sparse
+nonnegative decomposition that defines the full J-space
+\cite{gurnee2026verbalizable}. For depth traces, the source-layer matrix
+$[v_1,\ldots,v_{12}]$ is reused at every sampled layer with a fresh neutral
+calibration for that layer. Those traces are fixed-direction residual-depth
+measurements.
+
+\subsection{Models and frozen layers}
+
+The confirmatory checkpoint is \moemodel{} revision
+\code{995ad96eacd98c81ed38be0c5b274b04031597b0}. It has 35B total parameters,
+3B active parameters, a 2,048-dimensional language-model state, and 40 layers
+\cite{qwen2026moe}. We fit from residual layer 35 to layer 39 and trace layers
+3, 7, \ldots, 39.
+
+The descriptive extension uses \densemodel{} revision
+\code{6a9e13bd6fc8f0983b9b99948120bc37f49c13e9}. It has 27B parameters, a
+5,120-dimensional state, and 64 layers \cite{qwen2026dense}. We fit from layer
+55 to 63 and trace layers 3, 7, \ldots, 63. Both checkpoints run in bfloat16
+with PyTorch SDPA and the model cache disabled.
+
+\subsection{Lexically disjoint evaluation}
+
+Each signed axis has four positive and four negative landmark paraphrases, for
+96 cases. The social atlas has 21 families with six utterances each. Its
+\emph{meh} family contains three bare forms (``meh'', ``meh.'', and ``Meh.'')
+and three contextual forms (``meh, whatever'', ``meh, I could take it or leave
+it'', and ``meh, next''). The other families cover greetings, gratitude,
+apology, praise, insult, dismissal, complaint, repeated demands,
+encouragement, agreement, disagreement, uncertainty, surprise, amusement,
+farewell, requests, refusal, relief, confusion, and neutral statements.
+
+A case-insensitive whole-word check rejects evaluation text containing any
+pole word. The frozen inventory has zero collisions. Every case runs under
+helpful/direct, concise/technical, and conversational/natural system prompts:
+$222\times3=666$ passes per model.
+
+\subsection{Metrics and decisions}
+
+Intervals use 2,000 bootstrap resamples with seed 20260726. Resampling is
+clustered by utterance variant, with one system prompt drawn inside each
+selected variant. These intervals measure sensitivity to the fixed prompt
+inventory.
+
+Four rules were written before the confirmatory run:
+\begin{enumerate}
+  \item all twelve target landmark means must be positive, with at least ten
+  positive 95\% lower bounds;
+  \item the upper engagement interval for \emph{meh} must be below zero and its
+  distance from neutral at least three calibrated units;
+  \item boredom must be the nearest landmark overall and under at least two
+  system prompts;
+  \item the median same-family cosine across system prompts must be at least
+  0.80.
+\end{enumerate}
+The 27B comparison and all depth results are descriptive.
+
+\section{Results}
+
+\subsection{Held-out utterances orient the directions}
+
+Figure~\ref{fig:landmarks} shows the confirmatory landmark separations. All
+twelve target means are positive; ten lower intervals stay above zero.
+Patience and efficacy have positive means with lower bounds of $-0.139$ and
+$-0.029$. The 27B extension also has twelve positive means and eleven positive
+lower bounds; efficacy is the exception at $-0.235$.
+
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=0.86\linewidth]{landmark-separation.png}
+\caption{Positive-minus-negative landmark separation on the intended coordinate
+for \moemodel. Intervals are clustered over the four utterance variants and
+three system prompts. None of the landmark text contains a pole word.}
+\label{fig:landmarks}
+\end{figure}
+
+The intended coordinate accounts for a median 51.9\% of the full twelve-axis
+landmark separation vector on 35B and 57.3\% on 27B. Off-axis movement is
+substantial. Mean absolute off-diagonal axis correlation is 0.343 and 0.360,
+and the first principal component explains 48.8\% and 54.1\% of atlas-family
+centroid variance. The radar axes should therefore be read as correlated
+contrasts rather than orthogonal bins.
+
+\subsection{A stable low-engagement profile}
+
+Table~\ref{tab:meh} gives the main measurements. The 35B \emph{meh} centroid
+has engagement $-4.941$ with an upper interval of $-3.727$. Its Euclidean
+distance from the neutral centroid is 5.976. Both parts of the non-null rule
+pass. The dense model yields engagement $-3.457$, upper interval $-2.043$, and
+distance 6.194.
+
+\begin{table}[!tb]
+\centering
+\caption{Source-layer results. The 35B column is confirmatory; the 27B column
+is a descriptive extension.}
+\label{tab:meh}
+\begin{tabular}{lrr}
+\toprule
+Measurement & \moemodel & \densemodel \\
+\midrule
+Target means above zero & 12/12 & 12/12 \\
+Target lower bounds above zero & 10/12 & 11/12 \\
+\emph{Meh} engagement & $-4.941$ & $-3.457$ \\
+Engagement 95\% interval & $[-5.770,-3.727]$ & $[-4.341,-2.043]$ \\
+\emph{Meh}-neutral distance & 5.976 & 6.194 \\
+Nearest landmark & discouragement & boredom \\
+Boredom nearest by system & 0/3 & 3/3 \\
+Template cosine median & 0.9958 & 0.9957 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:radar} shows the full confirmatory coordinate and its contrast
+with neutral utterances. Relative to neutral, the largest negative shifts are
+engagement ($-3.98$) and patience ($-2.94$). Playfulness and ease move
+positively. Bare and contextual forms point in similar directions, while the
+contextual forms move farther on engagement and patience.
+
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=\linewidth]{meh-radar.png}
+\caption{The twelve-coordinate \emph{meh} centroid on \moemodel. The radar
+compares raw calibrated family centroids; the bars subtract the neutral-family
+centroid.}
+\label{fig:radar}
+\end{figure}
+
+The cross-model cosine between \emph{meh} centroids is 0.951, with identical
+signs on all twelve coordinates. Across all 21 matching atlas families, median
+cosine is 0.955 and mean coordinate-sign agreement is 94.0\%. The three system
+templates also leave family geometry nearly unchanged: their median
+same-family cosine is 0.9958 on 35B and 0.9957 on 27B.
+
+\subsection{The categorical address moves}
+
+The frozen boredom-adjacency rule fails on the confirmatory model.
+Discouragement is nearest at layer 35 with Euclidean distance 3.216, followed
+by frustration at 3.297 and boredom at 3.720. Discouragement remains first
+under every system prompt. On the dense model, boredom is nearest overall at
+2.654 and under all three prompts.
+
+The fixed-direction depth trace changes the answer again. On 35B, the nearest
+landmark is playfulness at layers 3 and 7; frustration at 11 and 15; boredom
+from 19 through 27; frustration at 31; discouragement at the frozen source
+layer 35; and boredom at the final traced layer 39. On 27B, late layers
+alternate mainly between boredom and frustration, with boredom nearest at
+layers 27, 35, 39, 43, 55, 59, and 63.
+
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=\linewidth]{meh-depth.png}
+\caption{Four coordinates of the \emph{meh}-minus-neutral contrast through
+\moemodel{} residual depth. The dashed line marks the fitted source layer.
+Every layer uses the layer-35 read directions and its own neutral calibration.}
+\label{fig:depth}
+\end{figure}
+
+The directional profile survives the model comparison better than the nearest
+category. Low engagement and low patience recur in both checkpoints. A
+Euclidean winner in twelve correlated coordinates compresses that profile into
+one atlas label, and small changes in the remaining coordinates can change the
+winner.
+
+\section{Limits and next tests}
+
+The corpus is synthetic, English-only, and small. It covers six variants per
+atlas family, four variants per landmark pole, and three system prompts. The
+bootstrap intervals describe this inventory rather than a population of users,
+decoding samples, or checkpoints. Both models come from the same Qwen release,
+so the 27B result tests architecture and scale inside one model family.
+
+The pole words determine the read directions. Lexical separation prevents a
+direct word-matching shortcut in evaluation, but another reasonable pole
+inventory could rotate the slice. Neutral calibration also makes coordinates
+comparable within this experiment, not universal units. Correlated axes make
+Euclidean neighbors especially sensitive to the chosen inventory and scale.
+
+The depth trace applies one fitted direction matrix outside its source layer.
+Independent J-lens fits at every layer would separate genuine representational
+rotation from mismatch between a layer and the reused read matrix. A broader
+replication should add independently fitted layers, unrelated model families,
+more system prompts, and human similarity judgments.
+
+The measurements say nothing about persistent state or model experience. They
+also do not show whether moving an activation along these directions changes a
+response. A direct follow-up can intervene along the measured axes and score
+complete decoded responses, while keeping the lexically disjoint atlas fixed.
+
+\section{Reproducibility}
+
+The standalone runner imports no LegoLM code. It pins both model revisions, the
+Jacobian-lens implementation, Python packages, corpus hash
+\code{a9b52273f23fcff7845e1d3e49bdfc7f34d8262ed1814be2800650348329deb4},
+calibration, bootstrap seed, metrics, and decisions. Both paper runs used
+Python 3.14.3, PyTorch 2.12.0, Transformers 5.12.1, CUDA 13.0, and one NVIDIA
+RTX PRO 6000. The 35B measurement run took 114.2 seconds with its checkpoint
+already cached. The 27B run took 670.6 seconds including the initial checkpoint
+download and reserved at most 50.5 GiB of CUDA memory.
+
+The repository includes the frozen method, source, tests, summaries, raw token
+measurements, PNG figures, cross-model comparison, and a self-contained HTML
+replay for each model. Resumable fit states and duplicate event streams are
+excluded from the publication bundle. The commands are:
+\begin{verbatim}
+uv sync --frozen
+uv run pytest
+uv run jspace-spectrum-paper reproduce --suite full \
+  --model qwen36-35b --device cuda \
+  --output-dir results/qwen36-35b-confirmatory
+uv run jspace-spectrum-paper reproduce --suite full \
+  --model qwen36-27b --device cuda \
+  --output-dir results/qwen36-27b-extension
+\end{verbatim}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
