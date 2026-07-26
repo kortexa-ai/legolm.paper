@@ -30,7 +30,8 @@
   model. Both artifacts identify source commit
   `0349d5c1ed28e9599dd8e4d0f7037e1b72547474`.
 - Stopped the seven GPU services on `smarty` once, after recording the initial
-  service state. They remain stopped until the publication work is complete.
+  service state. They were kept stopped until the publication work was
+  complete.
 - Completed the confirmatory `Qwen/Qwen3.6-35B-A3B` run on the RTX PRO 6000:
   666/666 measurements in 114.2 seconds with the checkpoint already cached,
   with no OOM.
@@ -52,4 +53,20 @@
   states, lens checkpoints, and duplicate event streams remain local to
   `smarty`.
 
-Status: both paper runs complete and archived; paper and public release next.
+## 2026-07-26: paper and publication
+
+- Wrote and built the six-page paper, *The Latent Geometry of "Meh"*, from the
+  frozen method and fresh artifacts. The paper reports the failed 35B
+  boredom-adjacency rule rather than smoothing it away.
+- Committed and pushed the paper and complete track record to the private
+  repository, through commit `5c0a27b`.
+- Published the clean reproduction, selected artifacts, HTML replays, figures,
+  source, and PDF to `kortexa-ai/legolm.paper`, through commit `6214d9f`.
+- Published the paper card at `https://research.kortexa.ai/` from research-site
+  commit `4c3eb28`, and verified the live card, PDF, and code links.
+- Restored all seven services stopped for the experiment exactly once. The
+  three model servers, ASR, TTS, vision, and LegoLM each returned HTTP 200
+  after restoration.
+
+Status: reproduction, paper, public artifacts, and research-site publication
+complete; `smarty` is restored to its pre-experiment service set.
