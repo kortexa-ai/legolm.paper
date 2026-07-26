@@ -77,3 +77,7 @@ rule, and the shared neutral center drifted too far on every axis.
 
 See [FINDINGS.md](FINDINGS.md) for the response-level findings and artifact
 map.
+
+Paper: [Eight Soft Tokens Can Change a Frozen Model's Tone](../../causal-expression-paper/main.pdf).
+Public code and data:
+[kortexa-ai/legolm.paper](https://github.com/kortexa-ai/legolm.paper/tree/main/reproductions/causal-expression).

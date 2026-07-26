@@ -28,7 +28,15 @@
   negative warmth prefix; the third tended toward refusal. Regular responses
   remained neutral.
 - Committed and pushed the raw JSON results and four PNGs at `a9a5aab`.
+- Wrote the seven-page paper with the `no-ai-slop` prose checks, rendered it
+  without TeX warnings, inspected every page, and pushed it privately at
+  `91a5ca9`.
+- Published the exact paper and reproduction snapshot to `legolm.paper` at
+  `40bb603`.
+- Published the paper card on `research.kortexa.ai` from research commit
+  `66dea75`; the live PDF and code links both return HTTP 200.
+- Restored the seven recorded smarty services once. All seven are active, their
+  expected ports are listening, and GPU memory returned to its pre-run
+  footprint.
 
-Next: write and render the short paper, publish the exact reproduction subtree
-to `legolm.paper`, update `research.kortexa.ai`, then restore the recorded smarty
-services.
+Status: complete.
