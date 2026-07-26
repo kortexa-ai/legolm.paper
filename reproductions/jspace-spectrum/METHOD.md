@@ -166,4 +166,3 @@ The full runner requires at least 85 GiB free CUDA memory and 100 GiB available
 system memory before loading either paper model. It aborts if CUDA headroom
 falls below 20 GiB after model load or if total CUDA use exceeds 90% during
 measurement. Models run sequentially and are released between runs.
-
