@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "legolm-expression-ladder-repro"
+version = "0.1.0"
+description = "Standalone reproduction for causal social-style control in Qwen 3.6"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "accelerate==1.14.0",
+  "matplotlib==3.10.8",
+  "numpy==2.4.2",
+  "torch==2.12.0",
+  "transformers==5.12.1",
+]
+
+[project.scripts]
+expression-ladder = "expression_ladder.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expression_ladder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

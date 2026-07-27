@@ -1,0 +1,233 @@
+\ifdefined\XeTeXrevision\else\pdfoutput=1\fi
+\documentclass[10pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={Five Ways to Fool Yourself About Steering a Frozen Model},
+  pdfauthor={Franci Penov},
+}
+\newcommand{\model}{Qwen3.6-35B-A3B}
+\newcommand{\code}[1]{\texttt{#1}}
+\title{Five Ways to Fool Yourself About Steering a Frozen Model}
+\author{Franci Penov \\ kortexa.ai \\ \texttt{francip@kortexa.ai}}
+\date{2026-07-27}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We measure six mechanisms for changing the interpersonal style of a frozen
+\model, and score each one twice: on the likelihood of curated reference
+responses, and on text the model actually generates. The two measurements
+disagree, and the disagreement is the result. A residual direction trained
+directly against paired response likelihood drives its training objective from
+$+0.366$ to $-1.188$ and decorrelates its axes to a mean cross-cosine of
+$0.031$, then moves generated text by $5.1\%$ of the explicit-prompt span on
+warmth and $-3.7\%$ on patience, where the sign is reversed. Its signed
+ordering on held-out prompts is 4/8 and 2/8, at or below chance. A static
+direction and a contextual multi-site variant show smaller versions of the same
+split, and on one axis the two measurements disagree in sign. The teacher-forced
+number is the one a steering study most naturally reports, it is measured in the
+space the writer was optimized in, and on this evidence it certifies nothing.
+Only the free-generation audit with a wrong-axis control separates a writer that
+works from one that has learned a continuation discriminator.
+\end{abstract}
+
+\section{Introduction}
+
+A steering method is usually reported by how far it moves a likelihood. The
+appeal is obvious: likelihood is cheap, differentiable, and available on
+held-out data without generating anything. The risk is equally obvious once
+stated. If the writer was optimized against that likelihood, then reporting it
+back measures how well the optimizer did its job, not whether the model's
+behaviour changed.
+
+This note makes the gap concrete. We build six writers for three signed social
+style axes, hold the language model frozen throughout, and score every one of
+them on both quantities: a teacher-forced span over curated positive and
+negative reference responses, and a generated span recomputed on greedily
+decoded text under a wrong-axis control. The mechanisms are ordered by how
+convincing their teacher-forced numbers are. That order does not survive contact
+with the second measurement.
+
+\paragraph{Status.} This is a confirmatory re-run. The ladder's qualitative
+outcomes were established in earlier unpublished work, so its doses, layers, and
+step counts were selected with knowledge of those outcomes. It makes no
+preregistration claim, and we say so here rather than let the reader assume
+otherwise. What the run establishes is that the effect reproduces in a clean
+implementation that shares no code with the original.
+
+\section{Setup}
+
+The frozen model is \model{} at revision
+\code{995ad96eacd98c81ed38be0c5b274b04031597b0}, loaded in bfloat16 on one
+NVIDIA RTX PRO 6000. The three axes are warmth versus cold hostility, patience
+versus annoyance, and goodwill versus resentment. The corpus is the synthetic
+16-case technical-request set with content-matched styled responses, hash
+\code{85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346}, split
+six fit, two development, eight held out. The held-out cases include repeated
+demands, a direct insult, praise, and gratitude.
+
+\paragraph{The two measurements.} For a held-out pair, the \emph{teacher-forced
+span} is the positive-minus-negative reference NLL contrast under a positive
+intervention minus the same contrast under a negative one. The \emph{generated
+span} decodes greedily under each sign and recomputes the contrast on the
+produced text. Both are quoted as a fraction of the span that visible style
+instructions achieve (Stage~A), because a raw likelihood shift has no scale.
+
+\paragraph{Why a wrong-axis control is not optional.} The fitted axes are
+correlated. A large target span means nothing unless it exceeds the shift caused
+by steering along a different axis, so every generated measurement below reports
+both.
+
+\section{The ladder}
+
+\paragraph{Stage A: the denominator.} Explicit style instructions give spans of
+$+0.1655$ (warmth), $+0.1977$ (patience), and $+0.0737$ (goodwill). Goodwill's
+upper bound is weak enough that its later fractions should be read with caution;
+we return to this in the limitations.
+
+\paragraph{Stage B: static directions.} One direction per axis, component, and
+layer, from mean positive-minus-negative activation differences at the prompt
+frontier over the fit split, at residual and attention outputs of layers 19, 27,
+and 35.
+
+\paragraph{Stage C: dose and window.} A sweep over residual fractions
+$\{0.005, 0.01, 0.02, 0.04, 0.08\}$ and injection windows of the first token,
+the first eight, and all response positions, scored teacher-forced. This is
+where a writer first looks like it works: best spans reach $+0.0508$ (patience),
+$+0.0465$ (goodwill), and $+0.0359$ (warmth).
+
+\paragraph{Stage D: what the text says.} Table~\ref{tab:main} recomputes those
+writers on generated text. Patience and warmth survive in weakened form, at
+$32.2\%$ and $21.8\%$ of the explicit span with 6/8 signed orderings each.
+Goodwill does not: $10.9\%$, 2/8 signed, and specific on a single prompt out of
+eight.
+
+\paragraph{Stage F: contextual, multi-site.} Directions derived from the
+specific prompt being answered, injected coherently at all six sites under a
+fixed total norm budget split as $\text{total}/\sqrt{\text{sites}}$. This is a
+deliberately privileged upper bound rather than a deployable writer. It produces
+the largest generated spans in the study, and also the study's cleanest
+inversion: on goodwill the teacher-forced span is $-0.0265$ while the generated
+span is $+0.0594$. The two measurements disagree in sign on the same writer.
+
+\paragraph{Stage G: train the thing directly.} One antisymmetric residual
+direction per axis at layer 35, initialized from Stage~B, trained for 72 steps
+against paired full-response likelihood with a cross-axis cosine penalty. It
+succeeds at what it was asked to do. The loss falls from $+0.366$ to $-1.188$
+and the mean absolute cross-axis cosine falls to $0.031$, so the axes are no
+longer the single correlated style factor the fitted geometry started from.
+Then the generated audit returns $+0.0085$ on warmth ($5.1\%$), $+0.0180$ on
+goodwill ($24.5\%$), and $-0.0073$ on patience, a reversal. Signed orderings are
+4/8, 5/8, and 2/8.
+
+\begin{table}[t]
+\centering
+\caption{Every writer, scored both ways. Teacher-forced spans are measured in
+the space the writer was optimized in; generated spans are recomputed on greedily
+decoded text. Percentages are of the Stage~A explicit-prompt span for that axis.
+Signed counts held-out prompts with the intended ordering; specific counts those
+where the target span also beat the wrong-axis shift.}
+\label{tab:main}
+\begin{tabular}{llrrrcc}
+\toprule
+Stage & Axis & Teacher & Generated & Gen/A & Signed & Specific \\
+\midrule
+D (static)     & warmth   & $+0.0359$ & $+0.0361$ & $21.8\%$ & 6/8 & 5/8 \\
+               & patience & $+0.0508$ & $+0.0636$ & $32.2\%$ & 6/8 & 6/8 \\
+               & goodwill & $+0.0465$ & $+0.0080$ & $10.9\%$ & 2/8 & 1/8 \\
+\addlinespace
+F (contextual) & warmth   & $+0.0250$ & $+0.1155$ & $69.8\%$ & -- & -- \\
+               & patience & $+0.0573$ & $+0.0953$ & $48.2\%$ & -- & -- \\
+               & goodwill & $-0.0265$ & $+0.0594$ & $80.7\%$ & -- & -- \\
+\addlinespace
+G (trained)    & warmth   & \multicolumn{1}{c}{$\ast$} & $+0.0085$ & $5.1\%$  & 4/8 & 5/8 \\
+               & patience & \multicolumn{1}{c}{$\ast$} & $-0.0073$ & $-3.7\%$ & 2/8 & 2/8 \\
+               & goodwill & \multicolumn{1}{c}{$\ast$} & $+0.0180$ & $24.5\%$ & 5/8 & 5/8 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize $\ast$ Stage~G optimizes the teacher-forced objective directly;
+its training loss falls from $+0.366$ to $-1.188$, so a held-out teacher-forced
+span is not an independent measurement of it.}
+\end{table}
+
+\section{What this means for reporting steering}
+
+The ranking by teacher-forced evidence and the ranking by behaviour are not the
+same ranking. Stage~G is the most thoroughly optimized writer here, has the
+cleanest axis geometry, and changes generated text least. Stage~F has the
+weakest teacher-forced numbers of the three and the strongest generated ones,
+and on one axis its two scores point in opposite directions.
+
+The mechanism is not mysterious. A direction trained against the likelihood of a
+fixed reference continuation can learn to discriminate that continuation from
+its content-matched opposite without ever making the model's own decoding
+trajectory prefer it. Greedy decoding leaves the trained trajectory at the first
+token and never returns to it. Nothing in the teacher-forced measurement can see
+that happen, because the measurement never lets the model choose its own tokens.
+
+This is the same shape as a result we reported for sensor conditioning, where a
+capacity-matched control reproduced a bridge's entire bits-per-byte gain while
+task-aligned probes showed decisive input dependence
+\cite{penov2026bridges}. Both are instances of one rule: a metric computed in
+the space an intervention was optimized in certifies nothing, and certification
+requires a probe outside that space. In the sensor case the probe is a
+task-aligned ranking; here it is free generation with a wrong-axis control.
+
+\section{Limitations}
+
+Goodwill's explicit-prompt span, $+0.0737$, is less than half of patience's, and
+every goodwill percentage in Table~\ref{tab:main} is a fraction of that small
+denominator. An earlier internal run of the same protocol measured a
+substantially larger goodwill upper bound, so this axis is unstable across runs
+and its fractions should be treated as exploratory rather than compared against
+the other two.
+
+The corpus is synthetic, English, and technical. Eight held-out prompts is a
+small denominator for counts like 6/8, and this run is single-seed: the
+companion soft-prefix study found seed-dependent behaviour severe enough that
+one seed refused where two others complied, so single-seed counts here should be
+read as indicative. Attribution is scored by the same frozen model under style
+instructions, which is a likelihood contrast rather than a rubric judgment, but
+it is not an independent judge; human evaluation would test whether the measured
+directions agree with reader perception. We report one dose per stage after the
+Stage~C sweep and did not extend Stage~G's budget, so its failure is a statement
+about 72 steps at this dose, not about the mechanism at every budget.
+
+\section{Reproducibility}
+
+The runner is self-contained. It pins the model revision, the corpus hash, the
+stage configuration, seeds, and decoding, and writes every number in this note
+into one summary artifact. The reference run used one NVIDIA RTX PRO 6000, peaked
+at $66.287$ GiB reserved, and completed without an out-of-memory event. Free
+memory gates are parameterized rather than hard preflight aborts, so the suite is
+portable to a different card; a 2B smoke path exercises the same code for anyone
+without an 80\,GB-class GPU.
+
+\begin{verbatim}
+uv sync
+uv run expression-ladder check
+uv run expression-ladder reproduce --suite full --device cuda \
+  --output-dir results/ladder-35b
+uv run python -m expression_ladder.report results/ladder-35b/summary.json
+\end{verbatim}
+
+\begin{thebibliography}{9}
+\bibitem{penov2026bridges} F.~Penov. Conditional LoRA Bridges for Modular Sensor
+Adaptation of Frozen Small Language Models. Preprint, 2026.
+\url{https://github.com/kortexa-ai/legolm.paper}.
+\end{thebibliography}
+
+\end{document}

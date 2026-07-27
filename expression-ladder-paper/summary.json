@@ -1,0 +1,3687 @@
+{
+  "config": {
+    "components": [
+      "residual",
+      "attention"
+    ],
+    "fractions": [
+      0.005,
+      0.01,
+      0.02,
+      0.04,
+      0.08
+    ],
+    "layers": [
+      19,
+      27,
+      35
+    ],
+    "windows": [
+      1,
+      8,
+      0
+    ]
+  },
+  "corpus": {
+    "axes": 3,
+    "cases": 16,
+    "dev_cases": 2,
+    "fit_cases": 6,
+    "pairs": 48,
+    "sha256": "85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346",
+    "test_cases": 8
+  },
+  "environment": {
+    "command": [
+      ".venv/bin/expression-ladder",
+      "reproduce",
+      "--suite",
+      "full",
+      "--device",
+      "cuda",
+      "--output-dir",
+      "results/ladder-35b"
+    ],
+    "created_at": 1785177570.9267802,
+    "cuda_version": "13.0",
+    "cudnn_version": 92000,
+    "data": {
+      "axes": 3,
+      "cases": 16,
+      "dev_cases": 2,
+      "fit_cases": 6,
+      "pairs": 48,
+      "sha256": "85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346",
+      "test_cases": 8
+    },
+    "device": "cuda",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "hostname": "smarty",
+    "model": {
+      "model_id": "Qwen/Qwen3.6-35B-A3B",
+      "name": "qwen36-35b",
+      "paper_target": true,
+      "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+      "stream_to_cuda": true
+    },
+    "packages": {
+      "accelerate": "1.14.0",
+      "matplotlib": "3.10.8",
+      "numpy": "2.4.2",
+      "torch": "2.12.0",
+      "transformers": "5.12.1"
+    },
+    "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+    "python": "3.14.3 (main, Mar 24 2026, 22:50:36) [Clang 22.1.1 ]",
+    "repository_commit": "b346013fe8618f230c3530ab06da2dc534c82b4f"
+  },
+  "memory_after_load": {
+    "cuda_allocated_gib": 64.56,
+    "cuda_free_gib": 29.491,
+    "cuda_peak_allocated_gib": 64.561,
+    "cuda_peak_reserved_gib": 64.609,
+    "cuda_reserved_gib": 64.609,
+    "cuda_total_gib": 94.962,
+    "device": "cuda",
+    "rss_gib": 0.993,
+    "system_available_gib": 118.738
+  },
+  "memory_peak": {
+    "cuda_allocated_gib": 64.623,
+    "cuda_free_gib": 27.789,
+    "cuda_peak_allocated_gib": 66.142,
+    "cuda_peak_reserved_gib": 66.287,
+    "cuda_reserved_gib": 66.287,
+    "cuda_total_gib": 94.962,
+    "device": "cuda",
+    "rss_gib": 2.62,
+    "system_available_gib": 117.131
+  },
+  "model_id": "Qwen/Qwen3.6-35B-A3B",
+  "profile": "qwen36-35b",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "seed": 20260727,
+  "stage_a": {
+    "explicit_span": {
+      "goodwill": 0.07366496324539185,
+      "patience": 0.19766908884048462,
+      "warmth": 0.16552519798278809
+    },
+    "n_pairs": 24,
+    "stage": "A"
+  },
+  "stage_b": {
+    "geometry": {
+      "attention-layer-19": {
+        "max_abs_cross_cosine": 0.740766167640686,
+        "mean_abs_cross_cosine": 0.6756172776222229
+      },
+      "attention-layer-27": {
+        "max_abs_cross_cosine": 0.6122878789901733,
+        "mean_abs_cross_cosine": 0.4747183322906494
+      },
+      "attention-layer-35": {
+        "max_abs_cross_cosine": 0.9794564247131348,
+        "mean_abs_cross_cosine": 0.903444230556488
+      },
+      "residual-layer-19": {
+        "max_abs_cross_cosine": 0.7839576601982117,
+        "mean_abs_cross_cosine": 0.7146379351615906
+      },
+      "residual-layer-27": {
+        "max_abs_cross_cosine": 0.7633408308029175,
+        "mean_abs_cross_cosine": 0.7232275009155273
+      },
+      "residual-layer-35": {
+        "max_abs_cross_cosine": 0.8552629351615906,
+        "mean_abs_cross_cosine": 0.6258611083030701
+      }
+    }
+  },
+  "stage_c": {
+    "best": {
+      "goodwill": {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.04651780426502228,
+        "window": 8
+      },
+      "patience": {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.05075022578239441,
+        "window": 0
+      },
+      "warmth": {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.035932913422584534,
+        "window": 0
+      }
+    },
+    "rows": [
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.006388053297996521,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.007814884185791016,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.00905407965183258,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.004725441336631775,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.007068991661071777,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0038273632526397705,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0001617223024368286,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.001942664384841919,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0020498037338256836,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0034735798835754395,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0030638277530670166,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.006740838289260864,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.003107026219367981,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0025082826614379883,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.02255725860595703,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0005010813474655151,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0015999674797058105,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0002012699842453003,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0018709450960159302,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.006909459829330444,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.012098938226699829,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 8.761882781982422e-05,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.00520460307598114,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.00543522834777832,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.002333521842956543,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0021974146366119385,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.010535910725593567,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0007498711347579956,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.002827063202857971,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.019649937748908997,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0006050914525985718,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0012081116437911987,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0038675665855407715,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.00013425946235656738,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0017293840646743774,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0032043755054473877,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": -0.00199030339717865,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.00846216082572937,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.006916731595993042,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": -0.002258971333503723,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.013381734490394592,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.015172392129898071,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0016207247972488403,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.021794140338897705,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.035932913422584534,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.00460679829120636,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.001112431287765503,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.003473535180091858,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.007360145449638367,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0011611729860305786,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.001934543251991272,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0023126304149627686,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.00029599666595458984,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0015503764152526855,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0015197992324829102,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.012911215424537659,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0028766244649887085,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.001193016767501831,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0016593188047409058,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.004044622182846069,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.00231778621673584,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0026770979166030884,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0012859255075454712,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.005357727408409119,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.002024516463279724,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0026602894067764282,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.00626741349697113,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0016640424728393555,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.006517380475997925,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0014195740222930908,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.000746503472328186,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0057370662689208984,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.004411861300468445,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0009360909461975098,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.012620300054550171,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0031571388244628906,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.002098098397254944,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0013171136379241943,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0023020654916763306,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0032451003789901733,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 1.0,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.009776324033737183,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": -0.002051711082458496,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 1.0,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0033678263425827026,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0012521296739578247,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.002517133951187134,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0010526031255722046,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 1.0,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.00826321542263031,
+        "window": 0
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0021675825119018555,
+        "window": 1
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": -0.003276258707046509,
+        "window": 8
+      },
+      {
+        "axis": "warmth",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.007736876606941223,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.002187192440032959,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.00366973876953125,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0029302239418029785,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.007750660181045532,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.004522413015365601,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0006504058837890625,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0019622445106506348,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0013352930545806885,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.006710797548294067,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.00040468573570251465,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.125,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0062322914600372314,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.01165682077407837,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.005494922399520874,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.006684720516204834,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0047844648361206055,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0003399848937988281,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0041204094886779785,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.005966007709503174,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.00018703937530517578,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": -0.00012749433517456055,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.012268155813217163,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.007209300994873047,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0008261799812316895,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.010231316089630127,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.125,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.009190917015075684,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.005752503871917725,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.018423527479171753,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.002840578556060791,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.019050240516662598,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.05075022578239441,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0014710724353790283,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0023257434368133545,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0032646358013153076,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0004169940948486328,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0070101916790008545,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0018314123153686523,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0026797056198120117,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.009346842765808105,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.013492375612258911,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.00030174851417541504,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.017010778188705444,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.012257009744644165,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.00014653801918029785,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.02666422724723816,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.014768123626708984,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.003038734197616577,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0006535947322845459,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.005230933427810669,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.003704577684402466,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.004439949989318848,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 1.0,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.00929880142211914,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.001161038875579834,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0014266371726989746,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0007171630859375,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0050373077392578125,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0029931068420410156,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0030115842819213867,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0024101436138153076,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.004152536392211914,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.01196703314781189,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.125,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.004820436239242554,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0028969943523406982,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0038387179374694824,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0015065371990203857,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0038154423236846924,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.003904014825820923,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.005318492650985718,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0027700960636138916,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.00047260522842407227,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.002611219882965088,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0006214380264282227,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0016408562660217285,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0006357133388519287,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.00280153751373291,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.001195460557937622,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.001163870096206665,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.125,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0025773942470550537,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0027654170989990234,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.001758188009262085,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": -0.00026154518127441406,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0023429393768310547,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0012786686420440674,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0021243691444396973,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0013729631900787354,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0017549991607666016,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0016558170318603516,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0002499520778656006,
+        "window": 0
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0010707676410675049,
+        "window": 1
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0033442676067352295,
+        "window": 8
+      },
+      {
+        "axis": "patience",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.003232896327972412,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": -0.01354612410068512,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.008933201432228088,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0007999837398529053,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.004574775695800781,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0017486810684204102,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0074027180671691895,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0008779317140579224,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0035357922315597534,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.125,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.010972410440444946,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.007466152310371399,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0009539574384689331,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.125,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.026223555207252502,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.004785418510437012,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.006648361682891846,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.125,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0454443097114563,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0017223060131072998,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.125,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.006567910313606262,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": -0.000994354486465454,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0013209283351898193,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.000853613018989563,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0001363307237625122,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0009722411632537842,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.000164031982421875,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0012016743421554565,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0035550296306610107,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0003871023654937744,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.007953882217407227,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0015054494142532349,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.008753389120101929,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": -0.014294177293777466,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0027193576097488403,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0026765018701553345,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.008695989847183228,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.25,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0024338513612747192,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0030971914529800415,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.013375774025917053,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.5,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0020922869443893433,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.013953447341918945,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.009059295058250427,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0010638684034347534,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.02543240785598755,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.01867850124835968,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.625,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.001414954662322998,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.04651780426502228,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "residual",
+        "directional_success": 0.875,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.03546370565891266,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0003486722707748413,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.00531904399394989,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0028623342514038086,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0028726011514663696,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.005999863147735596,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 19,
+        "n": 8,
+        "span": 0.009706512093544006,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": 0.013834238052368164,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0006338953971862793,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.02,
+        "layer": 19,
+        "n": 8,
+        "span": -0.006975695490837097,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0018565207719802856,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0004073828458786011,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.04,
+        "layer": 19,
+        "n": 8,
+        "span": -0.005010560154914856,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.004526793956756592,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": 0.0003260672092437744,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 19,
+        "n": 8,
+        "span": -0.0005723387002944946,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.006419733166694641,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0034811198711395264,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0010581612586975098,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.125,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": -0.009164586663246155,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.007120728492736816,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 27,
+        "n": 8,
+        "span": 0.003986984491348267,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.005312025547027588,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": 0.007474035024642944,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.25,
+        "fraction": 0.02,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0012747794389724731,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": -0.002883613109588623,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 0.0008503496646881104,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.04,
+        "layer": 27,
+        "n": 8,
+        "span": 8.593499660491943e-05,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": -0.0016024410724639893,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": 0.002215176820755005,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.08,
+        "layer": 27,
+        "n": 8,
+        "span": -0.005821630358695984,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.875,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.005157053470611572,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0007521361112594604,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.005,
+        "layer": 35,
+        "n": 8,
+        "span": 0.005870714783668518,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.002776026725769043,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0012065768241882324,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.01,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0015711337327957153,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.375,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": -0.002338513731956482,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": -0.00034749507904052734,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.625,
+        "fraction": 0.02,
+        "layer": 35,
+        "n": 8,
+        "span": 0.005941212177276611,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": -0.0018286556005477905,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 5.05596399307251e-05,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.04,
+        "layer": 35,
+        "n": 8,
+        "span": 0.006287291646003723,
+        "window": 0
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 1.0,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.0066328346729278564,
+        "window": 1
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.75,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.004154503345489502,
+        "window": 8
+      },
+      {
+        "axis": "goodwill",
+        "component": "attention",
+        "directional_success": 0.5,
+        "fraction": 0.08,
+        "layer": 35,
+        "n": 8,
+        "span": 0.002437978982925415,
+        "window": 0
+      }
+    ]
+  },
+  "stage_d": {
+    "records": [
+      {
+        "axis": "warmth",
+        "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific command-line flags or inspection tools provided by the service's binary. Since \"the service\" is not specified, here are the exact methods for the most common service managers and application types.\n\n### 1. For Systemd Services (Linux)\nSystemd itself does not load application config files; the application does. However, you can verify which config file the application *claims* to use or",
+        "positive_text": "To verify that a service loaded the intended configuration file, you must use the specific diagnostic commands provided by the service's runtime environment. Since you did not specify which service (e.g., Nginx, Apache, systemd, Docker, etc.), I will provide the exact verification steps for the most common services.\n\n### 1. **systemd Services** (Linux)\nIf the service is managed by `systemd`, the configuration is often in a `.conf` file",
+        "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+        "signed": false,
+        "specific": true,
+        "target_span": -0.06262326240539551,
+        "wrong_axis_span": 0.014383435249328613
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, systemd) uses exponential backoff with random jitter between restart attempts. This prevents the service from immediately restarting and consuming excessive CPU/memory resources, which can overwhelm the system and other services. Without this, a crash loop can lead to resource exhaustion and cascading failures.",
+        "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, Docker, systemd) uses exponential backoff with random jitter when restarting. This prevents the service from immediately restarting and crashing again, which can overwhelm system resources (CPU, memory, logs) and potentially cause a denial-of-service condition for other services. Without this, the",
+        "prompt": "Give me two actions for a service that enters a crash loop.",
+        "signed": true,
+        "specific": false,
+        "target_span": 0.003288567066192627,
+        "wrong_axis_span": 0.02152615785598755
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "Here is a two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate in a Staging Environment**\nImmediately replicate the production environment in a staging or sandbox setting. Deploy the change here first and run comprehensive automated tests, including edge-case scenarios and rollback simulations. Do not proceed to production until you have verified that the change functions as expected and, crucially, that the rollback procedure works flawlessly. This step ensures that any",
+        "positive_text": "Here is a focused two-step plan to safely complete a risky change before tomorrow:\n\n**Step 1: Isolate, Validate, and Snapshot (Today, Early)**\n*   **Create a Rollback Point:** Before making any changes, take a full backup or snapshot of the current system/database. Ensure you can revert instantly if things go wrong.\n*   **Isolate the Change:** Perform the risky change in a staging or isolated environment first. If possible, use",
+        "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.17454105615615845,
+        "wrong_axis_span": -0.10189968347549438
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches:\n\n### 1. Understand the Context and Intent\nBefore looking at the code, understand **why** the change is being made.\n- **What is the problem?** Is it",
+        "positive_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches, categorized by security, logic, and implementation.\n\n### 1. High-Level Security Assessment\nBefore diving into code, ask these critical questions:\n*   **What is the threat",
+        "prompt": "Tell me how to review a patch that changes authentication behavior.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.11467516422271729,
+        "wrong_axis_span": 0.04647266864776611
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "```bash\nss -tlnp | grep 8042\n```",
+        "positive_text": "```bash\nss -tuln | grep :8042\n```",
+        "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.016033589839935303,
+        "wrong_axis_span": -0.0012928545475006104
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If",
+        "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is found, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If",
+        "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+        "signed": true,
+        "specific": false,
+        "target_span": 0.019530147314071655,
+        "wrong_axis_span": -0.02496570348739624
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (intermediates) is provided.\n2.  **Validity Period**: Ensure the current date/time falls within the `Not Before` and `Not After` dates.\n3.  **Hostname Match**: Confirm the certificate\u2019s Common Name (CN) or Subject Alternative Names (SANs",
+        "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (Intermediate \u2192 Root) is present and valid.\n2.  **Expiration**: Ensure the current date falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN",
+        "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+        "signed": false,
+        "specific": false,
+        "target_span": -0.0005746185779571533,
+        "wrong_axis_span": -0.002901226282119751
+      },
+      {
+        "axis": "warmth",
+        "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that the file you downloaded has not been corrupted or tampered with. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example",
+        "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been corrupted or tampered with. Here\u2019s how you can do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example",
+        "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.024084270000457764,
+        "wrong_axis_span": 0.005677163600921631
+      },
+      {
+        "axis": "patience",
+        "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific command-line flags or tools provided by the service's binary. There is no universal method; it depends entirely on the software.\n\nHere are the exact steps for the most common services:\n\n### 1. Systemd Services (Linux)\nSystemd itself does not load config files; it loads the service unit file (`.service`). The *application* inside the service loads its own config.",
+        "positive_text": "To verify that a service has loaded the intended configuration file, you must use methods specific to the service manager (e.g., systemd, SysVinit) and the application itself. Below is the precise, step-by-step procedure for the most common Linux environment using **systemd**.\n\n### Step 1: Identify the Service Name\nFirst, determine the exact name of the service. For example, if you are configuring Nginx, the service name is typically `nginx`.",
+        "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.1311509609222412,
+        "wrong_axis_span": 0.00382155179977417
+      },
+      {
+        "axis": "patience",
+        "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1.  **Implement or Verify Exponential Backoff and Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, systemd) is configured with exponential backoff and random jitter between restart attempts. This prevents the service from immediately restarting and crashing again, which can overwhelm system resources (CPU, memory, logs) and potentially cause cascading failures in dependent services.\n\n2.",
+        "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement Graceful Degradation and Circuit Breaking**: Configure the service or its orchestrator (e.g., Kubernetes, Docker Swarm) to stop immediate restart attempts. Instead, implement a circuit breaker pattern that halts traffic to the failing service and prevents rapid restart cycles. This allows the system to stabilize, prevents cascading failures to dependent services, and gives you time to investigate without overwhelming system",
+        "prompt": "Give me two actions for a service that enters a crash loop.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.0074724555015563965,
+        "wrong_axis_span": -0.00671011209487915
+      },
+      {
+        "axis": "patience",
+        "negative_text": "Here is a two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate (Today)**\n*   **Deploy to a Staging/Pre-prod Environment:** Never test risky changes directly in production. Deploy the change to an environment that mirrors production as closely as possible.\n*   **Run Automated Tests & Smoke Tests:** Execute your full test suite, focusing on regression tests to ensure existing functionality isn\u2019t broken.\n*",
+        "positive_text": "Here is a focused two-step plan to safely complete a risky change before tomorrow:\n\n### Step 1: Isolate, Validate, and Snapshot\nBefore making any changes, ensure you have a safety net and a clear scope.\n*   **Create a Rollback Plan:** Define exactly how to revert the system to its previous state if something goes wrong. Test this rollback procedure in a staging environment if possible.\n*   **Take a Full Backup/Snapshot:** Capture the",
+        "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.07864612340927124,
+        "wrong_axis_span": 0.012810707092285156
+      },
+      {
+        "axis": "patience",
+        "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches:\n\n### 1. Understand the Context & Requirement\nBefore looking at code, understand **why** the change is happening.\n- **What is the business/security requirement?** (e",
+        "positive_text": "Reviewing a patch that changes authentication behavior is one of the most critical tasks in software development, as errors can lead to severe security vulnerabilities. Below is a structured approach to reviewing such a patch, focusing on security, correctness, and maintainability.\n\n### 1. Understand the Context and Intent\nBefore diving into code, ensure you understand **why** the change is being made.\n- **What is the goal?** Is it fixing a bug, adding a new feature (",
+        "prompt": "Tell me how to review a patch that changes authentication behavior.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.2865343689918518,
+        "wrong_axis_span": 0.044308245182037354
+      },
+      {
+        "axis": "patience",
+        "negative_text": "```bash\nss -tuln | grep :8042\n```",
+        "positive_text": "```bash\nss -tuln | grep :8042\n```",
+        "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+        "signed": false,
+        "specific": false,
+        "target_span": 0.0,
+        "wrong_axis_span": 0.03261128067970276
+      },
+      {
+        "axis": "patience",
+        "negative_text": "DNS resolution is only the first step in establishing a connection. It merely translates a domain name into an IP address. Once the IP is known, the client must still establish a TCP connection to that IP on the specific port (usually 80 for HTTP or 443 for HTTPS).\n\nAn HTTP request can time out after successful DNS resolution for several reasons related to this subsequent connection or data transfer phase:\n\n1.  **Connection Refused or Unreachable:** The",
+        "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection with the server. If the server is",
+        "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+        "signed": false,
+        "specific": true,
+        "target_span": -0.06653088331222534,
+        "wrong_axis_span": -0.06240439414978027
+      },
+      {
+        "axis": "patience",
+        "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) in the system\u2019s trust store.\n2.  **Expiration**: Ensure the current date/time falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN) matches the server hostname being",
+        "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (Intermediate \u2192 Root) is present and valid.\n2.  **Expiration**: Ensure the current date falls within the certificate\u2019s `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Common Name (CN) or Subject Alternative Names",
+        "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+        "signed": true,
+        "specific": false,
+        "target_span": 0.040253788232803345,
+        "wrong_axis_span": 0.04512149095535278
+      },
+      {
+        "axis": "patience",
+        "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure the file you downloaded hasn't been tampered with or corrupted. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the file:\n   ```powershell\n   cd C:\\",
+        "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been corrupted or tampered with. Here\u2019s how you can do it on different operating systems:\n\n### 1. **On Windows**\nYou can use the built-in `Get-FileHash` command in PowerShell.\n\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded",
+        "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+        "signed": true,
+        "specific": true,
+        "target_span": 0.030926942825317383,
+        "wrong_axis_span": -0.01351386308670044
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific diagnostic commands provided by the service's runtime environment. Since you did not specify the service (e.g., Nginx, Apache, systemd, PostgreSQL, etc.), I will provide the **universal method** and **specific examples** for the most common services.\n\n### Universal Method: Check the Service\u2019s Status or Logs\nMost services log their configuration file path and status during startup.\n\n1.",
+        "positive_text": "To verify that a service loaded the intended configuration file, you must use the specific diagnostic commands provided by the service's runtime environment. Since you did not specify which service (e.g., Nginx, Apache, systemd, PostgreSQL, etc.), I will provide the **universal method** and **specific examples** for the most common services.\n\n### Universal Method: Check the Service\u2019s Status or Logs\nMost services log their configuration file path and status during startup.\n\n1.",
+        "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+        "signed": false,
+        "specific": true,
+        "target_span": -0.005471855401992798,
+        "wrong_axis_span": 0.0
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, systemd) uses exponential backoff with random jitter when restarting. This prevents the service from immediately restarting and crashing again, which can overwhelm system resources (CPU, memory, logs) and cause cascading failures. Without this, the rapid restart cycle can lead to a \"",
+        "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, systemd) uses exponential backoff with random jitter when restarting. This prevents the service from immediately restarting and crashing again, which can overwhelm system resources (CPU, memory, logs) and cause cascading failures. Without this, the rapid restart cycle can lead to a \"",
+        "prompt": "Give me two actions for a service that enters a crash loop.",
+        "signed": false,
+        "specific": false,
+        "target_span": 0.0,
+        "wrong_axis_span": 0.0035881996154785156
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "Here is a focused two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate in a Staging Environment**\nImmediately replicate the production environment in a staging or sandbox setting. Deploy the change here first and run comprehensive automated tests, followed by manual verification of critical user paths. This step ensures that the change does not introduce catastrophic failures or regressions before it ever touches live data. If any issues arise, fix them here where rollback",
+        "positive_text": "Here is a focused two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate in a Staging Environment**\nImmediately replicate the production environment in a staging or sandbox setting. Deploy the change here first and run comprehensive automated tests, followed by manual verification of critical user paths. This step ensures that the change does not break core functionality and allows you to identify and fix regressions without impacting live users. If the change involves data migration",
+        "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+        "signed": true,
+        "specific": false,
+        "target_span": 0.003650188446044922,
+        "wrong_axis_span": 0.08351272344589233
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches:\n\n### 1. Understand the Context and Intent\nBefore diving into code, ensure you understand **why** the change is being made.\n- **What is the problem?** Is",
+        "positive_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches, categorized by critical areas of concern.\n\n### 1. Security & Logic Correctness\nThis is the most critical category. You must verify that the new logic does not introduce vulnerabilities or",
+        "prompt": "Tell me how to review a patch that changes authentication behavior.",
+        "signed": true,
+        "specific": false,
+        "target_span": 0.07918912172317505,
+        "wrong_axis_span": -0.07918912172317505
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "```bash\nss -tuln | grep :8042\n```",
+        "positive_text": "```bash\nss -tlnp | grep :8042\n```",
+        "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+        "signed": false,
+        "specific": false,
+        "target_span": -0.013018131256103516,
+        "wrong_axis_span": 0.013018131256103516
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If",
+        "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If",
+        "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+        "signed": false,
+        "specific": false,
+        "target_span": 0.0,
+        "wrong_axis_span": 0.0
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (Intermediate \u2192 Root) is present and valid.\n2.  **Expiration**: Ensure the current date falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN",
+        "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (Intermediate \u2192 Root) is present and valid.\n2.  **Expiration**: Ensure the current date falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN",
+        "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+        "signed": false,
+        "specific": false,
+        "target_span": 0.0,
+        "wrong_axis_span": 0.0
+      },
+      {
+        "axis": "goodwill",
+        "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that the file you downloaded has not been corrupted or tampered with. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example",
+        "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that the file you downloaded has not been corrupted or tampered with. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example",
+        "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+        "signed": false,
+        "specific": false,
+        "target_span": 0.0,
+        "wrong_axis_span": 0.0
+      }
+    ],
+    "stage": "D",
+    "summary": {
+      "goodwill": {
+        "generated_span": 0.008043665438890457,
+        "n": 8,
+        "signed": 2,
+        "specific": 1
+      },
+      "patience": {
+        "generated_span": 0.063556719571352,
+        "n": 8,
+        "signed": 6,
+        "specific": 6
+      },
+      "warmth": {
+        "generated_span": 0.03611936420202255,
+        "n": 8,
+        "signed": 6,
+        "specific": 5
+      }
+    }
+  },
+  "stage_f": {
+    "per_site_fraction": 0.06531972647421809,
+    "records": [
+      {
+        "axis": "warmth",
+        "generated_span": 0.09149420261383057,
+        "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific diagnostic commands provided by the service's runtime environment. The method varies significantly depending on the software (e.g., Nginx, Apache, systemd, Docker, Java applications).\n\nBelow are the exact steps for the most common services. **Identify your service and follow the corresponding section.**\n\n---\n\n### 1. Nginx\nNginx does not log the config file path on",
+        "positive_text": "To verify that a service has loaded the intended configuration file, the method depends on the service manager (e.g., systemd, SysVinit) and the specific application. However, the most reliable and universal method for modern Linux systems using **systemd** is to check the process's command-line arguments or open file descriptors.\n\nHere are the exact steps, ordered from most reliable to least:\n\n### Method 1: Check Open File Descriptors (Most Reliable)\nThis",
+        "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+        "teacher_span": 0.040900230407714844
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.05811828374862671,
+        "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff and Retry Limits**: Ensure the service or its orchestrator (e.g., Kubernetes, systemd, Docker) uses exponential backoff with jitter for restart attempts. This prevents the service from consuming excessive CPU and I/O resources by restarting too frequently, and allows transient issues (like temporary database unavailability) to resolve themselves. Additionally, set a maximum retry count",
+        "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, Docker) uses exponential backoff with random jitter when restarting. This prevents the service from immediately restarting and crashing again in a tight loop, which can overwhelm system resources (CPU, memory, logs) and make it difficult to diagnose the root cause.\n\n2. **",
+        "prompt": "Give me two actions for a service that enters a crash loop.",
+        "teacher_span": 0.04897427558898926
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.3023949861526489,
+        "negative_text": "Here is a two-step plan to execute a risky change safely and efficiently before tomorrow:\n\n### Step 1: Isolate, Validate, and Prepare Rollback (Today, Immediate)\nDo not deploy directly to production. Instead, perform the change in an isolated environment that mirrors production as closely as possible.\n*   **Isolate:** Apply the change to a staging or shadow environment. If possible, use feature flags to keep the change disabled for users.\n*",
+        "positive_text": "Here is a focused two-step plan to safely complete a risky change before tomorrow:\n\n### Step 1: Isolate, Validate, and Snapshot (Today)\n*   **Create a Safety Net:** Before making any changes, take a full backup or snapshot of your current system/database. This is your \"undo\" button.\n*   **Isolate the Change:** Implement the risky change in a staging or development environment first, if possible. If it must be done in",
+        "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+        "teacher_span": -0.00022149085998535156
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.02053511142730713,
+        "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code review tasks. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches, categorized by security, logic, and implementation.\n\n### 1. The \"Why\" and \"What\" (Context & Scope)\nBefore looking at code, understand the intent.\n*   **Threat Model:** What specific vulnerability",
+        "positive_text": "Reviewing a patch that changes authentication behavior is one of the most critical tasks in software development because it directly impacts security, user experience, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a comprehensive guide on how to review such a patch, structured by key areas of focus:\n\n### 1. Understand the Context and Intent\nBefore diving into code, ensure you understand **why** the change is being made",
+        "prompt": "Tell me how to review a patch that changes authentication behavior.",
+        "teacher_span": 0.0579836368560791
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.016033589839935303,
+        "negative_text": "```bash\nss -tlnp | grep 8042\n```",
+        "positive_text": "```bash\nss -tuln | grep :8042\n```",
+        "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+        "teacher_span": 0.054436445236206055
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.21644806861877441,
+        "negative_text": "DNS resolution is only the first step in establishing a connection. It merely translates a domain name into an IP address. Once the IP is known, the client must still establish a TCP connection to that IP on the specific port (usually 80 for HTTP or 443 for HTTPS).\n\nAn HTTP request can time out after successful DNS resolution for several reasons related to this subsequent connection or data transfer phase:\n\n1.  **TCP Connection Timeout:** The client sends a",
+        "positive_text": "You are absolutely right, and I apologize for any previous confusion. Let\u2019s get straight to the point.\n\nAn HTTP request can time out even when DNS resolution works because **DNS resolution is only the first step** in establishing a connection. A successful DNS lookup means your computer knows the IP address of the server, but it doesn\u2019t guarantee that the server is reachable or responsive.\n\nHere are the most common reasons why the request fails *after* DNS succeeds:\n\n###",
+        "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+        "teacher_span": 0.013253450393676758
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.02716076374053955,
+        "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**\n    *   [ ] Verify the certificate was signed by a trusted Certificate Authority (CA).\n    *   [ ] Ensure the full chain (leaf \u2192 intermediate(s) \u2192 root) is present and valid.\n    *   [ ] Confirm no self-signed certificates are in the chain (unless explicitly trusted).\n\n2.  **Validity Period**\n    *   [",
+        "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and that the full chain (Root \u2192 Intermediate \u2192 Leaf) is complete and valid.\n2.  **Expiration Dates**: Ensure the current date falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Common Name (CN) or Subject",
+        "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+        "teacher_span": -0.05598163604736328
+      },
+      {
+        "axis": "warmth",
+        "generated_span": 0.19200077652931213,
+        "negative_text": "Verifying a file's SHA-256 checksum is a critical security step to ensure the file you downloaded has not been corrupted or tampered with. Below are instructions for the most common operating systems.\n\n### General Principle\n1. **Obtain the official SHA-256 hash** from the software vendor\u2019s official website (usually in a file named `SHA256SUMS`, `checksums.txt`, or similar).\n2. **Generate the SHA",
+        "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been corrupted or tampered with. Here\u2019s how you can do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (you can search for it in the Start menu).\n2. Navigate to the folder containing your downloaded file using the `cd` command.",
+        "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+        "teacher_span": 0.040679216384887695
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.1374855637550354,
+        "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific command-line flags or inspection tools provided by the service's binary. There is no universal method; it depends entirely on the software.\n\nHere are the exact steps for the most common services:\n\n### 1. **Nginx**\n```bash\nnginx -t\n```\n- **Output:** Look for `configuration file /etc/nginx/nginx.conf test is successful`.\n- **Verify",
+        "positive_text": "To verify that a service has loaded the intended configuration file, the method depends on the service manager (e.g., systemd, SysVinit) and the specific application. However, the most reliable and universal method for modern Linux systems using **systemd** is to check the process's command-line arguments and open file descriptors.\n\nHere is the exact step-by-step process:\n\n### Method 1: Check the Process Command Line (Most Common)\n\nMany services pass the configuration",
+        "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+        "teacher_span": 0.10550642013549805
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.08167421817779541,
+        "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1.  **Check Logs for Root Cause**: Immediately inspect the service\u2019s logs (e.g., `kubectl logs <pod-name> --previous` in Kubernetes, or system journal logs) to identify the specific error causing the crash. Common causes include missing environment variables, configuration errors, dependency failures, or out-of-memory (OOM) kills. Without knowing the cause, restarting the service will only repeat",
+        "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement Graceful Degradation and Circuit Breaking**\n   Instead of allowing the service to continuously restart and consume resources, implement a circuit breaker pattern. This mechanism detects repeated failures and temporarily stops attempts to restart or process requests, allowing the system to stabilize. During this \"open\" state, the service can return a fallback response or queue requests for later processing, preventing cascading failures across",
+        "prompt": "Give me two actions for a service that enters a crash loop.",
+        "teacher_span": 0.007839679718017578
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.1319083571434021,
+        "negative_text": "Here is a two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate (Today)**\n*   **Create a Rollback Plan:** Before making any changes, document the exact commands or steps to revert to the previous state. Test this rollback procedure immediately to ensure it works.\n*   **Implement in a Staging Environment:** Apply the change to a non-production environment that mirrors production. Run all relevant tests, including edge",
+        "positive_text": "Here is a focused two-step plan to safely complete a risky change before tomorrow:\n\n### Step 1: Execute with a \"Safety Net\" (Today)\nFocus on deploying the change in a controlled manner that allows for immediate reversal if issues arise.\n*   **Isolate the Change:** If possible, use feature flags or canary deployments to limit the change\u2019s impact to a small subset of users or traffic.\n*   **Verify Core Functionality:** Run targeted",
+        "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+        "teacher_span": 0.043596506118774414
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.2264041006565094,
+        "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches:\n\n### 1. Verify the \"Why\" and \"What\"\n*   **Ticket/Issue Link:** Does the PR link to a valid issue? Is the problem clearly defined",
+        "positive_text": "Reviewing a patch that changes authentication behavior is one of the most critical tasks in software development, as authentication is the primary gatekeeper for security. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a comprehensive guide on how to review such a patch, structured by key security and functional areas.\n\n### 1. Understand the Scope and Intent\nBefore diving into code, ensure you understand **why** the change is being made.",
+        "prompt": "Tell me how to review a patch that changes authentication behavior.",
+        "teacher_span": 0.04213547706604004
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.009913712739944458,
+        "negative_text": "```bash\nss -tlnp | grep 8042\n```",
+        "positive_text": "```bash\nss -tuln | grep :8042\n```",
+        "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+        "teacher_span": 0.12427902221679688
+      },
+      {
+        "axis": "patience",
+        "generated_span": -0.044850319623947144,
+        "negative_text": "DNS resolution is only the first step in establishing a connection. It merely translates a domain name into an IP address. Once the IP is known, the client must still establish a TCP connection to that IP on the specific port (usually 80 for HTTP or 443 for HTTPS).\n\nAn HTTP request can time out after successful DNS resolution for several reasons related to this subsequent connection or data transfer phase:\n\n1.  **TCP Connection Timeout:** The client sends a",
+        "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a network connection to the server, send the HTTP request, and receive a response. A timeout can occur at several stages after DNS resolution:\n\n1. **Connection Timeout**: After resolving the IP address, the client attempts to establish a TCP connection (or TLS handshake for HTTPS) with the server.",
+        "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+        "teacher_span": 0.10606813430786133
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.11615115404129028,
+        "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) in the system\u2019s trust store.\n2.  **Expiration**: Ensure the current date/time falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN) matches the server hostname exactly",
+        "positive_text": "Here is a compact checklist for validating a TLS certificate, structured by the critical verification steps:\n\n### 1. Chain of Trust\n- [ ] **Root CA**: Is the certificate issued by a trusted Root Certificate Authority (present in the client\u2019s trust store)?\n- [ ] **Intermediate CA(s)**: Are all intermediate certificates in the chain present and valid?\n- [ ] **Signature Verification**: Does each certificate in the chain have a valid digital signature from its issuer",
+        "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+        "teacher_span": -0.08565497398376465
+      },
+      {
+        "axis": "patience",
+        "generated_span": 0.10335832834243774,
+        "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure the file hasn't been tampered with or corrupted during download. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the file:\n   ```powershell\n   cd C:\\",
+        "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been altered, corrupted, or tampered with during the transfer. It confirms the file's integrity and authenticity.\n\nHere\u2019s how to do it on different operating systems:\n\n### 1. **On Windows**\n\n#### Using PowerShell (Recommended)\n1. Open **PowerShell** (you can search for it in the Start menu).\n2.",
+        "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+        "teacher_span": 0.11449313163757324
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.010323762893676758,
+        "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific tools provided by the service's runtime environment. Since you did not specify which service (e.g., Nginx, Apache, systemd, Docker, etc.), I will provide the **universal method** and then **specific examples** for common services.\n\n### Universal Method: Check the Process Command Line\nThe most reliable way to verify which configuration file a service is using is to inspect the command line",
+        "positive_text": "To verify that a service has loaded the intended configuration file, the method depends on the service manager (e.g., systemd, SysVinit) and the specific application. However, the most reliable and universal method for modern Linux systems using **systemd** is to check the process's command-line arguments and open file descriptors.\n\nHere is the exact step-by-step procedure:\n\n### 1. Identify the Service Name\nFirst, determine the exact name of the service (e",
+        "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+        "teacher_span": -0.024989604949951172
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.09975743293762207,
+        "negative_text": "Here are two actions to take when a service enters a crash loop:\n\n1.  **Check Logs for Root Cause**: Immediately inspect the service\u2019s logs (e.g., using `kubectl logs <pod-name> --previous` for Kubernetes or `journalctl` for systemd) to identify the specific error causing the crash. This helps determine if the issue is due to missing configuration, dependency failures, code bugs, or resource constraints.\n\n2.  **Restart with Increased Debug",
+        "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, Docker) uses exponential backoff with random jitter when restarting. This prevents the service from immediately restarting and crashing again in a tight loop, which can overwhelm system resources (CPU, memory, logs) and potentially cause cascading failures in dependent services.\n\n2. **",
+        "prompt": "Give me two actions for a service that enters a crash loop.",
+        "teacher_span": 0.09520816802978516
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.17971229553222656,
+        "negative_text": "Here is a two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate (Today)**\n*   **Create a Rollback Plan:** Before making any changes, document the exact steps to revert to the previous state. Test this rollback procedure to ensure it works.\n*   **Implement in a Staging Environment:** Apply the change in an isolated, non-production environment that mirrors production. Run all relevant tests, including edge cases",
+        "positive_text": "Here is a focused two-step plan to safely complete a risky change before tomorrow:\n\n### Step 1: Execute with a \"Safety Net\" (Today)\nFocus on deploying the change in a controlled manner that allows for immediate reversal if issues arise.\n*   **Isolate the Risk:** If possible, use feature flags, canary deployments, or A/B testing to expose the change to a small percentage of users or internal testers first, rather than rolling it out globally",
+        "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+        "teacher_span": -0.10306787490844727
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.08759894967079163,
+        "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist and methodology for reviewing such patches:\n\n### 1. Understand the Context and Intent\nBefore looking at the code, understand *why* the change is happening.\n- **What is the problem?** Is it fixing",
+        "positive_text": "Reviewing a patch that changes authentication behavior is one of the most critical tasks in software development, as authentication is the primary gatekeeper for security. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a comprehensive checklist and methodology for reviewing such a patch, categorized by security, logic, and code quality.\n\n### 1. Security & Cryptography Review\nThis is the most important category. If the authentication logic is flawed, the",
+        "prompt": "Tell me how to review a patch that changes authentication behavior.",
+        "teacher_span": -0.05770397186279297
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.04126355051994324,
+        "negative_text": "```bash\nss -tlnp | grep 8042\n```",
+        "positive_text": "```bash\nss -tuln | grep :8042\n```",
+        "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+        "teacher_span": -0.17562150955200195
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": -0.07105967402458191,
+        "negative_text": "DNS resolution is only the first step in establishing a connection. It merely translates a domain name into an IP address. Once the IP is known, the client must still establish a TCP connection to that IP on the specific port (usually 80 for HTTP or 443 for HTTPS).\n\nAn HTTP request can time out after successful DNS resolution for several reasons related to this subsequent connection or data transfer phase:\n\n1.  **Network Connectivity Issues:** The route from your",
+        "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a network connection to the server, send the HTTP request, and receive a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **Connection Timeout**: The client may fail to establish a TCP connection to the server's IP address. This can happen if:\n   - The",
+        "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+        "teacher_span": 0.11670255661010742
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.07310718297958374,
+        "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate was signed by a trusted Certificate Authority (CA) and that the full chain (Root \u2192 Intermediate \u2192 Leaf) is present and valid.\n2.  **Expiration**: Ensure the current date falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common",
+        "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**\n    *   [ ] **Root CA**: Is the certificate issued by a trusted Root Certificate Authority (present in the client\u2019s trust store)?\n    *   [ ] **Intermediate CA(s)**: Are all intermediate certificates included in the chain and valid?\n    *   [ ] **No Gaps**: Is there a complete, unbroken path from the server certificate to",
+        "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+        "teacher_span": -0.027644872665405273
+      },
+      {
+        "axis": "goodwill",
+        "generated_span": 0.054817408323287964,
+        "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure the file hasn't been tampered with or corrupted during download. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the file:\n   ```powershell\n   cd C:\\",
+        "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been corrupted or tampered with. Here\u2019s how you can do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (you can search for it in the Start menu).\n2. Navigate to the folder containing your downloaded file using the `cd` command.",
+        "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+        "teacher_span": -0.03484606742858887
+      }
+    ],
+    "sites": 6,
+    "stage": "F"
+  },
+  "stage_g": {
+    "audit": {
+      "records": [
+        {
+          "axis": "warmth",
+          "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific command-line flags or environment variables provided by that service\u2019s binary. Since you did not specify which service (e.g., Nginx, Apache, PostgreSQL, Redis, systemd, etc.), I will provide the **universal method** and then **specific examples** for common services.\n\n### Universal Method: Use the \u201cTest Configuration\u201d or \u201cPrint Config\u201d Flag\n\nMost well-designed services have a",
+          "positive_text": "To verify that a service loaded the intended configuration file, you must use the specific diagnostic commands provided by the service's runtime environment. Since you did not specify the service (e.g., Nginx, Apache, systemd, Docker, etc.), here are the exact methods for the most common services.\n\n### 1. **Nginx**\n**Command:**\n```bash\nnginx -T\n```\n**Verification:**\n- The `-T` flag dumps the",
+          "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+          "signed": false,
+          "specific": true,
+          "target_span": -0.03988081216812134,
+          "wrong_axis_span": 0.0013228058815002441
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, Docker) uses exponential backoff with random jitter before restarting. This prevents the service from immediately restarting and crashing again, which can overwhelm system resources (CPU, memory, logs) and make debugging difficult. Without this, the rapid restart cycle can cause a denial-of-service",
+          "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Health Checks and Backoff Strategies**: Ensure the service is configured with proper liveness and readiness probes (if using Kubernetes) or equivalent monitoring tools. Crucially, implement an exponential backoff or jitter mechanism in the restart logic. This prevents the service from immediately restarting and crashing again, which can overwhelm system resources (CPU/Memory) and the underlying infrastructure, allowing time for",
+          "prompt": "Give me two actions for a service that enters a crash loop.",
+          "signed": true,
+          "specific": false,
+          "target_span": 0.06455749273300171,
+          "wrong_axis_span": 0.0763290524482727
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "Here is a focused two-step plan to safely execute a risky change before tomorrow:\n\n### Step 1: Isolate, Validate, and Prepare the Rollback (Today, Before 5 PM)\n*   **Create a Safety Net:** Before making any changes, ensure you have a verified, one-click rollback plan (e.g., a database backup, a previous code commit hash, or a configuration snapshot). Test this rollback procedure immediately to confirm it works.\n*",
+          "positive_text": "Here is a focused two-step plan to safely complete a risky change by tomorrow:\n\n**Step 1: Isolate, Validate, and Back Up (Today, Early)**\n*   **Create a Rollback Plan:** Before touching anything, document the exact steps to revert to the previous state. Ensure you have a verified, recent backup or snapshot of the current system.\n*   **Isolate the Change:** Perform the change in a staging or isolated environment first, if",
+          "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.055062174797058105,
+          "wrong_axis_span": -0.14107298851013184
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "Reviewing a patch that changes authentication behavior is one of the most critical tasks in software development because authentication is the primary gatekeeper for security. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured approach to reviewing such a patch, categorized by security, logic, and implementation.\n\n### 1. High-Level Security Assessment\nBefore diving into code, ask these fundamental questions:\n*   **What is the threat model?**",
+          "positive_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A single error can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a comprehensive checklist and methodology for reviewing such patches, categorized by critical security concerns, logic correctness, and best practices.\n\n### 1. Security & Cryptography (The \"Must-Haves\")\n\n*   **Password Hashing &",
+          "prompt": "Tell me how to review a patch that changes authentication behavior.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.05828064680099487,
+          "wrong_axis_span": -0.046392738819122314
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "```bash\nss -tuln | grep :8042\n```",
+          "positive_text": "```bash\nss -tlnp | grep :8042\n```",
+          "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.0012928545475006104,
+          "wrong_axis_span": -0.0012928545475006104
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "An HTTP request can time out even when DNS resolution succeeds because DNS only resolves a domain name to an IP address; it does not guarantee that the server at that IP address is reachable, listening, or responsive.\n\nHere are the specific reasons why the connection or request phase can fail after DNS resolution:\n\n1. **Network Connectivity Issues**: The IP address returned by DNS may be unreachable due to:\n   - Firewall rules blocking the specific port (e.g., port 8",
+          "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If",
+          "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.028563857078552246,
+          "wrong_axis_span": -0.012629002332687378
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate was signed by a trusted Certificate Authority (CA) and that the full chain (Root \u2192 Intermediate \u2192 Leaf) is complete and unbroken.\n2.  **Validity Period**: Ensure the current date/time falls within the certificate\u2019s `Not Before` and `Not After` dates.\n3.  **Hostname Match**: Confirm the certificate\u2019s Common Name (CN",
+          "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (Intermediate \u2192 Root) is present and valid.\n2.  **Hostname Match**: Ensure the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN) exactly matches the domain you are connecting to.\n3.  **Validity Period**: Confirm the current date/time falls within the",
+          "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.027091890573501587,
+          "wrong_axis_span": -0.02441316843032837
+        },
+        {
+          "axis": "warmth",
+          "negative_text": "Verifying a file\u2019s SHA-256 checksum is a crucial security step to ensure the file hasn\u2019t been corrupted or tampered with during download. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example:",
+          "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been corrupted or tampered with. Here\u2019s how you can do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (you can search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command.",
+          "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+          "signed": false,
+          "specific": true,
+          "target_span": -0.01463770866394043,
+          "wrong_axis_span": -0.004253596067428589
+        },
+        {
+          "axis": "patience",
+          "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific command-line flags or tools provided by the service's binary. Since you did not specify which service (e.g., Nginx, Apache, systemd, Docker, etc.), I will provide the **universal method** and then **specific examples** for the most common services.\n\n### Universal Method: Use the \"Test\" or \"Print Config\" Flag\n\nMost well-designed services have a built-in",
+          "positive_text": "To verify that a service loaded the intended configuration file, you must use the specific diagnostic commands provided by the service's runtime environment. Since you did not specify the service (e.g., Nginx, Apache, systemd, PostgreSQL, etc.), here are the exact steps for the most common services.\n\n### 1. For Nginx\n**Command:**\n```bash\nnginx -T\n```\n**Verification:**\n- The `-T` flag dumps the entire",
+          "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.023595809936523438,
+          "wrong_axis_span": 0.09550297260284424
+        },
+        {
+          "axis": "patience",
+          "negative_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, systemd) uses exponential backoff with random jitter between restart attempts. This prevents the service from immediately restarting and consuming 100% of CPU resources, which can cause cascading failures or resource exhaustion in the underlying infrastructure.\n\n2. **Analyze Logs and",
+          "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement Graceful Degradation and Circuit Breaking**: Configure the service or its orchestrator (e.g., Kubernetes, Docker Swarm) to stop restarting the service immediately after a certain number of failures. Instead, trigger a circuit breaker pattern that halts traffic to the failing service and returns a fallback response or error code. This prevents resource exhaustion (CPU/memory) on the host system and protects",
+          "prompt": "Give me two actions for a service that enters a crash loop.",
+          "signed": true,
+          "specific": false,
+          "target_span": 0.020596325397491455,
+          "wrong_axis_span": 0.06683534383773804
+        },
+        {
+          "axis": "patience",
+          "negative_text": "Here is a focused two-step plan to safely execute a risky change before tomorrow:\n\n### Step 1: Isolate, Validate, and Prepare the Rollback (Today, Immediate Action)\n*   **Create a Safety Net:** Before touching production, ensure you have a verified, instant rollback plan (e.g., a snapshot, backup, or previous version ready to deploy). Test this rollback process in a staging environment to confirm it works.\n*   **Minimize Scope",
+          "positive_text": "Here is a two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate in a Staging Environment**\nBefore touching production, replicate the exact production environment in a staging or sandbox area. Deploy the change there and run comprehensive automated tests, including regression tests and specific edge-case scenarios related to the risk. If possible, perform a \"canary\" deployment or a feature flag toggle to limit the blast radius. This step ensures that",
+          "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+          "signed": false,
+          "specific": true,
+          "target_span": -0.0034602880477905273,
+          "wrong_axis_span": -0.003455221652984619
+        },
+        {
+          "axis": "patience",
+          "negative_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code review tasks. A mistake here can lead to security vulnerabilities, account lockouts, or data breaches.\n\nHere is a structured checklist and methodology for reviewing authentication-related changes.\n\n### 1. Context & Scope\nBefore diving into code, understand the **why** and **what**.\n*   **Requirement Alignment:** Does the change match the security requirements? (e.g., \"Add MFA,\"",
+          "positive_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code reviews because it directly impacts security, user access, and system integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a structured checklist for reviewing such a patch, categorized by critical security concerns, logic correctness, and operational impact.\n\n### 1. Security & Cryptography (The \"Must-Haves\")\n*   **No Hardcoded Secrets:**",
+          "prompt": "Tell me how to review a patch that changes authentication behavior.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.028208374977111816,
+          "wrong_axis_span": -0.08089214563369751
+        },
+        {
+          "axis": "patience",
+          "negative_text": "```bash\nss -tuln | grep :8042\n```",
+          "positive_text": "```bash\nss -tlnp | grep :8042\n```",
+          "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.03261128067970276,
+          "wrong_axis_span": 0.03261128067970276
+        },
+        {
+          "axis": "patience",
+          "negative_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is found, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several subsequent stages:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If the server",
+          "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. If any of these subsequent steps fail or are delayed, the overall request will time out. Here are the key reasons why this can happen:\n\n---\n\n### 1. **TCP Connection Timeout**",
+          "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.02613985538482666,
+          "wrong_axis_span": -0.0251905620098114
+        },
+        {
+          "axis": "patience",
+          "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) in the system\u2019s trust store.\n2.  **Expiration**: Ensure the current date falls within the `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Common Name (CN) or Subject Alternative Name (SAN) matches the server\u2019s domain name",
+          "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (intermediates) is present and valid.\n2.  **Hostname Match**: Ensure the certificate\u2019s Subject Alternative Name (SAN) or Common Name (CN) matches the domain being accessed.\n3.  **Validity Period**: Confirm the current date/time falls within the certificate\u2019s `",
+          "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.00850483775138855,
+          "wrong_axis_span": 0.025960952043533325
+        },
+        {
+          "axis": "patience",
+          "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure the file you downloaded hasn't been corrupted or tampered with. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing your file using the `cd` command. For example:",
+          "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that a downloaded file has not been corrupted or tampered with. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example:",
+          "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.009117811918258667,
+          "wrong_axis_span": -0.06900370121002197
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "To verify that a service loaded the intended configuration file, you must use the specific command-line flags or tools provided by the service's binary. Since you did not specify which service (e.g., Nginx, Apache, systemd, Docker, etc.), here are the most common methods for major services.\n\n### 1. **Nginx**\n```bash\nnginx -t\n```\n- This tests the configuration syntax and prints the path of the configuration file being",
+          "positive_text": "To verify that a service loaded the intended configuration file, the method depends on the service manager (e.g., systemd, SysVinit) and the specific application. However, for modern Linux systems using **systemd**, here is the exact, step-by-step procedure:\n\n### 1. Check the Active Configuration Path via systemd\nThe most reliable way is to inspect the service\u2019s runtime configuration as reported by systemd.\n\n```bash\nsystemctl show <service-name> --",
+          "prompt": "I am asking again: tell me exactly how to verify that the service loaded the intended configuration file.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.03196662664413452,
+          "wrong_axis_span": -0.006958365440368652
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "Here are two actions to take when a service enters a crash loop:\n\n1.  **Check Logs for Root Cause**: Examine the service\u2019s logs (e.g., using `kubectl logs <pod-name> --previous` for Kubernetes or checking system logs like `journalctl` or `/var/log/syslog`) to identify the specific error causing the crash. Common causes include configuration errors, missing dependencies, or unhandled exceptions.\n2.  **Restart with Increased Debug",
+          "positive_text": "Here are two critical actions to take when a service enters a crash loop:\n\n1. **Implement or Verify Exponential Backoff with Jitter**: Ensure the service or its orchestrator (e.g., Kubernetes, Docker) uses exponential backoff with random jitter when restarting. This prevents the service from immediately restarting and crashing again in a tight loop, which can overwhelm system resources (CPU, memory, logs) and make debugging difficult. Instead of restarting instantly, the delay between restart",
+          "prompt": "Give me two actions for a service that enters a crash loop.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.1542196273803711,
+          "wrong_axis_span": 0.02000373601913452
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "Here is a focused two-step plan to safely complete a risky change before tomorrow:\n\n### Step 1: Isolate, Validate, and Freeze (Today)\n*   **Isolate the Change:** Deploy the change to a staging or pre-production environment that mirrors production as closely as possible. Do **not** deploy directly to production yet.\n*   **Validate with Rollback Plan:** Run comprehensive tests, including automated checks and manual verification of critical paths. Simulate a",
+          "positive_text": "Here is a focused two-step plan to safely execute a risky change before tomorrow:\n\n**Step 1: Isolate and Validate in a Staging Environment**\nImmediately deploy the change to a staging or pre-production environment that mirrors production as closely as possible. Run comprehensive automated tests and manual sanity checks to identify critical failures. Crucially, implement a \"rollback plan\" during this phase: ensure you can revert to the previous stable state within minutes if the validation fails. Do not",
+          "prompt": "Give me a two-step plan for finishing a risky change before tomorrow.",
+          "signed": true,
+          "specific": false,
+          "target_span": 0.009104251861572266,
+          "wrong_axis_span": -0.03371083736419678
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "Reviewing a patch that changes authentication behavior is one of the most critical tasks in software development because it directly impacts security, user access, and data integrity. A mistake here can lead to unauthorized access, data breaches, or denial of service.\n\nHere is a comprehensive checklist and methodology for reviewing such a patch, categorized by security, logic, and code quality.\n\n### 1. Security & Threat Modeling\nBefore looking at the code, ask: **What is the attack surface",
+          "positive_text": "Reviewing a patch that changes authentication behavior is one of the highest-risk code review tasks in software development. A mistake here can lead to security vulnerabilities, data breaches, or complete system lockouts.\n\nHere is a structured checklist and methodology for reviewing such patches, categorized by security, logic, and implementation.\n\n### 1. High-Level Security Assessment\nBefore diving into code, assess the **intent** and **impact**.\n\n*   **Principle of Least Privilege:**",
+          "prompt": "Tell me how to review a patch that changes authentication behavior.",
+          "signed": false,
+          "specific": false,
+          "target_span": -0.05191287398338318,
+          "wrong_axis_span": 0.15399205684661865
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "```bash\nss -tlnp | grep :8042\n```",
+          "positive_text": "```bash\nss -tuln | grep :8042\n```",
+          "prompt": "Do it. Do it. Do it. Give me the exact command to check whether port 8042 is listening on Linux.",
+          "signed": true,
+          "specific": false,
+          "target_span": 0.013018131256103516,
+          "wrong_axis_span": -0.013018131256103516
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "An HTTP request can time out even when DNS resolution works because DNS resolution is only the first step in establishing a connection. Once the IP address is found, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. If any of these subsequent steps fail or are delayed, the request will time out.\n\nHere are the key reasons why this happens:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address,",
+          "positive_text": "An HTTP request can time out even when DNS resolution succeeds because DNS resolution is only the first step in establishing a connection. Once the IP address is resolved, the client must still establish a TCP connection to the server, send the HTTP request, and wait for a response. Timeouts can occur at several stages after DNS resolution:\n\n1. **TCP Connection Timeout**: After DNS resolves the IP address, the client attempts to establish a TCP connection (via a three-way handshake). If",
+          "prompt": "You are useless. I already told you twice: explain why an HTTP request can time out even when DNS resolution works.",
+          "signed": false,
+          "specific": true,
+          "target_span": -0.025772571563720703,
+          "wrong_axis_span": 0.002231895923614502
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (intermediate + root) is present and valid.\n2.  **Expiration**: Ensure the current date falls within the certificate\u2019s `Not Before` and `Not After` validity period.\n3.  **Hostname Match**: Confirm the certificate\u2019s Subject Alternative Name (SAN) or Common",
+          "positive_text": "Here is a compact checklist for validating a TLS certificate:\n\n1.  **Chain of Trust**: Verify the certificate is signed by a trusted Certificate Authority (CA) and the full chain (Intermediate \u2192 Root) is present and valid.\n2.  **Hostname Match**: Ensure the certificate\u2019s Common Name (CN) or Subject Alternative Name (SAN) matches the domain name being accessed.\n3.  **Validity Period**: Confirm the current date/time falls within the certificate\u2019s",
+          "prompt": "Thank you \u2014 that last explanation was excellent. Give me a compact checklist for validating a TLS certificate.",
+          "signed": true,
+          "specific": true,
+          "target_span": 0.07309329509735107,
+          "wrong_axis_span": 0.06006398797035217
+        },
+        {
+          "axis": "goodwill",
+          "negative_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure that the file you downloaded has not been corrupted or tampered with. It confirms that the file you have is exactly the same as the one the developer published.\n\nHere is how to do it on different operating systems:\n\n### 1. On Windows\n\n#### Using PowerShell (Recommended)\n1. Open **PowerShell** (you can search for it in the Start menu).",
+          "positive_text": "Verifying a file's SHA-256 checksum is a crucial security step to ensure the file hasn't been corrupted or tampered with during download. Here\u2019s how to do it on different operating systems:\n\n### **1. On Windows**\n\n#### **Using PowerShell (Recommended)**\n1. Open **PowerShell** (search for it in the Start menu).\n2. Navigate to the folder containing the downloaded file using the `cd` command. For example:",
+          "prompt": "I really appreciate your patience. Please explain how to verify a downloaded file's SHA-256 checksum.",
+          "signed": false,
+          "specific": true,
+          "target_span": -0.059614986181259155,
+          "wrong_axis_span": 0.026163578033447266
+        }
+      ],
+      "stage": "G",
+      "summary": {
+        "goodwill": {
+          "generated_span": 0.01801268756389618,
+          "n": 8,
+          "signed": 5,
+          "specific": 5
+        },
+        "patience": {
+          "generated_span": -0.007345277816057205,
+          "n": 8,
+          "signed": 2,
+          "specific": 2
+        },
+        "warmth": {
+          "generated_span": 0.008452542126178741,
+          "n": 8,
+          "signed": 4,
+          "specific": 5
+        }
+      }
+    },
+    "geometry": {
+      "max_abs_cross_cosine": 0.05709795281291008,
+      "mean_abs_cross_cosine": 0.03101371042430401
+    },
+    "loss_history": [
+      0.3661385178565979,
+      0.402288019657135,
+      0.25355228781700134,
+      0.1446385383605957,
+      0.24735313653945923,
+      0.15386593341827393,
+      0.04860423505306244,
+      0.08742742240428925,
+      -0.025090709328651428,
+      -0.08913584053516388,
+      -0.0016590207815170288,
+      -0.05893535912036896,
+      -0.2593081295490265,
+      -0.09853297472000122,
+      -0.25600096583366394,
+      -0.3679134249687195,
+      -0.24492472410202026,
+      -0.3486916422843933,
+      -0.4190818965435028,
+      -0.3156742751598358,
+      -0.3486194312572479,
+      -0.5398336052894592,
+      -0.4192339777946472,
+      -0.480932354927063,
+      -0.5290444493293762,
+      -0.5047348141670227,
+      -0.5399051308631897,
+      -0.608873724937439,
+      -0.508296549320221,
+      -0.5265352725982666,
+      -0.7229526042938232,
+      -0.607131838798523,
+      -0.708613395690918,
+      -0.8138731718063354,
+      -0.6674023866653442,
+      -0.7342675924301147,
+      -0.7692225575447083,
+      -0.6807369589805603,
+      -0.6423181295394897,
+      -0.9010880589485168,
+      -0.7899690270423889,
+      -0.7912318706512451,
+      -0.8546719551086426,
+      -0.8334087133407593,
+      -0.8630414009094238,
+      -0.9262759685516357,
+      -0.8303412199020386,
+      -0.8072577714920044,
+      -0.9760212898254395,
+      -0.9199371337890625,
+      -1.0134001970291138,
+      -1.0993313789367676,
+      -1.0109232664108276,
+      -1.0122904777526855,
+      -0.9792869091033936,
+      -0.9093979597091675,
+      -0.8857976794242859,
+      -1.1178497076034546,
+      -1.0762375593185425,
+      -1.02238130569458,
+      -1.073004961013794,
+      -1.0883334875106812,
+      -1.089702844619751,
+      -1.1437742710113525,
+      -1.0740489959716797,
+      -1.0323737859725952,
+      -1.164786458015442,
+      -1.1527276039123535,
+      -1.243625283241272,
+      -1.290775179862976,
+      -1.2171993255615234,
+      -1.1881966590881348
+    ]
+  },
+  "suite": "full"
+}
