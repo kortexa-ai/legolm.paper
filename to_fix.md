@@ -28,5 +28,5 @@ list from April lives in git history.
    tokenizer self-heals, but shards/checkpoints have no checksum validation.
 2. **CI smoke job** — `paper-reproduce --suite smoke --quick` on push would
    catch import/path regressions early.
-3. **Vendor-provenance headers** — `src/runtime_*.py` and `*_snapshot.py`
-   files carry no "snapshotted from legolm @ commit" headers.
+3. **Vendor-provenance headers** — `src/runtime_*.py` and `*_snapshot.py` were
+   snapshotted from the development tree and carry no source-commit headers.

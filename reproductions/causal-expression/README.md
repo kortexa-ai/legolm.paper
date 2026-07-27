@@ -1,9 +1,9 @@
 # Causal expression in Qwen 3.6
 
-This directory reproduces the oracle-state expression experiment from LegoLM
-without importing LegoLM. It trains eight continuous prefix tokens while
-keeping `Qwen/Qwen3.6-35B-A3B` frozen, then tests whether signed social
-coordinates change complete generated responses.
+This directory is a self-contained reproduction of the oracle-state expression
+experiment. It trains eight continuous prefix tokens while keeping
+`Qwen/Qwen3.6-35B-A3B` frozen, then tests whether signed social coordinates
+change complete generated responses.
 
 The target model and revision are fixed:
 
@@ -62,8 +62,8 @@ than 85 GiB is free and stops training if CUDA headroom falls below 20 GiB.
 ## Scope
 
 This reproduces a causal expression writer with an oracle social state. It does
-not include a recurrent session reader, temporal decay, LegoLM services, MISO,
-or a claim about subjective experience.
+not include a recurrent session reader, temporal decay, or a claim about
+subjective experience.
 
 See [METHOD.md](METHOD.md) for the frozen design and decision rules.
 

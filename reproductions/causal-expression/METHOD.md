@@ -134,8 +134,8 @@ its median absolute drift stays below `0.10` of the explicit span on every
 axis. Goodwill remains exploratory.
 
 The run reports the measurements even when a rule fails. Paper claims and
-figures must use the clean consolidated artifact rather than the exploratory
-LegoLM outputs.
+figures must use the clean consolidated artifact rather than any exploratory
+output.
 
 ## Seeds
 

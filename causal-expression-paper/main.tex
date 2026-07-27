@@ -321,7 +321,8 @@ task accuracy beyond preserving the technical topic in matched responses.
 
 \section{Reproducibility}
 
-The clean runner has no LegoLM or \code{jlens} dependency. It pins Python
+The runner is self-contained and depends on no external lens
+implementation. It pins Python
 packages, the model revision, data hash
 \code{85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346},
 training schedules, seeds, decoding, metrics, and decision rules. The reference
