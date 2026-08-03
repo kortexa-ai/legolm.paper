@@ -3,10 +3,15 @@
     expression-ladder check
     expression-ladder reproduce --suite smoke --device cpu
     expression-ladder reproduce --suite full --device cuda --output-dir results/<run>
+    expression-ladder stage-j --suite smoke --device cpu --output-dir results/<run>
 
 The reproduce path runs stages A through G in order and writes one summary
 artifact. Stages B and C feed C and D respectively, so they are not
 independently selectable; a partial run would not produce a comparable number.
+
+Stage J is the one rung with frozen rules and runs standalone: it trains its
+own initialization, needs nothing from a prior A–G artifact, and writes its
+own verdict. See PREREGISTRATION-stage-j.md.
 """
 
 from __future__ import annotations
@@ -33,6 +38,7 @@ from .runtime import (
     memory_snapshot,
     release_model,
 )
+from .stage_j import STAGE_J_PREREG, reproduce_stage_j
 from .stages import (
     StageConfig,
     stage_a_prompt_upper_bound,
@@ -44,6 +50,18 @@ from .stages import (
 )
 
 AXES = ("warmth", "patience", "goodwill")
+
+
+def parse_seeds(value: str) -> tuple[int, ...]:
+    try:
+        seeds = tuple(int(item) for item in value.split(","))
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "seeds must be comma-separated integers"
+        ) from error
+    if not seeds or len(seeds) != len(set(seeds)):
+        raise argparse.ArgumentTypeError("seeds must be non-empty and unique")
+    return seeds
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -70,6 +88,20 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--stage-g-lr", type=float, default=1e-3)
     run.add_argument("--stage-g-fraction", type=float, default=0.16)
     run.add_argument("--stage-g-cross-axis-weight", type=float, default=1.0)
+
+    stage_j = sub.add_parser(
+        "stage-j",
+        help="Run the preregistered Stage J on-policy neutral distillation",
+    )
+    stage_j.add_argument("--suite", choices=["smoke", "full"], default="smoke")
+    stage_j.add_argument("--device", default="auto")
+    stage_j.add_argument("--output-dir", type=Path, default=Path("results/stage-j"))
+    stage_j.add_argument(
+        "--seeds",
+        type=parse_seeds,
+        default=tuple(STAGE_J_PREREG["seeds"]),
+        help="Comma-separated seeds; any deviation from the prereg set is INVALID",
+    )
     return parser
 
 
@@ -207,10 +239,32 @@ def command_reproduce(args: argparse.Namespace) -> None:
     emit("run_complete", path=str(path))
 
 
+def command_stage_j(args: argparse.Namespace) -> None:
+    summary = reproduce_stage_j(
+        suite=args.suite,
+        seeds=args.seeds,
+        output_dir=args.output_dir.resolve(),
+        requested_device=args.device,
+    )
+    print(
+        json.dumps(
+            {
+                "output": str(args.output_dir.resolve()),
+                "scientific_target": summary["scientific_target"],
+                "verdict": summary["verdict"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
 def main() -> None:
     args = build_parser().parse_args()
     if args.command == "check":
         command_check(args)
+    elif args.command == "stage-j":
+        command_stage_j(args)
     else:
         command_reproduce(args)
 

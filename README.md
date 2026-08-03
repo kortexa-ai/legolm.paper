@@ -62,6 +62,28 @@ center drifts on every axis.
 - Method, code, tests, raw responses, and figures:
   [`reproductions/causal-expression/`](reproductions/causal-expression/)
 
+## Qwen 3.6 expression ladder study
+
+The repository also contains the clean reproduction for **"Five Ways to Fool
+Yourself About Steering a Frozen Model."** It builds seven writers for the same
+three social style axes on the same frozen model and scores each one both on
+reference likelihood and on text the model actually generates. The two rankings
+disagree, and the disagreement is the result.
+
+The trained residual writer drives its own objective from +0.366 to −1.188 and
+then moves generated text by 5.1% of the explicit-prompt span on warmth and
+−3.7% on patience, where the sign reverses. Stage J, the one rung whose decision
+rules were frozen before it ran, distills an always-present soft prefix's zero
+state toward the frozen no-prefix model: the center goes nearly silent (drift
+1.1% and 0.4% against a 10% rule) and the signed channel collapses with it
+(warmth 17.2% against a 40% rule). Its preregistered verdict is a valid FAIL.
+Across the three soft-prefix rungs the two quantities trade off monotonically,
+which bounds the family.
+
+- Paper: [`expression-ladder-paper/main.pdf`](expression-ladder-paper/main.pdf)
+- Preregistration, code, tests, and result artifacts:
+  [`reproductions/expression-ladder/`](reproductions/expression-ladder/)
+
 ## Reproduce
 
 ```bash

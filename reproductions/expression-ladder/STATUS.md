@@ -1,7 +1,9 @@
 # Expression ladder (paper 6a) — build status
 
-Work in progress. Lives here, not in `legolm.paper`, until it runs end to end;
-the public repo takes only final code.
+**Complete (2026-08-02).** Every rung has run, Stage J included, and the
+manuscript ships with the Stage J result folded in. The public snapshot is
+`legolm.paper/expression-ladder-paper/` plus
+`legolm.paper/reproductions/expression-ladder/`.
 
 ## In place (2,530 lines, all imports resolve, all modules parse)
 
@@ -26,23 +28,55 @@ the public repo takes only final code.
 - `TrainedResidualWriter` + `TrainedResidualSteering` — Stage G, kept separate
   from `DirectionSteering` because the trained path must not detach
 
-## Remaining
+## In place since (2026-08-01)
 
-1. **`stages.py`** — orchestration: Stage A prompt upper bound, Stage C
-   dose/window sweep, the 144-generation audit loop per stage, Stage J's
-   on-policy KL distillation to the no-prefix path. Est. 500–700 lines.
-2. **`cli.py`** — `expression-ladder reproduce --stage {a..j}` plus `figures`.
-   Model this on `causal-expression/src/causal_expression/cli.py` (105 lines).
-3. **`tests/`** — the sibling reproductions carry nine tests each; match that.
-4. **2B smoke**, then the confirmatory 35B block. Needs the seven GPU services
-   stopped; restore set is in `PROGRAM.md`. Paper 5's comparable run was
-   4,735 s at 66.3 GiB peak, so budget one overnight block.
-5. **Manuscript** at `legolm.paper/expression-ladder-paper/`, hand-authored
-   `.tex` like papers 4 and 5.
+- `stages.py` and `cli.py` — stages A–G orchestration and the `reproduce`
+  entry point; the 35B ladder block ran and its artifact is
+  `artifacts/ladder-35b-summary.json`.
+- `stage_j.py` — on-policy neutral distillation: no-prefix KL teacher on the
+  frontier plus sampled on-policy continuations, prefix dropout and explicit
+  zero-state batches, doubled negative patience/goodwill coverage, dev-split
+  best-margin snapshot selection, greedy + sampled + trajectory audits, and
+  a machine-readable PASS/FAIL/INVALID verdict. Runs standalone via
+  `expression-ladder stage-j`.
+- `PREREGISTRATION-stage-j.md` — frozen thresholds, primary axes warmth and
+  patience, goodwill preregistered secondary. Frozen before the run and
+  unchanged since; the verdict is committed, so it is now history.
+- `tests/test_stage_j.py` — 11 CPU-only tests: schedule/dropout batching,
+  KL shape and alignment, parameter-targeting, seeded sampling, gate and
+  trajectory arithmetic, verdict validity.
+
+## The Stage J run (2026-08-02)
+
+`artifacts/stage-j-35b-{summary,environment}.json`. All three registered
+seeds (20260801–03) completed on smarty at the pinned revision and corpus
+hash. **Verdict FAIL, `invalid_reasons` empty** — a valid failure, not a
+void run. 6,402 s, 65.674 GiB peak reserved, no OOM.
+
+- **Gate 1 (center fidelity) missed by one clause.** Greedy attribution drift
+  at zero state fell to 0.011 (warmth) and 0.004 (patience) of the explicit
+  span, sampled to 0.048 and 0.019, all four inside the `< 0.10` rule that
+  Stage I failed at 0.170 and 0.125. Median center↔off word-Jaccard 0.565
+  against `>= 0.60` is the only failing clause.
+- **Gate 2 (signed axes) collapsed.** Greedy warmth relative span 0.172
+  against `>= 0.40`; patience 0.178 against `>= 0.20` with 18/24 signed
+  against 21 required. Sampled is worse on every count.
+- **Gate 3 (trajectories) failed both primary axes** — wrong sign at the
+  moderate negative state, 2 and 3 adjacent inversions against `<= 1`.
+
+The result is the trade-off curve H → I → J, measured on one model, one
+corpus, one audit: warmth span 0.714 → 0.427 → 0.172 as center drift goes
+absent → 0.170 → 0.011. A soft prefix with an always-present shared center
+cannot be both silent at zero state and causally effective at nonzero state.
+That also rules the soft prefix out as 6b's decaying-state substrate, by
+measurement rather than by argument.
 
 ## Do not forget
 
-6a is a **confirmatory re-run of a known internal result**. It cannot claim
-rules were frozen before the run, because the outcomes are already known from
-the development tree. Say so in the paper. Stage J is the only rung that can
-carry honest preregistration, which is the argument for folding it in here.
+6a is a **confirmatory re-run of a known internal result** for stages A–G. It
+cannot claim rules were frozen before the run, because the outcomes were
+already known from the development tree. The paper says so. Stage J is the
+only rung that carries honest preregistration, which was the argument for
+folding it in here; its verdict is committed, so
+`PREREGISTRATION-stage-j.md` and `STAGE_J_PREREG` are now a historical
+record and must not be edited to match anything.

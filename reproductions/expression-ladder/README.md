@@ -39,6 +39,29 @@ Stages H and I, the soft-prefix rungs that do change generated text, are
 reported in a companion study; `prefix.py` here carries the same banks so the
 ladder can be extended to them without a second corpus.
 
+Stage J — on-policy neutral distillation of the always-present shared center
+toward the frozen no-prefix policy — is the one rung that was never run
+internally, so it carries genuinely frozen rules. See
+`PREREGISTRATION-stage-j.md`.
+
+The preregistered 35B block ran on 2026-08-02 across all three registered
+seeds and returned a valid **FAIL** with no invalidating conditions. The
+center went nearly silent — greedy attribution drift 1.1% (warmth) and 0.4%
+(patience) of the explicit span against a `< 10%` rule that Stage I missed at
+17.0% and 12.5% — and the signed channel went with it, warmth relative span
+0.172 against a `>= 0.40` rule. Across Stage H, I, and J the two quantities
+trade off monotonically on warmth. Every number is in
+`artifacts/stage-j-35b-summary.json`.
+
+It runs standalone:
+
+```bash
+uv run expression-ladder stage-j --suite smoke --device cpu \
+  --output-dir results/stage-j-smoke
+uv run expression-ladder stage-j --suite full --device cuda \
+  --output-dir results/stage-j-35b
+```
+
 ## Running it
 
 ```bash
@@ -70,5 +93,7 @@ Social-style names are operational labels for matched response sets.
 
 This reproduction is a confirmatory re-run: the ladder's outcomes were
 established in earlier internal work, so its thresholds were chosen with
-knowledge of those outcomes and it makes no preregistration claim. See
-`METHOD.md`.
+knowledge of those outcomes and it makes no preregistration claim. The single
+exception is Stage J, which was never run internally, whose decision rules
+were frozen in `PREREGISTRATION-stage-j.md` before its first training step,
+and which failed them.

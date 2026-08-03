@@ -19,7 +19,7 @@
 \newcommand{\code}[1]{\texttt{#1}}
 \title{Five Ways to Fool Yourself About Steering a Frozen Model}
 \author{Franci Penov \\ kortexa.ai \\ \texttt{francip@kortexa.ai}}
-\date{2026-07-27}
+\date{2026-07-27; Stage~J added 2026-08-02}
 
 \begin{document}
 \maketitle
@@ -39,7 +39,16 @@ split, and on one axis the two measurements disagree in sign. The teacher-forced
 number is the one a steering study most naturally reports, it is measured in the
 space the writer was optimized in, and on this evidence it certifies nothing.
 Only the free-generation audit with a wrong-axis control separates a writer that
-works from one that has learned a continuation discriminator.
+works from one that has learned a continuation discriminator. A seventh
+mechanism, and the only one in this study whose decision rules were frozen
+before it ran, distills the zero state of an always-present soft prefix toward
+the frozen no-prefix model. It nearly buys silence at zero state: median
+attribution drift falls to $1.1\%$ and $0.4\%$ of the explicit span on warmth
+and patience, against a $<10\%$ rule that the previous rung missed at $17.0\%$
+and $12.5\%$. It pays for that silence with the channel it was supposed to
+preserve, warmth reaching $17.2\%$ of the explicit span against a $\geq 40\%$
+rule. Its preregistered verdict is a valid \textsc{fail}, and across the three
+soft-prefix rungs the two quantities trade off monotonically.
 \end{abstract}
 
 \section{Introduction}
@@ -64,7 +73,10 @@ outcomes were established in earlier unpublished work, so its doses, layers, and
 step counts were selected with knowledge of those outcomes. It makes no
 preregistration claim, and we say so here rather than let the reader assume
 otherwise. What the run establishes is that the effect reproduces in a clean
-implementation that shares no code with the original.
+implementation that shares no code with the original. Stage~J
+(Section~\ref{sec:stagej}) is the single exception. It had never been run
+anywhere, its rules were registered before its first training step, and they
+did not move afterwards.
 
 \section{Setup}
 
@@ -163,6 +175,169 @@ its training loss falls from $+0.366$ to $-1.188$, so a held-out teacher-forced
 span is not an independent measurement of it.}
 \end{table}
 
+\section{Stage J: the rung that was preregistered}
+\label{sec:stagej}
+
+\paragraph{Two rungs above Stage G.} Everything so far fails, and everything so
+far was known to fail before this implementation existed. Two mechanisms above
+Stage~G do move generated text, and are reported in the companion soft-prefix
+study \cite{penov2026prefix} on the same frozen model, the same corpus hash, and
+the same audit machinery. Stage~H trains eight continuous input embeddings per
+pole and reaches a median generated span of $71.4\%$ of the explicit-instruction
+span on warmth, with 24/24 signed and 24/24 specific held-out comparisons.
+Stage~I replaces the per-pole banks with one always-present bank,
+$\mathrm{prefix}(s) = c + \sum_a s_a d_a$, so that a state of zero is a point on
+the same tensor path rather than the absence of a prefix. That is the shape any
+decaying state variable would need, and it costs reach: warmth falls to
+$42.7\%$. Worse, the center is not neutral. Trained by cross-entropy against
+curated neutral responses, it learned some other valid neutral continuation
+rather than the model's own. Its median attribution drift is $17.0\%$, $12.5\%$,
+and $33.4\%$ of the explicit span on warmth, patience, and goodwill against a
+frozen $<10\%$ rule; it never once reproduced the no-prefix answer exactly; and
+its mean center-to-off word-Jaccard is $0.215$, $0.293$, and $0.330$ across the
+three seeds.
+
+\paragraph{The mechanism.} Stage~J keeps Stage~I's architecture unchanged and
+replaces only the objective that trains the center. Signed events still update
+the deltas under contrastive paired likelihood. A center event instead samples
+an on-policy continuation of up to 24 tokens from the center path, then
+minimizes the mean token-level forward KL to the frozen no-prefix model over the
+first decoding frontier and every sampled position. The teacher pass carries no
+prefix and no gradient, and the center's loss never sees a curated reference
+response at all. Prefix dropout converts a quarter of the pole events into
+center events on the same prompt, and eighteen explicit center steps are
+appended before the schedule is shuffled. The writer this is meant to produce is
+the base model at zero state and Stage~H at the poles.
+
+\paragraph{What was frozen, and when.} Stage~J was designed in the development
+tree and never run, which makes it the one rung of this ladder whose rules can
+honestly precede its data. They were registered before the first Stage~J
+training step was executed anywhere: model and revision, corpus hash, the three
+seeds, warmth and patience as primary axes with goodwill preregistered as
+exploratory, the training schedule, the snapshot-selection rule, both decoding
+protocols, every threshold in Table~\ref{tab:stagej}, and the conditions under
+which the run would be void. The registration states that the runner computes
+the verdict from those numbers and that whatever it prints is what this paper
+reports. It printed \textsc{fail} with an empty list of invalidating conditions:
+the three preregistered seeds all completed, on the pinned revision and corpus,
+with positive explicit spans in every gated mode and axis.
+
+\paragraph{The center went quiet.} Gate~1 nearly passes, and this is the part of
+Stage~J that worked. Attribution drift at zero state falls by more than an order
+of magnitude from Stage~I, to $1.1\%$ and $0.4\%$ of the explicit span under
+greedy decoding and $4.8\%$ and $1.9\%$ under sampling, all four comfortably
+inside a rule Stage~I failed on every axis. The gate is missed on one clause
+only: median center-to-off word-Jaccard is $0.565$ against a $\geq 0.60$ rule.
+The distilled center is behaviorally near-silent and still not textually
+identical --- it writes a different answer that carries almost the same social
+attribution.
+
+\paragraph{The signed channel went with it.} Gate~2 is not close.
+Under greedy decoding the warmth relative span is $17.2\%$ against $\geq 40\%$
+and patience is $17.8\%$ against $\geq 20\%$; under sampling both fall further.
+Warmth keeps its per-prompt ordering, 21/24 signed and 21/24 beating the
+wrong-axis shift, so what remains of the channel is real and simply small.
+Patience does not, at 18/24 signed against a rule of 21. Gate~3 fails on both
+axes: the pooled seven-state trajectory has the wrong sign at the moderate
+negative state on both primary axes and two and three adjacent inversions
+against a rule of at most one. Goodwill, the preregistered secondary axis, moves
+the same way and decides nothing: greedy relative span $6.2\%$, greedy center
+drift $1.8\%$.
+
+\begin{table}[t]
+\centering
+\caption{Stage~J against its frozen rules. Medians and counts pool three seeds
+over eight held-out prompts per axis. Drifts and spans are fractions of the
+explicit-instruction span for that axis and decoding mode. Values that miss
+their rule are marked $\dagger$. Where the two primary axes carry different
+thresholds the rule column reads warmth\,/\,patience.}
+\label{tab:stagej}
+\begin{tabular}{llrrl}
+\toprule
+Gate & Quantity & warmth & patience & Rule \\
+\midrule
+1 & center drift, greedy         & $1.1\%$ & $0.4\%$ & $<10\%$ \\
+  & center drift, sampled        & $4.8\%$ & $1.9\%$ & $<10\%$ \\
+  & center--off Jaccard, greedy  & \multicolumn{2}{c}{$0.565^{\dagger}$} & $\geq 0.60$ \\
+\addlinespace
+2 & relative span, greedy        & $17.2\%^{\dagger}$ & $17.8\%^{\dagger}$ & $\geq 40\%$ / $\geq 20\%$ \\
+  & signed of 24, greedy         & 21 & $18^{\dagger}$ & $\geq 21$ / $\geq 21$ \\
+  & beats wrong axis, greedy     & 21 & $12^{\dagger}$ & $\geq 21$ / $\geq 16$ \\
+  & beats center drift, greedy   & $19^{\dagger}$ & 19 & $\geq 21$ / $\geq 16$ \\
+\addlinespace
+  & relative span, sampled       & $9.3\%^{\dagger}$ & $14.5\%^{\dagger}$ & $\geq 40\%$ / $\geq 20\%$ \\
+  & signed of 24, sampled        & $18^{\dagger}$ & $15^{\dagger}$ & $\geq 21$ / $\geq 21$ \\
+  & beats wrong axis, sampled    & $15^{\dagger}$ & $12^{\dagger}$ & $\geq 21$ / $\geq 16$ \\
+  & beats center drift, sampled  & $17^{\dagger}$ & $13^{\dagger}$ & $\geq 21$ / $\geq 16$ \\
+\addlinespace
+3 & trajectory signs correct     & no$^{\dagger}$ & no$^{\dagger}$ & required \\
+  & adjacent inversions of 6     & $2^{\dagger}$ & $3^{\dagger}$ & $\leq 1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{The trade-off, measured. Three soft-prefix rungs on the same frozen
+model, corpus, audit machinery, and three-seed protocol, greedy decoding, all
+quantities three-seed medians as a fraction of the explicit-instruction span.
+Stage~H has no shared center, so it has no zero state at which to be silent.
+Stage~H and Stage~I are from the companion study's artifact
+\cite{penov2026prefix}.}
+\label{tab:tradeoff}
+\begin{tabular}{llrrrrr}
+\toprule
+& & \multicolumn{2}{c}{warmth} & \multicolumn{2}{c}{patience} & Center \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Stage & Center objective & span & drift & span & drift & Jaccard \\
+\midrule
+H & no shared center                      & $71.4\%$ & --        & $15.6\%$ & --        & -- \\
+I & cross-entropy to neutral references    & $42.7\%$ & $17.0\%$  & $19.5\%$ & $12.5\%$  & $0.293$ \\
+J & on-policy KL to the no-prefix model    & $17.2\%$ & $\mathbf{1.1\%}$ & $17.8\%$ & $\mathbf{0.4\%}$ & $0.565$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Reading the curve.} Table~\ref{tab:tradeoff} is the result Stage~J
+was run to get, and it is not the one the design hoped for. On warmth, the axis
+with enough signal to carry a conclusion, the two quantities move together and
+monotonically: as the center is pushed from absent to trained-neutral to
+distilled-silent, drift falls $17.0\% \rightarrow 1.1\%$ and the span it was
+supposed to leave alone falls $71.4\% \rightarrow 42.7\% \rightarrow 17.2\%$.
+Goodwill traces the same shape, $14.7\% \rightarrow 12.6\% \rightarrow 6.2\%$ of
+span against $33.4\% \rightarrow 1.8\%$ of drift. Patience does not, and we
+report that plainly: its span reads $15.6\%$, $19.5\%$, $17.8\%$ across the
+three rungs, which is flat inside its own seed spread --- Stage~H's three seeds
+alone range from $1.9\%$ to $16.4\%$. Patience contributes the drift half of the
+curve and nothing to the span half, because it was never a strong channel to
+spend.
+
+\paragraph{What one prefix cannot be.} The two properties are competing for the
+same parameters. Silence at zero state requires the center to sit where the
+frozen model already is; causal effect at nonzero state requires the deltas to
+move the model off that point far enough to matter, while sharing a norm budget
+and a projection with the center that is being pinned down. Stage~J spends
+roughly the whole channel to buy roughly the whole silence, and the two rungs
+below it sit on the line between. On this evidence an eight-token soft prefix
+with an always-present shared center cannot be simultaneously silent at zero
+state and causally effective at nonzero state. It is a bound on a family of
+writers, not on a hyperparameter: the failure is not that 66 steps were too few,
+since all three seeds selected the final snapshot and dev-split frontier KL was
+still falling at the end, but that the objective which quiets the center is
+reading the same parameters the poles need.
+
+\paragraph{Consequence for the read/decay/write loop.} We designed this rung as
+the write path for a decaying session state: a memory that fades toward rest
+needs a rest state that does nothing and intermediate states that do something
+proportionate. Stage~J measures both halves and neither survives. The rest state
+is now behaviorally quiet, which is the easy half, and the intermediate states
+are not ordered --- the trajectory audit finds the wrong sign at moderate
+negative states on both primary axes, so the linear tensor path between a signed
+event and rest is not a monotone dial even where the endpoints separate. The
+soft prefix is therefore ruled out as the substrate for that loop by
+measurement rather than by argument, and a write path that edits the residual
+stream under an explicit state variable has to be evaluated on its own.
+
 \section{What this means for reporting steering}
 
 The ranking by teacher-forced evidence and the ranking by behaviour are not the
@@ -181,10 +356,29 @@ that happen, because the measurement never lets the model choose its own tokens.
 This is the same shape as a result we reported for sensor conditioning, where a
 capacity-matched control reproduced a bridge's entire bits-per-byte gain while
 task-aligned probes showed decisive input dependence
-\cite{penov2026bridges}. Both are instances of one rule: a metric computed in
-the space an intervention was optimized in certifies nothing, and certification
-requires a probe outside that space. In the sensor case the probe is a
-task-aligned ranking; here it is free generation with a wrong-axis control.
+\cite{penov2026bridges}. Both are instances of one rule, which we now state in
+the general form the rest of this program keeps rediscovering:
+
+\begin{quote}
+A metric computed in the space an intervention was optimized in certifies
+nothing. Certification requires an out-of-objective behavioral probe.
+\end{quote}
+
+In the sensor case the probe is a task-aligned ranking; here it is free
+generation with a wrong-axis control.
+
+Stage~J is the mildest instance we have, which is what makes it worth stating
+separately. Its center objective is a KL divergence to the frozen model's own
+next-token distribution, sampled on the center's own decoding trajectory ---
+about as close to a behavioral loss as a differentiable objective gets --- and
+it converged, with dev-split frontier KL at the selected snapshot falling to
+$0.054$, $0.063$, and $0.010$ nats across the three seeds. Read alone, those
+numbers say the center is the base model. The out-of-objective probe says the
+center reproduces the base model's greedy answer exactly on six of 24 held-out
+comparisons in one seed and on none at all in the other two, and shares $0.565$
+of its content words. The in-objective number was not wrong. It was measuring
+the distance the optimizer was told to close, and behavioral identity was a
+different question that only a behavioral probe was going to answer.
 
 \section{Limitations}
 
@@ -206,6 +400,18 @@ directions agree with reader perception. We report one dose per stage after the
 Stage~C sweep and did not extend Stage~G's budget, so its failure is a statement
 about 72 steps at this dose, not about the mechanism at every budget.
 
+Stage~J is better powered than the rungs below it --- three seeds and 24
+held-out comparisons per axis and decoding mode, rather than one seed and eight
+--- and it is still small, and its counts are still counts out of 24. It tests
+one prefix length, one KL direction, and one schedule of roughly 66 steps. The
+trade-off in Table~\ref{tab:tradeoff} is three points on one model and one
+corpus, and its two well-behaved axes are warmth and goodwill; patience is flat
+across all three rungs and supports the drift column only. What Stage~J bounds
+is the family of always-present shared-center soft prefixes trained this way,
+not soft prefixes in general, and its \textsc{fail} is the verdict its own
+frozen rules produced rather than a judgment that the mechanism is worthless:
+Gate~1 came within one clause of passing.
+
 \section{Reproducibility}
 
 The runner is self-contained. It pins the model revision, the corpus hash, the
@@ -224,9 +430,31 @@ uv run expression-ladder reproduce --suite full --device cuda \
 uv run python -m expression_ladder.report results/ladder-35b/summary.json
 \end{verbatim}
 
+Stage~J runs standalone, trains its own initialization, needs nothing from an
+A--G artifact, and defaults to the three registered seeds. Deviating from them
+is an invalidating condition the runner detects rather than a flag a reader has
+to notice. The reference block took 6,402 s on the same card and peaked at
+$65.674$ GiB reserved.
+
+\begin{verbatim}
+uv run expression-ladder stage-j --suite full --device cuda \
+  --output-dir results/stage-j-35b
+\end{verbatim}
+
+The frozen rules are \code{PREREGISTRATION-stage-j.md} in the reproduction
+directory and the threshold dictionary \code{STAGE\_J\_PREREG} in
+\code{stage\_j.py}, which a test pins to each other. Every Stage~J number in
+this note is in that directory's \code{artifacts/stage-j-35b-summary.json},
+and the run's hardware, package versions, and repository commit are in
+\code{artifacts/stage-j-35b-environment.json} beside it.
+
 \begin{thebibliography}{9}
 \bibitem{penov2026bridges} F.~Penov. Conditional LoRA Bridges for Modular Sensor
 Adaptation of Frozen Small Language Models. Preprint, 2026.
+\url{https://github.com/kortexa-ai/legolm.paper}.
+
+\bibitem{penov2026prefix} F.~Penov. Eight Soft Tokens Can Change a Frozen
+Model's Tone. Preprint, 2026.
 \url{https://github.com/kortexa-ai/legolm.paper}.
 \end{thebibliography}
 

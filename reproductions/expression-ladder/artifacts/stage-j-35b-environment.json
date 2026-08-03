@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/home/francip/src/legolm-paper/reproductions/expression-ladder/.venv/bin/expression-ladder",
+    "stage-j",
+    "--suite",
+    "full",
+    "--device",
+    "cuda",
+    "--output-dir",
+    "results/stage-j-35b-20260801b"
+  ],
+  "created_at": 1785648394.5093212,
+  "cuda_version": "13.0",
+  "cudnn_version": 92000,
+  "data": {
+    "axes": 3,
+    "cases": 16,
+    "dev_cases": 2,
+    "fit_cases": 6,
+    "pairs": 48,
+    "sha256": "85f6e3599474ad33c37092b583b21ccfc3175fd85b168c65b735c2dd75332346",
+    "test_cases": 8
+  },
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "hostname": "smarty",
+  "model": {
+    "model_id": "Qwen/Qwen3.6-35B-A3B",
+    "name": "qwen36-35b",
+    "paper_target": true,
+    "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "stream_to_cuda": true
+  },
+  "packages": {
+    "accelerate": "1.14.0",
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.2",
+    "torch": "2.12.0",
+    "transformers": "5.12.1"
+  },
+  "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+  "python": "3.14.3 (main, Mar 24 2026, 22:50:36) [Clang 22.1.1 ]",
+  "repository_commit": "7664e8ee43ff1ca6ecafd72556704574fc54aec9"
+}
