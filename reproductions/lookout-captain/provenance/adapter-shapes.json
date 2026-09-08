@@ -1,0 +1,386 @@
+{
+  "450m": {
+    "top_keys": [
+      "format",
+      "door",
+      "host",
+      "seed",
+      "source_layer",
+      "inject_layers",
+      "train_dose",
+      "bus_dim",
+      "delta_positions",
+      "injection",
+      "hidden_size",
+      "depth",
+      "state_dict",
+      "history"
+    ],
+    "state_tensor_elements": 2827777,
+    "state_shapes": {
+      "source_center": [
+        1024
+      ],
+      "source_scale": [],
+      "emitter.weight": [
+        256,
+        1024
+      ],
+      "emitter.bias": [
+        256
+      ],
+      "receiver_bank.0.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.0.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.0.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.0.state_input.weight": [
+        128,
+        1024
+      ],
+      "receiver_bank.0.state_input.bias": [
+        128
+      ],
+      "receiver_bank.0.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.0.input.bias": [
+        512
+      ],
+      "receiver_bank.0.output.weight": [
+        1024,
+        512
+      ],
+      "receiver_bank.0.output.bias": [
+        1024
+      ],
+      "receiver_bank.1.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.1.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.1.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.1.state_input.weight": [
+        128,
+        1024
+      ],
+      "receiver_bank.1.state_input.bias": [
+        128
+      ],
+      "receiver_bank.1.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.1.input.bias": [
+        512
+      ],
+      "receiver_bank.1.output.weight": [
+        1024,
+        512
+      ],
+      "receiver_bank.1.output.bias": [
+        1024
+      ],
+      "receiver_bank.2.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.2.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.2.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.2.state_input.weight": [
+        128,
+        1024
+      ],
+      "receiver_bank.2.state_input.bias": [
+        128
+      ],
+      "receiver_bank.2.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.2.input.bias": [
+        512
+      ],
+      "receiver_bank.2.output.weight": [
+        1024,
+        512
+      ],
+      "receiver_bank.2.output.bias": [
+        1024
+      ]
+    }
+  },
+  "3b": {
+    "top_keys": [
+      "format",
+      "door",
+      "host",
+      "seed",
+      "source_layer",
+      "inject_layers",
+      "train_dose",
+      "bus_dim",
+      "delta_positions",
+      "injection",
+      "hidden_size",
+      "depth",
+      "state_dict",
+      "history"
+    ],
+    "state_tensor_elements": 5060097,
+    "state_shapes": {
+      "source_center": [
+        2048
+      ],
+      "source_scale": [],
+      "emitter.weight": [
+        256,
+        2048
+      ],
+      "emitter.bias": [
+        256
+      ],
+      "receiver_bank.0.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.0.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.0.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.0.state_input.weight": [
+        128,
+        2048
+      ],
+      "receiver_bank.0.state_input.bias": [
+        128
+      ],
+      "receiver_bank.0.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.0.input.bias": [
+        512
+      ],
+      "receiver_bank.0.output.weight": [
+        2048,
+        512
+      ],
+      "receiver_bank.0.output.bias": [
+        2048
+      ],
+      "receiver_bank.1.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.1.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.1.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.1.state_input.weight": [
+        128,
+        2048
+      ],
+      "receiver_bank.1.state_input.bias": [
+        128
+      ],
+      "receiver_bank.1.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.1.input.bias": [
+        512
+      ],
+      "receiver_bank.1.output.weight": [
+        2048,
+        512
+      ],
+      "receiver_bank.1.output.bias": [
+        2048
+      ],
+      "receiver_bank.2.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.2.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.2.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.2.state_input.weight": [
+        128,
+        2048
+      ],
+      "receiver_bank.2.state_input.bias": [
+        128
+      ],
+      "receiver_bank.2.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.2.input.bias": [
+        512
+      ],
+      "receiver_bank.2.output.weight": [
+        2048,
+        512
+      ],
+      "receiver_bank.2.output.bias": [
+        2048
+      ]
+    }
+  },
+  "27b": {
+    "top_keys": [
+      "format",
+      "door",
+      "host",
+      "seed",
+      "source_layer",
+      "inject_layers",
+      "train_dose",
+      "bus_dim",
+      "delta_positions",
+      "injection",
+      "hidden_size",
+      "depth",
+      "state_dict",
+      "history"
+    ],
+    "state_tensor_elements": 11757057,
+    "state_shapes": {
+      "source_center": [
+        5120
+      ],
+      "source_scale": [],
+      "emitter.weight": [
+        256,
+        5120
+      ],
+      "emitter.bias": [
+        256
+      ],
+      "receiver_bank.0.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.0.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.0.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.0.state_input.weight": [
+        128,
+        5120
+      ],
+      "receiver_bank.0.state_input.bias": [
+        128
+      ],
+      "receiver_bank.0.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.0.input.bias": [
+        512
+      ],
+      "receiver_bank.0.output.weight": [
+        5120,
+        512
+      ],
+      "receiver_bank.0.output.bias": [
+        5120
+      ],
+      "receiver_bank.1.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.1.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.1.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.1.state_input.weight": [
+        128,
+        5120
+      ],
+      "receiver_bank.1.state_input.bias": [
+        128
+      ],
+      "receiver_bank.1.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.1.input.bias": [
+        512
+      ],
+      "receiver_bank.1.output.weight": [
+        5120,
+        512
+      ],
+      "receiver_bank.1.output.bias": [
+        5120
+      ],
+      "receiver_bank.2.position_embedding": [
+        16,
+        64
+      ],
+      "receiver_bank.2.packet_input.weight": [
+        128,
+        256
+      ],
+      "receiver_bank.2.packet_input.bias": [
+        128
+      ],
+      "receiver_bank.2.state_input.weight": [
+        128,
+        5120
+      ],
+      "receiver_bank.2.state_input.bias": [
+        128
+      ],
+      "receiver_bank.2.input.weight": [
+        512,
+        320
+      ],
+      "receiver_bank.2.input.bias": [
+        512
+      ],
+      "receiver_bank.2.output.weight": [
+        5120,
+        512
+      ],
+      "receiver_bank.2.output.bias": [
+        5120
+      ]
+    }
+  }
+}

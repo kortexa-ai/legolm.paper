@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lookout-captain-reproduction"
+version = "1.0.0"
+description = "Evidence analysis and reproduction for The Lookout and the Captain"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0,<3", "matplotlib>=3.9,<4"]
+
+[project.optional-dependencies]
+experiments = [
+  "torch==2.13.0", "torchvision==0.28.0", "transformers==5.15.1",
+  "ultralytics==8.4.126", "mujoco==3.12.0", "pillow==12.3.0",
+  "safetensors==0.8.0",
+]
+
+[project.scripts]
+lookout-analyze = "legolm_lookout.analysis:main"
+lookout-render = "legolm_lookout.render:main"
+lookout-experiment = "legolm_lookout.experiment:main"
+lookout-inputs = "legolm_lookout.inputs:main"
+lookout-suite = "legolm_lookout.suite:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/legolm_lookout"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

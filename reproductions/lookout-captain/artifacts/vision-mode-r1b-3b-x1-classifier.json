@@ -1,0 +1,810 @@
+{
+  "admissibility": {
+    "admissible": true,
+    "fallback_ceiling": 0.05,
+    "grounding": {
+      "caution": 0.0,
+      "social": 0.022222
+    },
+    "grounding_ceiling": 0.2,
+    "max_parse_fallback_share": 0.0
+  },
+  "classifier": {
+    "eval": {
+      "accuracy": 0.916667,
+      "false_alarms": 3,
+      "frames": 60,
+      "label_x_verdict": {
+        "absent": {
+          "absent": 27,
+          "present": 3
+        },
+        "present": {
+          "absent": 2,
+          "present": 28
+        }
+      },
+      "misses": 2
+    },
+    "path": "checkpoints/experiments/vm-r2-person-head.pt",
+    "sha256": "f4084a89c0f160ef01e998100c8e70101d556fc933bfbd64077fad9c7a3952b1",
+    "training": {
+      "backbone": "torchvision mobilenet_v3_small IMAGENET1K_V1, frozen",
+      "balanced_per_epoch": 2670,
+      "batch": 64,
+      "epochs": 3,
+      "head": "Linear(576, 2)",
+      "history": [
+        {
+          "epoch": 1,
+          "examples": 2670,
+          "loss": 0.4007,
+          "train_accuracy": 0.8667
+        },
+        {
+          "epoch": 2,
+          "examples": 2670,
+          "loss": 0.2585,
+          "train_accuracy": 0.9154
+        },
+        {
+          "epoch": 3,
+          "examples": 2670,
+          "loss": 0.2166,
+          "train_accuracy": 0.9281
+        }
+      ],
+      "image_size": 224,
+      "learning_rate": 0.001,
+      "parameters_trained": 1154,
+      "seed": 42,
+      "train_frames": {
+        "absent": 2137,
+        "present": 1335
+      },
+      "wall_seconds": 12.064
+    },
+    "verdicts": {
+      "10995": {
+        "correct": true,
+        "p_present": 0.134474,
+        "verdict": "absent"
+      },
+      "118209": {
+        "correct": true,
+        "p_present": 0.119543,
+        "verdict": "absent"
+      },
+      "119828": {
+        "correct": true,
+        "p_present": 0.418431,
+        "verdict": "absent"
+      },
+      "123585": {
+        "correct": true,
+        "p_present": 0.241413,
+        "verdict": "absent"
+      },
+      "147518": {
+        "correct": true,
+        "p_present": 0.070089,
+        "verdict": "absent"
+      },
+      "156076": {
+        "correct": true,
+        "p_present": 0.950062,
+        "verdict": "present"
+      },
+      "162366": {
+        "correct": true,
+        "p_present": 0.136606,
+        "verdict": "absent"
+      },
+      "166391": {
+        "correct": true,
+        "p_present": 0.086053,
+        "verdict": "absent"
+      },
+      "167159": {
+        "correct": false,
+        "p_present": 0.929308,
+        "verdict": "present"
+      },
+      "180011": {
+        "correct": false,
+        "p_present": 0.184934,
+        "verdict": "absent"
+      },
+      "208363": {
+        "correct": true,
+        "p_present": 0.994752,
+        "verdict": "present"
+      },
+      "224093": {
+        "correct": true,
+        "p_present": 0.249412,
+        "verdict": "absent"
+      },
+      "229601": {
+        "correct": true,
+        "p_present": 0.96485,
+        "verdict": "present"
+      },
+      "232563": {
+        "correct": true,
+        "p_present": 0.977767,
+        "verdict": "present"
+      },
+      "255165": {
+        "correct": true,
+        "p_present": 0.030198,
+        "verdict": "absent"
+      },
+      "2587": {
+        "correct": true,
+        "p_present": 0.099382,
+        "verdict": "absent"
+      },
+      "268996": {
+        "correct": true,
+        "p_present": 0.085938,
+        "verdict": "absent"
+      },
+      "271728": {
+        "correct": false,
+        "p_present": 0.524837,
+        "verdict": "present"
+      },
+      "274411": {
+        "correct": true,
+        "p_present": 0.982104,
+        "verdict": "present"
+      },
+      "284743": {
+        "correct": true,
+        "p_present": 0.984947,
+        "verdict": "present"
+      },
+      "286182": {
+        "correct": true,
+        "p_present": 0.825097,
+        "verdict": "present"
+      },
+      "299355": {
+        "correct": true,
+        "p_present": 0.080347,
+        "verdict": "absent"
+      },
+      "300039": {
+        "correct": false,
+        "p_present": 0.324172,
+        "verdict": "absent"
+      },
+      "301563": {
+        "correct": true,
+        "p_present": 0.916922,
+        "verdict": "present"
+      },
+      "30504": {
+        "correct": true,
+        "p_present": 0.953155,
+        "verdict": "present"
+      },
+      "32081": {
+        "correct": true,
+        "p_present": 0.967229,
+        "verdict": "present"
+      },
+      "348243": {
+        "correct": true,
+        "p_present": 0.025386,
+        "verdict": "absent"
+      },
+      "357816": {
+        "correct": true,
+        "p_present": 0.982402,
+        "verdict": "present"
+      },
+      "362520": {
+        "correct": true,
+        "p_present": 0.650289,
+        "verdict": "present"
+      },
+      "389804": {
+        "correct": true,
+        "p_present": 0.088587,
+        "verdict": "absent"
+      },
+      "394611": {
+        "correct": true,
+        "p_present": 0.175055,
+        "verdict": "absent"
+      },
+      "422998": {
+        "correct": true,
+        "p_present": 0.959313,
+        "verdict": "present"
+      },
+      "436551": {
+        "correct": true,
+        "p_present": 0.113918,
+        "verdict": "absent"
+      },
+      "437351": {
+        "correct": true,
+        "p_present": 0.759278,
+        "verdict": "present"
+      },
+      "451571": {
+        "correct": true,
+        "p_present": 0.217042,
+        "verdict": "absent"
+      },
+      "455624": {
+        "correct": true,
+        "p_present": 0.840588,
+        "verdict": "present"
+      },
+      "469174": {
+        "correct": true,
+        "p_present": 0.067099,
+        "verdict": "absent"
+      },
+      "472623": {
+        "correct": true,
+        "p_present": 0.544994,
+        "verdict": "present"
+      },
+      "481582": {
+        "correct": true,
+        "p_present": 0.841388,
+        "verdict": "present"
+      },
+      "485424": {
+        "correct": true,
+        "p_present": 0.165046,
+        "verdict": "absent"
+      },
+      "489305": {
+        "correct": true,
+        "p_present": 0.837412,
+        "verdict": "present"
+      },
+      "492110": {
+        "correct": true,
+        "p_present": 0.988012,
+        "verdict": "present"
+      },
+      "49810": {
+        "correct": true,
+        "p_present": 0.043779,
+        "verdict": "absent"
+      },
+      "512403": {
+        "correct": false,
+        "p_present": 0.854934,
+        "verdict": "present"
+      },
+      "51314": {
+        "correct": true,
+        "p_present": 0.724957,
+        "verdict": "present"
+      },
+      "515025": {
+        "correct": true,
+        "p_present": 0.579693,
+        "verdict": "present"
+      },
+      "520531": {
+        "correct": true,
+        "p_present": 0.01562,
+        "verdict": "absent"
+      },
+      "527960": {
+        "correct": true,
+        "p_present": 0.065825,
+        "verdict": "absent"
+      },
+      "547383": {
+        "correct": true,
+        "p_present": 0.01314,
+        "verdict": "absent"
+      },
+      "555012": {
+        "correct": true,
+        "p_present": 0.059549,
+        "verdict": "absent"
+      },
+      "556158": {
+        "correct": true,
+        "p_present": 0.901944,
+        "verdict": "present"
+      },
+      "572303": {
+        "correct": true,
+        "p_present": 0.011568,
+        "verdict": "absent"
+      },
+      "578545": {
+        "correct": true,
+        "p_present": 0.980108,
+        "verdict": "present"
+      },
+      "59044": {
+        "correct": true,
+        "p_present": 0.996287,
+        "verdict": "present"
+      },
+      "60102": {
+        "correct": true,
+        "p_present": 0.99815,
+        "verdict": "present"
+      },
+      "68286": {
+        "correct": true,
+        "p_present": 0.05784,
+        "verdict": "absent"
+      },
+      "73702": {
+        "correct": true,
+        "p_present": 0.996086,
+        "verdict": "present"
+      },
+      "79014": {
+        "correct": true,
+        "p_present": 0.915038,
+        "verdict": "present"
+      },
+      "98853": {
+        "correct": true,
+        "p_present": 0.975918,
+        "verdict": "present"
+      },
+      "99053": {
+        "correct": true,
+        "p_present": 0.23822,
+        "verdict": "absent"
+      }
+    }
+  },
+  "dose_scale": 1.0,
+  "emitter": "classifier",
+  "experiment": "vision-mode-r1b-3b-x1-classifier-pooled",
+  "git_head": "c3ae3ba44b728b423866d7f193e1f999c3479d03",
+  "host": {
+    "depth": 30,
+    "hidden_size": 2048,
+    "key": "3b",
+    "label": "LFM2.5-VL-3B",
+    "model_id": "LiquidAI/LFM2.5-VL-3B"
+  },
+  "host_machine": "smarty",
+  "per_seed_admissible": {
+    "1042": true,
+    "2042": true,
+    "42": true
+  },
+  "per_seed_bands": {
+    "1042": {
+      "caution": "split",
+      "explore": "packet-holds",
+      "social": "text-wins"
+    },
+    "2042": {
+      "caution": "packet-holds",
+      "explore": "packet-holds",
+      "social": "packet-holds"
+    },
+    "42": {
+      "caution": "text-wins",
+      "explore": "packet-holds",
+      "social": "packet-holds"
+    }
+  },
+  "per_seed_ownership": {
+    "1042": {
+      "caution": 0.52,
+      "explore": 1.040001,
+      "social": -0.375001
+    },
+    "2042": {
+      "caution": 0.851852,
+      "explore": 2.300003,
+      "social": 1.250006
+    },
+    "42": {
+      "caution": 0.0,
+      "explore": 1.933334,
+      "social": 4.66667
+    }
+  },
+  "pooled_metrics": {
+    "caution": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.055556,
+          "other": 0.0,
+          "proceed": 0.944444,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.011111,
+          "other": 0.0,
+          "proceed": 0.922222,
+          "stop": 0.066667
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.066667,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "action": "stop",
+      "additivity": 0.188889,
+      "band": "split",
+      "grounding": 0.0,
+      "hostile_text_on_absent": 0.0,
+      "lean": 0.622222,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.622222,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.4,
+        "reason": null,
+        "value": 0.642857
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.466667,
+          "other": 0.0,
+          "proceed": 0.444444,
+          "stop": 0.088889
+        },
+        "hostile-text": {
+          "greet": 0.033333,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.0
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.288889,
+          "stop": 0.711111
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.1,
+          "stop": 0.9
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.6,
+          "stop": 0.4
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "present_share": {
+        "habit": 0.088889,
+        "hostile-text": 0.0,
+        "packet": 0.711111,
+        "packet+congruent": 0.9,
+        "packet+hostile": 0.4,
+        "shuffled+hostile": 0.0
+      }
+    },
+    "explore": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.055556,
+          "other": 0.0,
+          "proceed": 0.944444,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.088889,
+          "other": 0.0,
+          "proceed": 0.333333,
+          "stop": 0.577778
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.988889,
+          "stop": 0.011111
+        },
+        "shuffled+hostile": {
+          "greet": 0.011111,
+          "other": 0.0,
+          "proceed": 0.922222,
+          "stop": 0.066667
+        }
+      },
+      "absent_share": {
+        "habit": 0.944444,
+        "hostile-text": 0.333333,
+        "packet": 1.0,
+        "packet+congruent": 1.0,
+        "packet+hostile": 0.988889,
+        "shuffled+hostile": 0.922222
+      },
+      "action": "proceed",
+      "additivity": 0.0,
+      "band": "packet-holds",
+      "grounding": null,
+      "hostile_text_on_absent": 0.333333,
+      "lean": 0.555556,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.555556,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.866666,
+        "reason": null,
+        "value": 1.559998
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.466667,
+          "other": 0.0,
+          "proceed": 0.444444,
+          "stop": 0.088889
+        },
+        "hostile-text": {
+          "greet": 0.033333,
+          "other": 0.0,
+          "proceed": 0.055556,
+          "stop": 0.911111
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.922222,
+          "stop": 0.077778
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.1,
+          "stop": 0.9
+        }
+      },
+      "present_share": {
+        "habit": 0.444444,
+        "hostile-text": 0.055556,
+        "packet": 1.0,
+        "packet+congruent": 1.0,
+        "packet+hostile": 0.922222,
+        "shuffled+hostile": 0.1
+      }
+    },
+    "social": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.055556,
+          "other": 0.0,
+          "proceed": 0.944444,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet": {
+          "greet": 0.022222,
+          "other": 0.0,
+          "proceed": 0.977778,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.044444,
+          "other": 0.0,
+          "proceed": 0.955556,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "habit": 0.055556,
+        "hostile-text": 0.0,
+        "packet": 0.022222,
+        "packet+congruent": 0.044444,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "action": "greet",
+      "additivity": 0.011111,
+      "band": null,
+      "grounding": 0.022222,
+      "hostile_text_on_absent": 0.0,
+      "lean": -0.011111,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": -0.011111,
+        "guard": 0.05,
+        "guarded": true,
+        "numerator": 0.244445,
+        "reason": "no lean to own",
+        "value": null
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.466667,
+          "other": 0.0,
+          "proceed": 0.444444,
+          "stop": 0.088889
+        },
+        "hostile-text": {
+          "greet": 0.033333,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.0
+        },
+        "packet": {
+          "greet": 0.455556,
+          "other": 0.0,
+          "proceed": 0.255556,
+          "stop": 0.288889
+        },
+        "packet+congruent": {
+          "greet": 0.466667,
+          "other": 0.0,
+          "proceed": 0.355556,
+          "stop": 0.177778
+        },
+        "packet+hostile": {
+          "greet": 0.277778,
+          "other": 0.0,
+          "proceed": 0.577778,
+          "stop": 0.144444
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "present_share": {
+        "habit": 0.466667,
+        "hostile-text": 0.033333,
+        "packet": 0.455556,
+        "packet+congruent": 0.466667,
+        "packet+hostile": 0.277778,
+        "shuffled+hostile": 0.0
+      }
+    }
+  },
+  "reading": {
+    "bands": {
+      "guard": 0.05,
+      "holds": 0.7,
+      "text_wins": 0.3
+    },
+    "majority_band": {
+      "caution": null,
+      "explore": "packet-holds",
+      "social": "packet-holds"
+    },
+    "modes_with_lean": [
+      "caution",
+      "explore"
+    ],
+    "ownership": {
+      "caution": 0.642857,
+      "explore": 1.559998,
+      "social": null
+    },
+    "pooled_band": {
+      "caution": "split",
+      "explore": "packet-holds",
+      "social": null
+    },
+    "reading": "(i) PACKET HOLDS"
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 1b registration \u2014 the hostile prompt on the VL host (2026-08-22)",
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "smoke": false,
+  "track": "vision-mode",
+  "wall_seconds": 154.056
+}

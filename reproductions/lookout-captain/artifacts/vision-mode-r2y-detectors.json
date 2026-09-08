@@ -1,0 +1,371 @@
+{
+  "chosen": {
+    "name": "yolo26m",
+    "rerun_rung_2y": true,
+    "rule": "fewest misses on the calibration frames, ties to the smaller"
+  },
+  "device": "cuda",
+  "experiment": "vision-mode-r2y-detectors",
+  "frames": {
+    "calibration": 3472,
+    "eval": 200
+  },
+  "git_head": "8b548d387bfe853b25d2101fa9af9afbdb0862ba",
+  "host_machine": "smarty",
+  "nano_error_frames": {
+    "223747": {
+      "label": "present",
+      "yolo26m": {
+        "correct": true,
+        "largest_fraction": 0.955461,
+        "p_present": 0.472239,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "yolo26s": {
+        "correct": true,
+        "largest_fraction": 0.891437,
+        "p_present": 0.528161,
+        "person_boxes": 2,
+        "verdict": "present"
+      }
+    },
+    "261706": {
+      "label": "absent",
+      "yolo26m": {
+        "correct": false,
+        "largest_fraction": 0.343504,
+        "p_present": 0.473485,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.339633,
+        "p_present": 0.409116,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "yolo26s": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      }
+    },
+    "402765": {
+      "label": "present",
+      "yolo26m": {
+        "correct": true,
+        "largest_fraction": 0.962496,
+        "p_present": 0.718053,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "yolo26s": {
+        "correct": true,
+        "largest_fraction": 0.971099,
+        "p_present": 0.900204,
+        "person_boxes": 1,
+        "verdict": "present"
+      }
+    },
+    "480275": {
+      "label": "present",
+      "yolo26m": {
+        "correct": true,
+        "largest_fraction": 0.172449,
+        "p_present": 0.295239,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "yolo26s": {
+        "correct": true,
+        "largest_fraction": 0.106231,
+        "p_present": 0.335928,
+        "person_boxes": 2,
+        "verdict": "present"
+      }
+    },
+    "509699": {
+      "label": "absent",
+      "yolo26m": {
+        "correct": false,
+        "largest_fraction": 0.102989,
+        "p_present": 0.89093,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.102864,
+        "p_present": 0.520443,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "yolo26s": {
+        "correct": false,
+        "largest_fraction": 0.112975,
+        "p_present": 0.873586,
+        "person_boxes": 1,
+        "verdict": "present"
+      }
+    },
+    "523807": {
+      "label": "present",
+      "yolo26m": {
+        "correct": true,
+        "largest_fraction": 0.190755,
+        "p_present": 0.772281,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "yolo26s": {
+        "correct": true,
+        "largest_fraction": 0.198026,
+        "p_present": 0.557639,
+        "person_boxes": 1,
+        "verdict": "present"
+      }
+    },
+    "554266": {
+      "label": "present",
+      "yolo26m": {
+        "correct": true,
+        "largest_fraction": 0.2068,
+        "p_present": 0.439943,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "yolo26n": {
+        "correct": false,
+        "largest_fraction": 0.027753,
+        "p_present": 0.0,
+        "person_boxes": 1,
+        "verdict": "absent"
+      },
+      "yolo26s": {
+        "correct": true,
+        "largest_fraction": 0.212239,
+        "p_present": 0.547749,
+        "person_boxes": 3,
+        "verdict": "present"
+      }
+    }
+  },
+  "reading": {
+    "bands": {
+      "detector_floor_misses_max": 2,
+      "frame_floor_misses_min": 4
+    },
+    "eval_misses": {
+      "yolo26m": 0,
+      "yolo26n": 5,
+      "yolo26s": 0
+    },
+    "reading": "DETECTOR FLOOR"
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 2y-size registration \u2014 the detector size axis, for the last five misses (2026-08-23)",
+  "rule": {
+    "absent": "no such box",
+    "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+    "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+  },
+  "sizes": {
+    "yolo26m": {
+      "calibration": {
+        "accuracy": 0.990783,
+        "false_alarms": 22,
+        "frames": 3472,
+        "label_x_verdict": {
+          "absent": {
+            "absent": 2115,
+            "present": 22
+          },
+          "present": {
+            "absent": 10,
+            "present": 1325
+          }
+        },
+        "misses": 10,
+        "ms_per_frame": 4.431,
+        "wall_seconds": 15.385
+      },
+      "eval": {
+        "accuracy": 0.99,
+        "false_alarms": 2,
+        "frames": 200,
+        "label_x_verdict": {
+          "absent": {
+            "absent": 98,
+            "present": 2
+          },
+          "present": {
+            "absent": 0,
+            "present": 100
+          }
+        },
+        "misses": 0,
+        "ms_per_frame": 4.77,
+        "wall_seconds": 0.954
+      },
+      "parameters": 20411132,
+      "path": "checkpoints/experiments/yolo26m.pt",
+      "rule": {
+        "absent": "no such box",
+        "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+        "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+      },
+      "sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "trained_here": false,
+      "training": {
+        "backbone": "ultralytics yolo26m, COCO-pretrained detector, frozen",
+        "confidence": 0.25,
+        "head": "none: a rule over the person boxes",
+        "image_size": 640,
+        "note": "COCO val2017 is the detector's own validation split; no frame here was trained on",
+        "parameters_trained": 0
+      }
+    },
+    "yolo26n": {
+      "calibration": {
+        "accuracy": 0.985599,
+        "false_alarms": 25,
+        "frames": 3472,
+        "label_x_verdict": {
+          "absent": {
+            "absent": 2112,
+            "present": 25
+          },
+          "present": {
+            "absent": 25,
+            "present": 1310
+          }
+        },
+        "misses": 25,
+        "ms_per_frame": 3.494,
+        "wall_seconds": 12.132
+      },
+      "eval": {
+        "accuracy": 0.965,
+        "false_alarms": 2,
+        "frames": 200,
+        "label_x_verdict": {
+          "absent": {
+            "absent": 98,
+            "present": 2
+          },
+          "present": {
+            "absent": 5,
+            "present": 95
+          }
+        },
+        "misses": 5,
+        "ms_per_frame": 5.606,
+        "wall_seconds": 1.121
+      },
+      "parameters": 2408932,
+      "path": "checkpoints/experiments/yolo26n.pt",
+      "rule": {
+        "absent": "no such box",
+        "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+        "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+      },
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "trained_here": false,
+      "training": {
+        "backbone": "ultralytics yolo26n, COCO-pretrained detector, frozen",
+        "confidence": 0.25,
+        "head": "none: a rule over the person boxes",
+        "image_size": 640,
+        "note": "COCO val2017 is the detector's own validation split; no frame here was trained on",
+        "parameters_trained": 0
+      }
+    },
+    "yolo26s": {
+      "calibration": {
+        "accuracy": 0.990207,
+        "false_alarms": 22,
+        "frames": 3472,
+        "label_x_verdict": {
+          "absent": {
+            "absent": 2115,
+            "present": 22
+          },
+          "present": {
+            "absent": 12,
+            "present": 1323
+          }
+        },
+        "misses": 12,
+        "ms_per_frame": 3.58,
+        "wall_seconds": 12.431
+      },
+      "eval": {
+        "accuracy": 0.995,
+        "false_alarms": 1,
+        "frames": 200,
+        "label_x_verdict": {
+          "absent": {
+            "absent": 99,
+            "present": 1
+          },
+          "present": {
+            "absent": 0,
+            "present": 100
+          }
+        },
+        "misses": 0,
+        "ms_per_frame": 3.942,
+        "wall_seconds": 0.788
+      },
+      "parameters": 9496140,
+      "path": "checkpoints/experiments/yolo26s.pt",
+      "rule": {
+        "absent": "no such box",
+        "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+        "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+      },
+      "sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "trained_here": false,
+      "training": {
+        "backbone": "ultralytics yolo26s, COCO-pretrained detector, frozen",
+        "confidence": 0.25,
+        "head": "none: a rule over the person boxes",
+        "image_size": 640,
+        "note": "COCO val2017 is the detector's own validation split; no frame here was trained on",
+        "parameters_trained": 0
+      }
+    }
+  },
+  "track": "vision-mode"
+}

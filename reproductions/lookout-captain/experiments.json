@@ -1,0 +1,1548 @@
+{
+  "format": "lookout-captain-experiment-suite-v1",
+  "individual_result_records": 171,
+  "note": "Runs are ordered by dependencies. Three-seed groups use --all-seeds. One/two-seed follow-ups use only the recorded seeds. Historical pooled JSON is preserved for provenance; the analysis uses individual seed records.",
+  "runs": [
+    {
+      "id": "vision-mode-r1-27b",
+      "script": "vm_rung1",
+      "arguments": [
+        "--host",
+        "27b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1-27b-s1042.json",
+        "vision-mode-r1-27b-s2042.json",
+        "vision-mode-r1-27b-s42.json"
+      ],
+      "stage": 10
+    },
+    {
+      "id": "vision-mode-r1-3b",
+      "script": "vm_rung1",
+      "arguments": [
+        "--host",
+        "3b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1-3b-s1042.json",
+        "vision-mode-r1-3b-s2042.json",
+        "vision-mode-r1-3b-s42.json"
+      ],
+      "stage": 10
+    },
+    {
+      "id": "vision-mode-r1-450m",
+      "script": "vm_rung1",
+      "arguments": [
+        "--host",
+        "450m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1-450m-s1042.json",
+        "vision-mode-r1-450m-s2042.json",
+        "vision-mode-r1-450m-s42.json"
+      ],
+      "stage": 10
+    },
+    {
+      "id": "vision-mode-r2-3b",
+      "script": "vm_rung2",
+      "arguments": [
+        "--host",
+        "3b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2-3b-s1042.json",
+        "vision-mode-r2-3b-s2042.json",
+        "vision-mode-r2-3b-s42.json"
+      ],
+      "stage": 20
+    },
+    {
+      "id": "vision-mode-r2-450m",
+      "script": "vm_rung2",
+      "arguments": [
+        "--host",
+        "450m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2-450m-s1042.json",
+        "vision-mode-r2-450m-s2042.json",
+        "vision-mode-r2-450m-s42.json"
+      ],
+      "stage": 20
+    },
+    {
+      "id": "detector-sizes",
+      "script": "vm_detectors",
+      "arguments": [],
+      "seeds": [],
+      "expected_individual_artifacts": [],
+      "stage": 25
+    },
+    {
+      "id": "vision-mode-r2y-26m-3b",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "3b",
+        "--detector",
+        "yolo26m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-26m-3b-s1042.json",
+        "vision-mode-r2y-26m-3b-s2042.json",
+        "vision-mode-r2y-26m-3b-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-r2y-26m-450m",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "450m",
+        "--detector",
+        "yolo26m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-26m-450m-s1042.json",
+        "vision-mode-r2y-26m-450m-s2042.json",
+        "vision-mode-r2y-26m-450m-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-r2y-26s-3b",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "3b",
+        "--detector",
+        "yolo26s"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-26s-3b-s1042.json",
+        "vision-mode-r2y-26s-3b-s2042.json",
+        "vision-mode-r2y-26s-3b-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-r2y-26s-450m",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "450m",
+        "--detector",
+        "yolo26s"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-26s-450m-s1042.json",
+        "vision-mode-r2y-26s-450m-s2042.json",
+        "vision-mode-r2y-26s-450m-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-r2y-27b",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "27b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-27b-s1042.json",
+        "vision-mode-r2y-27b-s2042.json",
+        "vision-mode-r2y-27b-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-r2y-3b",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "3b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-3b-s1042.json",
+        "vision-mode-r2y-3b-s2042.json",
+        "vision-mode-r2y-3b-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-r2y-450m",
+      "script": "vm_rung2y",
+      "arguments": [
+        "--host",
+        "450m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2y-450m-s1042.json",
+        "vision-mode-r2y-450m-s2042.json",
+        "vision-mode-r2y-450m-s42.json"
+      ],
+      "stage": 30
+    },
+    {
+      "id": "vision-mode-mx2door-27b",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "27b",
+        "--variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2door-27b-s1042.json",
+        "vision-mode-mx2door-27b-s2042.json",
+        "vision-mode-mx2door-27b-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mx2door-3b",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "3b",
+        "--variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2door-3b-s1042.json",
+        "vision-mode-mx2door-3b-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mx2door-450m",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "450m",
+        "--variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2door-450m-s1042.json",
+        "vision-mode-mx2door-450m-s2042.json",
+        "vision-mode-mx2door-450m-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mx2o1042door-27b",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "27b",
+        "--variant",
+        "mx2",
+        "--order-seed",
+        "1042"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2o1042door-27b-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mx2o1042door-450m",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "450m",
+        "--variant",
+        "mx2",
+        "--order-seed",
+        "1042"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2o1042door-450m-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mx2o42door-27b",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "27b",
+        "--variant",
+        "mx2",
+        "--order-seed",
+        "42"
+      ],
+      "seeds": [
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2o42door-27b-s1042.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mx2o42door-450m",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "450m",
+        "--variant",
+        "mx2",
+        "--order-seed",
+        "42"
+      ],
+      "seeds": [
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mx2o42door-450m-s1042.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mxdoor-3b",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "3b",
+        "--variant",
+        "mx"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mxdoor-3b-s1042.json",
+        "vision-mode-mxdoor-3b-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-mxdoor-450m",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "450m",
+        "--variant",
+        "mx"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-mxdoor-450m-s1042.json",
+        "vision-mode-mxdoor-450m-s2042.json",
+        "vision-mode-mxdoor-450m-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-x2door-3b",
+      "script": "vm_door2x",
+      "arguments": [
+        "--host",
+        "3b",
+        "--variant",
+        "x2"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-x2door-3b-s1042.json",
+        "vision-mode-x2door-3b-s42.json"
+      ],
+      "stage": 35
+    },
+    {
+      "id": "vision-mode-r1b-27b-x1-oracle",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "27b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-27b-x1-oracle-s1042.json",
+        "vision-mode-r1b-27b-x1-oracle-s2042.json",
+        "vision-mode-r1b-27b-x1-oracle-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-27b-x1-oracle-mx2door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "27b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-27b-x1-oracle-mx2door-s1042.json",
+        "vision-mode-r1b-27b-x1-oracle-mx2door-s2042.json",
+        "vision-mode-r1b-27b-x1-oracle-mx2door-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-27b-x1-oracle-mx2ndoor",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "27b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2",
+        "--constant-variant",
+        "registered"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-27b-x1-oracle-mx2ndoor-s1042.json",
+        "vision-mode-r1b-27b-x1-oracle-mx2ndoor-s2042.json",
+        "vision-mode-r1b-27b-x1-oracle-mx2ndoor-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-27b-x1-oracle-mx2o1042door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "27b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "1042"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-27b-x1-oracle-mx2o1042door-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-27b-x1-oracle-mx2o42door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "27b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "42"
+      ],
+      "seeds": [
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-27b-x1-oracle-mx2o42door-s1042.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-27b-x1p5-oracle",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "27b",
+        "--dose-scale",
+        "1.5",
+        "--emitter",
+        "oracle"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-27b-x1p5-oracle-s1042.json",
+        "vision-mode-r1b-27b-x1p5-oracle-s2042.json",
+        "vision-mode-r1b-27b-x1p5-oracle-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1-classifier",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "classifier"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1-classifier-s1042.json",
+        "vision-mode-r1b-3b-x1-classifier-s2042.json",
+        "vision-mode-r1b-3b-x1-classifier-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1-detector",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "detector"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1-detector-s1042.json",
+        "vision-mode-r1b-3b-x1-detector-s2042.json",
+        "vision-mode-r1b-3b-x1-detector-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1-oracle",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1-oracle-s1042.json",
+        "vision-mode-r1b-3b-x1-oracle-s2042.json",
+        "vision-mode-r1b-3b-x1-oracle-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1-oracle-mx2door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1-oracle-mx2door-s1042.json",
+        "vision-mode-r1b-3b-x1-oracle-mx2door-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1-oracle-mxdoor",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1-oracle-mxdoor-s1042.json",
+        "vision-mode-r1b-3b-x1-oracle-mxdoor-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1-oracle-x2door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "x2"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1-oracle-x2door-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1p5-classifier",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.5",
+        "--emitter",
+        "classifier"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1p5-classifier-s1042.json",
+        "vision-mode-r1b-3b-x1p5-classifier-s2042.json",
+        "vision-mode-r1b-3b-x1p5-classifier-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-3b-x1p5-oracle",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "3b",
+        "--dose-scale",
+        "1.5",
+        "--emitter",
+        "oracle"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-3b-x1p5-oracle-s1042.json",
+        "vision-mode-r1b-3b-x1p5-oracle-s2042.json",
+        "vision-mode-r1b-3b-x1p5-oracle-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-classifier",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "classifier"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-classifier-s1042.json",
+        "vision-mode-r1b-450m-x1-classifier-s2042.json",
+        "vision-mode-r1b-450m-x1-classifier-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-detector",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "detector"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-detector-s1042.json",
+        "vision-mode-r1b-450m-x1-detector-s2042.json",
+        "vision-mode-r1b-450m-x1-detector-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-oracle",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-oracle-s1042.json",
+        "vision-mode-r1b-450m-x1-oracle-s2042.json",
+        "vision-mode-r1b-450m-x1-oracle-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-oracle-mx2door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-oracle-mx2door-s1042.json",
+        "vision-mode-r1b-450m-x1-oracle-mx2door-s2042.json",
+        "vision-mode-r1b-450m-x1-oracle-mx2door-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-oracle-mx2ndoor",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2",
+        "--constant-variant",
+        "registered"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-oracle-mx2ndoor-s1042.json",
+        "vision-mode-r1b-450m-x1-oracle-mx2ndoor-s2042.json",
+        "vision-mode-r1b-450m-x1-oracle-mx2ndoor-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-oracle-mx2o1042door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "1042"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-oracle-mx2o1042door-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-oracle-mx2o42door",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "42"
+      ],
+      "seeds": [
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-oracle-mx2o42door-s1042.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1-oracle-mxdoor",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.0",
+        "--emitter",
+        "oracle",
+        "--door-variant",
+        "mx"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1-oracle-mxdoor-s1042.json",
+        "vision-mode-r1b-450m-x1-oracle-mxdoor-s2042.json",
+        "vision-mode-r1b-450m-x1-oracle-mxdoor-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1p5-classifier",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.5",
+        "--emitter",
+        "classifier"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1p5-classifier-s1042.json",
+        "vision-mode-r1b-450m-x1p5-classifier-s2042.json",
+        "vision-mode-r1b-450m-x1p5-classifier-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r1b-450m-x1p5-oracle",
+      "script": "vm_rung1b",
+      "arguments": [
+        "--host",
+        "450m",
+        "--dose-scale",
+        "1.5",
+        "--emitter",
+        "oracle"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r1b-450m-x1p5-oracle-s1042.json",
+        "vision-mode-r1b-450m-x1p5-oracle-s2042.json",
+        "vision-mode-r1b-450m-x1p5-oracle-s42.json"
+      ],
+      "stage": 40
+    },
+    {
+      "id": "vision-mode-r2b-3b",
+      "script": "vm_rung2b",
+      "arguments": [
+        "--host",
+        "3b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2b-3b-s1042.json",
+        "vision-mode-r2b-3b-s2042.json",
+        "vision-mode-r2b-3b-s42.json"
+      ],
+      "stage": 45
+    },
+    {
+      "id": "vision-mode-r2b-450m",
+      "script": "vm_rung2b",
+      "arguments": [
+        "--host",
+        "450m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2b-450m-s1042.json",
+        "vision-mode-r2b-450m-s2042.json",
+        "vision-mode-r2b-450m-s42.json"
+      ],
+      "stage": 45
+    },
+    {
+      "id": "vision-mode-r2c-3b",
+      "script": "vm_rung2c",
+      "arguments": [
+        "--host",
+        "3b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2c-3b-s1042.json",
+        "vision-mode-r2c-3b-s2042.json",
+        "vision-mode-r2c-3b-s42.json"
+      ],
+      "stage": 46
+    },
+    {
+      "id": "vision-mode-r2c-450m",
+      "script": "vm_rung2c",
+      "arguments": [
+        "--host",
+        "450m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2c-450m-s1042.json",
+        "vision-mode-r2c-450m-s2042.json",
+        "vision-mode-r2c-450m-s42.json"
+      ],
+      "stage": 46
+    },
+    {
+      "id": "vision-mode-r2t-27b",
+      "script": "vm_rung2t",
+      "arguments": [
+        "--host",
+        "27b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2t-27b-s1042.json",
+        "vision-mode-r2t-27b-s2042.json",
+        "vision-mode-r2t-27b-s42.json"
+      ],
+      "stage": 50
+    },
+    {
+      "id": "vision-mode-r2t-3b",
+      "script": "vm_rung2t",
+      "arguments": [
+        "--host",
+        "3b"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2t-3b-s1042.json",
+        "vision-mode-r2t-3b-s2042.json",
+        "vision-mode-r2t-3b-s42.json"
+      ],
+      "stage": 50
+    },
+    {
+      "id": "vision-mode-r2t-450m",
+      "script": "vm_rung2t",
+      "arguments": [
+        "--host",
+        "450m"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r2t-450m-s1042.json",
+        "vision-mode-r2t-450m-s2042.json",
+        "vision-mode-r2t-450m-s42.json"
+      ],
+      "stage": 50
+    },
+    {
+      "id": "capsule-detectors",
+      "script": "vm_rung3",
+      "arguments": [
+        "--part",
+        "1",
+        "--figure",
+        "capsule"
+      ],
+      "seeds": [],
+      "expected_individual_artifacts": [],
+      "stage": 52
+    },
+    {
+      "id": "mesh-detectors",
+      "script": "vm_rung3",
+      "arguments": [
+        "--part",
+        "1",
+        "--figure",
+        "mesh"
+      ],
+      "seeds": [],
+      "expected_individual_artifacts": [],
+      "stage": 53
+    },
+    {
+      "id": "vision-mode-r3-hostprobe-3b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "3b",
+        "--part",
+        "probe",
+        "--figure",
+        "capsule"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3-hostprobe-3b.json"
+      ],
+      "stage": 55
+    },
+    {
+      "id": "vision-mode-r3b-27b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "27b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-27b-s1042.json",
+        "vision-mode-r3b-27b-s2042.json",
+        "vision-mode-r3b-27b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-3b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "3b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-3b-s1042.json",
+        "vision-mode-r3b-3b-s2042.json",
+        "vision-mode-r3b-3b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-450m",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "450m",
+        "--part",
+        "2",
+        "--figure",
+        "mesh"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-450m-s1042.json",
+        "vision-mode-r3b-450m-s2042.json",
+        "vision-mode-r3b-450m-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2door-27b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "27b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2door-27b-s1042.json",
+        "vision-mode-r3b-mx2door-27b-s2042.json",
+        "vision-mode-r3b-mx2door-27b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2door-3b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "3b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2door-3b-s1042.json",
+        "vision-mode-r3b-mx2door-3b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2door-450m",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "450m",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2door-450m-s1042.json",
+        "vision-mode-r3b-mx2door-450m-s2042.json",
+        "vision-mode-r3b-mx2door-450m-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2ndoor-27b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "27b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2",
+        "--constant-variant",
+        "registered"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2ndoor-27b-s1042.json",
+        "vision-mode-r3b-mx2ndoor-27b-s2042.json",
+        "vision-mode-r3b-mx2ndoor-27b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2ndoor-450m",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "450m",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2",
+        "--constant-variant",
+        "registered"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2ndoor-450m-s1042.json",
+        "vision-mode-r3b-mx2ndoor-450m-s2042.json",
+        "vision-mode-r3b-mx2ndoor-450m-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2o1042door-27b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "27b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "1042"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2o1042door-27b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2o1042door-450m",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "450m",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "1042"
+      ],
+      "seeds": [
+        42
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2o1042door-450m-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2o42door-27b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "27b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "42"
+      ],
+      "seeds": [
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2o42door-27b-s1042.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mx2o42door-450m",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "450m",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx2",
+        "--order-seed",
+        "42"
+      ],
+      "seeds": [
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mx2o42door-450m-s1042.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mxdoor-3b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "3b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mxdoor-3b-s1042.json",
+        "vision-mode-r3b-mxdoor-3b-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-mxdoor-450m",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "450m",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "mx"
+      ],
+      "seeds": [
+        42,
+        1042,
+        2042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-mxdoor-450m-s1042.json",
+        "vision-mode-r3b-mxdoor-450m-s2042.json",
+        "vision-mode-r3b-mxdoor-450m-s42.json"
+      ],
+      "stage": 60
+    },
+    {
+      "id": "vision-mode-r3b-x2door-3b",
+      "script": "vm_rung3",
+      "arguments": [
+        "--host",
+        "3b",
+        "--part",
+        "2",
+        "--figure",
+        "mesh",
+        "--door-variant",
+        "x2"
+      ],
+      "seeds": [
+        42,
+        1042
+      ],
+      "expected_individual_artifacts": [
+        "vision-mode-r3b-x2door-3b-s1042.json",
+        "vision-mode-r3b-x2door-3b-s42.json"
+      ],
+      "stage": 60
+    }
+  ]
+}

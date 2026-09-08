@@ -1,0 +1,96 @@
+{
+  "device": "cuda",
+  "doors": {
+    "constant": {
+      "path": "checkpoints/experiments/vm-r1mx2-constant-bridge-27b-s1042.pt",
+      "sha256": "2cd11cacb7d5fd4c4221bc13d0ff2add8fc326f947831620c13d1a0a7a8a57ea"
+    },
+    "mode": {
+      "path": "checkpoints/experiments/vm-r1mx2-mode-bridge-27b-s1042.pt",
+      "sha256": "fe158664212fdf26cc1e1a158d43fe773439550e7a59b52aa9dbd9246f4dbefe"
+    }
+  },
+  "experiment": "vision-mode-mx2door-27b-s1042",
+  "gates": {
+    "held_out": {
+      "frames": 8,
+      "passed": true,
+      "per_mode": {
+        "caution": 1.0,
+        "explore": 1.0,
+        "social": 1.0
+      },
+      "pooled": 1.0,
+      "positions": [
+        8,
+        9
+      ],
+      "threshold": 0.9
+    },
+    "zero_dose": {
+      "exact": true,
+      "max_abs_difference": 0.0,
+      "passed": true
+    }
+  },
+  "git_head": "e619cdd429b629847570f5b88c31ef90a904f599",
+  "host": {
+    "depth": 64,
+    "estimated_weight_gib": 52.0,
+    "hidden_size": 5120,
+    "key": "27b",
+    "label": "Qwen3.8-27B",
+    "model_id": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "stream_to_cuda": true,
+    "template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "host_machine": "smarty",
+  "layer_plan": {
+    "depth": 64,
+    "inject_fractions": [
+      0.29,
+      0.46,
+      0.63
+    ],
+    "inject_layers": [
+      19,
+      29,
+      40
+    ],
+    "prior_fraction": 0.79,
+    "scanned": false,
+    "source_layer": 51
+  },
+  "registered_steps": 192,
+  "registration": "tracks/vision-mode/PLAN.md, Rung 3d registration \u2014 mixed-domain doors: renders in the training mix (2026-08-24)",
+  "reuses": "tracks/vision-mode/PLAN.md, Rung 1 registration \u2014 mode packets on a vision-language host (2026-08-22)",
+  "seed": 1042,
+  "smoke": false,
+  "steps": 384,
+  "track": "vision-mode",
+  "training": {
+    "constant_final": {
+      "grad_norm": 0.0031,
+      "loss": 0.0514,
+      "step": 384,
+      "token_accuracy": 0.9844
+    },
+    "mode_final": {
+      "grad_norm": 0.0,
+      "loss": 0.0,
+      "step": 384,
+      "token_accuracy": 1.0
+    }
+  },
+  "training_frames": {
+    "coco": 80,
+    "mesh": 80,
+    "mesh_manifest": "/tmp/vm-r3-trainframes/mesh/manifest.json",
+    "mesh_manifest_sha256": "4d71906cd9f0a2a21de61be29177720106488bd5ac4ebe6ef4d8fc57cda3ee04",
+    "total": 160
+  },
+  "wall_seconds": 3007.945
+}

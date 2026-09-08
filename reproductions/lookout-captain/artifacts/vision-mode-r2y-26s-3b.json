@@ -1,0 +1,1753 @@
+{
+  "classifier": {
+    "calibration": {
+      "accuracy": 0.990207,
+      "false_alarms": 22,
+      "frames": 3472,
+      "label_x_verdict": {
+        "absent": {
+          "absent": 2115,
+          "present": 22
+        },
+        "present": {
+          "absent": 12,
+          "present": 1323
+        }
+      },
+      "misses": 12,
+      "wall_seconds": 12.197
+    },
+    "eval": {
+      "accuracy": 0.995,
+      "false_alarms": 1,
+      "frames": 200,
+      "label_x_verdict": {
+        "absent": {
+          "absent": 99,
+          "present": 1
+        },
+        "present": {
+          "absent": 0,
+          "present": 100
+        }
+      },
+      "misses": 0,
+      "wall_seconds": 1.087
+    },
+    "path": "checkpoints/experiments/yolo26s.pt",
+    "rule": {
+      "absent": "no such box",
+      "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+      "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+    },
+    "sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+    "trained_here": false,
+    "training": {
+      "backbone": "ultralytics yolo26s, COCO-pretrained detector, frozen",
+      "confidence": 0.25,
+      "head": "none: a rule over the person boxes",
+      "image_size": 640,
+      "note": "COCO val2017 is the detector's own validation split; no frame here was trained on",
+      "parameters_trained": 0
+    },
+    "verdicts": {
+      "102805": {
+        "correct": true,
+        "largest_fraction": 0.300574,
+        "p_present": 0.941604,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "104603": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "107554": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "108495": {
+        "correct": true,
+        "largest_fraction": 0.761007,
+        "p_present": 0.962903,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "109916": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "111609": {
+        "correct": true,
+        "largest_fraction": 0.126257,
+        "p_present": 0.795258,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "113051": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "116068": {
+        "correct": true,
+        "largest_fraction": 0.175509,
+        "p_present": 0.945211,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "117374": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "126592": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "130566": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "13177": {
+        "correct": true,
+        "largest_fraction": 0.407481,
+        "p_present": 0.965048,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "132587": {
+        "correct": true,
+        "largest_fraction": 0.430803,
+        "p_present": 0.963063,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "13729": {
+        "correct": true,
+        "largest_fraction": 0.231388,
+        "p_present": 0.941719,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "140439": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "140556": {
+        "correct": true,
+        "largest_fraction": 0.311285,
+        "p_present": 0.955577,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "143998": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "144333": {
+        "correct": true,
+        "largest_fraction": 0.237196,
+        "p_present": 0.91708,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "147205": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "15079": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "153229": {
+        "correct": true,
+        "largest_fraction": 0.178611,
+        "p_present": 0.953541,
+        "person_boxes": 7,
+        "verdict": "present"
+      },
+      "153632": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "161879": {
+        "correct": true,
+        "largest_fraction": 0.167655,
+        "p_present": 0.952643,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "166563": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "166664": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "166768": {
+        "correct": true,
+        "largest_fraction": 0.793946,
+        "p_present": 0.948136,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "1675": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "168458": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "168619": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "168883": {
+        "correct": true,
+        "largest_fraction": 0.405151,
+        "p_present": 0.943797,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "175438": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "176847": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "177539": {
+        "correct": true,
+        "largest_fraction": 0.24333,
+        "p_present": 0.89849,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "179898": {
+        "correct": true,
+        "largest_fraction": 0.528753,
+        "p_present": 0.923761,
+        "person_boxes": 9,
+        "verdict": "present"
+      },
+      "183648": {
+        "correct": true,
+        "largest_fraction": 0.142461,
+        "p_present": 0.949641,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "187055": {
+        "correct": true,
+        "largest_fraction": 0.388598,
+        "p_present": 0.876355,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "189475": {
+        "correct": true,
+        "largest_fraction": 0.372894,
+        "p_present": 0.952758,
+        "person_boxes": 11,
+        "verdict": "present"
+      },
+      "190637": {
+        "correct": true,
+        "largest_fraction": 0.50454,
+        "p_present": 0.514168,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "192904": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "195165": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "198489": {
+        "correct": true,
+        "largest_fraction": 0.206244,
+        "p_present": 0.950867,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "199310": {
+        "correct": true,
+        "largest_fraction": 0.444725,
+        "p_present": 0.95174,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "199681": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "200152": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "200421": {
+        "correct": true,
+        "largest_fraction": 0.426859,
+        "p_present": 0.938972,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "201646": {
+        "correct": true,
+        "largest_fraction": 0.445147,
+        "p_present": 0.977902,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "201676": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "205324": {
+        "correct": true,
+        "largest_fraction": 0.221918,
+        "p_present": 0.936443,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "215778": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "223747": {
+        "correct": true,
+        "largest_fraction": 0.891437,
+        "p_present": 0.528161,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "224051": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "225532": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "227985": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "22935": {
+        "correct": true,
+        "largest_fraction": 0.653159,
+        "p_present": 0.962672,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "234526": {
+        "correct": true,
+        "largest_fraction": 0.23115,
+        "p_present": 0.944479,
+        "person_boxes": 7,
+        "verdict": "present"
+      },
+      "243199": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "244181": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "245915": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "252776": {
+        "correct": true,
+        "largest_fraction": 0.614113,
+        "p_present": 0.958352,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "255401": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "256407": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "258911": {
+        "correct": true,
+        "largest_fraction": 0.109073,
+        "p_present": 0.907679,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "261318": {
+        "correct": true,
+        "largest_fraction": 0.314206,
+        "p_present": 0.463521,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "261706": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "262682": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "273711": {
+        "correct": true,
+        "largest_fraction": 0.148588,
+        "p_present": 0.938619,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "276284": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "278973": {
+        "correct": true,
+        "largest_fraction": 0.137725,
+        "p_present": 0.942598,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "281447": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "282296": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "282912": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "283268": {
+        "correct": true,
+        "largest_fraction": 0.321942,
+        "p_present": 0.878802,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "283785": {
+        "correct": true,
+        "largest_fraction": 0.112211,
+        "p_present": 0.92768,
+        "person_boxes": 6,
+        "verdict": "present"
+      },
+      "293390": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "295138": {
+        "correct": true,
+        "largest_fraction": 0.28897,
+        "p_present": 0.933315,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "300155": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "300233": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "303566": {
+        "correct": true,
+        "largest_fraction": 0.096945,
+        "p_present": 0.809752,
+        "person_boxes": 15,
+        "verdict": "present"
+      },
+      "311928": {
+        "correct": true,
+        "largest_fraction": 0.247028,
+        "p_present": 0.950387,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "312192": {
+        "correct": true,
+        "largest_fraction": 0.250311,
+        "p_present": 0.663123,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "312263": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "314541": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "315001": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "318908": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "330396": {
+        "correct": true,
+        "largest_fraction": 0.142827,
+        "p_present": 0.946739,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "331075": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "331569": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "334483": {
+        "correct": true,
+        "largest_fraction": 0.245634,
+        "p_present": 0.932048,
+        "person_boxes": 7,
+        "verdict": "present"
+      },
+      "335177": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "341469": {
+        "correct": true,
+        "largest_fraction": 0.458803,
+        "p_present": 0.945124,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "343524": {
+        "correct": true,
+        "largest_fraction": 0.224742,
+        "p_present": 0.949651,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "351823": {
+        "correct": true,
+        "largest_fraction": 0.32891,
+        "p_present": 0.949004,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "352582": {
+        "correct": true,
+        "largest_fraction": 0.365713,
+        "p_present": 0.97225,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "357888": {
+        "correct": true,
+        "largest_fraction": 0.262866,
+        "p_present": 0.957708,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "363875": {
+        "correct": true,
+        "largest_fraction": 0.287679,
+        "p_present": 0.820262,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "367082": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "373382": {
+        "correct": true,
+        "largest_fraction": 0.328955,
+        "p_present": 0.949381,
+        "person_boxes": 16,
+        "verdict": "present"
+      },
+      "388056": {
+        "correct": true,
+        "largest_fraction": 0.215546,
+        "p_present": 0.948202,
+        "person_boxes": 7,
+        "verdict": "present"
+      },
+      "389315": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "394199": {
+        "correct": true,
+        "largest_fraction": 0.454226,
+        "p_present": 0.935852,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "395180": {
+        "correct": true,
+        "largest_fraction": 0.135253,
+        "p_present": 0.932198,
+        "person_boxes": 6,
+        "verdict": "present"
+      },
+      "401244": {
+        "correct": true,
+        "largest_fraction": 0.389853,
+        "p_present": 0.86744,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "401250": {
+        "correct": true,
+        "largest_fraction": 0.127096,
+        "p_present": 0.95461,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "402765": {
+        "correct": true,
+        "largest_fraction": 0.971099,
+        "p_present": 0.900204,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "402783": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "40757": {
+        "correct": true,
+        "largest_fraction": 0.209892,
+        "p_present": 0.794843,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "415741": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "418062": {
+        "correct": true,
+        "largest_fraction": 0.414892,
+        "p_present": 0.965126,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "41872": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "419201": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "424349": {
+        "correct": true,
+        "largest_fraction": 0.246524,
+        "p_present": 0.950652,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "426372": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "427256": {
+        "correct": true,
+        "largest_fraction": 0.332312,
+        "p_present": 0.957405,
+        "person_boxes": 16,
+        "verdict": "present"
+      },
+      "430048": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "433134": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "438774": {
+        "correct": true,
+        "largest_fraction": 0.153897,
+        "p_present": 0.928093,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "439525": {
+        "correct": true,
+        "largest_fraction": 0.454823,
+        "p_present": 0.880397,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "442161": {
+        "correct": true,
+        "largest_fraction": 0.416817,
+        "p_present": 0.925981,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "447611": {
+        "correct": true,
+        "largest_fraction": 0.218768,
+        "p_present": 0.890991,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "449406": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "45070": {
+        "correct": true,
+        "largest_fraction": 0.390808,
+        "p_present": 0.959402,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "452122": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "453040": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "455301": {
+        "correct": true,
+        "largest_fraction": 0.742266,
+        "p_present": 0.752277,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "457559": {
+        "correct": true,
+        "largest_fraction": 0.30936,
+        "p_present": 0.971703,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "46463": {
+        "correct": true,
+        "largest_fraction": 0.460513,
+        "p_present": 0.817331,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "466125": {
+        "correct": true,
+        "largest_fraction": 0.367691,
+        "p_present": 0.950822,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "466256": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "468577": {
+        "correct": true,
+        "largest_fraction": 0.176322,
+        "p_present": 0.878921,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "473219": {
+        "correct": true,
+        "largest_fraction": 0.233772,
+        "p_present": 0.951248,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "474164": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "47801": {
+        "correct": true,
+        "largest_fraction": 0.59873,
+        "p_present": 0.966611,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "479448": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "480275": {
+        "correct": true,
+        "largest_fraction": 0.106231,
+        "p_present": 0.335928,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "480936": {
+        "correct": true,
+        "largest_fraction": 0.599208,
+        "p_present": 0.948143,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "486046": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "488673": {
+        "correct": true,
+        "largest_fraction": 0.313201,
+        "p_present": 0.910157,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "489046": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "491071": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "492362": {
+        "correct": true,
+        "largest_fraction": 0.268557,
+        "p_present": 0.953342,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "494427": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "494869": {
+        "correct": true,
+        "largest_fraction": 0.222351,
+        "p_present": 0.929125,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "50326": {
+        "correct": true,
+        "largest_fraction": 0.228296,
+        "p_present": 0.937621,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "509699": {
+        "correct": false,
+        "largest_fraction": 0.112975,
+        "p_present": 0.873586,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "512657": {
+        "correct": true,
+        "largest_fraction": 0.27054,
+        "p_present": 0.939676,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "515266": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "515579": {
+        "correct": true,
+        "largest_fraction": 0.422688,
+        "p_present": 0.971318,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "520871": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "521405": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "523807": {
+        "correct": true,
+        "largest_fraction": 0.198026,
+        "p_present": 0.557639,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "52591": {
+        "correct": true,
+        "largest_fraction": 0.643588,
+        "p_present": 0.958489,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "533145": {
+        "correct": true,
+        "largest_fraction": 0.302545,
+        "p_present": 0.798324,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "53505": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "535523": {
+        "correct": true,
+        "largest_fraction": 0.117299,
+        "p_present": 0.919525,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "536073": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "53909": {
+        "correct": true,
+        "largest_fraction": 0.751615,
+        "p_present": 0.584776,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "540502": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "54123": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "541773": {
+        "correct": true,
+        "largest_fraction": 0.485547,
+        "p_present": 0.968342,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "542089": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "546976": {
+        "correct": true,
+        "largest_fraction": 0.561881,
+        "p_present": 0.950131,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "547854": {
+        "correct": true,
+        "largest_fraction": 0.63414,
+        "p_present": 0.945557,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "54931": {
+        "correct": true,
+        "largest_fraction": 0.304715,
+        "p_present": 0.94947,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "5529": {
+        "correct": true,
+        "largest_fraction": 0.167873,
+        "p_present": 0.933339,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "554266": {
+        "correct": true,
+        "largest_fraction": 0.212239,
+        "p_present": 0.547749,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "556193": {
+        "correct": true,
+        "largest_fraction": 0.327557,
+        "p_present": 0.968789,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "557501": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "559160": {
+        "correct": true,
+        "largest_fraction": 0.261946,
+        "p_present": 0.955193,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "563603": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "565469": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "571264": {
+        "correct": true,
+        "largest_fraction": 0.203462,
+        "p_present": 0.934556,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "571804": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "572555": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "575500": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "577735": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "578922": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "61171": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "61471": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "63047": {
+        "correct": true,
+        "largest_fraction": 0.300425,
+        "p_present": 0.963408,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "63602": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "64359": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "66635": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "68409": {
+        "correct": true,
+        "largest_fraction": 0.339459,
+        "p_present": 0.910547,
+        "person_boxes": 11,
+        "verdict": "present"
+      },
+      "7784": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "78032": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "78420": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "78426": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "79969": {
+        "correct": true,
+        "largest_fraction": 0.142097,
+        "p_present": 0.935681,
+        "person_boxes": 7,
+        "verdict": "present"
+      },
+      "80932": {
+        "correct": true,
+        "largest_fraction": 0.326886,
+        "p_present": 0.940582,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "82180": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "82688": {
+        "correct": true,
+        "largest_fraction": 0.578548,
+        "p_present": 0.965073,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "82846": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "85576": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "8629": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "872": {
+        "correct": true,
+        "largest_fraction": 0.335799,
+        "p_present": 0.897386,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "90062": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "90284": {
+        "correct": true,
+        "largest_fraction": 0.522345,
+        "p_present": 0.97158,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "91654": {
+        "correct": true,
+        "largest_fraction": 0.041442,
+        "p_present": 0.0,
+        "person_boxes": 1,
+        "verdict": "absent"
+      },
+      "92416": {
+        "correct": true,
+        "largest_fraction": 0.572875,
+        "p_present": 0.967861,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "94326": {
+        "correct": true,
+        "largest_fraction": 0.321949,
+        "p_present": 0.914299,
+        "person_boxes": 1,
+        "verdict": "present"
+      }
+    }
+  },
+  "experiment": "vision-mode-r2y-26s-3b-pooled",
+  "git_head": "72a9e0e13073c9d8cf810e150e6ec7ac99a59759",
+  "host": {
+    "depth": 30,
+    "hidden_size": 2048,
+    "key": "3b",
+    "label": "LFM2.5-VL-3B",
+    "model_id": "LiquidAI/LFM2.5-VL-3B"
+  },
+  "host_machine": "smarty",
+  "majority_reading": {
+    "decisive": true,
+    "of": 3,
+    "reading": "(i) ROBUST",
+    "votes": 3
+  },
+  "per_seed": {
+    "1042": {
+      "false_alarm": {
+        "caution": 0.03,
+        "social": 0.02
+      },
+      "fidelity": {
+        "caution": 0.0,
+        "social": 0.0
+      },
+      "miss_cost": {
+        "caution": 0.96,
+        "social": 0.46
+      },
+      "oracle_lean": {
+        "caution": 0.79,
+        "social": -0.13
+      }
+    },
+    "2042": {
+      "false_alarm": {
+        "caution": 0.07,
+        "social": 0.02
+      },
+      "fidelity": {
+        "caution": 0.0,
+        "social": 0.0
+      },
+      "miss_cost": {
+        "caution": 0.99,
+        "social": 0.43
+      },
+      "oracle_lean": {
+        "caution": 0.98,
+        "social": 0.02
+      }
+    },
+    "42": {
+      "false_alarm": {
+        "caution": 0.01,
+        "social": 0.01
+      },
+      "fidelity": {
+        "caution": 0.0,
+        "social": 0.0
+      },
+      "miss_cost": {
+        "caution": 0.26,
+        "social": 0.48
+      },
+      "oracle_lean": {
+        "caution": 0.22,
+        "social": -0.12
+      }
+    }
+  },
+  "per_seed_readings": {
+    "1042": "(i) ROBUST",
+    "2042": "(i) ROBUST",
+    "42": "(i) ROBUST"
+  },
+  "pooled_metrics": {
+    "caution": {
+      "absent_mix": {
+        "classifier": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.993333,
+          "stop": 0.006667
+        },
+        "flipped": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.963333,
+          "stop": 0.036667
+        },
+        "habit": {
+          "greet": 0.036667,
+          "other": 0.0,
+          "proceed": 0.943333,
+          "stop": 0.02
+        },
+        "oracle": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "classifier": 0.006667,
+        "flipped": 0.036667,
+        "habit": 0.02,
+        "oracle": 0.0
+      },
+      "action": "stop",
+      "false_alarm_cell": 0.036667,
+      "fidelity": 0.0,
+      "miss_cell": 0.0,
+      "miss_cost": 0.736667,
+      "oracle_lean": 0.663334,
+      "parse_fallback_share": {
+        "classifier": 0.0,
+        "flipped": 0.0,
+        "habit": 0.0,
+        "oracle": 0.0
+      },
+      "present_mix": {
+        "classifier": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.263333,
+          "stop": 0.736667
+        },
+        "flipped": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "habit": {
+          "greet": 0.533333,
+          "other": 0.0,
+          "proceed": 0.393333,
+          "stop": 0.073333
+        },
+        "oracle": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.263333,
+          "stop": 0.736667
+        }
+      },
+      "present_share": {
+        "classifier": 0.736667,
+        "flipped": 0.0,
+        "habit": 0.073333,
+        "oracle": 0.736667
+      },
+      "real_errors": {
+        "false_alarms": {
+          "action_share": 0.666667,
+          "n": 3
+        },
+        "misses": {
+          "action_share": null,
+          "n": 0
+        }
+      }
+    },
+    "social": {
+      "absent_mix": {
+        "classifier": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.993333,
+          "stop": 0.006667
+        },
+        "flipped": {
+          "greet": 0.016667,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.016667
+        },
+        "habit": {
+          "greet": 0.036667,
+          "other": 0.0,
+          "proceed": 0.943333,
+          "stop": 0.02
+        },
+        "oracle": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "classifier": 0.0,
+        "flipped": 0.016667,
+        "habit": 0.036667,
+        "oracle": 0.0
+      },
+      "action": "greet",
+      "false_alarm_cell": 0.016667,
+      "fidelity": 0.0,
+      "miss_cell": 0.0,
+      "miss_cost": 0.456667,
+      "oracle_lean": -0.076666,
+      "parse_fallback_share": {
+        "classifier": 0.0,
+        "flipped": 0.0,
+        "habit": 0.0,
+        "oracle": 0.0
+      },
+      "present_mix": {
+        "classifier": {
+          "greet": 0.456667,
+          "other": 0.0,
+          "proceed": 0.223333,
+          "stop": 0.32
+        },
+        "flipped": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "habit": {
+          "greet": 0.533333,
+          "other": 0.0,
+          "proceed": 0.393333,
+          "stop": 0.073333
+        },
+        "oracle": {
+          "greet": 0.456667,
+          "other": 0.0,
+          "proceed": 0.223333,
+          "stop": 0.32
+        }
+      },
+      "present_share": {
+        "classifier": 0.456667,
+        "flipped": 0.0,
+        "habit": 0.533333,
+        "oracle": 0.456667
+      },
+      "real_errors": {
+        "false_alarms": {
+          "action_share": 0.0,
+          "n": 3
+        },
+        "misses": {
+          "action_share": null,
+          "n": 0
+        }
+      }
+    }
+  },
+  "pooled_reading": {
+    "bands": {
+      "false_alarm_captured": 0.5,
+      "false_alarm_clean": 0.2,
+      "fidelity": 0.1,
+      "inert": 0.1,
+      "oracle_lean_floor": 0.25
+    },
+    "captured_modes": [],
+    "classifier_vs_habit": {
+      "caution": 0.663334,
+      "social": -0.076666
+    },
+    "faithful": true,
+    "false_alarm": {
+      "caution": 0.036667,
+      "social": 0.016667
+    },
+    "fidelity": {
+      "caution": 0.0,
+      "social": 0.0
+    },
+    "grounding_clean": true,
+    "miss_cost": {
+      "caution": 0.736667,
+      "social": 0.456667
+    },
+    "oracle_lean": {
+      "caution": 0.663334,
+      "social": -0.076666
+    },
+    "reading": "(i) ROBUST"
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 2y registration \u2014 a person detector in the classifier's seat (2026-08-23)",
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "smoke": false,
+  "track": "vision-mode",
+  "wall_seconds": 173.936
+}

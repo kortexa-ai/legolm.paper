@@ -1,0 +1,432 @@
+{
+  "admissibility": {
+    "admissible": true,
+    "fallback_ceiling": 0.05,
+    "grounding": {
+      "caution": 0.033333,
+      "social": 0.0
+    },
+    "grounding_ceiling": 0.2,
+    "max_parse_fallback_share": 0.0
+  },
+  "classifier": null,
+  "constant_variant": "same",
+  "dose_scale": 1.0,
+  "emitter": "oracle",
+  "experiment": "vision-mode-r1b-450m-x1-oracle-mx2o42door-pooled",
+  "git_head": "879792a927944fa521492637a67a30266dff1a94",
+  "host": {
+    "depth": 16,
+    "hidden_size": 1024,
+    "key": "450m",
+    "label": "LFM2.5-VL-450M",
+    "model_id": "LiquidAI/LFM2.5-VL-450M"
+  },
+  "host_machine": "smarty",
+  "order_seed": 42,
+  "per_seed_admissible": {
+    "1042": true
+  },
+  "per_seed_bands": {
+    "1042": {
+      "caution": "packet-holds",
+      "explore": "packet-holds",
+      "social": "packet-holds"
+    }
+  },
+  "per_seed_ownership": {
+    "1042": {
+      "caution": 1.14286,
+      "explore": 1.181816,
+      "social": 1.0
+    }
+  },
+  "pooled_metrics": {
+    "caution": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "habit": 0.0,
+        "hostile-text": 0.033333,
+        "packet": 0.033333,
+        "packet+congruent": 0.033333,
+        "packet+hostile": 0.033333,
+        "shuffled+hostile": 0.0
+      },
+      "action": "stop",
+      "additivity": 0.0,
+      "band": "packet-holds",
+      "grounding": 0.033333,
+      "hostile_text_on_absent": 0.033333,
+      "lean": 0.233333,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.233333,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.266667,
+        "reason": null,
+        "value": 1.14286
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.233333,
+          "stop": 0.766667
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.266667,
+          "stop": 0.733333
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        },
+        "shuffled+hostile": {
+          "greet": 0.266667,
+          "other": 0.0,
+          "proceed": 0.733333,
+          "stop": 0.0
+        }
+      },
+      "present_share": {
+        "habit": 0.766667,
+        "hostile-text": 0.733333,
+        "packet": 1.0,
+        "packet+congruent": 1.0,
+        "packet+hostile": 1.0,
+        "shuffled+hostile": 0.0
+      }
+    },
+    "explore": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.766667,
+          "stop": 0.233333
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        }
+      },
+      "absent_share": {
+        "habit": 1.0,
+        "hostile-text": 0.766667,
+        "packet": 1.0,
+        "packet+congruent": 1.0,
+        "packet+hostile": 1.0,
+        "shuffled+hostile": 0.966667
+      },
+      "action": "proceed",
+      "additivity": 0.133333,
+      "band": "packet-holds",
+      "grounding": null,
+      "hostile_text_on_absent": 0.766667,
+      "lean": 0.366667,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.366667,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.433333,
+        "reason": null,
+        "value": 1.181816
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.233333,
+          "stop": 0.766667
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        },
+        "packet": {
+          "greet": 0.4,
+          "other": 0.0,
+          "proceed": 0.6,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.266667,
+          "other": 0.0,
+          "proceed": 0.733333,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.5,
+          "other": 0.0,
+          "proceed": 0.433333,
+          "stop": 0.066667
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        }
+      },
+      "present_share": {
+        "habit": 0.233333,
+        "hostile-text": 0.0,
+        "packet": 0.6,
+        "packet+congruent": 0.733333,
+        "packet+hostile": 0.433333,
+        "shuffled+hostile": 0.0
+      }
+    },
+    "social": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "action": "greet",
+      "additivity": 0.0,
+      "band": "packet-holds",
+      "grounding": 0.0,
+      "hostile_text_on_absent": 0.0,
+      "lean": 0.5,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.5,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.5,
+        "reason": null,
+        "value": 1.0
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.233333,
+          "stop": 0.766667
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.266667,
+          "stop": 0.733333
+        },
+        "packet": {
+          "greet": 0.5,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 0.5
+        },
+        "packet+congruent": {
+          "greet": 0.5,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 0.5
+        },
+        "packet+hostile": {
+          "greet": 0.5,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 0.5
+        },
+        "shuffled+hostile": {
+          "greet": 0.266667,
+          "other": 0.0,
+          "proceed": 0.733333,
+          "stop": 0.0
+        }
+      },
+      "present_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.5,
+        "packet+congruent": 0.5,
+        "packet+hostile": 0.5,
+        "shuffled+hostile": 0.266667
+      }
+    }
+  },
+  "reading": {
+    "bands": {
+      "guard": 0.05,
+      "holds": 0.7,
+      "text_wins": 0.3
+    },
+    "majority_band": {
+      "caution": "packet-holds",
+      "explore": "packet-holds",
+      "social": "packet-holds"
+    },
+    "modes_with_lean": [
+      "social",
+      "caution",
+      "explore"
+    ],
+    "ownership": {
+      "caution": 1.14286,
+      "explore": 1.181816,
+      "social": 1.0
+    },
+    "pooled_band": {
+      "caution": "packet-holds",
+      "explore": "packet-holds",
+      "social": "packet-holds"
+    },
+    "reading": "(i) PACKET HOLDS"
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 1b registration \u2014 the hostile prompt on the VL host (2026-08-22)",
+  "seeds": [
+    1042
+  ],
+  "smoke": false,
+  "track": "vision-mode",
+  "wall_seconds": 34.102
+}

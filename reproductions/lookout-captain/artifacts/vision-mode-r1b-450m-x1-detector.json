@@ -1,0 +1,908 @@
+{
+  "admissibility": {
+    "admissible": true,
+    "fallback_ceiling": 0.05,
+    "grounding": {
+      "caution": 0.0,
+      "social": 0.0
+    },
+    "grounding_ceiling": 0.2,
+    "max_parse_fallback_share": 0.0
+  },
+  "classifier": {
+    "eval": {
+      "accuracy": 0.983333,
+      "false_alarms": 1,
+      "frames": 60,
+      "label_x_verdict": {
+        "absent": {
+          "absent": 29,
+          "present": 1
+        },
+        "present": {
+          "absent": 0,
+          "present": 30
+        }
+      },
+      "misses": 0
+    },
+    "path": "checkpoints/experiments/yolo26n.pt",
+    "rule": {
+      "absent": "no such box",
+      "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+      "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+    },
+    "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+    "trained_here": false,
+    "training": {
+      "backbone": "ultralytics yolo26n, COCO-pretrained detector, frozen",
+      "confidence": 0.25,
+      "head": "none: a rule over the person boxes",
+      "image_size": 640,
+      "note": "COCO val2017 is the detector's own validation split; no frame here was trained on",
+      "parameters_trained": 0
+    },
+    "verdicts": {
+      "10995": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "118209": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "119828": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "123585": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "147518": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "156076": {
+        "correct": true,
+        "largest_fraction": 0.179345,
+        "p_present": 0.919804,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "162366": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "166391": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "167159": {
+        "correct": false,
+        "largest_fraction": 0.409033,
+        "p_present": 0.5232,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "180011": {
+        "correct": true,
+        "largest_fraction": 0.12539,
+        "p_present": 0.70882,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "208363": {
+        "correct": true,
+        "largest_fraction": 0.23466,
+        "p_present": 0.942023,
+        "person_boxes": 14,
+        "verdict": "present"
+      },
+      "224093": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "229601": {
+        "correct": true,
+        "largest_fraction": 0.1654,
+        "p_present": 0.947639,
+        "person_boxes": 6,
+        "verdict": "present"
+      },
+      "232563": {
+        "correct": true,
+        "largest_fraction": 0.51772,
+        "p_present": 0.920035,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "255165": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "2587": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "268996": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "271728": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "274411": {
+        "correct": true,
+        "largest_fraction": 0.17755,
+        "p_present": 0.917779,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "284743": {
+        "correct": true,
+        "largest_fraction": 0.307941,
+        "p_present": 0.826064,
+        "person_boxes": 5,
+        "verdict": "present"
+      },
+      "286182": {
+        "correct": true,
+        "largest_fraction": 0.104566,
+        "p_present": 0.881116,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "299355": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "300039": {
+        "correct": true,
+        "largest_fraction": 0.289954,
+        "p_present": 0.452432,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "301563": {
+        "correct": true,
+        "largest_fraction": 0.16472,
+        "p_present": 0.946247,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "30504": {
+        "correct": true,
+        "largest_fraction": 0.232127,
+        "p_present": 0.868427,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "32081": {
+        "correct": true,
+        "largest_fraction": 0.299968,
+        "p_present": 0.941841,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "348243": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "357816": {
+        "correct": true,
+        "largest_fraction": 0.487476,
+        "p_present": 0.899023,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "362520": {
+        "correct": true,
+        "largest_fraction": 0.377222,
+        "p_present": 0.775392,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "389804": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "394611": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "422998": {
+        "correct": true,
+        "largest_fraction": 0.567727,
+        "p_present": 0.886565,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "436551": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "437351": {
+        "correct": true,
+        "largest_fraction": 0.504519,
+        "p_present": 0.91557,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "451571": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "455624": {
+        "correct": true,
+        "largest_fraction": 0.190196,
+        "p_present": 0.87967,
+        "person_boxes": 13,
+        "verdict": "present"
+      },
+      "469174": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "472623": {
+        "correct": true,
+        "largest_fraction": 0.182668,
+        "p_present": 0.92363,
+        "person_boxes": 3,
+        "verdict": "present"
+      },
+      "481582": {
+        "correct": true,
+        "largest_fraction": 0.174396,
+        "p_present": 0.644515,
+        "person_boxes": 4,
+        "verdict": "present"
+      },
+      "485424": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "489305": {
+        "correct": true,
+        "largest_fraction": 0.55063,
+        "p_present": 0.848496,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "492110": {
+        "correct": true,
+        "largest_fraction": 0.454539,
+        "p_present": 0.937954,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "49810": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "512403": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "51314": {
+        "correct": true,
+        "largest_fraction": 0.221502,
+        "p_present": 0.832071,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "515025": {
+        "correct": true,
+        "largest_fraction": 0.214143,
+        "p_present": 0.713955,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "520531": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "527960": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "547383": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "555012": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "556158": {
+        "correct": true,
+        "largest_fraction": 0.122589,
+        "p_present": 0.935755,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "572303": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "578545": {
+        "correct": true,
+        "largest_fraction": 0.199259,
+        "p_present": 0.838279,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "59044": {
+        "correct": true,
+        "largest_fraction": 0.328818,
+        "p_present": 0.812439,
+        "person_boxes": 14,
+        "verdict": "present"
+      },
+      "60102": {
+        "correct": true,
+        "largest_fraction": 0.686639,
+        "p_present": 0.953114,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "68286": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      },
+      "73702": {
+        "correct": true,
+        "largest_fraction": 0.484984,
+        "p_present": 0.91129,
+        "person_boxes": 2,
+        "verdict": "present"
+      },
+      "79014": {
+        "correct": true,
+        "largest_fraction": 0.600706,
+        "p_present": 0.731203,
+        "person_boxes": 1,
+        "verdict": "present"
+      },
+      "98853": {
+        "correct": true,
+        "largest_fraction": 0.272255,
+        "p_present": 0.770949,
+        "person_boxes": 14,
+        "verdict": "present"
+      },
+      "99053": {
+        "correct": true,
+        "largest_fraction": 0.0,
+        "p_present": 0.0,
+        "person_boxes": 0,
+        "verdict": "absent"
+      }
+    }
+  },
+  "dose_scale": 1.0,
+  "emitter": "detector",
+  "experiment": "vision-mode-r1b-450m-x1-detector-pooled",
+  "git_head": "b544a2434f4be876a36cd4080fe2cc8b2ab0efff",
+  "host": {
+    "depth": 16,
+    "hidden_size": 1024,
+    "key": "450m",
+    "label": "LFM2.5-VL-450M",
+    "model_id": "LiquidAI/LFM2.5-VL-450M"
+  },
+  "host_machine": "smarty",
+  "per_seed_admissible": {
+    "1042": true,
+    "2042": true,
+    "42": true
+  },
+  "per_seed_bands": {
+    "1042": {
+      "caution": "packet-holds",
+      "explore": "packet-holds",
+      "social": "split"
+    },
+    "2042": {
+      "caution": "packet-holds",
+      "explore": "text-wins",
+      "social": "packet-holds"
+    },
+    "42": {
+      "caution": "packet-holds",
+      "explore": null,
+      "social": "packet-holds"
+    }
+  },
+  "per_seed_ownership": {
+    "1042": {
+      "caution": 1.333333,
+      "explore": 0.900001,
+      "social": 0.499999
+    },
+    "2042": {
+      "caution": 1.0,
+      "explore": -2.799996,
+      "social": 1.5
+    },
+    "42": {
+      "caution": 0.965518,
+      "explore": null,
+      "social": 1.250006
+    }
+  },
+  "pooled_metrics": {
+    "caution": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.988889,
+          "stop": 0.011111
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.955556,
+          "stop": 0.044444
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "habit": 0.0,
+        "hostile-text": 0.011111,
+        "packet": 0.0,
+        "packet+congruent": 0.044444,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "action": "stop",
+      "additivity": 0.0,
+      "band": "packet-holds",
+      "grounding": 0.0,
+      "hostile_text_on_absent": 0.011111,
+      "lean": 0.777778,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.777778,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.811111,
+        "reason": null,
+        "value": 1.042857
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.3,
+          "other": 0.0,
+          "proceed": 0.477778,
+          "stop": 0.222222
+        },
+        "hostile-text": {
+          "greet": 0.288889,
+          "other": 0.0,
+          "proceed": 0.533333,
+          "stop": 0.177778
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        },
+        "packet+hostile": {
+          "greet": 0.011111,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 0.988889
+        },
+        "shuffled+hostile": {
+          "greet": 0.155556,
+          "other": 0.0,
+          "proceed": 0.533333,
+          "stop": 0.311111
+        }
+      },
+      "present_share": {
+        "habit": 0.222222,
+        "hostile-text": 0.177778,
+        "packet": 1.0,
+        "packet+congruent": 1.0,
+        "packet+hostile": 0.988889,
+        "shuffled+hostile": 0.311111
+      }
+    },
+    "explore": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.622222,
+          "stop": 0.377778
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.033333
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.955556,
+          "stop": 0.044444
+        }
+      },
+      "absent_share": {
+        "habit": 1.0,
+        "hostile-text": 0.622222,
+        "packet": 1.0,
+        "packet+congruent": 1.0,
+        "packet+hostile": 0.966667,
+        "shuffled+hostile": 0.955556
+      },
+      "action": "proceed",
+      "additivity": 0.011111,
+      "band": null,
+      "grounding": null,
+      "hostile_text_on_absent": 0.622222,
+      "lean": 0.044444,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.044444,
+        "guard": 0.05,
+        "guarded": true,
+        "numerator": 0.311111,
+        "reason": "no lean to own",
+        "value": null
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.3,
+          "other": 0.0,
+          "proceed": 0.477778,
+          "stop": 0.222222
+        },
+        "hostile-text": {
+          "greet": 0.055556,
+          "other": 0.0,
+          "proceed": 0.022222,
+          "stop": 0.922222
+        },
+        "packet": {
+          "greet": 0.155556,
+          "other": 0.0,
+          "proceed": 0.522222,
+          "stop": 0.322222
+        },
+        "packet+congruent": {
+          "greet": 0.155556,
+          "other": 0.0,
+          "proceed": 0.533333,
+          "stop": 0.311111
+        },
+        "packet+hostile": {
+          "greet": 0.133333,
+          "other": 0.0,
+          "proceed": 0.333333,
+          "stop": 0.533333
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 1.0
+        }
+      },
+      "present_share": {
+        "habit": 0.477778,
+        "hostile-text": 0.022222,
+        "packet": 0.522222,
+        "packet+congruent": 0.533333,
+        "packet+hostile": 0.333333,
+        "shuffled+hostile": 0.0
+      }
+    },
+    "social": {
+      "absent_mix": {
+        "habit": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "hostile-text": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.988889,
+          "stop": 0.011111
+        },
+        "packet": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+congruent": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "packet+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        },
+        "shuffled+hostile": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "action": "greet",
+      "additivity": 0.111111,
+      "band": "packet-holds",
+      "grounding": 0.0,
+      "hostile_text_on_absent": 0.0,
+      "lean": 0.333333,
+      "ownership": {
+        "definition": "(share(packet+hostile) - share(hostile-text)) / (share(packet) - share(habit))",
+        "denominator": 0.333333,
+        "guard": 0.05,
+        "guarded": false,
+        "numerator": 0.266667,
+        "reason": null,
+        "value": 0.800002
+      },
+      "parse_fallback_share": {
+        "habit": 0.0,
+        "hostile-text": 0.0,
+        "packet": 0.0,
+        "packet+congruent": 0.0,
+        "packet+hostile": 0.0,
+        "shuffled+hostile": 0.0
+      },
+      "present_mix": {
+        "habit": {
+          "greet": 0.3,
+          "other": 0.0,
+          "proceed": 0.477778,
+          "stop": 0.222222
+        },
+        "hostile-text": {
+          "greet": 0.288889,
+          "other": 0.0,
+          "proceed": 0.533333,
+          "stop": 0.177778
+        },
+        "packet": {
+          "greet": 0.633333,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 0.366667
+        },
+        "packet+congruent": {
+          "greet": 0.744444,
+          "other": 0.0,
+          "proceed": 0.0,
+          "stop": 0.255556
+        },
+        "packet+hostile": {
+          "greet": 0.555556,
+          "other": 0.0,
+          "proceed": 0.011111,
+          "stop": 0.433333
+        },
+        "shuffled+hostile": {
+          "greet": 0.155556,
+          "other": 0.0,
+          "proceed": 0.533333,
+          "stop": 0.311111
+        }
+      },
+      "present_share": {
+        "habit": 0.3,
+        "hostile-text": 0.288889,
+        "packet": 0.633333,
+        "packet+congruent": 0.744444,
+        "packet+hostile": 0.555556,
+        "shuffled+hostile": 0.155556
+      }
+    }
+  },
+  "reading": {
+    "bands": {
+      "guard": 0.05,
+      "holds": 0.7,
+      "text_wins": 0.3
+    },
+    "majority_band": {
+      "caution": "packet-holds",
+      "explore": null,
+      "social": "packet-holds"
+    },
+    "modes_with_lean": [
+      "social",
+      "caution"
+    ],
+    "ownership": {
+      "caution": 1.042857,
+      "explore": null,
+      "social": 0.800002
+    },
+    "pooled_band": {
+      "caution": "packet-holds",
+      "explore": null,
+      "social": "packet-holds"
+    },
+    "reading": "(i) PACKET HOLDS"
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 1b registration \u2014 the hostile prompt on the VL host (2026-08-22)",
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "smoke": false,
+  "track": "vision-mode",
+  "wall_seconds": 104.705
+}

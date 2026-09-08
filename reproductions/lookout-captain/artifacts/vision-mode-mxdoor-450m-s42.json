@@ -1,0 +1,90 @@
+{
+  "device": "cuda",
+  "doors": {
+    "constant": {
+      "path": "checkpoints/experiments/vm-r1mx-constant-bridge-450m-s42.pt",
+      "sha256": "2a3bf7fffba24c0926f4728c5278cd4ef1506e9c371f9cf3e4e5b03fb0056207"
+    },
+    "mode": {
+      "path": "checkpoints/experiments/vm-r1mx-mode-bridge-450m-s42.pt",
+      "sha256": "d5a4e973768db8c2a5bf53f067a0293927fe43d4703aa6fb03fca9bf3aea5a69"
+    }
+  },
+  "experiment": "vision-mode-mxdoor-450m-s42",
+  "gates": {
+    "held_out": {
+      "frames": 8,
+      "passed": true,
+      "per_mode": {
+        "caution": 0.9549,
+        "explore": 0.9306,
+        "social": 0.9583
+      },
+      "pooled": 0.9479,
+      "positions": [
+        8,
+        9
+      ],
+      "threshold": 0.9
+    },
+    "zero_dose": {
+      "exact": true,
+      "max_abs_difference": 0.0,
+      "passed": true
+    }
+  },
+  "git_head": "603f552bcfe11b5f4d2f2a28f9781ab73bb029fc",
+  "host": {
+    "depth": 16,
+    "hidden_size": 1024,
+    "key": "450m",
+    "label": "LFM2.5-VL-450M",
+    "model_id": "LiquidAI/LFM2.5-VL-450M"
+  },
+  "host_machine": "smarty",
+  "layer_plan": {
+    "depth": 16,
+    "inject_fractions": [
+      0.29,
+      0.46,
+      0.63
+    ],
+    "inject_layers": [
+      5,
+      7,
+      10
+    ],
+    "prior_fraction": 0.79,
+    "scanned": false,
+    "source_layer": 13
+  },
+  "registered_steps": 192,
+  "registration": "tracks/vision-mode/PLAN.md, Rung 3d registration \u2014 mixed-domain doors: renders in the training mix (2026-08-24)",
+  "reuses": "tracks/vision-mode/PLAN.md, Rung 1 registration \u2014 mode packets on a vision-language host (2026-08-22)",
+  "seed": 42,
+  "smoke": false,
+  "steps": 192,
+  "track": "vision-mode",
+  "training": {
+    "constant_final": {
+      "grad_norm": 0.033,
+      "loss": 0.1056,
+      "step": 192,
+      "token_accuracy": 0.9288
+    },
+    "mode_final": {
+      "grad_norm": 0.0125,
+      "loss": 0.0026,
+      "step": 192,
+      "token_accuracy": 1.0
+    }
+  },
+  "training_frames": {
+    "coco": 80,
+    "mesh": 80,
+    "mesh_manifest": "/tmp/vm-r3-trainframes/mesh/manifest.json",
+    "mesh_manifest_sha256": "4d71906cd9f0a2a21de61be29177720106488bd5ac4ebe6ef4d8fc57cda3ee04",
+    "total": 160
+  },
+  "wall_seconds": 41.612
+}

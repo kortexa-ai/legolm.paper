@@ -5,6 +5,7 @@ on `main`; paper-specific directories separate their code and artifacts.
 
 | Study | Reproduction | Paper |
 | --- | --- | --- |
+| The Lookout and the Captain | [`reproductions/lookout-captain/`](reproductions/lookout-captain/) | [`PDF`](lookout-captain-paper/main.pdf) |
 | Paper 1: conditional LoRA bridges | [`paper1/`](paper1/) | [`Paper 1 manuscript`](paper1/manuscript/main.pdf) |
 | Historical 230M companion to Paper 1 | [`Historical command and interpretive erratum`](paper1/REVISION_NOTES.md#impact-on-the-historical-230m-companion-note) | [`PDF`](note/main.pdf) |
 | The Latent Geometry of Meh | [`reproductions/jspace-spectrum/`](reproductions/jspace-spectrum/) | [`PDF`](jspace-spectrum-paper/main.pdf) |
@@ -23,6 +24,21 @@ The historical root harness and `arxiv/` remain available for the original
 33.6M release. An improvement in independently sampled text likelihood alone
 does not establish sensor use. The revision measures conditioning with matched
 checkpoint evaluations and explicit sensor interventions.
+
+## The Lookout and the Captain
+
+This study separates mode conditioning from event-triggered model invocation
+on frozen vision-language hosts of 450M, 3B, and 27B parameters. A mode packet
+changes selection among greet, stop, and proceed. A person detector selects
+the mode and controls when the host runs. At 27B, verdict gating avoids 83.54%
+of calls in the recorded replay while matching every-frame actions on 98.06%
+of social and 99.03% of caution steps. The paper also reports action errors,
+unresolved invocation delays, and failures across phrases and visual domains.
+
+The [reproduction guide](reproductions/lookout-captain/README.md) provides a
+CPU rebuild from 232 saved result records and the complete model-experiment
+suite. The [revision notes](reproductions/lookout-captain/REVISION_NOTES.md)
+explain corrected comparisons, delay accounting, and provenance limits.
 
 ## Qwen 3.6 J-space spectrum study
 

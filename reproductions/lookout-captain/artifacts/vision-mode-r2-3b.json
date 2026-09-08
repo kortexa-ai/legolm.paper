@@ -1,0 +1,1358 @@
+{
+  "classifier": {
+    "eval": {
+      "accuracy": 0.91,
+      "false_alarms": 6,
+      "frames": 200,
+      "label_x_verdict": {
+        "absent": {
+          "absent": 94,
+          "present": 6
+        },
+        "present": {
+          "absent": 12,
+          "present": 88
+        }
+      },
+      "misses": 12
+    },
+    "path": "checkpoints/experiments/vm-r2-person-head.pt",
+    "sha256": "f4084a89c0f160ef01e998100c8e70101d556fc933bfbd64077fad9c7a3952b1",
+    "trained_here": false,
+    "training": {
+      "backbone": "torchvision mobilenet_v3_small IMAGENET1K_V1, frozen",
+      "balanced_per_epoch": 2670,
+      "batch": 64,
+      "epochs": 3,
+      "head": "Linear(576, 2)",
+      "history": [
+        {
+          "epoch": 1,
+          "examples": 2670,
+          "loss": 0.4007,
+          "train_accuracy": 0.8667
+        },
+        {
+          "epoch": 2,
+          "examples": 2670,
+          "loss": 0.2585,
+          "train_accuracy": 0.9154
+        },
+        {
+          "epoch": 3,
+          "examples": 2670,
+          "loss": 0.2166,
+          "train_accuracy": 0.9281
+        }
+      ],
+      "image_size": 224,
+      "learning_rate": 0.001,
+      "parameters_trained": 1154,
+      "seed": 42,
+      "train_frames": {
+        "absent": 2137,
+        "present": 1335
+      },
+      "wall_seconds": 12.064
+    },
+    "verdicts": {
+      "102805": {
+        "correct": true,
+        "p_present": 0.988636,
+        "verdict": "present"
+      },
+      "104603": {
+        "correct": true,
+        "p_present": 0.04042,
+        "verdict": "absent"
+      },
+      "107554": {
+        "correct": true,
+        "p_present": 0.287158,
+        "verdict": "absent"
+      },
+      "108495": {
+        "correct": true,
+        "p_present": 0.985852,
+        "verdict": "present"
+      },
+      "109916": {
+        "correct": true,
+        "p_present": 0.10807,
+        "verdict": "absent"
+      },
+      "111609": {
+        "correct": true,
+        "p_present": 0.878911,
+        "verdict": "present"
+      },
+      "113051": {
+        "correct": true,
+        "p_present": 0.09997,
+        "verdict": "absent"
+      },
+      "116068": {
+        "correct": true,
+        "p_present": 0.991755,
+        "verdict": "present"
+      },
+      "117374": {
+        "correct": true,
+        "p_present": 0.212058,
+        "verdict": "absent"
+      },
+      "126592": {
+        "correct": true,
+        "p_present": 0.033495,
+        "verdict": "absent"
+      },
+      "130566": {
+        "correct": true,
+        "p_present": 0.002774,
+        "verdict": "absent"
+      },
+      "13177": {
+        "correct": true,
+        "p_present": 0.9445,
+        "verdict": "present"
+      },
+      "132587": {
+        "correct": true,
+        "p_present": 0.970469,
+        "verdict": "present"
+      },
+      "13729": {
+        "correct": true,
+        "p_present": 0.982374,
+        "verdict": "present"
+      },
+      "140439": {
+        "correct": true,
+        "p_present": 0.08721,
+        "verdict": "absent"
+      },
+      "140556": {
+        "correct": true,
+        "p_present": 0.980621,
+        "verdict": "present"
+      },
+      "143998": {
+        "correct": true,
+        "p_present": 0.288176,
+        "verdict": "absent"
+      },
+      "144333": {
+        "correct": true,
+        "p_present": 0.983132,
+        "verdict": "present"
+      },
+      "147205": {
+        "correct": true,
+        "p_present": 0.378503,
+        "verdict": "absent"
+      },
+      "15079": {
+        "correct": true,
+        "p_present": 0.129162,
+        "verdict": "absent"
+      },
+      "153229": {
+        "correct": true,
+        "p_present": 0.994412,
+        "verdict": "present"
+      },
+      "153632": {
+        "correct": true,
+        "p_present": 0.092443,
+        "verdict": "absent"
+      },
+      "161879": {
+        "correct": true,
+        "p_present": 0.81339,
+        "verdict": "present"
+      },
+      "166563": {
+        "correct": true,
+        "p_present": 0.101685,
+        "verdict": "absent"
+      },
+      "166664": {
+        "correct": true,
+        "p_present": 0.06996,
+        "verdict": "absent"
+      },
+      "166768": {
+        "correct": true,
+        "p_present": 0.994135,
+        "verdict": "present"
+      },
+      "1675": {
+        "correct": true,
+        "p_present": 0.024988,
+        "verdict": "absent"
+      },
+      "168458": {
+        "correct": true,
+        "p_present": 0.02812,
+        "verdict": "absent"
+      },
+      "168619": {
+        "correct": true,
+        "p_present": 0.334703,
+        "verdict": "absent"
+      },
+      "168883": {
+        "correct": true,
+        "p_present": 0.994212,
+        "verdict": "present"
+      },
+      "175438": {
+        "correct": true,
+        "p_present": 0.114791,
+        "verdict": "absent"
+      },
+      "176847": {
+        "correct": true,
+        "p_present": 0.21326,
+        "verdict": "absent"
+      },
+      "177539": {
+        "correct": false,
+        "p_present": 0.436976,
+        "verdict": "absent"
+      },
+      "179898": {
+        "correct": true,
+        "p_present": 0.987651,
+        "verdict": "present"
+      },
+      "183648": {
+        "correct": true,
+        "p_present": 0.869439,
+        "verdict": "present"
+      },
+      "187055": {
+        "correct": true,
+        "p_present": 0.96759,
+        "verdict": "present"
+      },
+      "189475": {
+        "correct": true,
+        "p_present": 0.973951,
+        "verdict": "present"
+      },
+      "190637": {
+        "correct": true,
+        "p_present": 0.998123,
+        "verdict": "present"
+      },
+      "192904": {
+        "correct": false,
+        "p_present": 0.686809,
+        "verdict": "present"
+      },
+      "195165": {
+        "correct": true,
+        "p_present": 0.251875,
+        "verdict": "absent"
+      },
+      "198489": {
+        "correct": true,
+        "p_present": 0.973782,
+        "verdict": "present"
+      },
+      "199310": {
+        "correct": true,
+        "p_present": 0.951229,
+        "verdict": "present"
+      },
+      "199681": {
+        "correct": true,
+        "p_present": 0.086084,
+        "verdict": "absent"
+      },
+      "200152": {
+        "correct": true,
+        "p_present": 0.064754,
+        "verdict": "absent"
+      },
+      "200421": {
+        "correct": true,
+        "p_present": 0.918452,
+        "verdict": "present"
+      },
+      "201646": {
+        "correct": true,
+        "p_present": 0.97958,
+        "verdict": "present"
+      },
+      "201676": {
+        "correct": true,
+        "p_present": 0.046381,
+        "verdict": "absent"
+      },
+      "205324": {
+        "correct": true,
+        "p_present": 0.905421,
+        "verdict": "present"
+      },
+      "215778": {
+        "correct": true,
+        "p_present": 0.110633,
+        "verdict": "absent"
+      },
+      "223747": {
+        "correct": true,
+        "p_present": 0.932325,
+        "verdict": "present"
+      },
+      "224051": {
+        "correct": true,
+        "p_present": 0.195563,
+        "verdict": "absent"
+      },
+      "225532": {
+        "correct": true,
+        "p_present": 0.224751,
+        "verdict": "absent"
+      },
+      "227985": {
+        "correct": true,
+        "p_present": 0.278717,
+        "verdict": "absent"
+      },
+      "22935": {
+        "correct": true,
+        "p_present": 0.997405,
+        "verdict": "present"
+      },
+      "234526": {
+        "correct": true,
+        "p_present": 0.830268,
+        "verdict": "present"
+      },
+      "243199": {
+        "correct": true,
+        "p_present": 0.26732,
+        "verdict": "absent"
+      },
+      "244181": {
+        "correct": true,
+        "p_present": 0.151097,
+        "verdict": "absent"
+      },
+      "245915": {
+        "correct": true,
+        "p_present": 0.032254,
+        "verdict": "absent"
+      },
+      "252776": {
+        "correct": true,
+        "p_present": 0.998905,
+        "verdict": "present"
+      },
+      "255401": {
+        "correct": true,
+        "p_present": 0.044206,
+        "verdict": "absent"
+      },
+      "256407": {
+        "correct": true,
+        "p_present": 0.086686,
+        "verdict": "absent"
+      },
+      "258911": {
+        "correct": false,
+        "p_present": 0.396606,
+        "verdict": "absent"
+      },
+      "261318": {
+        "correct": true,
+        "p_present": 0.922743,
+        "verdict": "present"
+      },
+      "261706": {
+        "correct": true,
+        "p_present": 0.290198,
+        "verdict": "absent"
+      },
+      "262682": {
+        "correct": true,
+        "p_present": 0.063827,
+        "verdict": "absent"
+      },
+      "273711": {
+        "correct": false,
+        "p_present": 0.359004,
+        "verdict": "absent"
+      },
+      "276284": {
+        "correct": false,
+        "p_present": 0.657604,
+        "verdict": "present"
+      },
+      "278973": {
+        "correct": true,
+        "p_present": 0.843285,
+        "verdict": "present"
+      },
+      "281447": {
+        "correct": true,
+        "p_present": 0.074455,
+        "verdict": "absent"
+      },
+      "282296": {
+        "correct": true,
+        "p_present": 0.066115,
+        "verdict": "absent"
+      },
+      "282912": {
+        "correct": true,
+        "p_present": 0.100724,
+        "verdict": "absent"
+      },
+      "283268": {
+        "correct": true,
+        "p_present": 0.599215,
+        "verdict": "present"
+      },
+      "283785": {
+        "correct": true,
+        "p_present": 0.954908,
+        "verdict": "present"
+      },
+      "293390": {
+        "correct": true,
+        "p_present": 0.010312,
+        "verdict": "absent"
+      },
+      "295138": {
+        "correct": true,
+        "p_present": 0.849425,
+        "verdict": "present"
+      },
+      "300155": {
+        "correct": true,
+        "p_present": 0.099683,
+        "verdict": "absent"
+      },
+      "300233": {
+        "correct": true,
+        "p_present": 0.107493,
+        "verdict": "absent"
+      },
+      "303566": {
+        "correct": false,
+        "p_present": 0.420414,
+        "verdict": "absent"
+      },
+      "311928": {
+        "correct": true,
+        "p_present": 0.988652,
+        "verdict": "present"
+      },
+      "312192": {
+        "correct": false,
+        "p_present": 0.384005,
+        "verdict": "absent"
+      },
+      "312263": {
+        "correct": true,
+        "p_present": 0.061728,
+        "verdict": "absent"
+      },
+      "314541": {
+        "correct": true,
+        "p_present": 0.070017,
+        "verdict": "absent"
+      },
+      "315001": {
+        "correct": true,
+        "p_present": 0.380977,
+        "verdict": "absent"
+      },
+      "318908": {
+        "correct": true,
+        "p_present": 0.038105,
+        "verdict": "absent"
+      },
+      "330396": {
+        "correct": true,
+        "p_present": 0.954382,
+        "verdict": "present"
+      },
+      "331075": {
+        "correct": true,
+        "p_present": 0.043768,
+        "verdict": "absent"
+      },
+      "331569": {
+        "correct": true,
+        "p_present": 0.221054,
+        "verdict": "absent"
+      },
+      "334483": {
+        "correct": true,
+        "p_present": 0.98981,
+        "verdict": "present"
+      },
+      "335177": {
+        "correct": true,
+        "p_present": 0.118947,
+        "verdict": "absent"
+      },
+      "341469": {
+        "correct": true,
+        "p_present": 0.578086,
+        "verdict": "present"
+      },
+      "343524": {
+        "correct": true,
+        "p_present": 0.989443,
+        "verdict": "present"
+      },
+      "351823": {
+        "correct": true,
+        "p_present": 0.993661,
+        "verdict": "present"
+      },
+      "352582": {
+        "correct": true,
+        "p_present": 0.996772,
+        "verdict": "present"
+      },
+      "357888": {
+        "correct": true,
+        "p_present": 0.964657,
+        "verdict": "present"
+      },
+      "363875": {
+        "correct": true,
+        "p_present": 0.969614,
+        "verdict": "present"
+      },
+      "367082": {
+        "correct": false,
+        "p_present": 0.604442,
+        "verdict": "present"
+      },
+      "373382": {
+        "correct": true,
+        "p_present": 0.981175,
+        "verdict": "present"
+      },
+      "388056": {
+        "correct": true,
+        "p_present": 0.926518,
+        "verdict": "present"
+      },
+      "389315": {
+        "correct": false,
+        "p_present": 0.526652,
+        "verdict": "present"
+      },
+      "394199": {
+        "correct": true,
+        "p_present": 0.967101,
+        "verdict": "present"
+      },
+      "395180": {
+        "correct": true,
+        "p_present": 0.567348,
+        "verdict": "present"
+      },
+      "401244": {
+        "correct": true,
+        "p_present": 0.988222,
+        "verdict": "present"
+      },
+      "401250": {
+        "correct": false,
+        "p_present": 0.043511,
+        "verdict": "absent"
+      },
+      "402765": {
+        "correct": false,
+        "p_present": 0.059462,
+        "verdict": "absent"
+      },
+      "402783": {
+        "correct": true,
+        "p_present": 0.047217,
+        "verdict": "absent"
+      },
+      "40757": {
+        "correct": true,
+        "p_present": 0.929392,
+        "verdict": "present"
+      },
+      "415741": {
+        "correct": true,
+        "p_present": 0.128303,
+        "verdict": "absent"
+      },
+      "418062": {
+        "correct": true,
+        "p_present": 0.995221,
+        "verdict": "present"
+      },
+      "41872": {
+        "correct": true,
+        "p_present": 0.06376,
+        "verdict": "absent"
+      },
+      "419201": {
+        "correct": true,
+        "p_present": 0.039619,
+        "verdict": "absent"
+      },
+      "424349": {
+        "correct": true,
+        "p_present": 0.985221,
+        "verdict": "present"
+      },
+      "426372": {
+        "correct": true,
+        "p_present": 0.037319,
+        "verdict": "absent"
+      },
+      "427256": {
+        "correct": true,
+        "p_present": 0.976103,
+        "verdict": "present"
+      },
+      "430048": {
+        "correct": true,
+        "p_present": 0.104102,
+        "verdict": "absent"
+      },
+      "433134": {
+        "correct": true,
+        "p_present": 0.036903,
+        "verdict": "absent"
+      },
+      "438774": {
+        "correct": true,
+        "p_present": 0.915014,
+        "verdict": "present"
+      },
+      "439525": {
+        "correct": true,
+        "p_present": 0.98432,
+        "verdict": "present"
+      },
+      "442161": {
+        "correct": true,
+        "p_present": 0.9983,
+        "verdict": "present"
+      },
+      "447611": {
+        "correct": true,
+        "p_present": 0.678321,
+        "verdict": "present"
+      },
+      "449406": {
+        "correct": true,
+        "p_present": 0.046166,
+        "verdict": "absent"
+      },
+      "45070": {
+        "correct": true,
+        "p_present": 0.98805,
+        "verdict": "present"
+      },
+      "452122": {
+        "correct": true,
+        "p_present": 0.038282,
+        "verdict": "absent"
+      },
+      "453040": {
+        "correct": true,
+        "p_present": 0.070041,
+        "verdict": "absent"
+      },
+      "455301": {
+        "correct": true,
+        "p_present": 0.996443,
+        "verdict": "present"
+      },
+      "457559": {
+        "correct": true,
+        "p_present": 0.996759,
+        "verdict": "present"
+      },
+      "46463": {
+        "correct": false,
+        "p_present": 0.140411,
+        "verdict": "absent"
+      },
+      "466125": {
+        "correct": true,
+        "p_present": 0.981784,
+        "verdict": "present"
+      },
+      "466256": {
+        "correct": true,
+        "p_present": 0.135953,
+        "verdict": "absent"
+      },
+      "468577": {
+        "correct": false,
+        "p_present": 0.473092,
+        "verdict": "absent"
+      },
+      "473219": {
+        "correct": true,
+        "p_present": 0.998057,
+        "verdict": "present"
+      },
+      "474164": {
+        "correct": true,
+        "p_present": 0.078567,
+        "verdict": "absent"
+      },
+      "47801": {
+        "correct": true,
+        "p_present": 0.983038,
+        "verdict": "present"
+      },
+      "479448": {
+        "correct": true,
+        "p_present": 0.144467,
+        "verdict": "absent"
+      },
+      "480275": {
+        "correct": false,
+        "p_present": 0.067574,
+        "verdict": "absent"
+      },
+      "480936": {
+        "correct": true,
+        "p_present": 0.989234,
+        "verdict": "present"
+      },
+      "486046": {
+        "correct": true,
+        "p_present": 0.079493,
+        "verdict": "absent"
+      },
+      "488673": {
+        "correct": true,
+        "p_present": 0.970861,
+        "verdict": "present"
+      },
+      "489046": {
+        "correct": true,
+        "p_present": 0.073209,
+        "verdict": "absent"
+      },
+      "491071": {
+        "correct": true,
+        "p_present": 0.013203,
+        "verdict": "absent"
+      },
+      "492362": {
+        "correct": true,
+        "p_present": 0.986616,
+        "verdict": "present"
+      },
+      "494427": {
+        "correct": true,
+        "p_present": 0.009667,
+        "verdict": "absent"
+      },
+      "494869": {
+        "correct": true,
+        "p_present": 0.952367,
+        "verdict": "present"
+      },
+      "50326": {
+        "correct": true,
+        "p_present": 0.749179,
+        "verdict": "present"
+      },
+      "509699": {
+        "correct": false,
+        "p_present": 0.72743,
+        "verdict": "present"
+      },
+      "512657": {
+        "correct": true,
+        "p_present": 0.994167,
+        "verdict": "present"
+      },
+      "515266": {
+        "correct": true,
+        "p_present": 0.037374,
+        "verdict": "absent"
+      },
+      "515579": {
+        "correct": true,
+        "p_present": 0.963701,
+        "verdict": "present"
+      },
+      "520871": {
+        "correct": false,
+        "p_present": 0.65605,
+        "verdict": "present"
+      },
+      "521405": {
+        "correct": true,
+        "p_present": 0.181587,
+        "verdict": "absent"
+      },
+      "523807": {
+        "correct": true,
+        "p_present": 0.597687,
+        "verdict": "present"
+      },
+      "52591": {
+        "correct": true,
+        "p_present": 0.823097,
+        "verdict": "present"
+      },
+      "533145": {
+        "correct": false,
+        "p_present": 0.376139,
+        "verdict": "absent"
+      },
+      "53505": {
+        "correct": true,
+        "p_present": 0.031888,
+        "verdict": "absent"
+      },
+      "535523": {
+        "correct": true,
+        "p_present": 0.571703,
+        "verdict": "present"
+      },
+      "536073": {
+        "correct": true,
+        "p_present": 0.237953,
+        "verdict": "absent"
+      },
+      "53909": {
+        "correct": false,
+        "p_present": 0.471893,
+        "verdict": "absent"
+      },
+      "540502": {
+        "correct": true,
+        "p_present": 0.151183,
+        "verdict": "absent"
+      },
+      "54123": {
+        "correct": true,
+        "p_present": 0.013674,
+        "verdict": "absent"
+      },
+      "541773": {
+        "correct": true,
+        "p_present": 0.923633,
+        "verdict": "present"
+      },
+      "542089": {
+        "correct": true,
+        "p_present": 0.040142,
+        "verdict": "absent"
+      },
+      "546976": {
+        "correct": true,
+        "p_present": 0.991127,
+        "verdict": "present"
+      },
+      "547854": {
+        "correct": true,
+        "p_present": 0.959087,
+        "verdict": "present"
+      },
+      "54931": {
+        "correct": true,
+        "p_present": 0.964939,
+        "verdict": "present"
+      },
+      "5529": {
+        "correct": true,
+        "p_present": 0.944505,
+        "verdict": "present"
+      },
+      "554266": {
+        "correct": true,
+        "p_present": 0.796499,
+        "verdict": "present"
+      },
+      "556193": {
+        "correct": true,
+        "p_present": 0.988567,
+        "verdict": "present"
+      },
+      "557501": {
+        "correct": true,
+        "p_present": 0.093379,
+        "verdict": "absent"
+      },
+      "559160": {
+        "correct": true,
+        "p_present": 0.947142,
+        "verdict": "present"
+      },
+      "563603": {
+        "correct": true,
+        "p_present": 0.192606,
+        "verdict": "absent"
+      },
+      "565469": {
+        "correct": true,
+        "p_present": 0.301167,
+        "verdict": "absent"
+      },
+      "571264": {
+        "correct": true,
+        "p_present": 0.98146,
+        "verdict": "present"
+      },
+      "571804": {
+        "correct": true,
+        "p_present": 0.020504,
+        "verdict": "absent"
+      },
+      "572555": {
+        "correct": true,
+        "p_present": 0.044375,
+        "verdict": "absent"
+      },
+      "575500": {
+        "correct": true,
+        "p_present": 0.35423,
+        "verdict": "absent"
+      },
+      "577735": {
+        "correct": true,
+        "p_present": 0.094572,
+        "verdict": "absent"
+      },
+      "578922": {
+        "correct": true,
+        "p_present": 0.318297,
+        "verdict": "absent"
+      },
+      "61171": {
+        "correct": true,
+        "p_present": 0.30473,
+        "verdict": "absent"
+      },
+      "61471": {
+        "correct": true,
+        "p_present": 0.098874,
+        "verdict": "absent"
+      },
+      "63047": {
+        "correct": true,
+        "p_present": 0.950257,
+        "verdict": "present"
+      },
+      "63602": {
+        "correct": true,
+        "p_present": 0.182195,
+        "verdict": "absent"
+      },
+      "64359": {
+        "correct": true,
+        "p_present": 0.049054,
+        "verdict": "absent"
+      },
+      "66635": {
+        "correct": true,
+        "p_present": 0.043167,
+        "verdict": "absent"
+      },
+      "68409": {
+        "correct": true,
+        "p_present": 0.969738,
+        "verdict": "present"
+      },
+      "7784": {
+        "correct": true,
+        "p_present": 0.117739,
+        "verdict": "absent"
+      },
+      "78032": {
+        "correct": true,
+        "p_present": 0.016077,
+        "verdict": "absent"
+      },
+      "78420": {
+        "correct": true,
+        "p_present": 0.038986,
+        "verdict": "absent"
+      },
+      "78426": {
+        "correct": true,
+        "p_present": 0.022927,
+        "verdict": "absent"
+      },
+      "79969": {
+        "correct": true,
+        "p_present": 0.971974,
+        "verdict": "present"
+      },
+      "80932": {
+        "correct": true,
+        "p_present": 0.96123,
+        "verdict": "present"
+      },
+      "82180": {
+        "correct": true,
+        "p_present": 0.097571,
+        "verdict": "absent"
+      },
+      "82688": {
+        "correct": true,
+        "p_present": 0.998573,
+        "verdict": "present"
+      },
+      "82846": {
+        "correct": true,
+        "p_present": 0.028824,
+        "verdict": "absent"
+      },
+      "85576": {
+        "correct": true,
+        "p_present": 0.138388,
+        "verdict": "absent"
+      },
+      "8629": {
+        "correct": true,
+        "p_present": 0.130246,
+        "verdict": "absent"
+      },
+      "872": {
+        "correct": true,
+        "p_present": 0.959499,
+        "verdict": "present"
+      },
+      "90062": {
+        "correct": true,
+        "p_present": 0.081766,
+        "verdict": "absent"
+      },
+      "90284": {
+        "correct": true,
+        "p_present": 0.827569,
+        "verdict": "present"
+      },
+      "91654": {
+        "correct": true,
+        "p_present": 0.461697,
+        "verdict": "absent"
+      },
+      "92416": {
+        "correct": true,
+        "p_present": 0.995753,
+        "verdict": "present"
+      },
+      "94326": {
+        "correct": true,
+        "p_present": 0.750992,
+        "verdict": "present"
+      }
+    }
+  },
+  "experiment": "vision-mode-r2-3b-pooled",
+  "git_head": "4d0726990e08a751b96fb5fa050289b68d390cd2",
+  "host": {
+    "depth": 30,
+    "hidden_size": 2048,
+    "key": "3b",
+    "label": "LFM2.5-VL-3B",
+    "model_id": "LiquidAI/LFM2.5-VL-3B"
+  },
+  "host_machine": "smarty",
+  "majority_reading": {
+    "decisive": true,
+    "of": 3,
+    "reading": "(i) ROBUST",
+    "votes": 2
+  },
+  "per_seed": {
+    "1042": {
+      "false_alarm": {
+        "caution": 0.03,
+        "social": 0.02
+      },
+      "fidelity": {
+        "caution": -0.09,
+        "social": -0.03
+      },
+      "miss_cost": {
+        "caution": 0.87,
+        "social": 0.43
+      },
+      "oracle_lean": {
+        "caution": 0.79,
+        "social": -0.13
+      }
+    },
+    "2042": {
+      "false_alarm": {
+        "caution": 0.07,
+        "social": 0.02
+      },
+      "fidelity": {
+        "caution": -0.12,
+        "social": -0.04
+      },
+      "miss_cost": {
+        "caution": 0.87,
+        "social": 0.39
+      },
+      "oracle_lean": {
+        "caution": 0.98,
+        "social": 0.02
+      }
+    },
+    "42": {
+      "false_alarm": {
+        "caution": 0.01,
+        "social": 0.01
+      },
+      "fidelity": {
+        "caution": -0.01,
+        "social": -0.04
+      },
+      "miss_cost": {
+        "caution": 0.25,
+        "social": 0.44
+      },
+      "oracle_lean": {
+        "caution": 0.22,
+        "social": -0.12
+      }
+    }
+  },
+  "per_seed_readings": {
+    "1042": "(i) ROBUST",
+    "2042": "(iv) MIXED",
+    "42": "(i) ROBUST"
+  },
+  "pooled_metrics": {
+    "caution": {
+      "absent_mix": {
+        "classifier": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.993333,
+          "stop": 0.006667
+        },
+        "flipped": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.963333,
+          "stop": 0.036667
+        },
+        "habit": {
+          "greet": 0.036667,
+          "other": 0.0,
+          "proceed": 0.943333,
+          "stop": 0.02
+        },
+        "oracle": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "classifier": 0.006667,
+        "flipped": 0.036667,
+        "habit": 0.02,
+        "oracle": 0.0
+      },
+      "action": "stop",
+      "false_alarm_cell": 0.036667,
+      "fidelity": -0.073334,
+      "miss_cell": 0.073333,
+      "miss_cost": 0.663334,
+      "oracle_lean": 0.663334,
+      "parse_fallback_share": {
+        "classifier": 0.0,
+        "flipped": 0.0,
+        "habit": 0.0,
+        "oracle": 0.0
+      },
+      "present_mix": {
+        "classifier": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.336667,
+          "stop": 0.663333
+        },
+        "flipped": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.926667,
+          "stop": 0.073333
+        },
+        "habit": {
+          "greet": 0.533333,
+          "other": 0.0,
+          "proceed": 0.393333,
+          "stop": 0.073333
+        },
+        "oracle": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.263333,
+          "stop": 0.736667
+        }
+      },
+      "present_share": {
+        "classifier": 0.663333,
+        "flipped": 0.073333,
+        "habit": 0.073333,
+        "oracle": 0.736667
+      },
+      "real_errors": {
+        "false_alarms": {
+          "action_share": 0.111111,
+          "n": 18
+        },
+        "misses": {
+          "action_share": 0.0,
+          "n": 36
+        }
+      }
+    },
+    "social": {
+      "absent_mix": {
+        "classifier": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 0.993333,
+          "stop": 0.006667
+        },
+        "flipped": {
+          "greet": 0.016667,
+          "other": 0.0,
+          "proceed": 0.966667,
+          "stop": 0.016667
+        },
+        "habit": {
+          "greet": 0.036667,
+          "other": 0.0,
+          "proceed": 0.943333,
+          "stop": 0.02
+        },
+        "oracle": {
+          "greet": 0.0,
+          "other": 0.0,
+          "proceed": 1.0,
+          "stop": 0.0
+        }
+      },
+      "absent_share": {
+        "classifier": 0.0,
+        "flipped": 0.016667,
+        "habit": 0.036667,
+        "oracle": 0.0
+      },
+      "action": "greet",
+      "false_alarm_cell": 0.016667,
+      "fidelity": -0.036667,
+      "miss_cell": 0.036667,
+      "miss_cost": 0.42,
+      "oracle_lean": -0.076666,
+      "parse_fallback_share": {
+        "classifier": 0.0,
+        "flipped": 0.0,
+        "habit": 0.0,
+        "oracle": 0.0
+      },
+      "present_mix": {
+        "classifier": {
+          "greet": 0.42,
+          "other": 0.0,
+          "proceed": 0.296667,
+          "stop": 0.283333
+        },
+        "flipped": {
+          "greet": 0.036667,
+          "other": 0.0,
+          "proceed": 0.926667,
+          "stop": 0.036667
+        },
+        "habit": {
+          "greet": 0.533333,
+          "other": 0.0,
+          "proceed": 0.393333,
+          "stop": 0.073333
+        },
+        "oracle": {
+          "greet": 0.456667,
+          "other": 0.0,
+          "proceed": 0.223333,
+          "stop": 0.32
+        }
+      },
+      "present_share": {
+        "classifier": 0.42,
+        "flipped": 0.036667,
+        "habit": 0.533333,
+        "oracle": 0.456667
+      },
+      "real_errors": {
+        "false_alarms": {
+          "action_share": 0.0,
+          "n": 18
+        },
+        "misses": {
+          "action_share": 0.0,
+          "n": 36
+        }
+      }
+    }
+  },
+  "pooled_reading": {
+    "bands": {
+      "false_alarm_captured": 0.5,
+      "false_alarm_clean": 0.2,
+      "fidelity": 0.1,
+      "inert": 0.1,
+      "oracle_lean_floor": 0.25
+    },
+    "captured_modes": [],
+    "classifier_vs_habit": {
+      "caution": 0.59,
+      "social": -0.113333
+    },
+    "faithful": true,
+    "false_alarm": {
+      "caution": 0.036667,
+      "social": 0.016667
+    },
+    "fidelity": {
+      "caution": -0.073334,
+      "social": -0.036667
+    },
+    "grounding_clean": true,
+    "miss_cost": {
+      "caution": 0.663334,
+      "social": 0.42
+    },
+    "oracle_lean": {
+      "caution": 0.663334,
+      "social": -0.076666
+    },
+    "reading": "(i) ROBUST"
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 2 registration \u2014 the fast classifier emits the mode (2026-08-22)",
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "smoke": false,
+  "track": "vision-mode",
+  "wall_seconds": 170.443
+}

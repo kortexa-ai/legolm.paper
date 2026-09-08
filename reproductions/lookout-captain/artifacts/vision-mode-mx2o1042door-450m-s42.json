@@ -1,0 +1,91 @@
+{
+  "device": "cuda",
+  "doors": {
+    "constant": {
+      "path": "checkpoints/experiments/vm-r1mx2o1042-constant-bridge-450m-s42.pt",
+      "sha256": "e897ebcb7b5568d8c4fce6f6bb9ef4360af91923afec351f0a537e86fe1c317c"
+    },
+    "mode": {
+      "path": "checkpoints/experiments/vm-r1mx2o1042-mode-bridge-450m-s42.pt",
+      "sha256": "1cdd7b91b47218faf06df9c7a7b8266b546ca8fab3ed91ef8006df93e7600bd3"
+    }
+  },
+  "experiment": "vision-mode-mx2o1042door-450m-s42",
+  "gates": {
+    "held_out": {
+      "frames": 8,
+      "passed": true,
+      "per_mode": {
+        "caution": 0.9688,
+        "explore": 0.9653,
+        "social": 0.9722
+      },
+      "pooled": 0.9688,
+      "positions": [
+        8,
+        9
+      ],
+      "threshold": 0.9
+    },
+    "zero_dose": {
+      "exact": true,
+      "max_abs_difference": 0.0,
+      "passed": true
+    }
+  },
+  "git_head": "a17f61eec7c8e8d425662ba960c9fe1acbe53f48",
+  "host": {
+    "depth": 16,
+    "hidden_size": 1024,
+    "key": "450m",
+    "label": "LFM2.5-VL-450M",
+    "model_id": "LiquidAI/LFM2.5-VL-450M"
+  },
+  "host_machine": "smarty",
+  "layer_plan": {
+    "depth": 16,
+    "inject_fractions": [
+      0.29,
+      0.46,
+      0.63
+    ],
+    "inject_layers": [
+      5,
+      7,
+      10
+    ],
+    "prior_fraction": 0.79,
+    "scanned": false,
+    "source_layer": 13
+  },
+  "order_seed": 1042,
+  "registered_steps": 192,
+  "registration": "tracks/vision-mode/PLAN.md, Rung 3g registration \u2014 the seed-42 autopsy, the neutral habit door, and the small host's step count (2026-08-27)",
+  "reuses": "tracks/vision-mode/PLAN.md, Rung 1 registration \u2014 mode packets on a vision-language host (2026-08-22)",
+  "seed": 42,
+  "smoke": false,
+  "steps": 384,
+  "track": "vision-mode",
+  "training": {
+    "constant_final": {
+      "grad_norm": 0.0127,
+      "loss": 0.0417,
+      "step": 384,
+      "token_accuracy": 0.9844
+    },
+    "mode_final": {
+      "grad_norm": 0.0008,
+      "loss": 0.0002,
+      "step": 384,
+      "token_accuracy": 1.0
+    }
+  },
+  "training_frames": {
+    "coco": 80,
+    "mesh": 80,
+    "mesh_manifest": "/tmp/vm-r3-trainframes/mesh/manifest.json",
+    "mesh_manifest_sha256": "4d71906cd9f0a2a21de61be29177720106488bd5ac4ebe6ef4d8fc57cda3ee04",
+    "total": 160
+  },
+  "wall_seconds": 80.826
+}

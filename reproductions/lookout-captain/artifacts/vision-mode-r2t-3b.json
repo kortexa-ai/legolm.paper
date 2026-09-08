@@ -1,0 +1,312 @@
+{
+  "detector": {
+    "episode_verdicts": {
+      "absent": 9,
+      "absent_frames": 479,
+      "present": 475,
+      "present_frames": 481
+    },
+    "lookout": {
+      "frames": 960,
+      "ms_per_frame": 7.523,
+      "wall_seconds": 7.222
+    },
+    "path": "checkpoints/experiments/yolo26s.pt",
+    "rule": {
+      "absent": "no such box",
+      "note": "rung 1's PRESENT rule on COCO uses the annotation's mask area; a box is never smaller than its mask, so the detector's side of the rule is the looser one",
+      "present": "any `person` box with confidence >= 0.25 whose box area is >= 5% of the frame"
+    },
+    "sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+    "trained_here": false,
+    "training": {
+      "backbone": "ultralytics yolo26s, COCO-pretrained detector, frozen",
+      "confidence": 0.25,
+      "head": "none: a rule over the person boxes",
+      "image_size": 640,
+      "note": "COCO val2017 is the detector's own validation split; no frame here was trained on",
+      "parameters_trained": 0
+    }
+  },
+  "episodes": {
+    "cut_p": 0.2,
+    "cuts": 227,
+    "episodes": 60,
+    "jitter": {
+      "brightness": [
+        0.96,
+        1.04
+      ],
+      "crop_min": 0.94
+    },
+    "manifest_sha256": "2aa0665e7dc2442ee86231031d530c9398ba458f3ccf47725e165b418dfe25d6",
+    "seed": 2026,
+    "steps": 16
+  },
+  "experiment": "vision-mode-r2t-3b-pooled",
+  "git_head": "375b61fe3610aa67f8903324d7d212bb879154c3",
+  "host": {
+    "depth": 30,
+    "hidden_size": 2048,
+    "key": "3b",
+    "label": "LFM2.5-VL-3B",
+    "model_id": "LiquidAI/LFM2.5-VL-3B"
+  },
+  "host_machine": "smarty",
+  "majority_reading": {
+    "decisive": true,
+    "of": 3,
+    "reading": "(i) FREE LUNCH",
+    "votes": 2
+  },
+  "per_seed": {
+    "1042": {
+      "agreement": {
+        "caution": 0.994792,
+        "social": 0.946875
+      },
+      "bands": {
+        "agree": 0.95,
+        "ceiling_margin": 0.02,
+        "jittery": 0.7,
+        "stale": 0.85,
+        "wake": 0.4
+      },
+      "ceiling": {
+        "caution": 0.991667,
+        "social": 0.995833
+      },
+      "compute_saved": {
+        "caution": 0.835417,
+        "social": 0.835417
+      },
+      "reading": "(iv) MIXED",
+      "threshold": {
+        "caution": 0.95,
+        "social": 0.95
+      },
+      "wake_fraction": {
+        "caution": 0.164583,
+        "social": 0.164583
+      }
+    },
+    "2042": {
+      "agreement": {
+        "caution": 0.994792,
+        "social": 0.957292
+      },
+      "bands": {
+        "agree": 0.95,
+        "ceiling_margin": 0.02,
+        "jittery": 0.7,
+        "stale": 0.85,
+        "wake": 0.4
+      },
+      "ceiling": {
+        "caution": 0.990625,
+        "social": 0.992708
+      },
+      "compute_saved": {
+        "caution": 0.835417,
+        "social": 0.835417
+      },
+      "reading": "(i) FREE LUNCH",
+      "threshold": {
+        "caution": 0.95,
+        "social": 0.95
+      },
+      "wake_fraction": {
+        "caution": 0.164583,
+        "social": 0.164583
+      }
+    },
+    "42": {
+      "agreement": {
+        "caution": 0.96875,
+        "social": 0.986458
+      },
+      "bands": {
+        "agree": 0.95,
+        "ceiling_margin": 0.02,
+        "jittery": 0.7,
+        "stale": 0.85,
+        "wake": 0.4
+      },
+      "ceiling": {
+        "caution": 0.990625,
+        "social": 0.996875
+      },
+      "compute_saved": {
+        "caution": 0.835417,
+        "social": 0.835417
+      },
+      "reading": "(i) FREE LUNCH",
+      "threshold": {
+        "caution": 0.95,
+        "social": 0.95
+      },
+      "wake_fraction": {
+        "caution": 0.164583,
+        "social": 0.164583
+      }
+    }
+  },
+  "per_seed_readings": {
+    "1042": "(iv) MIXED",
+    "2042": "(i) FREE LUNCH",
+    "42": "(i) FREE LUNCH"
+  },
+  "pooled_metrics": {
+    "caution": {
+      "always": {
+        "action": "stop",
+        "agreement": 1.0,
+        "compute_saved": 0.0,
+        "false_wakes": 2199,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.874305,
+        "wake_fraction": 1.0
+      },
+      "box": {
+        "action": "stop",
+        "agreement": 0.997222,
+        "compute_saved": 0.722917,
+        "false_wakes": 225,
+        "mean_cut_lag": 0.2981,
+        "oracle_correctness": 0.875695,
+        "wake_fraction": 0.277083
+      },
+      "cut_oracle": {
+        "action": "stop",
+        "agreement": 0.990972,
+        "compute_saved": 0.763542,
+        "false_wakes": 0,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.877778,
+        "wake_fraction": 0.236458
+      },
+      "never": {
+        "action": "stop",
+        "agreement": 0.744097,
+        "compute_saved": 0.9375,
+        "false_wakes": 0,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.642708,
+        "wake_fraction": 0.0625
+      },
+      "pixel": {
+        "action": "stop",
+        "agreement": 0.998958,
+        "compute_saved": 0.053125,
+        "false_wakes": 2046,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.874653,
+        "wake_fraction": 0.946875
+      },
+      "verdict": {
+        "action": "stop",
+        "agreement": 0.986111,
+        "compute_saved": 0.835417,
+        "false_wakes": 30,
+        "mean_cut_lag": 0.9842,
+        "oracle_correctness": 0.869444,
+        "wake_fraction": 0.164583
+      }
+    },
+    "social": {
+      "always": {
+        "action": "greet",
+        "agreement": 1.0,
+        "compute_saved": 0.0,
+        "false_wakes": 2199,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.713542,
+        "wake_fraction": 1.0
+      },
+      "box": {
+        "action": "greet",
+        "agreement": 0.998611,
+        "compute_saved": 0.722917,
+        "false_wakes": 225,
+        "mean_cut_lag": 0.2981,
+        "oracle_correctness": 0.714236,
+        "wake_fraction": 0.277083
+      },
+      "cut_oracle": {
+        "action": "greet",
+        "agreement": 0.995139,
+        "compute_saved": 0.763542,
+        "false_wakes": 0,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.712153,
+        "wake_fraction": 0.236458
+      },
+      "never": {
+        "action": "greet",
+        "agreement": 0.725,
+        "compute_saved": 0.9375,
+        "false_wakes": 0,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.523958,
+        "wake_fraction": 0.0625
+      },
+      "pixel": {
+        "action": "greet",
+        "agreement": 0.999653,
+        "compute_saved": 0.053125,
+        "false_wakes": 2046,
+        "mean_cut_lag": 0.0,
+        "oracle_correctness": 0.713542,
+        "wake_fraction": 0.946875
+      },
+      "verdict": {
+        "action": "greet",
+        "agreement": 0.963542,
+        "compute_saved": 0.835417,
+        "false_wakes": 30,
+        "mean_cut_lag": 0.9842,
+        "oracle_correctness": 0.706944,
+        "wake_fraction": 0.164583
+      }
+    }
+  },
+  "pooled_reading": {
+    "agreement": {
+      "caution": 0.986111,
+      "social": 0.963542
+    },
+    "bands": {
+      "agree": 0.95,
+      "ceiling_margin": 0.02,
+      "jittery": 0.7,
+      "stale": 0.85,
+      "wake": 0.4
+    },
+    "ceiling": {
+      "caution": 0.990972,
+      "social": 0.995139
+    },
+    "compute_saved": {
+      "caution": 0.835417,
+      "social": 0.835417
+    },
+    "reading": "(i) FREE LUNCH",
+    "threshold": {
+      "caution": 0.95,
+      "social": 0.95
+    },
+    "wake_fraction": {
+      "caution": 0.164583,
+      "social": 0.164583
+    }
+  },
+  "registration": "tracks/vision-mode/PLAN.md, Rung 2t registration \u2014 the drowsy captain (2026-08-23)",
+  "seeds": [
+    42,
+    1042,
+    2042
+  ],
+  "smoke": false,
+  "track": "vision-mode",
+  "wall_seconds": 307.684
+}

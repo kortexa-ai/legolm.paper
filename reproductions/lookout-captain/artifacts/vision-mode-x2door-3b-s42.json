@@ -1,0 +1,83 @@
+{
+  "device": "cuda",
+  "doors": {
+    "constant": {
+      "path": "checkpoints/experiments/vm-r1x2-constant-bridge-3b-s42.pt",
+      "sha256": "d021eb7167ce416f394c09e3d3611a766713b3005b072661ff90c8aa3807f264"
+    },
+    "mode": {
+      "path": "checkpoints/experiments/vm-r1x2-mode-bridge-3b-s42.pt",
+      "sha256": "82eac8d7aa0acd82d9efc9dce736f3dc08986a19650dc074b622176028c8cd6a"
+    }
+  },
+  "experiment": "vision-mode-x2door-3b-s42",
+  "gates": {
+    "held_out": {
+      "frames": 8,
+      "passed": true,
+      "per_mode": {
+        "caution": 1.0,
+        "explore": 1.0,
+        "social": 0.9688
+      },
+      "pooled": 0.9896,
+      "positions": [
+        8,
+        9
+      ],
+      "threshold": 0.9
+    },
+    "zero_dose": {
+      "exact": true,
+      "max_abs_difference": 0.0,
+      "passed": true
+    }
+  },
+  "git_head": "f58fc13b7dc3a02cdf79d132f5ca20affe509275",
+  "host": {
+    "depth": 30,
+    "hidden_size": 2048,
+    "key": "3b",
+    "label": "LFM2.5-VL-3B",
+    "model_id": "LiquidAI/LFM2.5-VL-3B"
+  },
+  "host_machine": "smarty",
+  "layer_plan": {
+    "depth": 30,
+    "inject_fractions": [
+      0.29,
+      0.46,
+      0.63
+    ],
+    "inject_layers": [
+      9,
+      14,
+      19
+    ],
+    "prior_fraction": 0.79,
+    "scanned": false,
+    "source_layer": 24
+  },
+  "registered_steps": 192,
+  "registration": "tracks/vision-mode/PLAN.md, Stronger-door registration \u2014 the weak seed's doors at 2\u00d7 steps (3B s42) (2026-08-23)",
+  "reuses": "tracks/vision-mode/PLAN.md, Rung 1 registration \u2014 mode packets on a vision-language host (2026-08-22)",
+  "seed": 42,
+  "smoke": false,
+  "steps": 384,
+  "track": "vision-mode",
+  "training": {
+    "constant_final": {
+      "grad_norm": 0.0048,
+      "loss": 0.0177,
+      "step": 384,
+      "token_accuracy": 1.0
+    },
+    "mode_final": {
+      "grad_norm": 0.1574,
+      "loss": 0.0047,
+      "step": 384,
+      "token_accuracy": 1.0
+    }
+  },
+  "wall_seconds": 183.92
+}
