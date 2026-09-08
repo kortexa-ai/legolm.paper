@@ -1,9 +1,9 @@
-The machine-readable summary contains every condition, seed estimate, paired contrast, intervention, and intermediate checkpoint. The following tables retain both primary endpoints and the declared penalty values. A final release accounts for every declared trial, including numerical failures. For an unavailable aggregate, $n=a/b$ gives available/declared seeds; no survivor-only estimate is reported.
+The machine-readable summary contains every condition, seed estimate, paired contrast, intervention, and intermediate checkpoint. These tables cover both primary endpoints and all declared penalties, including numerical failures. For an unavailable aggregate, $n=a/b$ gives available/declared seeds. We omit the aggregate when any declared seed is missing.
 
 {\small
 \setlength{\tabcolsep}{4pt}
 \begin{longtable}{@{}lllllll@{}}
-\caption{Numerical failures under the fixed recipe. A range is bounded by the original execution log; the separate diagnostic replay is not a replacement trial. Saved checkpoints before failure remain in the evidence.}\label{tab:numerical-failures}\\
+\caption{Numerical failures with the specified training settings. Step ranges come from the original execution log. Diagnostic replays are separate from the training trials. The evidence includes checkpoints saved before failure.}\label{tab:numerical-failures}\\
 \toprule
 Host/cohort & Task & Interface & Seed & $\lambda$ & Failure step & Unavailable steps \\
 \midrule\endfirsthead
@@ -492,7 +492,7 @@ Qwen 0.8B & IMU & true & 0.2 & 600 & 3 & 0.820 [0.680, 0.923] & 0.833 [0.706, 0.
 
 \begin{table}[!htbp]\centering\small
 \setlength{\tabcolsep}{4pt}
-\caption{Full-population feature references. Their classifiers are fixed in the bootstrap; intervals reflect held-out clusters, not independently trained encoder seeds. Audio exposure remains as stated in the protocol.}\label{tab:linear}
+\caption{Feature references on the full test population. The bootstrap resamples held-out clusters while keeping the classifiers fixed; it does not resample independently trained encoders. The audio exposure described in the protocol still applies.}\label{tab:linear}
 \begin{tabular}{@{}llll@{}}
 \toprule
 Task & Frozen-feature reference & Macro [95\%] & Micro [95\%] \\
@@ -508,7 +508,7 @@ Vision & Linear & 0.799 [0.791, 0.807] & 0.799 [0.791, 0.807] \\
 
 \begin{table}[!htbp]\centering\small
 \setlength{\tabcolsep}{4pt}
-\caption{Audio sensitivity analysis for known original sources crossing train/test. Excluding these sources does not undo the encoder's held-out normalization exposure.}\label{tab:audio-audit}
+\caption{Audio sensitivity analysis excluding original sources shared by training and test sets. Test inputs still influenced encoder normalization.}\label{tab:audio-audit}
 \begin{tabular}{@{}llll@{}}
 \toprule
 Host & Excluded clips & All test [95\%] & Source-disjoint [95\%] \\
@@ -523,7 +523,7 @@ Qwen 0.8B & 3 & 0.421 [0.383, 0.459] & 0.420 [0.382, 0.458] \\
 {\small
 \setlength{\tabcolsep}{4pt}
 \begin{longtable}{@{}lllllll@{}}
-\caption{Batch-one resource measurements on the isolated RTX PRO 6000. Parameters are trainable adapter millions; VRAM is peak allocated GiB with host, adapter, and external encoder resident. First is raw-sensor-to-first-token median milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths omit unused sensor work.}\label{tab:resources-full}\\
+\caption{Resource measurements at batch size one on the isolated RTX PRO 6000. Parameters are millions of trainable adapter parameters. VRAM is peak allocated GiB with the host, adapter, and external encoder resident. First is median time from raw sensor input to the first token, in milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths skip unused sensor work.}\label{tab:resources-full}\\
 \toprule
 Host & Task & Interface & Params M & VRAM GiB & First ms & 32-token ms \\
 \midrule\endfirsthead

@@ -1,6 +1,6 @@
 \begin{table}[!htbp]\centering\small
 \setlength{\tabcolsep}{4pt}
-\caption{Batch-one resource measurements on the isolated RTX PRO 6000. Parameters are trainable adapter millions; VRAM is peak allocated GiB with host, adapter, and external encoder resident. First is raw-sensor-to-first-token median milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths omit unused sensor work. The appendix contains every modality and prefix case.}\label{tab:resources}
+\caption{Resource measurements at batch size one on the isolated RTX PRO 6000. Parameters are millions of trainable adapter parameters. VRAM is peak allocated GiB with the host, adapter, and external encoder resident. First is median time from raw sensor input to the first token, in milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths skip unused sensor work. The appendix contains every modality and prefix case.}\label{tab:resources}
 \begin{tabular}{@{}lllllll@{}}
 \toprule
 Host & Task & Interface & Params M & VRAM GiB & First ms & 32-token ms \\

@@ -97,15 +97,16 @@ class Report:
                          tex(r["kind"] + "/" + r["feature_mode"]), str(r["seed"]), f'{r["diversity"]:g}',
                          step, ", ".join(map(str, item["unavailable_checkpoints"]))])
         self.failure_appendix = table(["Host/cohort", "Task", "Interface", "Seed", "$\\lambda$", "Failure step", "Unavailable steps"],
-            rows, "Numerical failures under the fixed recipe. A range is bounded by the original execution log; "
-            "the separate diagnostic replay is not a replacement trial. Saved checkpoints before failure remain in the evidence.",
+            rows, ('Numerical failures with the specified training settings. Step ranges come from the '
+            'original execution log. Diagnostic replays are separate from the training trials. The '
+            'evidence includes checkpoints saved before failure.'),
             "tab:numerical-failures", long=True)
         total = self.summary["coverage"].get("registered_trajectories", 411)
-        self.write("failure-results", str(len(failures)) + " of the " + str(total) + " declared trials terminated with "
-            "nonfinite loss or gradient norms before an optimizer update (Table~\\ref{tab:numerical-failures}). "
-            "These are fixed-recipe outcomes. Earlier checkpoints do not replace unavailable endpoints, and seeds are not retried "
-            "until they succeed. An aggregate requires its complete declared seed set: a dash denotes an unavailable estimate, "
-            "not an average over surviving seeds. All available per-seed measurements remain in the evidence.")
+        self.write("failure-results", str(len(failures)) + " of the " + str(total) + (' declared trials terminated with nonfinite loss or gradient norms before an optimizer '
+            'update (Table~\\ref{tab:numerical-failures}). We keep these failures as outcomes of the '
+            'specified training settings. We do not substitute earlier checkpoints or retry seeds '
+            'until they succeed. A dash marks an estimate missing one or more declared seeds. The '
+            'evidence includes every available per-seed measurement.'))
 
     def find(self, host, modality, measurement, *, cohort="U", kind="bridge", mode="true",
              penalty=0., step=None, intervention="correct", prompt=None, trajectory=False, **settings):
@@ -176,9 +177,10 @@ class Report:
                          number(count / 1e6, 2) if count else "--",
                          number(count / identity["frozen_parameters"], 2) if count else "--"])
         self.write("hosts", table(["Host", "Host M", "$D$", "Targets", "Bridge M", "Bridge/host"], rows,
-            "Instantiated language-host and IMU-bridge sizes. M denotes million parameters. "
-            "Audio and vision change the small input projection; their exact counts are in the resource artifact. "
-            "The native Qwen vision tower is excluded from these counts.", "tab:hosts"))
+            ('Parameter counts for the instantiated language models and IMU bridges. M denotes '
+            'million parameters. Audio and vision use different small input projections; the '
+            'resource artifact gives their exact counts. These counts exclude the native Qwen vision '
+            'tower.'), "tab:hosts"))
 
     def bpb(self):
         rows, capacity_deltas, static_deltas, prefix_deltas = [], [], [], []
@@ -213,17 +215,19 @@ class Report:
             capacity_text = ("Across " + str(len(means)) + " host/modality pairs, the true-minus-constant BPB "
                              "differences range from " + number(min(means), 4) + " to " + number(max(means), 4)
                              + "; " + str(spans_zero) + " of their " + str(len(means)) + " intervals include zero. ")
-        static_text = "Static adapters provide a sensor-free text-adaptation reference. "
+        static_text = ('Static adapters measure text adaptation without sensor input. ')
         if static_deltas:
             below = sum(d["ci95"][1] < 0 for d in static_deltas)
             above = sum(d["ci95"][0] > 0 for d in static_deltas)
             static_text += ("For true-minus-static BPB, " + str(above) + " intervals are above zero, "
                             + str(below) + " below zero, and " + str(len(static_deltas) - above - below)
-                            + " include zero. Negative differences favor the bridge; the ordering is not uniform. ")
+                            + (' include zero. Negative differences favor the bridge, whose performance relative to '
+            'static adapters varies across these pairs. '))
         self.write("text-results", "Table~\\ref{tab:bpb} reports unpaired adaptation at 3000 steps. "
-                   + capacity_text + "These within-host comparisons test whether variable features are needed under "
-                   "independent text/sensor sampling. Intervals spanning zero do not establish equivalence, and this "
-                   "experiment does not rule out a likelihood benefit from conditioning on paired sensor/text data. "
+                   + capacity_text + ('These comparisons test whether variable features are needed when text and sensors are '
+            'sampled independently within each host. Intervals spanning zero do not prove '
+            'equivalence. Paired sensor/text data could still yield a likelihood benefit from '
+            'conditioning. ')
                    + static_text + "Figure~\\ref{fig:bpb} includes every training corruption at both budgets; "
                    "the machine-readable summary retains the paired intervals, and the appendix reports the "
                    "separate common-byte panel.")
@@ -234,9 +238,10 @@ class Report:
                           for step in (0, 300, 3000)]
                 rows.append([HOST_NAMES[host], MOD_NAMES[modality], *[estimate(v) for v in values]])
         self.write("prefix", table(["Host", "Task", "Initialized", "300 steps", "3000 steps"], rows,
-            "Eight generated input-prefix embeddings: native BPB at initialization and both budgets. "
-            "Initialization and 300 steps use 256 rows; 3000 steps use 1024. Compare each with its matching frozen panel, "
-            "not across different panels. Each score includes the same 128 text positions as its reference.", "tab:prefix"))
+            ('Eight generated input-prefix embeddings: native BPB at initialization and both budgets. '
+            'Initialization and 300 steps use 256 rows; 3000 steps use 1024. Compare each score with '
+            'the frozen reference on the same panel; the panels differ across budgets. Each score '
+            'includes the same 128 text positions as its reference.'), "tab:prefix"))
         prefix_text = "The trained-prefix comparison is unavailable for the registered seed set. "
         if prefix_deltas:
             means = [d["mean"] for d in prefix_deltas]
@@ -244,10 +249,10 @@ class Report:
             prefix_text = ("At 3000 U steps, prefix-minus-frozen BPB differences range from "
                            + number(min(means), 4) + " to " + number(max(means), 4) + "; "
                            + str(below) + " of " + str(len(means)) + " paired intervals are below zero. ")
-        self.write("prefix-results", prefix_text + "Table~\\ref{tab:prefix} also shows initialization and the short budget. "
-                   "The corrected comparison uses the same 128 scored text positions for prefix and reference. "
-                   "These results concern eight input-prefix embeddings under the U objective; they do not establish "
-                   "sensor use or compare prefix conditioning with the separately trained P and G bridges.")
+        self.write("prefix-results", prefix_text + ('Table~\\ref{tab:prefix} also shows initialization and the short budget. Prefix and '
+            'reference score the same 128 text positions. The result covers eight input-prefix '
+            'embeddings trained on U. It does not show sensor use, and the separately trained P and '
+            'G bridges provide no matched comparison of prefix conditioning.'))
 
     def tasks(self):
         rows, contrasts, vision = [], [], []
@@ -278,14 +283,15 @@ class Report:
         linear = self.summary["linear_baselines"]
         linear_text = "; ".join(MOD_NAMES[m] + " " + estimate(linear[m]["linear_feature_classifier"]["rank1"]["macro"]) for m in MODALITIES)
         self.write("task-results", "Table~\\ref{tab:tasks} uses all held-out items, with seed and cluster intervals. "
-                   "The frozen-feature linear classifier reaches macro accuracy " + linear_text + ". "
-                   "This reference tests whether the bridge offers value beyond information already exposed by its encoder. "
-                   "For the same true-trained checkpoint, the correct-minus-first-permutation macro-accuracy differences are "
-                   + ("; ".join(contrasts) if contrasts else "unavailable for the registered seed set") + ". "
-                   "All five fixed permutations and other feature interventions are retained, so this first-permutation display is not selected by outcome."
-                   + ("\n\nThe new vision probes give " + "; ".join(vision) + ". "
-                      "They directly test whether image features affect label ranking, addressing a question that U's "
-                      "BPB result cannot answer. This is a ten-class ranking test, not visual generation or open-world reasoning."
+                   "The frozen-feature linear classifier reaches macro accuracy " + linear_text + ('. This reference measures label information already available in the encoder features, '
+            'against which to compare the bridge. We also replace the correct features with the '
+            'first fixed permutation while holding each true-trained checkpoint fixed. The '
+            'macro-accuracy differences (correct minus permuted) are ')
+                   + ("; ".join(contrasts) if contrasts else "unavailable for the registered seed set") + ('. The evidence includes all five fixed permutations and the other feature '
+            'interventions. We show the first permutation without selecting it by its result.')
+                   + ("\n\nThe new vision probes give " + "; ".join(vision) + ('. These interventions test whether image features affect ten-class label ranking, which '
+            "U's BPB result cannot determine. They do not test visual generation or open-world "
+            'reasoning.')
                       if vision else ""))
         rows = []
         for host in HOSTS:
@@ -320,9 +326,8 @@ class Report:
             unavailable = sum(c["host"] == host and c["step"] == 6000 and c["measurement"] == "ranking" for c in gaps)
             if unavailable:
                 missing.append(HOST_NAMES[host] + " (" + str(unavailable) + " of 5 penalty settings)")
-        coverage = ("Recorded numerical stops prevent complete three-seed 6000-step estimates for "
-                    + "; ".join(missing) + ". "
-                    "These gaps do not supply a later accuracy measurement. Earlier per-seed evidence remains available. ") if missing else ""
+        coverage = (('Numerical failures leave the three-seed 6000-step estimates incomplete for ')
+                    + "; ".join(missing) + ('. Earlier per-seed measurements remain available. ')) if missing else ""
         zero_penalty, geometry, long_intervals = [], [], []
         for host in ("lfm230m", "qwen08"):
             endpoints = [self.stat(host, "imu", "ranking", "rank1", "macro", cohort="P", step=step, trajectory=True)
@@ -340,12 +345,12 @@ class Report:
                                 + ", and output KL " + number(kl) + " nats")
         behavior = "At zero penalty, the 600-to-6000-step comparison is " + "; ".join(zero_penalty) + ". " if zero_penalty else ""
         if long_intervals and all(value["ci95"][0] > 1 / 6 for value in long_intervals):
-            behavior += ("The available larger-host long-endpoint intervals lie above the six-class chance rate. "
-                         "They do not support a universal collapse-to-chance claim at this budget. ")
+            behavior += (('The available intervals at the long endpoint for larger hosts lie above six-class '
+            'chance accuracy. Collapse to chance is therefore not universal at this budget. '))
         geometry_text = ("At the largest declared penalty, $\\lambda=0.2$, and 6000 P steps, the seed means are "
-                         + "; ".join(geometry) + ". Factor-space diversity, effective-update direction, and output "
-                         "variation are distinct. Cosine also does not measure update magnitude; centered energies "
-                         "and norms remain in the full analysis. ") if geometry else ""
+                         + "; ".join(geometry) + ('. The three measures describe variation in factors, effective-update directions, and '
+            'outputs, respectively. Cosine omits update magnitude; the full analysis also gives '
+            'centered energies and norms. ')) if geometry else ""
         self.write("collapse-results", "Figure~\\ref{fig:trajectories} connects each IMU P accuracy curve to effective-update "
                    "cosine and fixed-text output sensitivity from the same weights. Table~\\ref{tab:budget-endpoints} "
                    "compares 600 with 6000 steps using only seeds 42, 1042, and 2042 at every penalty.\n\n"
@@ -355,9 +360,9 @@ class Report:
                            "probe seeds do not enter these curves. Dashes mark unavailable full-seed estimates.",
                            "tab:budget-endpoints")
                    + "\n\n" + coverage + behavior + "\n\n" + geometry_text
-                   + "Penalty effects differ across hosts and budgets. The full U trajectories are retained "
-                   "in the analysis. No penalty is selected by its test-set peak, and the short budget does not define a "
-                   "universal collapse threshold.")
+                   + ('Penalty effects differ across hosts and budgets. The full U trajectories are retained '
+            'in the analysis. We do not select a penalty by its test-set peak. Results at the short '
+            'budget cannot define a collapse threshold that applies generally.'))
 
     @staticmethod
     def shared_seed_mean(row, statistic):
@@ -386,9 +391,10 @@ class Report:
             "Qwen G at 6000 steps: class-macro response scores on held-out instruction templates. Each estimate requires all three training seeds. "
             "Joint success requires the exact normalized target; semantic and format scores identify different failure types.", "tab:generation")
             + table(["Task", "Family", "Frozen", "Const.", "Shuf.", "Rand.", "Static", "Oracle", "Classifier"], references,
-            "Generation references: class-macro held-out-template joint success, with the same G evaluation prompts and decoding. "
-            "Oracle and classifier columns reveal an explicit label to the frozen host. Other columns receive no label text. "
-            "Their full intervals and both budgets are retained in the analysis.", "tab:generation-controls")
+            ('Generation references: joint success averaged by class on held-out templates, using the '
+            'same G prompts and decoding. Oracle and classifier prompts give the frozen host an '
+            'explicit label; other prompts supply no label text. The full analysis includes '
+            'intervals and both budgets.'), "tab:generation-controls")
             + table(["Task", "Frozen [95\\%]", "P static [95\\%]", "P true bridge [95\\%]"], raw,
             "Raw generation from Qwen P checkpoints at 6000 steps, without additional instruction training. "
             "The frozen reference uses the identical original ranking prompt. Exact category output is joint success, averaged by class. "
@@ -425,17 +431,18 @@ class Report:
         self.write("generation-results", "Tables~\\ref{tab:generation}--\\ref{tab:raw-generation} distinguish raw P decoding, "
                    "separately trained instruction responses, and label-in-text references. All values below are "
                    "class-macro scores on held-out templates at 6000 G steps.\n\n"
-                   + "\n\n".join(response_results) + "\n\n"
-                   "The correct-minus-different-class differences in class-macro held-out-rule joint success are "
+                   + "\n\n".join(response_results) + ('\n\nFor held-out rule prompts, the differences in macro-averaged joint success (correct '
+            'sensor minus a sensor from another class) are ')
                    + ("; ".join(statements) if statements else "unavailable for the registered seed set") + ". "
-                   + "The secondary score requiring both reversed mappings to be correct for the same sensor/template is "
-                   + ("; ".join(mapping_pairs) if mapping_pairs else "unavailable for the registered seed set") + ". "
-                   "The rule panel includes reversed output mappings with each sensor fixed. It therefore tests a bounded "
-                   "dependence on the instruction as well as the sensor. Results on these deterministic templates do not "
-                   "establish general instruction following. In particular, sensor-dependent labels or fixed sentences "
-                   "do not establish reliable rule application. The label-in-text references use a different input interface "
-                   "and are practical comparisons, not matched bridge architectures. Every generated response, including invalid and repetitive output, "
-                   "is preserved in the evidence.")
+                   + ('Requiring both reversed mappings to be correct for the same sensor and template gives '
+            'the secondary scores ')
+                   + ("; ".join(mapping_pairs) if mapping_pairs else "unavailable for the registered seed set") + ('. Reversing the output mapping while keeping the sensor fixed tests whether responses '
+            'follow the supplied rule as well as the sensor. These deterministic templates cannot '
+            'demonstrate general instruction following, and sensor-dependent labels or fixed '
+            'sentences alone do not show reliable rule application. The label-in-text references are '
+            'practical comparisons with a different input interface; their architectures are not '
+            'matched to the bridge. The evidence includes every response, including invalid and '
+            'repetitive output.'))
         self.generation_examples()
 
     def generation_examples(self):
@@ -483,9 +490,10 @@ class Report:
                 rows.append([HOST_NAMES[host], names.get(cell["operator"], tex(cell["operator"])),
                              estimate(cell["bpb"]), estimate(cell["delta_to_off"]), estimate(cell["bpb_nonadditivity"])])
         self.write("composition", table(["Host", "Operator", "BPB [95\\%]", "$\\Delta$ frozen [95\\%]", "Nonadditivity [95\\%]"], rows,
-            "All three U modalities composed at 1500 constituent steps. Negative changes from frozen improve BPB. "
-            "Positive nonadditivity means combined BPB is worse than the prediction from summing standalone BPB improvements. "
-            "That prediction is a descriptive reference, not a required law. All subsets and both budgets are in the analysis.", "tab:composition"))
+            ('All three U modalities composed at 1500 constituent steps. Negative changes from frozen '
+            'improve BPB. Positive nonadditivity means combined BPB is worse than the prediction '
+            'from summing standalone BPB improvements. We use that prediction as a descriptive '
+            'reference. The analysis includes all subsets and both budgets.'), "tab:composition"))
 
     def resources(self):
         rows, full, costs = [], [], []
@@ -503,20 +511,22 @@ class Report:
             peak = max((r["memory"].get("peak_allocated_gib", 0) for r in jobs), default=0)
             costs.append(HOST_NAMES[host] + " " + number(seconds / 3600, 2) + " accumulated optimizer-step hours and "
                          + number(peak, 2) + " GiB peak allocated training memory")
-        caption = ("Batch-one resource measurements on the isolated RTX PRO 6000. Parameters are trainable adapter millions; "
-                   "VRAM is peak allocated GiB with host, adapter, and external encoder resident. First is raw-sensor-to-first-token "
-                   "median milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. "
-                   "Both use 128 input text tokens. Frozen/static paths omit unused sensor work.")
+        caption = (('Resource measurements at batch size one on the isolated RTX PRO 6000. Parameters are '
+            'millions of trainable adapter parameters. VRAM is peak allocated GiB with the host, '
+            'adapter, and external encoder resident. First is median time from raw sensor input to '
+            'the first token, in milliseconds; 32-token is median generation time with cached sensor '
+            'factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths '
+            'skip unused sensor work.'))
         headers = ["Host", "Task", "Interface", "Params M", "VRAM GiB", "First ms", "32-token ms"]
         self.write("resources", table(headers, rows, caption + " The appendix contains every modality and prefix case.", "tab:resources"))
         self.resource_appendix = table(headers, full, caption, "tab:resources-full", long=True)
-        self.write("resource-results", "Table~\\ref{tab:resources} reports measured costs, including the frozen encoder. "
-                   "Across successfully trained trajectories, training records contain " + "; ".join(costs) + ". "
-                   "These step times include batch preparation and synchronized training, but exclude model loading, "
-                   "checkpoint writes, separate evaluation, and failed attempts. The artifact also records the wall time "
-                   "of each successful worker attempt. Times overlap under concurrent training and are not isolated GPU-hours "
-                   "or total elapsed study time. The measurements include dense-head cost rather than inferring efficiency "
-                   "from the number of adapted host parameters.")
+        self.write("resource-results", (('Table~\\ref{tab:resources} reports measured costs, including the frozen encoder. For '
+            'successful training trajectories, accumulated optimizer-step time and peak allocated '
+            'memory are ')) + "; ".join(costs) + ('. Step times include batch preparation and synchronized training. They exclude model '
+            'loading, checkpoint writes, separate evaluation, and failed attempts. The artifact also '
+            "records each successful worker attempt's wall time. Concurrent workers overlap, so the "
+            'sums are neither isolated GPU-hours nor total study time. The measurements include the '
+            "dense output head's cost."))
 
     def plots(self):
         import matplotlib
@@ -616,10 +626,11 @@ class Report:
         plt.close(fig)
 
     def appendix(self):
-        fragments = ["The machine-readable summary contains every condition, seed estimate, paired contrast, "
-                     "intervention, and intermediate checkpoint. The following tables retain both primary endpoints "
-                     "and the declared penalty values. A final release accounts for every declared trial, including numerical failures. "
-                     "For an unavailable aggregate, $n=a/b$ gives available/declared seeds; no survivor-only estimate is reported.\n",
+        fragments = [('The machine-readable summary contains every condition, seed estimate, paired contrast, '
+            'intervention, and intermediate checkpoint. These tables cover both primary endpoints '
+            'and all declared penalties, including numerical failures. For an unavailable aggregate, '
+            '$n=a/b$ gives available/declared seeds. We omit the aggregate when any declared seed is '
+            'missing.\n'),
                      self.failure_appendix]
         all_conditions = [*self.summary["conditions"], *[{**r, "statistics": None, "seeds": r["available_seeds"]}
                                                        for r in self.summary.get("unavailable_conditions", [])]]
@@ -657,8 +668,9 @@ class Report:
                 audit_rows.append([MOD_NAMES[modality], "Linear" if name == "linear_feature_classifier" else "Original head",
                                    estimate(baseline["rank1"]["macro"]), estimate(baseline["rank1"]["micro"])])
         fragments.append(table(["Task", "Frozen-feature reference", "Macro [95\\%]", "Micro [95\\%]"], audit_rows,
-            "Full-population feature references. Their classifiers are fixed in the bootstrap; intervals reflect held-out clusters, "
-            "not independently trained encoder seeds. Audio exposure remains as stated in the protocol.", "tab:linear"))
+            ('Feature references on the full test population. The bootstrap resamples held-out '
+            'clusters while keeping the classifiers fixed; it does not resample independently '
+            'trained encoders. The audio exposure described in the protocol still applies.'), "tab:linear"))
         sensitivity = []
         for record in self.summary["conditions"]:
             c, stats = record["condition"], record["statistics"]
@@ -669,8 +681,8 @@ class Report:
                 sensitivity.append([HOST_NAMES[c["host"]], str(secondary["excluded_items"]),
                                     estimate(stats["rank1"]["macro"]), estimate(secondary["macro"])])
         fragments.append(table(["Host", "Excluded clips", "All test [95\\%]", "Source-disjoint [95\\%]"], sensitivity,
-            "Audio sensitivity analysis for known original sources crossing train/test. Excluding these sources does not undo "
-            "the encoder's held-out normalization exposure.", "tab:audio-audit"))
+            ('Audio sensitivity analysis excluding original sources shared by training and test sets. '
+            'Test inputs still influenced encoder normalization.'), "tab:audio-audit"))
         fragments.append(self.resource_appendix)
         self.write("appendix", "\n".join(fragments))
         # A lossless tabular index keeps all cells accessible without hundreds of PDF pages.
@@ -697,8 +709,8 @@ class Report:
         if capacity:
             zero = sum(d["ci95"][0] <= 0 <= d["ci95"][1] for d in capacity)
             capacity_text = ("Under independent sampling, " + str(zero) + " of " + str(len(capacity))
-                             + " true-minus-constant BPB intervals include zero. This does not establish equivalence "
-                             "or extend to all paired likelihood objectives. ")
+                             + (' true-minus-constant BPB intervals include zero. This does not prove equivalence; '
+            'paired likelihood objectives may still benefit from conditioning. '))
         results = []
         for host in ("mini", "qwen08"):
             values = [(MOD_NAMES[modality], self.stat(host, modality, "ranking", "rank1", "macro", cohort="P"))
@@ -715,23 +727,24 @@ class Report:
                      + "; sensor replacement tests their input dependence. "
                      + ("Success on both reversed rule mappings is " + number(mappings["mean"]) + ". " if mappings else "")
                      + "Audio generation varies substantially across seeds. ") if all(v is not None for v in generation) else ""
-        self.write("abstract", "A hypernetwork can condition a frozen language model by generating low-rank weight updates from "
-                   "sensor features. The same bridge also adds trainable capacity, so improved text likelihood alone is an "
-                   "ambiguous indicator of sensor use. We separate these effects with independently sampled text, paired "
-                   "category probes, and a separately trained instruction-generation cohort. The study retains the original "
-                   "33.6M host and adds pinned 230M and 0.8B hosts, with matched constant, shuffled, random, static-adapter, "
-                   "and frozen references. " + capacity_text
-                   + "Full held-out populations, grouped intervals, and same-checkpoint interventions assess conditioning. "
+        self.write("abstract", ('A hypernetwork can condition a frozen language model by generating low-rank weight '
+            'updates from sensor features. The same bridge also adds trainable capacity, so improved '
+            'text likelihood alone is an ambiguous indicator of sensor use. We compare separate '
+            'training cohorts for unpaired text, paired category labels, and sensor-plus-instruction '
+            'responses. We use the original 33.6M host and fixed versions of 230M and 0.8B hosts, '
+            'with matched constant, shuffled, random, static-adapter, and frozen references. ') + capacity_text
+                   + ('We assess conditioning on full held-out populations, using grouped intervals and sensor '
+            'interventions on the same checkpoints. ')
                    + ("Numerical training failures affected " + str(len(self.summary["coverage"].get("numerical_failures", [])))
                       + " of the " + str(self.summary["coverage"].get("registered_trajectories", 411))
                       + " declared trials; the corresponding endpoint estimates are unavailable. "
                       if self.summary["coverage"].get("numerical_failures") else "")
                    + (("; ".join(results) + ". ") if results else "") + generated
-                   + "We report training-budget trajectories, effective-update variation, three composition operators, and "
-                   "measured bridge costs. The dense output head grows with adapted dimensions, and workstation results do "
-                   "not establish edge efficiency. Audio evidence is limited by the original encoder's use of held-out "
-                   "inputs in normalization. Claims about likelihood, input prefixes, and generation are scoped to the "
-                   "tested objectives and interfaces; the complete evidence and per-paper reproduction code accompany the revision.")
+                   + (('We measure changes over training, variation in effective updates, three composition '
+            'operators, and bridge costs. The dense output head grows with adapted dimensions. '
+            'Workstation measurements leave edge efficiency untested. The original audio encoder '
+            'used held-out inputs for normalization, which limits the audio evidence. The complete '
+            'evidence and reproduction code accompany the paper.')))
 
 
 def template_directory():
@@ -827,15 +840,16 @@ def run(summary, evidence, output, date, *, draft=False, compile=False, package=
     report.plots()
     report.appendix()
     report.abstract()
-    report.write("revision-notes", "The original root-level \\texttt{arxiv/} and \\texttt{src/} remain the historical release. "
-                 "This revision replaces its primary estimates with the corrected, explicitly registered matrix. "
-                 "Changes include matched prefix text budgets, separation of training and test corruption, native tokenization "
-                 "at label boundaries, full-population evaluation, and fresh larger-host runs. The new results must not be "
-                 "pooled with historical scores from a different evaluation protocol. The matrix identifier is "
-                 + r"\texttt{" + data["matrix_id"][:12] + "}. The evidence manifest SHA-256 is recorded in "
-                 r"\texttt{release.json}, along with the exact summary and rendering sources. "
-                 "The source archive includes its bibliography and is compiled in a fresh directory before release. "
-                 "The original mini tokenizer is distributed exactly; it is not reconstructed from a new tokenizer-training run.")
+    report.write("revision-notes", ('The original root-level \\texttt{arxiv/} and \\texttt{src/} remain the historical '
+            'release. This revision reports new primary estimates from the corrected, registered '
+            'matrix. Changes include matched prefix text budgets, separation of training and test '
+            'corruption, native tokenization at label boundaries, full-population evaluation, and '
+            'fresh larger-host runs. The changed evaluation protocol prevents pooling these results '
+            'with historical scores. The matrix identifier is ')
+                 + r"\texttt{" + data["matrix_id"][:12] + ('}. The evidence manifest SHA-256 is recorded in \\texttt{release.json}, along with the '
+            'exact summary and rendering sources. The source archive includes its bibliography and '
+            'is compiled in a fresh directory before release. The package includes the original mini '
+            'tokenizer, without retraining it.'))
     metadata = {"schema": "paper1-manuscript-v2", "status": "draft" if draft else "final", "date": date,
                 "matrix_id": data["matrix_id"], "summary_sha256": file_hash(summary),
                 "evidence_manifest_sha256": data["evidence_manifest_sha256"],
