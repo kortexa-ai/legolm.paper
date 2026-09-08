@@ -1,0 +1,45 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Qwen G at 6000 steps: class-macro response scores on held-out instruction templates. Each estimate requires all three training seeds. Joint success requires the exact normalized target; semantic and format scores identify different failure types.}\label{tab:generation}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Task & Family & Semantic [95\%] & Format [95\%] & Joint [95\%] \\
+\midrule
+IMU & Label & 0.877 [0.748, 0.979] & 0.892 [0.799, 0.987] & 0.838 [0.737, 0.936] \\
+IMU & Sentence & 0.866 [0.729, 0.971] & 0.731 [0.196, 1.000] & 0.689 [0.198, 0.971] \\
+IMU & Rule & 0.501 [0.497, 0.505] & 0.999 [0.998, 1.000] & 0.501 [0.497, 0.505] \\
+Audio & Label & 0.058 [0.000, 0.166] & 0.224 [0.000, 0.668] & 0.056 [0.000, 0.161] \\
+Audio & Sentence & 0.064 [0.000, 0.185] & 0.281 [0.000, 0.838] & 0.064 [0.000, 0.186] \\
+Audio & Rule & 0.158 [0.000, 0.468] & 0.316 [0.000, 0.937] & 0.158 [0.000, 0.468] \\
+\bottomrule
+\end{tabular}
+\end{table}\par
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Generation references: class-macro held-out-template joint success, with the same G evaluation prompts and decoding. Oracle and classifier columns reveal an explicit label to the frozen host. Other columns receive no label text. Their full intervals and both budgets are retained in the analysis.}\label{tab:generation-controls}
+\begin{tabular}{@{}lllllllll@{}}
+\toprule
+Task & Family & Frozen & Const. & Shuf. & Rand. & Static & Oracle & Classifier \\
+\midrule
+IMU & Label & 0.000 & 0.167 & 0.167 & 0.167 & 0.148 & 0.778 & 0.757 \\
+IMU & Sentence & 0.000 & 0.159 & 0.139 & 0.205 & 0.130 & 0.500 & 0.484 \\
+IMU & Rule & 0.162 & 0.498 & 0.460 & 0.500 & 0.446 & 0.504 & 0.502 \\
+Audio & Label & 0.000 & 0.016 & 0.020 & 0.022 & 0.020 & 0.587 & 0.381 \\
+Audio & Sentence & 0.000 & 0.017 & 0.013 & 0.019 & 0.020 & 0.533 & 0.347 \\
+Audio & Rule & 0.226 & 0.500 & 0.500 & 0.499 & 0.500 & 0.531 & 0.465 \\
+\bottomrule
+\end{tabular}
+\end{table}\par
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Raw generation from Qwen P checkpoints at 6000 steps, without additional instruction training. The frozen reference uses the identical original ranking prompt. Exact category output is joint success, averaged by class. This diagnostic is separate from native-chat G training.}\label{tab:raw-generation}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Task & Frozen [95\%] & P static [95\%] & P true bridge [95\%] \\
+\midrule
+IMU & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] \\
+Audio & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] \\
+Vision & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] \\
+\bottomrule
+\end{tabular}
+\end{table}\par

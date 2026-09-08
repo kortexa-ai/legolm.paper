@@ -1,0 +1,570 @@
+The machine-readable summary contains every condition, seed estimate, paired contrast, intervention, and intermediate checkpoint. The following tables retain both primary endpoints and the declared penalty values. A final release accounts for every declared trial, including numerical failures. For an unavailable aggregate, $n=a/b$ gives available/declared seeds; no survivor-only estimate is reported.
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}lllllll@{}}
+\caption{Numerical failures under the fixed recipe. A range is bounded by the original execution log; the separate diagnostic replay is not a replacement trial. Saved checkpoints before failure remain in the evidence.}\label{tab:numerical-failures}\\
+\toprule
+Host/cohort & Task & Interface & Seed & $\lambda$ & Failure step & Unavailable steps \\
+\midrule\endfirsthead
+\toprule
+Host/cohort & Task & Interface & Seed & $\lambda$ & Failure step & Unavailable steps \\
+\midrule\endhead
+Mini/P & IMU & bridge/constant & 1042 & 0 & 2853 & 6000 \\
+Mini/P & IMU & bridge/constant & 2042 & 0 & 5088 & 6000 \\
+Mini/P & IMU & bridge/constant & 3042 & 0 & 3031 & 6000 \\
+Mini/P & IMU & bridge/constant & 42 & 0 & 5009 & 6000 \\
+Mini/P & IMU & bridge/shuffled & 1042 & 0 & 3295 & 6000 \\
+Mini/P & IMU & bridge/shuffled & 2042 & 0 & 2520 & 6000 \\
+Mini/P & IMU & bridge/shuffled & 42 & 0 & 3211 & 6000 \\
+Mini/P & Vision & bridge/shuffled & 42 & 0 & 4347 & 6000 \\
+Mini/P & IMU & bridge/true & 1042 & 0 & 1263 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 2042 & 0 & 1170 & 1200, 2400, 6000 \\
+Mini/P & IMU & bridge/true & 3042 & 0 & 1069 & 1200, 2400, 6000 \\
+Mini/P & IMU & bridge/true & 4042 & 0 & 1823 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 42 & 0 & 1301--1350 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 1042 & 0.01 & 2211 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 2042 & 0.01 & 2143 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 42 & 0.01 & 2580 & 6000 \\
+Mini/P & IMU & bridge/true & 1042 & 0.05 & 1388 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 2042 & 0.05 & 5112 & 6000 \\
+Mini/P & IMU & bridge/true & 42 & 0.05 & 545 & 600, 1200, 2400, 6000 \\
+Mini/P & IMU & bridge/true & 1042 & 0.1 & 889 & 1200, 2400, 6000 \\
+Mini/P & IMU & bridge/true & 2042 & 0.1 & 4007 & 6000 \\
+Mini/P & IMU & bridge/true & 42 & 0.1 & 1698 & 2400, 6000 \\
+Mini/P & IMU & bridge/true & 1042 & 0.2 & 807 & 1200, 2400, 6000 \\
+Mini/P & IMU & bridge/true & 2042 & 0.2 & 2936 & 6000 \\
+Mini/P & IMU & bridge/true & 42 & 0.2 & 1118 & 1200, 2400, 6000 \\
+\bottomrule
+\end{longtable}}\par
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}llllllll@{}}
+\caption{Native BPB; step/row count is shown explicitly. $n$ is the number of training seeds; a frozen host is a fixed reference.}\label{tab:full-native_bpb}\\
+\toprule
+Host & Task & Interface & $\lambda$ & Step/rows & $n$ & BPB [95\%] & Seed SD \\
+\midrule\endfirsthead
+\toprule
+Host & Task & Interface & $\lambda$ & Step/rows & $n$ & BPB [95\%] & Seed SD \\
+\midrule\endhead
+LFM 230M & Audio & constant & 0 & 3000/1024 & 3 & 1.067 [1.052, 1.083] & $1.2\times10^{-4}$ \\
+LFM 230M & Audio & constant & 0 & 300/256 & 3 & 1.098 [1.066, 1.131] & 0.001 \\
+LFM 230M & IMU & constant & 0 & 3000/1024 & 3 & 1.067 [1.052, 1.083] & 0.001 \\
+LFM 230M & IMU & constant & 0 & 300/256 & 3 & 1.098 [1.065, 1.130] & 0.001 \\
+LFM 230M & Vision & constant & 0 & 3000/1024 & 3 & 1.067 [1.052, 1.083] & $4.3\times10^{-4}$ \\
+LFM 230M & Vision & constant & 0 & 300/256 & 3 & 1.099 [1.066, 1.131] & 0.002 \\
+Mini & Audio & constant & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & $2.5\times10^{-4}$ \\
+Mini & Audio & constant & 0 & 300/256 & 3 & 1.963 [1.926, 1.999] & $4.3\times10^{-4}$ \\
+Mini & IMU & constant & 0 & 3000/1024 & 3 & 1.943 [1.925, 1.961] & $3.3\times10^{-4}$ \\
+Mini & IMU & constant & 0 & 300/256 & 3 & 1.963 [1.926, 2.000] & $3.3\times10^{-4}$ \\
+Mini & Vision & constant & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & 0.001 \\
+Mini & Vision & constant & 0 & 300/256 & 3 & 1.963 [1.926, 2.000] & $3.3\times10^{-4}$ \\
+Qwen 0.8B & Audio & constant & 0 & 3000/1024 & 3 & 0.985 [0.970, 0.999] & 0.001 \\
+Qwen 0.8B & Audio & constant & 0 & 300/256 & 3 & 1.010 [0.981, 1.039] & 0.001 \\
+Qwen 0.8B & IMU & constant & 0 & 3000/1024 & 3 & 0.986 [0.972, 1.000] & 0.001 \\
+Qwen 0.8B & IMU & constant & 0 & 300/256 & 3 & 1.011 [0.982, 1.040] & 0.001 \\
+Qwen 0.8B & Vision & constant & 0 & 3000/1024 & 3 & 0.985 [0.971, 0.999] & 0.001 \\
+Qwen 0.8B & Vision & constant & 0 & 300/256 & 3 & 1.011 [0.982, 1.039] & 0.001 \\
+LFM 230M & Audio & random & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $4.1\times10^{-4}$ \\
+LFM 230M & Audio & random & 0 & 300/256 & 3 & 1.102 [1.070, 1.135] & $4.7\times10^{-4}$ \\
+LFM 230M & IMU & random & 0 & 3000/1024 & 3 & 1.067 [1.052, 1.083] & $3.4\times10^{-4}$ \\
+LFM 230M & IMU & random & 0 & 300/256 & 3 & 1.102 [1.070, 1.134] & 0.001 \\
+LFM 230M & Vision & random & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $4.1\times10^{-4}$ \\
+LFM 230M & Vision & random & 0 & 300/256 & 3 & 1.102 [1.070, 1.135] & $4.7\times10^{-4}$ \\
+Mini & Audio & random & 0 & 3000/1024 & 3 & 1.943 [1.925, 1.961] & $2.6\times10^{-4}$ \\
+Mini & Audio & random & 0 & 300/256 & 3 & 1.965 [1.928, 2.001] & $2.5\times10^{-4}$ \\
+Mini & IMU & random & 0 & 3000/1024 & 3 & 1.943 [1.925, 1.961] & $4.8\times10^{-4}$ \\
+Mini & IMU & random & 0 & 300/256 & 3 & 1.964 [1.927, 2.001] & $3.3\times10^{-4}$ \\
+Mini & Vision & random & 0 & 3000/1024 & 3 & 1.943 [1.925, 1.961] & $2.6\times10^{-4}$ \\
+Mini & Vision & random & 0 & 300/256 & 3 & 1.965 [1.928, 2.001] & $2.5\times10^{-4}$ \\
+Qwen 0.8B & Audio & random & 0 & 3000/1024 & 3 & 0.987 [0.973, 1.001] & $8.9\times10^{-5}$ \\
+Qwen 0.8B & Audio & random & 0 & 300/256 & 3 & 1.013 [0.984, 1.042] & 0.001 \\
+Qwen 0.8B & IMU & random & 0 & 3000/1024 & 3 & 0.986 [0.972, 1.000] & 0.001 \\
+Qwen 0.8B & IMU & random & 0 & 300/256 & 3 & 1.014 [0.985, 1.042] & 0.002 \\
+Qwen 0.8B & Vision & random & 0 & 3000/1024 & 3 & 0.987 [0.973, 1.001] & $8.9\times10^{-5}$ \\
+Qwen 0.8B & Vision & random & 0 & 300/256 & 3 & 1.013 [0.984, 1.042] & 0.001 \\
+LFM 230M & Audio & shuffled & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & 0.001 \\
+LFM 230M & Audio & shuffled & 0 & 300/256 & 3 & 1.099 [1.066, 1.131] & 0.001 \\
+LFM 230M & IMU & shuffled & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $3.6\times10^{-4}$ \\
+LFM 230M & IMU & shuffled & 0 & 300/256 & 3 & 1.099 [1.066, 1.131] & 0.001 \\
+LFM 230M & Vision & shuffled & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & 0.001 \\
+LFM 230M & Vision & shuffled & 0 & 300/256 & 3 & 1.098 [1.066, 1.130] & $4.5\times10^{-4}$ \\
+Mini & Audio & shuffled & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & $1.3\times10^{-4}$ \\
+Mini & Audio & shuffled & 0 & 300/256 & 3 & 1.963 [1.926, 2.000] & $2.1\times10^{-4}$ \\
+Mini & IMU & shuffled & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & $2.3\times10^{-4}$ \\
+Mini & IMU & shuffled & 0 & 300/256 & 3 & 1.963 [1.926, 2.000] & $1.3\times10^{-4}$ \\
+Mini & Vision & shuffled & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & $3.5\times10^{-4}$ \\
+Mini & Vision & shuffled & 0 & 300/256 & 3 & 1.963 [1.926, 1.999] & $2.2\times10^{-4}$ \\
+Qwen 0.8B & Audio & shuffled & 0 & 3000/1024 & 3 & 0.984 [0.970, 0.999] & $2.7\times10^{-4}$ \\
+Qwen 0.8B & Audio & shuffled & 0 & 300/256 & 3 & 1.010 [0.981, 1.039] & 0.002 \\
+Qwen 0.8B & IMU & shuffled & 0 & 3000/1024 & 3 & 0.985 [0.971, 1.000] & $4.6\times10^{-4}$ \\
+Qwen 0.8B & IMU & shuffled & 0 & 300/256 & 3 & 1.011 [0.982, 1.040] & 0.002 \\
+Qwen 0.8B & Vision & shuffled & 0 & 3000/1024 & 3 & 0.984 [0.970, 0.998] & 0.001 \\
+Qwen 0.8B & Vision & shuffled & 0 & 300/256 & 3 & 1.010 [0.981, 1.039] & 0.001 \\
+LFM 230M & Audio & true & 0 & 3000/1024 & 3 & 1.067 [1.051, 1.083] & 0.001 \\
+LFM 230M & Audio & true & 0 & 300/256 & 3 & 1.098 [1.066, 1.131] & $4.0\times10^{-4}$ \\
+LFM 230M & IMU & true & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $1.6\times10^{-4}$ \\
+LFM 230M & IMU & true & 0 & 300/256 & 3 & 1.098 [1.065, 1.130] & 0.001 \\
+LFM 230M & Vision & true & 0 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $3.1\times10^{-4}$ \\
+LFM 230M & Vision & true & 0 & 300/256 & 3 & 1.099 [1.066, 1.131] & $4.9\times10^{-4}$ \\
+LFM 230M & Audio & Frozen & 0 & 0/1024 & 1 & 1.145 [1.128, 1.161] & -- \\
+LFM 230M & Audio & Frozen & 0 & 0/256 & 1 & 1.184 [1.150, 1.218] & -- \\
+LFM 230M & IMU & Frozen & 0 & 0/1024 & 1 & 1.145 [1.128, 1.161] & -- \\
+LFM 230M & IMU & Frozen & 0 & 0/256 & 1 & 1.184 [1.150, 1.218] & -- \\
+LFM 230M & Vision & Frozen & 0 & 0/1024 & 1 & 1.145 [1.128, 1.161] & -- \\
+LFM 230M & Vision & Frozen & 0 & 0/256 & 1 & 1.184 [1.150, 1.218] & -- \\
+LFM 230M & Audio & prefix & 0 & 3000/1024 & 3 & 1.072 [1.057, 1.088] & $1.1\times10^{-4}$ \\
+LFM 230M & Audio & prefix & 0 & 0/256 & 3 & 1.198 [1.163, 1.232] & 0.003 \\
+LFM 230M & Audio & prefix & 0 & 300/256 & 3 & 1.114 [1.082, 1.146] & 0.001 \\
+LFM 230M & IMU & prefix & 0 & 3000/1024 & 3 & 1.070 [1.055, 1.086] & $1.3\times10^{-4}$ \\
+LFM 230M & IMU & prefix & 0 & 0/256 & 3 & 1.192 [1.158, 1.226] & 0.005 \\
+LFM 230M & IMU & prefix & 0 & 300/256 & 3 & 1.114 [1.082, 1.146] & 0.001 \\
+LFM 230M & Vision & prefix & 0 & 3000/1024 & 3 & 1.074 [1.058, 1.090] & $4.7\times10^{-4}$ \\
+LFM 230M & Vision & prefix & 0 & 0/256 & 3 & 1.192 [1.158, 1.225] & 0.001 \\
+LFM 230M & Vision & prefix & 0 & 300/256 & 3 & 1.115 [1.083, 1.147] & $3.9\times10^{-4}$ \\
+LFM 230M & Audio & static & 0 & 3000/1024 & 3 & 1.066 [1.051, 1.083] & $1.4\times10^{-4}$ \\
+LFM 230M & Audio & static & 0 & 300/256 & 3 & 1.096 [1.064, 1.129] & $9.9\times10^{-5}$ \\
+LFM 230M & IMU & static & 0 & 3000/1024 & 3 & 1.066 [1.051, 1.083] & $1.4\times10^{-4}$ \\
+LFM 230M & IMU & static & 0 & 300/256 & 3 & 1.096 [1.064, 1.129] & $9.9\times10^{-5}$ \\
+LFM 230M & Vision & static & 0 & 3000/1024 & 3 & 1.066 [1.051, 1.083] & $1.4\times10^{-4}$ \\
+LFM 230M & Vision & static & 0 & 300/256 & 3 & 1.096 [1.064, 1.129] & $9.9\times10^{-5}$ \\
+Mini & Audio & true & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & 0.001 \\
+Mini & Audio & true & 0 & 300/256 & 3 & 1.963 [1.926, 1.999] & $1.9\times10^{-4}$ \\
+Mini & IMU & true & 0 & 3000/1024 & 3 & 1.943 [1.925, 1.961] & $1.7\times10^{-4}$ \\
+Mini & IMU & true & 0 & 300/256 & 3 & 1.963 [1.926, 1.999] & $3.4\times10^{-4}$ \\
+Mini & Vision & true & 0 & 3000/1024 & 3 & 1.942 [1.924, 1.960] & $3.1\times10^{-4}$ \\
+Mini & Vision & true & 0 & 300/256 & 3 & 1.963 [1.926, 1.999] & $7.9\times10^{-5}$ \\
+Mini & Audio & Frozen & 0 & 0/1024 & 1 & 1.954 [1.936, 1.973] & -- \\
+Mini & Audio & Frozen & 0 & 0/256 & 1 & 1.965 [1.929, 2.004] & -- \\
+Mini & IMU & Frozen & 0 & 0/1024 & 1 & 1.954 [1.936, 1.973] & -- \\
+Mini & IMU & Frozen & 0 & 0/256 & 1 & 1.965 [1.929, 2.004] & -- \\
+Mini & Vision & Frozen & 0 & 0/1024 & 1 & 1.954 [1.936, 1.973] & -- \\
+Mini & Vision & Frozen & 0 & 0/256 & 1 & 1.965 [1.929, 2.004] & -- \\
+Mini & Audio & prefix & 0 & 3000/1024 & 3 & 1.953 [1.934, 1.971] & $4.8\times10^{-5}$ \\
+Mini & Audio & prefix & 0 & 0/256 & 3 & 1.965 [1.928, 2.002] & $1.5\times10^{-4}$ \\
+Mini & Audio & prefix & 0 & 300/256 & 3 & 1.964 [1.927, 2.001] & $6.7\times10^{-5}$ \\
+Mini & IMU & prefix & 0 & 3000/1024 & 3 & 1.953 [1.934, 1.971] & $3.5\times10^{-5}$ \\
+Mini & IMU & prefix & 0 & 0/256 & 3 & 1.965 [1.928, 2.002] & $2.0\times10^{-4}$ \\
+Mini & IMU & prefix & 0 & 300/256 & 3 & 1.965 [1.928, 2.001] & $2.6\times10^{-4}$ \\
+Mini & Vision & prefix & 0 & 3000/1024 & 3 & 1.953 [1.934, 1.971] & $2.9\times10^{-5}$ \\
+Mini & Vision & prefix & 0 & 0/256 & 3 & 1.965 [1.929, 2.002] & $8.4\times10^{-5}$ \\
+Mini & Vision & prefix & 0 & 300/256 & 3 & 1.964 [1.927, 2.001] & $4.4\times10^{-6}$ \\
+Mini & Audio & static & 0 & 3000/1024 & 3 & 1.941 [1.923, 1.959] & $1.4\times10^{-4}$ \\
+Mini & Audio & static & 0 & 300/256 & 3 & 1.962 [1.925, 1.998] & $1.5\times10^{-4}$ \\
+Mini & IMU & static & 0 & 3000/1024 & 3 & 1.941 [1.923, 1.959] & $1.4\times10^{-4}$ \\
+Mini & IMU & static & 0 & 300/256 & 3 & 1.962 [1.925, 1.998] & $1.5\times10^{-4}$ \\
+Mini & Vision & static & 0 & 3000/1024 & 3 & 1.941 [1.923, 1.959] & $1.4\times10^{-4}$ \\
+Mini & Vision & static & 0 & 300/256 & 3 & 1.962 [1.925, 1.998] & $1.5\times10^{-4}$ \\
+Qwen 0.8B & Audio & true & 0 & 3000/1024 & 3 & 0.985 [0.971, 0.999] & $1.7\times10^{-4}$ \\
+Qwen 0.8B & Audio & true & 0 & 300/256 & 3 & 1.011 [0.982, 1.040] & 0.001 \\
+Qwen 0.8B & IMU & true & 0 & 3000/1024 & 3 & 0.986 [0.972, 1.001] & $3.5\times10^{-4}$ \\
+Qwen 0.8B & IMU & true & 0 & 300/256 & 3 & 1.010 [0.981, 1.039] & 0.001 \\
+Qwen 0.8B & Vision & true & 0 & 3000/1024 & 3 & 0.984 [0.970, 0.998] & 0.001 \\
+Qwen 0.8B & Vision & true & 0 & 300/256 & 3 & 1.010 [0.981, 1.039] & 0.001 \\
+Qwen 0.8B & Audio & Frozen & 0 & 0/1024 & 1 & 0.998 [0.984, 1.012] & -- \\
+Qwen 0.8B & Audio & Frozen & 0 & 0/256 & 1 & 1.040 [1.010, 1.069] & -- \\
+Qwen 0.8B & IMU & Frozen & 0 & 0/1024 & 1 & 0.998 [0.984, 1.012] & -- \\
+Qwen 0.8B & IMU & Frozen & 0 & 0/256 & 1 & 1.040 [1.010, 1.069] & -- \\
+Qwen 0.8B & Vision & Frozen & 0 & 0/1024 & 1 & 0.998 [0.984, 1.012] & -- \\
+Qwen 0.8B & Vision & Frozen & 0 & 0/256 & 1 & 1.040 [1.010, 1.069] & -- \\
+Qwen 0.8B & Audio & prefix & 0 & 3000/1024 & 3 & 0.963 [0.949, 0.977] & $4.1\times10^{-4}$ \\
+Qwen 0.8B & Audio & prefix & 0 & 0/256 & 3 & 1.280 [1.219, 1.347] & 0.058 \\
+Qwen 0.8B & Audio & prefix & 0 & 300/256 & 3 & 1.004 [0.975, 1.033] & $2.5\times10^{-4}$ \\
+Qwen 0.8B & IMU & prefix & 0 & 3000/1024 & 3 & 0.962 [0.948, 0.976] & $2.7\times10^{-4}$ \\
+Qwen 0.8B & IMU & prefix & 0 & 0/256 & 3 & 1.299 [1.253, 1.344] & 0.026 \\
+Qwen 0.8B & IMU & prefix & 0 & 300/256 & 3 & 1.004 [0.975, 1.033] & 0.001 \\
+Qwen 0.8B & Vision & prefix & 0 & 3000/1024 & 3 & 0.964 [0.949, 0.978] & 0.001 \\
+Qwen 0.8B & Vision & prefix & 0 & 0/256 & 3 & 1.358 [1.303, 1.414] & 0.043 \\
+Qwen 0.8B & Vision & prefix & 0 & 300/256 & 3 & 1.004 [0.976, 1.033] & 0.001 \\
+Qwen 0.8B & Audio & static & 0 & 3000/1024 & 3 & 0.987 [0.972, 1.001] & 0.001 \\
+Qwen 0.8B & Audio & static & 0 & 300/256 & 3 & 1.009 [0.979, 1.037] & $2.3\times10^{-4}$ \\
+Qwen 0.8B & IMU & static & 0 & 3000/1024 & 3 & 0.987 [0.972, 1.001] & 0.001 \\
+Qwen 0.8B & IMU & static & 0 & 300/256 & 3 & 1.009 [0.979, 1.037] & $2.3\times10^{-4}$ \\
+Qwen 0.8B & Vision & static & 0 & 3000/1024 & 3 & 0.987 [0.972, 1.001] & 0.001 \\
+Qwen 0.8B & Vision & static & 0 & 300/256 & 3 & 1.009 [0.979, 1.037] & $2.3\times10^{-4}$ \\
+LFM 230M & IMU & true & 0.01 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $3.4\times10^{-4}$ \\
+LFM 230M & IMU & true & 0.01 & 300/256 & 3 & 1.099 [1.067, 1.131] & 0.001 \\
+Mini & IMU & true & 0.01 & 3000/1024 & 3 & 1.943 [1.925, 1.961] & $3.5\times10^{-4}$ \\
+Mini & IMU & true & 0.01 & 300/256 & 3 & 1.963 [1.926, 2.000] & $3.6\times10^{-4}$ \\
+Qwen 0.8B & IMU & true & 0.01 & 3000/1024 & 3 & 0.985 [0.971, 0.999] & $3.8\times10^{-4}$ \\
+Qwen 0.8B & IMU & true & 0.01 & 300/256 & 3 & 1.010 [0.980, 1.039] & 0.002 \\
+LFM 230M & IMU & true & 0.05 & 3000/1024 & 3 & 1.068 [1.052, 1.084] & $2.1\times10^{-4}$ \\
+LFM 230M & IMU & true & 0.05 & 300/256 & 3 & 1.099 [1.067, 1.131] & $3.6\times10^{-4}$ \\
+Mini & IMU & true & 0.05 & 3000/1024 & 3 & 1.949 [1.931, 1.967] & $4.9\times10^{-4}$ \\
+Mini & IMU & true & 0.05 & 300/256 & 3 & 1.965 [1.928, 2.001] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.05 & 3000/1024 & 3 & 0.985 [0.971, 0.999] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.05 & 300/256 & 3 & 1.010 [0.981, 1.039] & 0.002 \\
+LFM 230M & IMU & true & 0.1 & 3000/1024 & 3 & 1.068 [1.053, 1.084] & 0.001 \\
+LFM 230M & IMU & true & 0.1 & 300/256 & 3 & 1.106 [1.074, 1.138] & 0.002 \\
+Mini & IMU & true & 0.1 & 3000/1024 & 3 & 1.949 [1.931, 1.968] & $2.2\times10^{-4}$ \\
+Mini & IMU & true & 0.1 & 300/256 & 3 & 1.965 [1.928, 2.002] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.1 & 3000/1024 & 3 & 0.986 [0.972, 1.000] & $2.4\times10^{-4}$ \\
+Qwen 0.8B & IMU & true & 0.1 & 300/256 & 3 & 1.009 [0.979, 1.037] & 0.001 \\
+LFM 230M & IMU & true & 0.2 & 3000/1024 & 3 & 1.072 [1.057, 1.088] & $3.3\times10^{-4}$ \\
+LFM 230M & IMU & true & 0.2 & 300/256 & 3 & 1.111 [1.078, 1.143] & 0.001 \\
+Mini & IMU & true & 0.2 & 3000/1024 & 3 & 1.949 [1.931, 1.967] & 0.001 \\
+Mini & IMU & true & 0.2 & 300/256 & 3 & 1.966 [1.929, 2.002] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.2 & 3000/1024 & 3 & 0.988 [0.974, 1.002] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.2 & 300/256 & 3 & 1.017 [0.988, 1.047] & 0.002 \\
+\bottomrule
+\end{longtable}}\par
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}llllllll@{}}
+\caption{Common-byte BPB on identical held-out spans. $n$ is the number of training seeds; a frozen host is a fixed reference.}\label{tab:full-common_bpb}\\
+\toprule
+Host & Task & Interface & $\lambda$ & Step & $n$ & BPB [95\%] & Seed SD \\
+\midrule\endfirsthead
+\toprule
+Host & Task & Interface & $\lambda$ & Step & $n$ & BPB [95\%] & Seed SD \\
+\midrule\endhead
+LFM 230M & Audio & constant & 0 & 3000 & 3 & 1.268 [1.237, 1.300] & 0.001 \\
+LFM 230M & Audio & constant & 0 & 300 & 3 & 1.271 [1.240, 1.302] & 0.001 \\
+LFM 230M & IMU & constant & 0 & 3000 & 3 & 1.268 [1.238, 1.300] & 0.001 \\
+LFM 230M & IMU & constant & 0 & 300 & 3 & 1.272 [1.241, 1.304] & 0.002 \\
+LFM 230M & Vision & constant & 0 & 3000 & 3 & 1.270 [1.239, 1.301] & $4.3\times10^{-4}$ \\
+LFM 230M & Vision & constant & 0 & 300 & 3 & 1.271 [1.240, 1.302] & 0.002 \\
+Mini & Audio & constant & 0 & 3000 & 3 & 2.122 [2.082, 2.164] & $3.6\times10^{-4}$ \\
+Mini & Audio & constant & 0 & 300 & 3 & 2.139 [2.098, 2.182] & $2.8\times10^{-4}$ \\
+Mini & IMU & constant & 0 & 3000 & 3 & 2.124 [2.083, 2.165] & $4.2\times10^{-4}$ \\
+Mini & IMU & constant & 0 & 300 & 3 & 2.140 [2.099, 2.182] & $2.5\times10^{-4}$ \\
+Mini & Vision & constant & 0 & 3000 & 3 & 2.122 [2.081, 2.164] & $1.6\times10^{-4}$ \\
+Mini & Vision & constant & 0 & 300 & 3 & 2.139 [2.098, 2.181] & $4.8\times10^{-4}$ \\
+Qwen 0.8B & Audio & constant & 0 & 3000 & 3 & 1.189 [1.161, 1.217] & $3.7\times10^{-4}$ \\
+Qwen 0.8B & Audio & constant & 0 & 300 & 3 & 1.179 [1.151, 1.206] & 0.001 \\
+Qwen 0.8B & IMU & constant & 0 & 3000 & 3 & 1.187 [1.160, 1.216] & 0.001 \\
+Qwen 0.8B & IMU & constant & 0 & 300 & 3 & 1.183 [1.155, 1.210] & 0.002 \\
+Qwen 0.8B & Vision & constant & 0 & 3000 & 3 & 1.187 [1.159, 1.216] & 0.001 \\
+Qwen 0.8B & Vision & constant & 0 & 300 & 3 & 1.180 [1.153, 1.207] & 0.001 \\
+LFM 230M & Audio & random & 0 & 3000 & 3 & 1.270 [1.239, 1.301] & $4.1\times10^{-4}$ \\
+LFM 230M & Audio & random & 0 & 300 & 3 & 1.276 [1.245, 1.307] & 0.001 \\
+LFM 230M & IMU & random & 0 & 3000 & 3 & 1.269 [1.238, 1.301] & 0.002 \\
+LFM 230M & IMU & random & 0 & 300 & 3 & 1.276 [1.245, 1.307] & $4.6\times10^{-4}$ \\
+LFM 230M & Vision & random & 0 & 3000 & 3 & 1.270 [1.239, 1.301] & $4.1\times10^{-4}$ \\
+LFM 230M & Vision & random & 0 & 300 & 3 & 1.276 [1.245, 1.307] & 0.001 \\
+Mini & Audio & random & 0 & 3000 & 3 & 2.125 [2.084, 2.166] & $9.0\times10^{-5}$ \\
+Mini & Audio & random & 0 & 300 & 3 & 2.141 [2.101, 2.184] & 0.001 \\
+Mini & IMU & random & 0 & 3000 & 3 & 2.125 [2.084, 2.166] & $3.3\times10^{-4}$ \\
+Mini & IMU & random & 0 & 300 & 3 & 2.141 [2.100, 2.183] & 0.001 \\
+Mini & Vision & random & 0 & 3000 & 3 & 2.125 [2.084, 2.166] & $9.0\times10^{-5}$ \\
+Mini & Vision & random & 0 & 300 & 3 & 2.141 [2.101, 2.184] & 0.001 \\
+Qwen 0.8B & Audio & random & 0 & 3000 & 3 & 1.190 [1.162, 1.219] & 0.002 \\
+Qwen 0.8B & Audio & random & 0 & 300 & 3 & 1.182 [1.155, 1.210] & 0.001 \\
+Qwen 0.8B & IMU & random & 0 & 3000 & 3 & 1.189 [1.161, 1.217] & 0.003 \\
+Qwen 0.8B & IMU & random & 0 & 300 & 3 & 1.184 [1.156, 1.212] & 0.001 \\
+Qwen 0.8B & Vision & random & 0 & 3000 & 3 & 1.190 [1.162, 1.219] & 0.002 \\
+Qwen 0.8B & Vision & random & 0 & 300 & 3 & 1.182 [1.155, 1.210] & 0.001 \\
+LFM 230M & Audio & shuffled & 0 & 3000 & 3 & 1.269 [1.238, 1.300] & 0.002 \\
+LFM 230M & Audio & shuffled & 0 & 300 & 3 & 1.272 [1.240, 1.303] & $4.4\times10^{-4}$ \\
+LFM 230M & IMU & shuffled & 0 & 3000 & 3 & 1.270 [1.239, 1.301] & 0.001 \\
+LFM 230M & IMU & shuffled & 0 & 300 & 3 & 1.271 [1.240, 1.302] & 0.001 \\
+LFM 230M & Vision & shuffled & 0 & 3000 & 3 & 1.268 [1.237, 1.299] & 0.002 \\
+LFM 230M & Vision & shuffled & 0 & 300 & 3 & 1.270 [1.239, 1.301] & $4.5\times10^{-4}$ \\
+Mini & Audio & shuffled & 0 & 3000 & 3 & 2.122 [2.082, 2.164] & 0.001 \\
+Mini & Audio & shuffled & 0 & 300 & 3 & 2.140 [2.099, 2.182] & 0.001 \\
+Mini & IMU & shuffled & 0 & 3000 & 3 & 2.124 [2.083, 2.165] & $3.7\times10^{-4}$ \\
+Mini & IMU & shuffled & 0 & 300 & 3 & 2.139 [2.098, 2.181] & $1.7\times10^{-4}$ \\
+Mini & Vision & shuffled & 0 & 3000 & 3 & 2.122 [2.082, 2.164] & 0.001 \\
+Mini & Vision & shuffled & 0 & 300 & 3 & 2.139 [2.098, 2.181] & $2.4\times10^{-4}$ \\
+Qwen 0.8B & Audio & shuffled & 0 & 3000 & 3 & 1.187 [1.159, 1.216] & 0.002 \\
+Qwen 0.8B & Audio & shuffled & 0 & 300 & 3 & 1.181 [1.153, 1.209] & 0.004 \\
+Qwen 0.8B & IMU & shuffled & 0 & 3000 & 3 & 1.187 [1.159, 1.216] & 0.002 \\
+Qwen 0.8B & IMU & shuffled & 0 & 300 & 3 & 1.181 [1.154, 1.209] & 0.001 \\
+Qwen 0.8B & Vision & shuffled & 0 & 3000 & 3 & 1.187 [1.159, 1.215] & 0.001 \\
+Qwen 0.8B & Vision & shuffled & 0 & 300 & 3 & 1.180 [1.153, 1.208] & 0.001 \\
+LFM 230M & Audio & true & 0 & 3000 & 3 & 1.266 [1.235, 1.298] & 0.001 \\
+LFM 230M & Audio & true & 0 & 300 & 3 & 1.271 [1.240, 1.302] & $3.4\times10^{-4}$ \\
+LFM 230M & IMU & true & 0 & 3000 & 3 & 1.269 [1.238, 1.300] & 0.002 \\
+LFM 230M & IMU & true & 0 & 300 & 3 & 1.272 [1.241, 1.303] & 0.001 \\
+LFM 230M & Vision & true & 0 & 3000 & 3 & 1.269 [1.238, 1.300] & $2.6\times10^{-4}$ \\
+LFM 230M & Vision & true & 0 & 300 & 3 & 1.271 [1.240, 1.302] & 0.002 \\
+LFM 230M & Audio & Frozen & 0 & 0 & 1 & 1.373 [1.340, 1.407] & -- \\
+LFM 230M & IMU & Frozen & 0 & 0 & 1 & 1.373 [1.340, 1.407] & -- \\
+LFM 230M & Vision & Frozen & 0 & 0 & 1 & 1.373 [1.340, 1.407] & -- \\
+LFM 230M & Audio & prefix & 0 & 0 & 3 & 1.385 [1.351, 1.419] & 0.002 \\
+LFM 230M & Audio & prefix & 0 & 3000 & 3 & 1.275 [1.243, 1.306] & $4.9\times10^{-4}$ \\
+LFM 230M & Audio & prefix & 0 & 300 & 3 & 1.280 [1.248, 1.312] & 0.001 \\
+LFM 230M & IMU & prefix & 0 & 0 & 3 & 1.382 [1.348, 1.416] & 0.001 \\
+LFM 230M & IMU & prefix & 0 & 3000 & 3 & 1.274 [1.242, 1.305] & $2.8\times10^{-4}$ \\
+LFM 230M & IMU & prefix & 0 & 300 & 3 & 1.282 [1.250, 1.314] & $3.5\times10^{-4}$ \\
+LFM 230M & Vision & prefix & 0 & 0 & 3 & 1.379 [1.345, 1.413] & 0.004 \\
+LFM 230M & Vision & prefix & 0 & 3000 & 3 & 1.276 [1.245, 1.308] & 0.001 \\
+LFM 230M & Vision & prefix & 0 & 300 & 3 & 1.282 [1.251, 1.315] & 0.002 \\
+LFM 230M & Audio & static & 0 & 3000 & 3 & 1.268 [1.237, 1.299] & 0.001 \\
+LFM 230M & Audio & static & 0 & 300 & 3 & 1.271 [1.240, 1.303] & $2.9\times10^{-4}$ \\
+LFM 230M & IMU & static & 0 & 3000 & 3 & 1.268 [1.237, 1.299] & 0.001 \\
+LFM 230M & IMU & static & 0 & 300 & 3 & 1.271 [1.240, 1.303] & $2.9\times10^{-4}$ \\
+LFM 230M & Vision & static & 0 & 3000 & 3 & 1.268 [1.237, 1.299] & 0.001 \\
+LFM 230M & Vision & static & 0 & 300 & 3 & 1.271 [1.240, 1.303] & $2.9\times10^{-4}$ \\
+Mini & Audio & true & 0 & 3000 & 3 & 2.122 [2.082, 2.164] & 0.001 \\
+Mini & Audio & true & 0 & 300 & 3 & 2.139 [2.098, 2.182] & $3.3\times10^{-4}$ \\
+Mini & IMU & true & 0 & 3000 & 3 & 2.123 [2.083, 2.165] & 0.001 \\
+Mini & IMU & true & 0 & 300 & 3 & 2.139 [2.098, 2.181] & $4.1\times10^{-4}$ \\
+Mini & Vision & true & 0 & 3000 & 3 & 2.123 [2.082, 2.165] & $4.9\times10^{-4}$ \\
+Mini & Vision & true & 0 & 300 & 3 & 2.139 [2.098, 2.181] & $2.2\times10^{-4}$ \\
+Mini & Audio & Frozen & 0 & 0 & 1 & 2.142 [2.103, 2.185] & -- \\
+Mini & IMU & Frozen & 0 & 0 & 1 & 2.142 [2.103, 2.185] & -- \\
+Mini & Vision & Frozen & 0 & 0 & 1 & 2.142 [2.103, 2.185] & -- \\
+Mini & Audio & prefix & 0 & 0 & 3 & 2.144 [2.103, 2.186] & 0.001 \\
+Mini & Audio & prefix & 0 & 3000 & 3 & 2.140 [2.099, 2.183] & $5.3\times10^{-5}$ \\
+Mini & Audio & prefix & 0 & 300 & 3 & 2.141 [2.100, 2.184] & $3.1\times10^{-4}$ \\
+Mini & IMU & prefix & 0 & 0 & 3 & 2.144 [2.103, 2.186] & $3.3\times10^{-4}$ \\
+Mini & IMU & prefix & 0 & 3000 & 3 & 2.140 [2.099, 2.182] & $7.5\times10^{-5}$ \\
+Mini & IMU & prefix & 0 & 300 & 3 & 2.142 [2.100, 2.184] & $4.0\times10^{-4}$ \\
+Mini & Vision & prefix & 0 & 0 & 3 & 2.144 [2.103, 2.186] & 0.001 \\
+Mini & Vision & prefix & 0 & 3000 & 3 & 2.140 [2.099, 2.183] & $6.7\times10^{-5}$ \\
+Mini & Vision & prefix & 0 & 300 & 3 & 2.142 [2.100, 2.184] & $1.7\times10^{-4}$ \\
+Mini & Audio & static & 0 & 3000 & 3 & 2.122 [2.081, 2.164] & $3.3\times10^{-4}$ \\
+Mini & Audio & static & 0 & 300 & 3 & 2.138 [2.097, 2.180] & $2.0\times10^{-4}$ \\
+Mini & IMU & static & 0 & 3000 & 3 & 2.122 [2.081, 2.164] & $3.3\times10^{-4}$ \\
+Mini & IMU & static & 0 & 300 & 3 & 2.138 [2.097, 2.180] & $2.0\times10^{-4}$ \\
+Mini & Vision & static & 0 & 3000 & 3 & 2.122 [2.081, 2.164] & $3.3\times10^{-4}$ \\
+Mini & Vision & static & 0 & 300 & 3 & 2.138 [2.097, 2.180] & $2.0\times10^{-4}$ \\
+Qwen 0.8B & Audio & true & 0 & 3000 & 3 & 1.187 [1.159, 1.216] & 0.001 \\
+Qwen 0.8B & Audio & true & 0 & 300 & 3 & 1.180 [1.152, 1.207] & 0.002 \\
+Qwen 0.8B & IMU & true & 0 & 3000 & 3 & 1.189 [1.161, 1.218] & 0.003 \\
+Qwen 0.8B & IMU & true & 0 & 300 & 3 & 1.180 [1.152, 1.207] & 0.001 \\
+Qwen 0.8B & Vision & true & 0 & 3000 & 3 & 1.187 [1.159, 1.215] & 0.002 \\
+Qwen 0.8B & Vision & true & 0 & 300 & 3 & 1.180 [1.152, 1.208] & 0.002 \\
+Qwen 0.8B & Audio & Frozen & 0 & 0 & 1 & 1.212 [1.184, 1.241] & -- \\
+Qwen 0.8B & IMU & Frozen & 0 & 0 & 1 & 1.212 [1.184, 1.241] & -- \\
+Qwen 0.8B & Vision & Frozen & 0 & 0 & 1 & 1.212 [1.184, 1.241] & -- \\
+Qwen 0.8B & Audio & prefix & 0 & 0 & 3 & 1.611 [1.535, 1.702] & 0.084 \\
+Qwen 0.8B & Audio & prefix & 0 & 3000 & 3 & 1.165 [1.137, 1.193] & 0.001 \\
+Qwen 0.8B & Audio & prefix & 0 & 300 & 3 & 1.173 [1.145, 1.201] & 0.002 \\
+Qwen 0.8B & IMU & prefix & 0 & 0 & 3 & 1.653 [1.577, 1.732] & 0.076 \\
+Qwen 0.8B & IMU & prefix & 0 & 3000 & 3 & 1.163 [1.136, 1.191] & $2.6\times10^{-4}$ \\
+Qwen 0.8B & IMU & prefix & 0 & 300 & 3 & 1.172 [1.144, 1.200] & 0.001 \\
+Qwen 0.8B & Vision & prefix & 0 & 0 & 3 & 1.743 [1.671, 1.819] & 0.067 \\
+Qwen 0.8B & Vision & prefix & 0 & 3000 & 3 & 1.166 [1.139, 1.194] & 0.001 \\
+Qwen 0.8B & Vision & prefix & 0 & 300 & 3 & 1.173 [1.145, 1.201] & 0.001 \\
+Qwen 0.8B & Audio & static & 0 & 3000 & 3 & 1.189 [1.162, 1.218] & 0.001 \\
+Qwen 0.8B & Audio & static & 0 & 300 & 3 & 1.178 [1.151, 1.205] & 0.001 \\
+Qwen 0.8B & IMU & static & 0 & 3000 & 3 & 1.189 [1.162, 1.218] & 0.001 \\
+Qwen 0.8B & IMU & static & 0 & 300 & 3 & 1.178 [1.151, 1.205] & 0.001 \\
+Qwen 0.8B & Vision & static & 0 & 3000 & 3 & 1.189 [1.162, 1.218] & 0.001 \\
+Qwen 0.8B & Vision & static & 0 & 300 & 3 & 1.178 [1.151, 1.205] & 0.001 \\
+LFM 230M & IMU & true & 0.01 & 3000 & 3 & 1.270 [1.239, 1.301] & 0.001 \\
+LFM 230M & IMU & true & 0.01 & 300 & 3 & 1.272 [1.241, 1.304] & 0.001 \\
+Mini & IMU & true & 0.01 & 3000 & 3 & 2.124 [2.084, 2.166] & 0.001 \\
+Mini & IMU & true & 0.01 & 300 & 3 & 2.140 [2.098, 2.182] & $3.4\times10^{-4}$ \\
+Qwen 0.8B & IMU & true & 0.01 & 3000 & 3 & 1.188 [1.160, 1.217] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.01 & 300 & 3 & 1.180 [1.152, 1.207] & 0.001 \\
+LFM 230M & IMU & true & 0.05 & 3000 & 3 & 1.269 [1.238, 1.301] & 0.002 \\
+LFM 230M & IMU & true & 0.05 & 300 & 3 & 1.272 [1.241, 1.303] & 0.001 \\
+Mini & IMU & true & 0.05 & 3000 & 3 & 2.133 [2.092, 2.175] & 0.001 \\
+Mini & IMU & true & 0.05 & 300 & 3 & 2.142 [2.101, 2.184] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.05 & 3000 & 3 & 1.188 [1.160, 1.217] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.05 & 300 & 3 & 1.180 [1.153, 1.208] & 0.002 \\
+LFM 230M & IMU & true & 0.1 & 3000 & 3 & 1.269 [1.238, 1.301] & 0.003 \\
+LFM 230M & IMU & true & 0.1 & 300 & 3 & 1.280 [1.249, 1.311] & 0.003 \\
+Mini & IMU & true & 0.1 & 3000 & 3 & 2.134 [2.093, 2.176] & 0.001 \\
+Mini & IMU & true & 0.1 & 300 & 3 & 2.142 [2.101, 2.184] & $1.9\times10^{-4}$ \\
+Qwen 0.8B & IMU & true & 0.1 & 3000 & 3 & 1.191 [1.163, 1.219] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.1 & 300 & 3 & 1.177 [1.150, 1.205] & 0.002 \\
+LFM 230M & IMU & true & 0.2 & 3000 & 3 & 1.276 [1.245, 1.307] & 0.001 \\
+LFM 230M & IMU & true & 0.2 & 300 & 3 & 1.284 [1.253, 1.316] & 0.001 \\
+Mini & IMU & true & 0.2 & 3000 & 3 & 2.132 [2.092, 2.175] & 0.001 \\
+Mini & IMU & true & 0.2 & 300 & 3 & 2.143 [2.102, 2.185] & 0.001 \\
+Qwen 0.8B & IMU & true & 0.2 & 3000 & 3 & 1.191 [1.163, 1.220] & 0.004 \\
+Qwen 0.8B & IMU & true & 0.2 & 300 & 3 & 1.188 [1.160, 1.216] & 0.004 \\
+\bottomrule
+\end{longtable}}\par
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}llllllll@{}}
+\caption{Paired P ranking on the full held-out population. $n$ is the number of training seeds; a frozen host is a fixed reference.}\label{tab:full-ranking}\\
+\toprule
+Host & Task & Interface & $\lambda$ & Step & $n$ & Macro [95\%] & Micro [95\%] \\
+\midrule\endfirsthead
+\toprule
+Host & Task & Interface & $\lambda$ & Step & $n$ & Macro [95\%] & Micro [95\%] \\
+\midrule\endhead
+LFM 230M & Audio & constant & 0 & 6000 & 3 & 0.018 [0.010, 0.022] & 0.018 [0.010, 0.024] \\
+LFM 230M & Audio & constant & 0 & 600 & 3 & 0.018 [0.013, 0.022] & 0.018 [0.013, 0.024] \\
+LFM 230M & IMU & constant & 0 & 6000 & 3 & 0.167 [0.167, 0.167] & 0.148 [0.138, 0.159] \\
+LFM 230M & IMU & constant & 0 & 600 & 3 & 0.167 [0.167, 0.167] & 0.160 [0.155, 0.164] \\
+Mini & Audio & constant & 0 & 6000 & 5 & 0.020 [0.017, 0.020] & 0.020 [0.017, 0.023] \\
+Mini & Audio & constant & 0 & 600 & 5 & 0.024 [0.020, 0.029] & 0.024 [0.019, 0.029] \\
+Mini & IMU & constant & 0 & 6000 & 1/5 & -- & -- \\
+Mini & IMU & constant & 0 & 600 & 5 & 0.167 [0.167, 0.167] & 0.156 [0.148, 0.163] \\
+Mini & Vision & constant & 0 & 6000 & 3 & 0.100 [0.100, 0.101] & 0.100 [0.100, 0.101] \\
+Mini & Vision & constant & 0 & 600 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Qwen 0.8B & Audio & constant & 0 & 6000 & 5 & 0.021 [0.018, 0.024] & 0.021 [0.016, 0.026] \\
+Qwen 0.8B & Audio & constant & 0 & 600 & 5 & 0.017 [0.011, 0.022] & 0.017 [0.010, 0.024] \\
+Qwen 0.8B & IMU & constant & 0 & 6000 & 5 & 0.167 [0.167, 0.167] & 0.153 [0.144, 0.161] \\
+Qwen 0.8B & IMU & constant & 0 & 600 & 5 & 0.167 [0.166, 0.167] & 0.153 [0.144, 0.161] \\
+Qwen 0.8B & Vision & constant & 0 & 6000 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Qwen 0.8B & Vision & constant & 0 & 600 & 3 & 0.105 [0.100, 0.114] & 0.105 [0.100, 0.114] \\
+LFM 230M & Audio & random & 0 & 6000 & 3 & 0.023 [0.020, 0.028] & 0.023 [0.017, 0.030] \\
+LFM 230M & Audio & random & 0 & 600 & 3 & 0.024 [0.018, 0.031] & 0.024 [0.017, 0.032] \\
+LFM 230M & IMU & random & 0 & 6000 & 3 & 0.109 [0.027, 0.167] & 0.104 [0.024, 0.159] \\
+LFM 230M & IMU & random & 0 & 600 & 3 & 0.124 [0.045, 0.167] & 0.113 [0.042, 0.159] \\
+Mini & Audio & random & 0 & 6000 & 5 & 0.021 [0.020, 0.023] & 0.021 [0.018, 0.024] \\
+Mini & Audio & random & 0 & 600 & 5 & 0.021 [0.018, 0.025] & 0.021 [0.017, 0.028] \\
+Mini & IMU & random & 0 & 6000 & 5 & 0.190 [0.158, 0.227] & 0.179 [0.140, 0.221] \\
+Mini & IMU & random & 0 & 600 & 5 & 0.123 [0.069, 0.168] & 0.112 [0.061, 0.157] \\
+Mini & Vision & random & 0 & 6000 & 3 & 0.112 [0.101, 0.122] & 0.112 [0.101, 0.122] \\
+Mini & Vision & random & 0 & 600 & 3 & 0.084 [0.053, 0.100] & 0.084 [0.053, 0.100] \\
+Qwen 0.8B & Audio & random & 0 & 6000 & 5 & 0.023 [0.020, 0.029] & 0.023 [0.018, 0.031] \\
+Qwen 0.8B & Audio & random & 0 & 600 & 5 & 0.023 [0.015, 0.032] & 0.023 [0.014, 0.033] \\
+Qwen 0.8B & IMU & random & 0 & 6000 & 5 & 0.175 [0.167, 0.194] & 0.160 [0.145, 0.180] \\
+Qwen 0.8B & IMU & random & 0 & 600 & 5 & 0.209 [0.153, 0.269] & 0.199 [0.145, 0.259] \\
+Qwen 0.8B & Vision & random & 0 & 6000 & 3 & 0.100 [0.099, 0.100] & 0.100 [0.099, 0.100] \\
+Qwen 0.8B & Vision & random & 0 & 600 & 3 & 0.093 [0.066, 0.113] & 0.093 [0.066, 0.113] \\
+LFM 230M & Audio & shuffled & 0 & 6000 & 3 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.025] \\
+LFM 230M & Audio & shuffled & 0 & 600 & 3 & 0.021 [0.016, 0.026] & 0.021 [0.015, 0.028] \\
+LFM 230M & IMU & shuffled & 0 & 6000 & 3 & 0.176 [0.167, 0.196] & 0.164 [0.155, 0.177] \\
+LFM 230M & IMU & shuffled & 0 & 600 & 3 & 0.156 [0.129, 0.167] & 0.145 [0.114, 0.163] \\
+Mini & Audio & shuffled & 0 & 6000 & 5 & 0.020 [0.020, 0.020] & 0.020 [0.018, 0.023] \\
+Mini & Audio & shuffled & 0 & 600 & 5 & 0.019 [0.015, 0.020] & 0.019 [0.016, 0.024] \\
+Mini & IMU & shuffled & 0 & 6000 & 2/5 & -- & -- \\
+Mini & IMU & shuffled & 0 & 600 & 5 & 0.167 [0.167, 0.167] & 0.156 [0.148, 0.163] \\
+Mini & Vision & shuffled & 0 & 6000 & 2/3 & -- & -- \\
+Mini & Vision & shuffled & 0 & 600 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Qwen 0.8B & Audio & shuffled & 0 & 6000 & 5 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.024] \\
+Qwen 0.8B & Audio & shuffled & 0 & 600 & 5 & 0.022 [0.017, 0.028] & 0.022 [0.016, 0.030] \\
+Qwen 0.8B & IMU & shuffled & 0 & 6000 & 5 & 0.173 [0.165, 0.189] & 0.164 [0.150, 0.179] \\
+Qwen 0.8B & IMU & shuffled & 0 & 600 & 5 & 0.158 [0.096, 0.219] & 0.151 [0.090, 0.216] \\
+Qwen 0.8B & Vision & shuffled & 0 & 6000 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Qwen 0.8B & Vision & shuffled & 0 & 600 & 3 & 0.123 [0.100, 0.138] & 0.123 [0.100, 0.138] \\
+LFM 230M & Audio & true & 0 & 6000 & 3 & 0.386 [0.336, 0.442] & 0.386 [0.337, 0.440] \\
+LFM 230M & Audio & true & 0 & 600 & 3 & 0.260 [0.180, 0.331] & 0.260 [0.182, 0.331] \\
+LFM 230M & IMU & true & 0 & 6000 & 3 & 0.839 [0.761, 0.913] & 0.853 [0.784, 0.920] \\
+LFM 230M & IMU & true & 0 & 600 & 3 & 0.834 [0.759, 0.911] & 0.844 [0.773, 0.916] \\
+LFM 230M & Audio & static & 0 & 6000 & 3 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.025] \\
+LFM 230M & Audio & static & 0 & 600 & 3 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.024] \\
+LFM 230M & IMU & static & 0 & 6000 & 3 & 0.167 [0.167, 0.167] & 0.154 [0.143, 0.163] \\
+LFM 230M & IMU & static & 0 & 600 & 3 & 0.167 [0.167, 0.167] & 0.154 [0.143, 0.163] \\
+Mini & Audio & true & 0 & 6000 & 5 & 0.461 [0.419, 0.506] & 0.461 [0.417, 0.504] \\
+Mini & Audio & true & 0 & 600 & 5 & 0.318 [0.279, 0.355] & 0.318 [0.278, 0.357] \\
+Mini & IMU & true & 0 & 6000 & 0/5 & -- & -- \\
+Mini & IMU & true & 0 & 600 & 5 & 0.759 [0.714, 0.798] & 0.760 [0.711, 0.804] \\
+Mini & Vision & true & 0 & 6000 & 3 & 0.582 [0.526, 0.628] & 0.582 [0.526, 0.628] \\
+Mini & Vision & true & 0 & 600 & 3 & 0.431 [0.404, 0.464] & 0.431 [0.404, 0.464] \\
+Mini & Audio & static & 0 & 6000 & 5 & 0.020 [0.020, 0.020] & 0.020 [0.018, 0.023] \\
+Mini & Audio & static & 0 & 600 & 5 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.025] \\
+Mini & IMU & static & 0 & 6000 & 5 & 0.167 [0.167, 0.167] & 0.156 [0.148, 0.163] \\
+Mini & IMU & static & 0 & 600 & 5 & 0.167 [0.167, 0.167] & 0.156 [0.148, 0.163] \\
+Mini & Vision & static & 0 & 6000 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Mini & Vision & static & 0 & 600 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Qwen 0.8B & Audio & true & 0 & 6000 & 5 & 0.421 [0.383, 0.459] & 0.421 [0.384, 0.461] \\
+Qwen 0.8B & Audio & true & 0 & 600 & 5 & 0.166 [0.135, 0.205] & 0.166 [0.134, 0.204] \\
+Qwen 0.8B & IMU & true & 0 & 6000 & 5 & 0.838 [0.733, 0.927] & 0.849 [0.752, 0.932] \\
+Qwen 0.8B & IMU & true & 0 & 600 & 5 & 0.828 [0.738, 0.918] & 0.833 [0.742, 0.921] \\
+Qwen 0.8B & Vision & true & 0 & 6000 & 3 & 0.451 [0.353, 0.553] & 0.451 [0.353, 0.553] \\
+Qwen 0.8B & Vision & true & 0 & 600 & 3 & 0.341 [0.305, 0.365] & 0.341 [0.305, 0.365] \\
+Qwen 0.8B & Audio & static & 0 & 6000 & 5 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.025] \\
+Qwen 0.8B & Audio & static & 0 & 600 & 5 & 0.020 [0.020, 0.020] & 0.020 [0.017, 0.025] \\
+Qwen 0.8B & IMU & static & 0 & 6000 & 5 & 0.167 [0.167, 0.167] & 0.153 [0.144, 0.161] \\
+Qwen 0.8B & IMU & static & 0 & 600 & 5 & 0.167 [0.167, 0.167] & 0.160 [0.155, 0.164] \\
+Qwen 0.8B & Vision & static & 0 & 6000 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+Qwen 0.8B & Vision & static & 0 & 600 & 3 & 0.100 [0.100, 0.100] & 0.100 [0.100, 0.100] \\
+LFM 230M & IMU & true & 0.01 & 6000 & 3 & 0.768 [0.645, 0.869] & 0.788 [0.676, 0.878] \\
+LFM 230M & IMU & true & 0.01 & 600 & 3 & 0.723 [0.644, 0.809] & 0.745 [0.669, 0.826] \\
+Mini & IMU & true & 0.01 & 6000 & 0/3 & -- & -- \\
+Mini & IMU & true & 0.01 & 600 & 3 & 0.802 [0.770, 0.830] & 0.802 [0.765, 0.833] \\
+Qwen 0.8B & IMU & true & 0.01 & 6000 & 3 & 0.607 [0.553, 0.649] & 0.632 [0.575, 0.682] \\
+Qwen 0.8B & IMU & true & 0.01 & 600 & 3 & 0.738 [0.638, 0.833] & 0.760 [0.667, 0.848] \\
+LFM 230M & IMU & true & 0.05 & 6000 & 3 & 0.741 [0.652, 0.802] & 0.762 [0.683, 0.818] \\
+LFM 230M & IMU & true & 0.05 & 600 & 3 & 0.759 [0.651, 0.908] & 0.773 [0.670, 0.908] \\
+Mini & IMU & true & 0.05 & 6000 & 0/3 & -- & -- \\
+Mini & IMU & true & 0.05 & 600 & 2/3 & -- & -- \\
+Qwen 0.8B & IMU & true & 0.05 & 6000 & 3 & 0.762 [0.653, 0.867] & 0.777 [0.676, 0.877] \\
+Qwen 0.8B & IMU & true & 0.05 & 600 & 3 & 0.756 [0.690, 0.821] & 0.769 [0.709, 0.829] \\
+LFM 230M & IMU & true & 0.1 & 6000 & 3 & 0.676 [0.640, 0.729] & 0.694 [0.656, 0.747] \\
+LFM 230M & IMU & true & 0.1 & 600 & 3 & 0.709 [0.623, 0.794] & 0.730 [0.649, 0.808] \\
+Mini & IMU & true & 0.1 & 6000 & 0/3 & -- & -- \\
+Mini & IMU & true & 0.1 & 600 & 3 & 0.759 [0.701, 0.804] & 0.762 [0.703, 0.808] \\
+Qwen 0.8B & IMU & true & 0.1 & 6000 & 3 & 0.762 [0.692, 0.834] & 0.763 [0.695, 0.835] \\
+Qwen 0.8B & IMU & true & 0.1 & 600 & 3 & 0.667 [0.484, 0.820] & 0.685 [0.500, 0.831] \\
+LFM 230M & IMU & true & 0.2 & 6000 & 3 & 0.737 [0.658, 0.840] & 0.757 [0.682, 0.846] \\
+LFM 230M & IMU & true & 0.2 & 600 & 3 & 0.733 [0.628, 0.820] & 0.749 [0.657, 0.830] \\
+Mini & IMU & true & 0.2 & 6000 & 0/3 & -- & -- \\
+Mini & IMU & true & 0.2 & 600 & 3 & 0.804 [0.725, 0.903] & 0.803 [0.722, 0.905] \\
+Qwen 0.8B & IMU & true & 0.2 & 6000 & 3 & 0.838 [0.718, 0.929] & 0.837 [0.712, 0.934] \\
+Qwen 0.8B & IMU & true & 0.2 & 600 & 3 & 0.820 [0.680, 0.923] & 0.833 [0.706, 0.929] \\
+\bottomrule
+\end{longtable}}\par
+
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Full-population feature references. Their classifiers are fixed in the bootstrap; intervals reflect held-out clusters, not independently trained encoder seeds. Audio exposure remains as stated in the protocol.}\label{tab:linear}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Task & Frozen-feature reference & Macro [95\%] & Micro [95\%] \\
+\midrule
+Audio & Linear & 0.662 [0.624, 0.700] & 0.662 [0.622, 0.702] \\
+Audio & Original head & 0.652 [0.613, 0.696] & 0.652 [0.610, 0.694] \\
+IMU & Linear & 0.967 [0.934, 0.989] & 0.968 [0.935, 0.989] \\
+IMU & Original head & 0.966 [0.931, 0.989] & 0.966 [0.931, 0.989] \\
+Vision & Linear & 0.799 [0.791, 0.807] & 0.799 [0.791, 0.807] \\
+\bottomrule
+\end{tabular}
+\end{table}\par
+
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Audio sensitivity analysis for known original sources crossing train/test. Excluding these sources does not undo the encoder's held-out normalization exposure.}\label{tab:audio-audit}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Host & Excluded clips & All test [95\%] & Source-disjoint [95\%] \\
+\midrule
+Mini & 3 & 0.461 [0.419, 0.506] & 0.461 [0.419, 0.506] \\
+LFM 230M & 3 & 0.386 [0.336, 0.442] & 0.383 [0.333, 0.440] \\
+Qwen 0.8B & 3 & 0.421 [0.383, 0.459] & 0.420 [0.382, 0.458] \\
+\bottomrule
+\end{tabular}
+\end{table}\par
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}lllllll@{}}
+\caption{Batch-one resource measurements on the isolated RTX PRO 6000. Parameters are trainable adapter millions; VRAM is peak allocated GiB with host, adapter, and external encoder resident. First is raw-sensor-to-first-token median milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths omit unused sensor work.}\label{tab:resources-full}\\
+\toprule
+Host & Task & Interface & Params M & VRAM GiB & First ms & 32-token ms \\
+\midrule\endfirsthead
+\toprule
+Host & Task & Interface & Params M & VRAM GiB & First ms & 32-token ms \\
+\midrule\endhead
+Mini & Audio & Bridge & 84.35 & 0.49 & 5.2 & 94.3 \\
+Mini & Audio & None & 0.00 & 0.17 & 1.7 & 48.8 \\
+Mini & Audio & Prefix & 2.10 & 0.18 & 3.3 & 49.3 \\
+Mini & Audio & Static & 0.33 & 0.17 & 2.7 & 82.8 \\
+Mini & IMU & Bridge & 84.33 & 0.49 & 3.7 & 90.0 \\
+Mini & IMU & None & 0.00 & 0.17 & 1.8 & 49.8 \\
+Mini & IMU & Prefix & 1.05 & 0.18 & 2.0 & 49.2 \\
+Mini & IMU & Static & 0.33 & 0.17 & 2.7 & 82.3 \\
+Mini & Vision & Bridge & 84.35 & 0.51 & 5.2 & 89.9 \\
+Mini & Vision & None & 0.00 & 0.19 & 1.7 & 47.8 \\
+Mini & Vision & Prefix & 2.10 & 0.20 & 3.5 & 50.5 \\
+Mini & Vision & Static & 0.33 & 0.19 & 2.8 & 83.1 \\
+LFM 230M & Audio & Bridge & 199.09 & 1.67 & 8.0 & 160.3 \\
+LFM 230M & Audio & None & 0.00 & 0.93 & 4.2 & 113.6 \\
+LFM 230M & Audio & Prefix & 4.20 & 0.95 & 6.3 & 116.0 \\
+LFM 230M & Audio & Static & 0.77 & 0.93 & 5.6 & 156.6 \\
+LFM 230M & IMU & Bridge & 199.07 & 1.67 & 6.5 & 161.0 \\
+LFM 230M & IMU & None & 0.00 & 0.93 & 4.2 & 113.4 \\
+LFM 230M & IMU & Prefix & 2.11 & 0.94 & 4.7 & 114.0 \\
+LFM 230M & IMU & Static & 0.77 & 0.93 & 5.7 & 158.6 \\
+LFM 230M & Vision & Bridge & 199.09 & 1.69 & 8.1 & 160.8 \\
+LFM 230M & Vision & None & 0.00 & 0.94 & 4.2 & 115.2 \\
+LFM 230M & Vision & Prefix & 4.20 & 0.96 & 6.3 & 114.1 \\
+LFM 230M & Vision & Static & 0.77 & 0.94 & 5.5 & 152.2 \\
+Qwen 0.8B & Audio & Bridge & 410.67 & 4.52 & 52.6 & 431.0 \\
+Qwen 0.8B & Audio & None & 0.00 & 2.99 & 47.4 & 373.3 \\
+Qwen 0.8B & Audio & Prefix & 4.20 & 3.01 & 52.5 & 361.7 \\
+Qwen 0.8B & Audio & Static & 1.60 & 2.99 & 49.3 & 425.0 \\
+Qwen 0.8B & IMU & Bridge & 410.66 & 4.52 & 50.6 & 440.1 \\
+Qwen 0.8B & IMU & None & 0.00 & 2.99 & 46.8 & 359.8 \\
+Qwen 0.8B & IMU & Prefix & 2.11 & 3.00 & 50.8 & 376.8 \\
+Qwen 0.8B & IMU & Static & 1.60 & 2.99 & 49.4 & 423.0 \\
+Qwen 0.8B & Vision & Bridge & 410.67 & 4.54 & 52.1 & 440.0 \\
+Qwen 0.8B & Vision & None & 0.00 & 3.00 & 46.8 & 362.1 \\
+Qwen 0.8B & Vision & Prefix & 4.20 & 3.02 & 51.6 & 362.9 \\
+Qwen 0.8B & Vision & Static & 1.60 & 3.00 & 48.6 & 417.9 \\
+\bottomrule
+\end{longtable}}\par

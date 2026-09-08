@@ -1,0 +1,18 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Full-population macro rank-1 accuracy at 6000 P steps, with no diversity penalty. Uniform-choice references are 1/6 (IMU), 1/50 (audio), and 1/10 (vision). Mini/Qwen IMU/audio use five seeds; other paired cells use three. LFM vision P is outside the registered grid.}\label{tab:tasks}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+Host & Task & Frozen & Static & Const. & Shuf. & Rand. & True [95\%] \\
+\midrule
+Mini & IMU & 0.167 & 0.167 & -- & -- & 0.190 & -- \\
+Mini & Audio & 0.020 & 0.020 & 0.020 & 0.020 & 0.021 & 0.461 [0.419, 0.506] \\
+Mini & Vision & 0.100 & 0.100 & 0.100 & -- & 0.112 & 0.582 [0.526, 0.628] \\
+LFM 230M & IMU & 0.167 & 0.167 & 0.167 & 0.176 & 0.109 & 0.839 [0.761, 0.913] \\
+LFM 230M & Audio & 0.020 & 0.020 & 0.018 & 0.020 & 0.023 & 0.386 [0.336, 0.442] \\
+Qwen 0.8B & IMU & 0.167 & 0.167 & 0.167 & 0.173 & 0.175 & 0.838 [0.733, 0.927] \\
+Qwen 0.8B & Audio & 0.020 & 0.020 & 0.021 & 0.020 & 0.023 & 0.421 [0.383, 0.459] \\
+Qwen 0.8B & Vision & 0.100 & 0.100 & 0.100 & 0.100 & 0.100 & 0.451 [0.353, 0.553] \\
+\bottomrule
+\end{tabular}
+\end{table}\par

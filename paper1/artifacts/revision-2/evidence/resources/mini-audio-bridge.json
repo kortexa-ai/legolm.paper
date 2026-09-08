@@ -1,0 +1,1350 @@
+{
+  "adapter_generation": {
+    "median_ms": 0.24965504417195916,
+    "p10_ms": 0.24892595829442143,
+    "p90_ms": 0.2504188218154013,
+    "repeats": 30,
+    "samples_ms": [
+      0.25258399546146393,
+      0.2511640777811408,
+      0.25007501244544983,
+      0.2497490495443344,
+      0.2502209972590208,
+      0.24977303110063076,
+      0.2503360155969858,
+      0.25023205671459436,
+      0.2495989901944995,
+      0.25277805980294943,
+      0.2490190090611577,
+      0.2502490533515811,
+      0.2494659274816513,
+      0.24894997477531433,
+      0.24846196174621582,
+      0.2500769915059209,
+      0.24902401491999626,
+      0.2490389160811901,
+      0.24927896447479725,
+      0.2496630186215043,
+      0.2488400787115097,
+      0.24957803543657064,
+      0.24884496815502644,
+      0.24973205290734768,
+      0.24964706972241402,
+      0.2500510308891535,
+      0.24893495719879866,
+      0.2497369423508644,
+      0.2492800122126937,
+      0.24934893008321524
+    ],
+    "warmup": 5
+  },
+  "adapter_parameters": 84345472,
+  "adapter_tensor_bytes_fp32": 337381888,
+  "backend": {
+    "compute_capability": [
+      12,
+      0
+    ],
+    "cpu_machine": "x86_64",
+    "cuda_version": "13.0",
+    "cudnn_version": 92000,
+    "deterministic_algorithms": false,
+    "device_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "device_total_bytes": 102014189568,
+    "device_type": "cuda",
+    "execution": "FP32, autocast disabled, TF32 disabled",
+    "interop_threads": 24,
+    "intraop_threads": 4,
+    "torch_version": "2.13.0+cu130"
+  },
+  "batch_size": 1,
+  "cached_decode_matches_four_token_reference": true,
+  "cached_sensor_generate_32": {
+    "median_ms": 94.31124501861632,
+    "p10_ms": 94.1132947220467,
+    "p90_ms": 97.82570274546742,
+    "repeats": 10,
+    "samples_ms": [
+      94.43128306884319,
+      94.76556198205799,
+      94.24761694390327,
+      94.37487309332937,
+      93.98190095089376,
+      97.80041594058275,
+      98.05328398942947,
+      94.12789402995259,
+      94.16597592644393,
+      94.21219897922128
+    ],
+    "warmup": 2
+  },
+  "cached_sensor_prefill": {
+    "median_ms": 2.9478639480657876,
+    "p10_ms": 2.919492917135358,
+    "p90_ms": 2.980394207406789,
+    "repeats": 30,
+    "samples_ms": [
+      2.9799320036545396,
+      2.9608269687741995,
+      2.9504880076274276,
+      3.0136939603835344,
+      2.9462360544130206,
+      2.9845540411770344,
+      2.9476889176294208,
+      2.921445993706584,
+      2.9629379278048873,
+      2.9480389785021544,
+      2.9404149390757084,
+      2.934974036179483,
+      2.969012944959104,
+      2.9768249951303005,
+      2.9556540539488196,
+      2.986519015394151,
+      2.903222106397152,
+      2.943897037766874,
+      2.9198030242696404,
+      2.9167019529268146,
+      2.9347060481086373,
+      2.9527900042012334,
+      2.9411930590867996,
+      2.9052509926259518,
+      2.948308945633471,
+      2.9433410381898284,
+      2.96950398478657,
+      2.9795620357617736,
+      2.9362509958446026,
+      2.9302440816536546
+    ],
+    "warmup": 5
+  },
+  "checkpoint_bytes": 337409734,
+  "checkpoint_loading_s": 0.6653993460349739,
+  "checkpoint_sha256": "bec3c16e053d2fc9b5e41ae68575555cd6caf52421e2f7946de9b92693f25cb9",
+  "decode_after_first_token_per_second": 339.63164497748255,
+  "decode_breakdown_ms": [
+    {
+      "first_token_ms": 3.1716289231553674,
+      "remaining_tokens_ms": 91.55849798116833,
+      "total_ms": 94.7301269043237
+    },
+    {
+      "first_token_ms": 2.966154948808253,
+      "remaining_tokens_ms": 91.27988305408508,
+      "total_ms": 94.24603800289333
+    },
+    {
+      "first_token_ms": 3.0114289838820696,
+      "remaining_tokens_ms": 91.38259198516607,
+      "total_ms": 94.39402096904814
+    },
+    {
+      "first_token_ms": 2.9557900270447135,
+      "remaining_tokens_ms": 91.54458495322615,
+      "total_ms": 94.50037498027086
+    },
+    {
+      "first_token_ms": 2.990214037708938,
+      "remaining_tokens_ms": 91.27083304338157,
+      "total_ms": 94.26104708109051
+    },
+    {
+      "first_token_ms": 2.985923085361719,
+      "remaining_tokens_ms": 91.15420200396329,
+      "total_ms": 94.14012508932501
+    },
+    {
+      "first_token_ms": 2.992413006722927,
+      "remaining_tokens_ms": 91.14334604237229,
+      "total_ms": 94.13575904909521
+    },
+    {
+      "first_token_ms": 2.9833290027454495,
+      "remaining_tokens_ms": 90.87283303961158,
+      "total_ms": 93.85616204235703
+    },
+    {
+      "first_token_ms": 3.0087119666859508,
+      "remaining_tokens_ms": 91.11425001174212,
+      "total_ms": 94.12296197842807
+    },
+    {
+      "first_token_ms": 2.9965699650347233,
+      "remaining_tokens_ms": 91.55025403015316,
+      "total_ms": 94.54682399518788
+    }
+  ],
+  "encoder_only": {
+    "median_ms": 0.11410005390644073,
+    "p10_ms": 0.11178074637427926,
+    "p90_ms": 0.12596992310136557,
+    "repeats": 30,
+    "samples_ms": [
+      0.1255829120054841,
+      0.11783698573708534,
+      0.11906994041055441,
+      0.12451596558094025,
+      0.11885608546435833,
+      0.11500506661832333,
+      0.113515998236835,
+      0.11320295743644238,
+      0.11467398144304752,
+      0.11418003123253584,
+      0.11182704474776983,
+      0.12945302296429873,
+      0.11517398525029421,
+      0.11603790335357189,
+      0.11253193952143192,
+      0.11270807590335608,
+      0.11277198791503906,
+      0.1107100397348404,
+      0.1312850508838892,
+      0.11631997767835855,
+      0.12957199942320585,
+      0.11303694918751717,
+      0.11383404489606619,
+      0.11221901513636112,
+      0.11402007658034563,
+      0.11239899322390556,
+      0.11251599062234163,
+      0.11040095705538988,
+      0.11136406101286411,
+      0.11598295532166958
+    ],
+    "warmup": 5
+  },
+  "encoder_parameters": 285810,
+  "eos_stopping": false,
+  "feature_sha256": "fa446a5ee9047a84e0d1516962817ae832d17622bced60c92afb8463c46bb73e",
+  "fresh_sensor_prefill": {
+    "median_ms": 3.5145835136063397,
+    "p10_ms": 3.454858949407935,
+    "p90_ms": 3.535086754709482,
+    "repeats": 30,
+    "samples_ms": [
+      3.530105925165117,
+      3.4493609564378858,
+      3.5124379210174084,
+      3.5207669716328382,
+      3.4602469531819224,
+      3.531833994202316,
+      3.4513850696384907,
+      3.497733036056161,
+      3.448772942647338,
+      3.470257972367108,
+      3.517988952808082,
+      3.4891420509666204,
+      3.5018629860132933,
+      3.4973389701917768,
+      3.5297760041430593,
+      3.5566980950534344,
+      3.521780949085951,
+      3.5457530757412314,
+      3.5342059563845396,
+      3.516729106195271,
+      3.497362951748073,
+      3.532740054652095,
+      3.5430139396339655,
+      3.517589997500181,
+      3.5098870284855366,
+      3.526058979332447,
+      3.4891939722001553,
+      3.4922549966722727,
+      3.4552449360489845,
+      3.522838931530714
+    ],
+    "warmup": 5
+  },
+  "generate_32_tokens_per_second": 339.3020630115046,
+  "generated_factor_dimension": 327680,
+  "host": "mini",
+  "host_identity": {
+    "autocast": false,
+    "checkpoint_sha256": "9c856c03809a5e3c33267fafd42b594f48fa8dbfbcd1209df1df87b4e8b2cac8",
+    "config": {
+      "attn_output_gate": true,
+      "head_dim": 64,
+      "intermediate_size": 1792,
+      "n_embd": 512,
+      "n_head": 8,
+      "n_kv_head": 2,
+      "n_layer": 8,
+      "rms_norm_eps": 1e-06,
+      "rope_theta": 10000000.0,
+      "sequence_len": 512,
+      "tie_word_embeddings": true,
+      "vocab_size": 8192,
+      "window_pattern": "SSSL"
+    },
+    "dtype": "float32",
+    "frozen_parameters": 33563136,
+    "lora_dim": 327680,
+    "model_id": "mini-base",
+    "revision": null,
+    "targets": [
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.0.attn.c_q",
+        "offset": 0,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.0.attn.c_k",
+        "offset": 4096,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.0.attn.c_v",
+        "offset": 6656,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.0.attn.c_proj",
+        "offset": 9216,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.0.mlp.gate_proj",
+        "offset": 13312,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.0.mlp.up_proj",
+        "offset": 22528,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.0.mlp.down_proj",
+        "offset": 31744,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.1.attn.c_q",
+        "offset": 40960,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.1.attn.c_k",
+        "offset": 45056,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.1.attn.c_v",
+        "offset": 47616,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.1.attn.c_proj",
+        "offset": 50176,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.1.mlp.gate_proj",
+        "offset": 54272,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.1.mlp.up_proj",
+        "offset": 63488,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.1.mlp.down_proj",
+        "offset": 72704,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.2.attn.c_q",
+        "offset": 81920,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.2.attn.c_k",
+        "offset": 86016,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.2.attn.c_v",
+        "offset": 88576,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.2.attn.c_proj",
+        "offset": 91136,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.2.mlp.gate_proj",
+        "offset": 95232,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.2.mlp.up_proj",
+        "offset": 104448,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.2.mlp.down_proj",
+        "offset": 113664,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.3.attn.c_q",
+        "offset": 122880,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.3.attn.c_k",
+        "offset": 126976,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.3.attn.c_v",
+        "offset": 129536,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.3.attn.c_proj",
+        "offset": 132096,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.3.mlp.gate_proj",
+        "offset": 136192,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.3.mlp.up_proj",
+        "offset": 145408,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.3.mlp.down_proj",
+        "offset": 154624,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.4.attn.c_q",
+        "offset": 163840,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.4.attn.c_k",
+        "offset": 167936,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.4.attn.c_v",
+        "offset": 170496,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.4.attn.c_proj",
+        "offset": 173056,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.4.mlp.gate_proj",
+        "offset": 177152,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.4.mlp.up_proj",
+        "offset": 186368,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.4.mlp.down_proj",
+        "offset": 195584,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.5.attn.c_q",
+        "offset": 204800,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.5.attn.c_k",
+        "offset": 208896,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.5.attn.c_v",
+        "offset": 211456,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.5.attn.c_proj",
+        "offset": 214016,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.5.mlp.gate_proj",
+        "offset": 218112,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.5.mlp.up_proj",
+        "offset": 227328,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.5.mlp.down_proj",
+        "offset": 236544,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.6.attn.c_q",
+        "offset": 245760,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.6.attn.c_k",
+        "offset": 249856,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.6.attn.c_v",
+        "offset": 252416,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.6.attn.c_proj",
+        "offset": 254976,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.6.mlp.gate_proj",
+        "offset": 259072,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.6.mlp.up_proj",
+        "offset": 268288,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.6.mlp.down_proj",
+        "offset": 277504,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.7.attn.c_q",
+        "offset": 286720,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.7.attn.c_k",
+        "offset": 290816,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          128
+        ],
+        "count": 2560,
+        "module": "transformer.h.7.attn.c_v",
+        "offset": 293376,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 4096,
+        "module": "transformer.h.7.attn.c_proj",
+        "offset": 295936,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.7.mlp.gate_proj",
+        "offset": 300032,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          512,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1792
+        ],
+        "count": 9216,
+        "module": "transformer.h.7.mlp.up_proj",
+        "offset": 309248,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1792,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 9216,
+        "module": "transformer.h.7.mlp.down_proj",
+        "offset": 318464,
+        "rank": 4
+      }
+    ],
+    "tf32": false,
+    "tokenizer": {
+      "bytes_sha256": "9a3de9aad4f5824a20ccdf551b8d2b60a621cfc94f15d4d61f0b68c5fcb672a8",
+      "host": "mini",
+      "tokenizer_sha256": "efb531d66f15ae3af3b420e1e326834fc659b42ba9ce1254684bd98aac155dab"
+    }
+  },
+  "kind": "bridge",
+  "measurement": "resources",
+  "memory": {
+    "free_gib": 93.760986328125,
+    "peak_allocated_gib": 0.4891190528869629,
+    "peak_reserved_gib": 0.515625,
+    "total_gib": 95.00811767578125
+  },
+  "modality": "audio",
+  "operating_conditions": {
+    "after": {
+      "default_power_limit_w": 600.0,
+      "fan_percent": "35",
+      "gpu_uuid": "GPU-a71210ca-e14a-755a-88bb-77f53a2102f6",
+      "memory_clock_mhz": 13365.0,
+      "performance_state": "P1",
+      "power_limit_w": 450.0,
+      "sm_clock_mhz": 2782.0,
+      "temperature_c": 57.0
+    },
+    "before": {
+      "default_power_limit_w": 600.0,
+      "fan_percent": "35",
+      "gpu_uuid": "GPU-a71210ca-e14a-755a-88bb-77f53a2102f6",
+      "memory_clock_mhz": 13365.0,
+      "performance_state": "P1",
+      "power_limit_w": 450.0,
+      "sm_clock_mhz": 2805.0,
+      "temperature_c": 54.0
+    }
+  },
+  "output_tokens": 32,
+  "prefix_tokens": 0,
+  "preprocessing": {
+    "median_ms": 1.168231014162302,
+    "p10_ms": 1.1605761596001685,
+    "p90_ms": 1.2369717704132204,
+    "repeats": 30,
+    "samples_ms": [
+      1.1820029467344284,
+      1.1863509425893426,
+      1.1776899918913841,
+      1.1672290274873376,
+      1.1627250351011753,
+      1.2079090811312199,
+      1.7091549234464765,
+      1.8760639941319823,
+      1.4985359739512205,
+      1.1832229793071747,
+      1.1807589326053858,
+      1.1675639543682337,
+      1.1684759519994259,
+      1.1693589622154832,
+      1.1677580187097192,
+      1.1646399507299066,
+      1.1627599596977234,
+      1.1581290746107697,
+      1.1598849669098854,
+      1.1649499647319317,
+      1.1700020404532552,
+      1.182536012493074,
+      1.1674789711833,
+      1.163371023721993,
+      1.1569720227271318,
+      1.168463029898703,
+      1.1728910030797124,
+      1.1606529587879777,
+      1.167998998425901,
+      1.1652519460767508
+    ],
+    "warmup": 5
+  },
+  "raw_sensor_to_first_token": {
+    "median_ms": 5.195408477447927,
+    "p10_ms": 5.170116538647562,
+    "p90_ms": 5.269166233483702,
+    "repeats": 30,
+    "samples_ms": [
+      5.186114925891161,
+      5.278636002913117,
+      5.222814972512424,
+      5.1721601048484445,
+      5.197655991651118,
+      5.217967904172838,
+      5.188385024666786,
+      5.238182027824223,
+      5.176662001758814,
+      5.212108022533357,
+      5.156259052455425,
+      5.171281984075904,
+      5.170181044377387,
+      5.193154909648001,
+      5.197916063480079,
+      5.167895928025246,
+      5.190794006921351,
+      5.1897859666496515,
+      5.193160963244736,
+      5.2108250092715025,
+      5.2344100549817085,
+      5.222315085120499,
+      5.237460019998252,
+      5.192363983951509,
+      5.175947095267475,
+      5.1695359870791435,
+      5.21002197638154,
+      5.318693001754582,
+      5.268114036880434,
+      5.311987944878638
+    ],
+    "warmup": 5
+  },
+  "sample_id": "5-103415-A-2.wav",
+  "scope": {
+    "cached_sensor": "Reuses generated factors/prefix; each request starts a new text cache.",
+    "cold_weights": "Checkpoint-loading time is observed with existing local files; no claim of an empty OS file cache.",
+    "decoding": "Native model cache for LFM/Qwen; mini recomputes its prefix because the released mini has no KV-cache interface.",
+    "fresh_sensor_prefill": "Feature already on GPU; regenerates adapter/prefix before 128-token prefill.",
+    "memory": "Language host, adapter and external encoder simultaneously resident; no optimizer state.",
+    "raw_input": "Already decoded in RAM; excludes file/network acquisition.",
+    "raw_sensor_to_first_token": "Preprocessing, transfer, encoder, adapter and prefill; sensor-free references omit unused sensor computation.",
+    "timing_spread": "Repeat dispersion on one isolated workstation; not uncertainty across hardware or inputs."
+  },
+  "sensor_path": {
+    "median_ms": 1.3603490078821778,
+    "p10_ms": 1.3530662516131997,
+    "p90_ms": 1.3783548027276993,
+    "repeats": 30,
+    "samples_ms": [
+      1.354043954052031,
+      1.3576969504356384,
+      1.5307579888030887,
+      1.3705769088119268,
+      1.3656129594892263,
+      1.3532990124076605,
+      1.3742860173806548,
+      1.367771066725254,
+      1.3449880061671138,
+      1.364688971079886,
+      1.3600210659205914,
+      1.3509810669347644,
+      1.3730779755860567,
+      1.354167005047202,
+      1.3545510591939092,
+      1.3741400325670838,
+      1.3606769498437643,
+      1.3609910383820534,
+      1.3576929923146963,
+      1.353524043224752,
+      1.3679279945790768,
+      1.3810449745506048,
+      1.3534000609070063,
+      1.386553980410099,
+      1.3581709936261177,
+      1.35135801974684,
+      1.3780558947473764,
+      1.356214052066207,
+      1.3532560551539063,
+      1.3738879933953285
+    ],
+    "warmup": 5
+  },
+  "source": {
+    "files": {
+      "__init__.py": "d5f4929cbb13266d205a42d2826b69284c3e853ed2b97fd69b129e55d5f783cb",
+      "accept.py": "a8787778af543731498cd3b2eec2f2a200584c26b1c7056503d7ee827e18f568",
+      "aggregate.py": "99df0acd4aec05c7a52c53b3ce5ecee64dfcb4ca917e36c46586d8715c0d117c",
+      "artifacts.py": "c627c34262c05f7e0c88ac52532b24819334676535a50a9b8ff0e966bbd0c34b",
+      "assets.py": "167aa4b67bd0369065b421a91ec556620d81702f68fd4d40f2c6d1770c558dd1",
+      "backend.py": "b0f2da9f4e91e676f24e72b0872214b49afd56438aa4ab68f159c985e5406ec0",
+      "bootstrap.py": "6fd429cdfd94e28515e1476c11dd8b5269635bc97d4dacea55965f9fb42449cf",
+      "canary.py": "902f163c84466b1d473f13df4b25943e944284901bfbe9e89b7103a498b6d7b6",
+      "checkpoint_eval.py": "a5d16936e248dbb274767b7a8a20647119dcfb0548ba059d5e37dbc695439ad6",
+      "checkpoints.py": "4615202fed4cd70e150885aceeffa5e88991fbe9424ec4793e1aa4e29e6a5d74",
+      "cli.py": "a8c932f861936f675b9b115542e62ed5d6d3459a22e60e073c6e43c98e29443b",
+      "composition.py": "e80e6a476de5d9e3e1bd0986d6f80a864350867837b9e2f3cb223f2a46ed93ae",
+      "encoder_audit.py": "649beff5154b282ac7c47767d70c8bce7660290853df84638652ef029c55e37d",
+      "evaluate.py": "986054f3a5275e05dcf233c826348f662c723ac3d2d1072779a291725c1c04bc",
+      "execution.py": "6b9ec687b941612bf5c768cfae2d86357b3d38ea506f8653d23d6b87fd39b9f9",
+      "generation.py": "f5aca14122e6deda446921132aeb7b0f51cc47682764ef55569305855cdc012a",
+      "generation_cached.py": "598334a3eff85e4d357d05b19abd5b4370dc1e64b931b353711855d96f1a5bac",
+      "generation_diagnostic.py": "094446d48d069d35eadec16c5eb2cc21d1114e055c73d1e126ba760cbe30bd16",
+      "gpu_limits.py": "9ab6e56406c0344a4edf244a8b32bbbeb7b12dafb08d1efa7350037ab2eaf400",
+      "grid.py": "8147a90c355e5022c1678c5ad072a6c6276078cc0793d1098b81a06b24dcd7eb",
+      "hosts.py": "99b55955751dd7a01665a9c56d64cbac59b40ba28e0e28e4afa8aac32da4acb6",
+      "job_evaluation.py": "0837cff4bb3e55bbc70547032573515f91844f62a40b5298f6e42b8d82699b1d",
+      "legacy/__init__.py": "6af5f7dcf77d66985ccf01ff469bbae7edad7ee53150e8e5fe6072e8acd4334a",
+      "legacy/audio_snapshot.py": "0fbff61ac6296016ae3309026f004434ad38390ec4932347e96fca4f202c9e1d",
+      "legacy/imu_snapshot.py": "5b32f419aab92868545f6a940895cb1684018ed2817d4e96297ff6c75b7d4a3c",
+      "legacy/runtime_lm.py": "8b3495aae84d734bc19937a401ad11d5a8afd305c70b8b998a5a752d0e277154",
+      "legacy/vision_snapshot.py": "f5edab0cb57dfd8e8b7b1b4986ed01e3d3e6fcd040efa331e2c8ab80cecd66f6",
+      "linear_probe.py": "634f2cee10faa6cb45c3e943c13f74e15e54508d228e4d0ddbc19a00b77b7908",
+      "outcomes.py": "ad8f15fd2887c6cf5ebeeedbbfc8b2e89ac36e52e500fba2c974746a8f1edaf2",
+      "portable_text.py": "456ec17925eec6e42e0a3e880f6e216bbf730ceabc6519c306fbcc9b2022df5e",
+      "provenance.py": "3c175712b8a9fb217246fcaccd1ed5a5e8a947572635b808532a13b0480affca",
+      "reconcile.py": "42bbeecd928d88ed7ca408a2f183fb5fb137b2f460812b23f07a906c31e763db",
+      "render.py": "03ff8778e0b6dd3a4b013ac6b812f157feb270fb545975c2596ef8d3725c9bb0",
+      "resources.py": "ca3db6e3ecc14f814c40a72872e26e69b7ecec4a910c325feadf6d98224004fe",
+      "scheduler.py": "03d636a9db1653ec43918c5220a2aa2585a4fe1d71fc81c26aa55c6b058e0f02",
+      "statistics.py": "7ceca220cf2e0d02774805f485c3a129c1e01a303d2fc7caeb932554cc69fa1b",
+      "supplement.py": "b2a608d08cb63091febe4a501e97b37e2122537cd0c8fed505a3b7bc92bdeec3",
+      "text.py": "88143963188c3755783bd5fbb807367a9735e96c78fc40ec2615cf43c25920e9",
+      "train.py": "ea6c46c53281320fb16b82eca6ab4d07cfbd87101dac532e5f1293648283cfbb"
+    },
+    "git_commit": "9dc1985c864aa4a73f4fa2a152153d660f45d0da",
+    "lock_sha256": "0fea89df33d552574980ca0c809190b16feb40e343ee747cfebb69ba0702fec6",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.13.0",
+      "torchvision": "0.28.0",
+      "transformers": "5.15.1"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "python": "3.14.3",
+    "source_hash": "4d613062b6f5519abadee5ef72ad873a245b59e832c03e3eb84e8f6ed60089c7"
+  },
+  "text_row": 0,
+  "text_sha256": "b576a10fd6d090c79a7498146793e9e6c7306f365ef1384b6937b08f2de691d7",
+  "text_tokens": 128
+}

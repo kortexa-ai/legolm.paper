@@ -1,0 +1,19 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Unpaired native BPB at 3000 steps (1024 shared rows per host). Lower is better. True-feature intervals include seeds and text units; complete control intervals and both budgets are in the appendix.}\label{tab:bpb}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Host & Task & Frozen & True [95\% interval] & Const. & Static \\
+\midrule
+Mini & IMU & 1.954 & 1.943 [1.925, 1.961] & 1.943 & 1.941 \\
+Mini & Audio & 1.954 & 1.942 [1.924, 1.960] & 1.942 & 1.941 \\
+Mini & Vision & 1.954 & 1.942 [1.924, 1.960] & 1.942 & 1.941 \\
+LFM 230M & IMU & 1.145 & 1.068 [1.052, 1.084] & 1.067 & 1.066 \\
+LFM 230M & Audio & 1.145 & 1.067 [1.051, 1.083] & 1.067 & 1.066 \\
+LFM 230M & Vision & 1.145 & 1.068 [1.052, 1.084] & 1.067 & 1.066 \\
+Qwen 0.8B & IMU & 0.998 & 0.986 [0.972, 1.001] & 0.986 & 0.987 \\
+Qwen 0.8B & Audio & 0.998 & 0.985 [0.971, 0.999] & 0.985 & 0.987 \\
+Qwen 0.8B & Vision & 0.998 & 0.984 [0.970, 0.998] & 0.985 & 0.987 \\
+\bottomrule
+\end{tabular}
+\end{table}\par

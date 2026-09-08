@@ -1,0 +1,1567 @@
+{
+  "adapter_generation": {
+    "median_ms": 0.016299542039632797,
+    "p10_ms": 0.016115035396069288,
+    "p90_ms": 0.01936104381456971,
+    "repeats": 30,
+    "samples_ms": [
+      0.01930294092744589,
+      0.01777801662683487,
+      0.016745994798839092,
+      0.020878971554338932,
+      0.016535981558263302,
+      0.01611793413758278,
+      0.016661942936480045,
+      0.016851001419126987,
+      0.01616193912923336,
+      0.01628196332603693,
+      0.016281032003462315,
+      0.016167061403393745,
+      0.016224919818341732,
+      0.016246107406914234,
+      0.016088946722447872,
+      0.016203965060412884,
+      0.016227015294134617,
+      0.016960897482931614,
+      0.016069039702415466,
+      0.016252044588327408,
+      0.016057980246841908,
+      0.016305013559758663,
+      0.016658916138112545,
+      0.016328995116055012,
+      0.016440986655652523,
+      0.017307931557297707,
+      0.01988396979868412,
+      0.01629407051950693,
+      0.016276026144623756,
+      0.0203009694814682
+    ],
+    "warmup": 5
+  },
+  "adapter_parameters": 4202496,
+  "adapter_tensor_bytes_fp32": 16809984,
+  "backend": {
+    "compute_capability": [
+      12,
+      0
+    ],
+    "cpu_machine": "x86_64",
+    "cuda_version": "13.0",
+    "cudnn_version": 92000,
+    "deterministic_algorithms": false,
+    "device_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "device_total_bytes": 102014189568,
+    "device_type": "cuda",
+    "execution": "FP32, autocast disabled, TF32 disabled",
+    "interop_threads": 24,
+    "intraop_threads": 4,
+    "torch_version": "2.13.0+cu130"
+  },
+  "batch_size": 1,
+  "cached_decode_matches_four_token_reference": true,
+  "cached_sensor_generate_32": {
+    "median_ms": 115.95293798018247,
+    "p10_ms": 115.78650404699147,
+    "p90_ms": 117.93694394873455,
+    "repeats": 10,
+    "samples_ms": [
+      115.88270601350814,
+      121.10183900222182,
+      117.58528894279152,
+      115.80142797902226,
+      115.84903299808502,
+      116.11257796175778,
+      116.0231699468568,
+      115.80032005440444,
+      116.13109102472663,
+      115.66215998027474
+    ],
+    "warmup": 2
+  },
+  "cached_sensor_prefill": {
+    "median_ms": 4.361948987934738,
+    "p10_ms": 4.3466310715302825,
+    "p90_ms": 4.3829300557263196,
+    "repeats": 30,
+    "samples_ms": [
+      4.393349983729422,
+      4.352873074822128,
+      4.36126405838877,
+      4.3653290485963225,
+      4.427048959769309,
+      4.3622099328786135,
+      4.334751982241869,
+      4.36834990978241,
+      4.3576189782470465,
+      4.363293992355466,
+      4.353795084170997,
+      4.381985054351389,
+      4.36443998478353,
+      4.366857931017876,
+      4.391435068100691,
+      4.354867967776954,
+      4.373122937977314,
+      4.353933967649937,
+      4.353811033070087,
+      4.374445998109877,
+      4.361688042990863,
+      4.346971050836146,
+      4.372398019768298,
+      4.316881066188216,
+      4.354232922196388,
+      4.35669906437397,
+      4.344949033111334,
+      4.3468179646879435,
+      4.364825086668134,
+      4.370278096757829
+    ],
+    "warmup": 5
+  },
+  "checkpoint_bytes": 16838533,
+  "checkpoint_loading_s": 1.3686152310110629,
+  "checkpoint_sha256": "189b7706d024e5b8e8f26399e79d47a055cfafc8cf6590e7763ad496d62ef6e6",
+  "decode_after_first_token_per_second": 279.35527648549277,
+  "decode_breakdown_ms": [
+    {
+      "first_token_ms": 4.855143022723496,
+      "remaining_tokens_ms": 110.9188380651176,
+      "total_ms": 115.7739810878411
+    },
+    {
+      "first_token_ms": 4.7795940190553665,
+      "remaining_tokens_ms": 111.07491899747401,
+      "total_ms": 115.85451301652938
+    },
+    {
+      "first_token_ms": 4.758678958751261,
+      "remaining_tokens_ms": 110.80867296550423,
+      "total_ms": 115.56735192425549
+    },
+    {
+      "first_token_ms": 4.748814972117543,
+      "remaining_tokens_ms": 111.04141396936029,
+      "total_ms": 115.79022894147784
+    },
+    {
+      "first_token_ms": 4.753435030579567,
+      "remaining_tokens_ms": 110.80737295560539,
+      "total_ms": 115.56080798618495
+    },
+    {
+      "first_token_ms": 4.745551967062056,
+      "remaining_tokens_ms": 111.02050903718919,
+      "total_ms": 115.76606100425124
+    },
+    {
+      "first_token_ms": 4.745497950352728,
+      "remaining_tokens_ms": 111.02316004689783,
+      "total_ms": 115.76865799725056
+    },
+    {
+      "first_token_ms": 4.759263945743442,
+      "remaining_tokens_ms": 110.97187700215727,
+      "total_ms": 115.73114094790071
+    },
+    {
+      "first_token_ms": 4.712437046691775,
+      "remaining_tokens_ms": 110.96772900782526,
+      "total_ms": 115.68016605451703
+    },
+    {
+      "first_token_ms": 4.757630988024175,
+      "remaining_tokens_ms": 110.94003403559327,
+      "total_ms": 115.69766502361745
+    }
+  ],
+  "encoder_only": {
+    "median_ms": 0.10938302148133516,
+    "p10_ms": 0.1074395258910954,
+    "p90_ms": 0.11529378825798631,
+    "repeats": 30,
+    "samples_ms": [
+      0.11972093489021063,
+      0.11497898958623409,
+      0.1131430035457015,
+      0.11858099605888128,
+      0.11448597069829702,
+      0.11163193266838789,
+      0.11022109538316727,
+      0.1093749888241291,
+      0.10910804849117994,
+      0.11173996608704329,
+      0.1083130482584238,
+      0.10965508408844471,
+      0.11312798596918583,
+      0.11119595728814602,
+      0.10854005813598633,
+      0.10741699952632189,
+      0.10768999345600605,
+      0.1073669409379363,
+      0.10744202882051468,
+      0.1073859166353941,
+      0.10906800162047148,
+      0.110410968773067,
+      0.10939105413854122,
+      0.10872702114284039,
+      0.10995299089699984,
+      0.10859000030905008,
+      0.10894204024225473,
+      0.10884704533964396,
+      0.10843900963664055,
+      0.11812697630375624
+    ],
+    "warmup": 5
+  },
+  "encoder_parameters": 285810,
+  "eos_stopping": false,
+  "feature_sha256": "fa446a5ee9047a84e0d1516962817ae832d17622bced60c92afb8463c46bb73e",
+  "fresh_sensor_prefill": {
+    "median_ms": 4.555782536044717,
+    "p10_ms": 4.534639767371118,
+    "p90_ms": 4.580343735869974,
+    "repeats": 30,
+    "samples_ms": [
+      4.578856052830815,
+      4.561112029477954,
+      4.586249007843435,
+      4.550428013317287,
+      4.582627909258008,
+      4.555377061478794,
+      4.540411056950688,
+      4.562509944662452,
+      4.5554080279544,
+      4.565922077745199,
+      4.544128081761301,
+      4.549616016447544,
+      4.550038021989167,
+      4.548332071863115,
+      4.556157044135034,
+      4.5158310094848275,
+      4.545968025922775,
+      4.565469105727971,
+      4.5635809656232595,
+      4.558354965411127,
+      4.548399010673165,
+      4.517482011578977,
+      4.534731968306005,
+      4.580089938826859,
+      4.533809958957136,
+      4.551462014205754,
+      4.569528973661363,
+      4.5663210330531,
+      4.564541042782366,
+      4.709437023848295
+    ],
+    "warmup": 5
+  },
+  "generate_32_tokens_per_second": 275.974033581358,
+  "generated_factor_dimension": 0,
+  "host": "lfm230m",
+  "host_identity": {
+    "autocast": false,
+    "config": {
+      "_name_or_path": "LiquidAI/LFM2.5-230M",
+      "architectures": [
+        "Lfm2ForCausalLM"
+      ],
+      "block__name_mlp": "parallel_mlp_merged",
+      "block_auto_adjust_ff_dim": false,
+      "block_dim": 1024,
+      "block_ffn_dim_multiplier": 1.0,
+      "block_ffn_te_autocast": false,
+      "block_ffn_use_quantized_params": false,
+      "block_mlp_init_scale": 1.0,
+      "block_multiple_of": 256,
+      "block_norm_eps": 1e-05,
+      "block_out_init_scale": 1.0,
+      "block_sequence_parallel_norm_across_tp": false,
+      "block_use_swiglu": true,
+      "block_use_xavier_init": true,
+      "bos_token_id": 1,
+      "chunk_size_feed_forward": 0,
+      "conv_L_cache": 3,
+      "conv_bias": false,
+      "conv_dim": 1024,
+      "conv_use_xavier_init": true,
+      "dtype": "float32",
+      "eos_token_id": 7,
+      "ffn_te_autocast": false,
+      "ffn_use_quantized_params": false,
+      "full_attn_idxs": null,
+      "hidden_size": 1024,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "initializer_range": 0.02,
+      "intermediate_size": 2560,
+      "is_encoder_decoder": false,
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "layer_types": [
+        "conv",
+        "conv",
+        "full_attention",
+        "conv",
+        "full_attention",
+        "conv",
+        "full_attention",
+        "conv",
+        "full_attention",
+        "conv",
+        "full_attention",
+        "conv",
+        "full_attention",
+        "conv"
+      ],
+      "max_position_embeddings": 128000,
+      "model_type": "lfm2",
+      "norm_eps": 1e-05,
+      "num_attention_heads": 16,
+      "num_heads": 16,
+      "num_hidden_layers": 14,
+      "num_key_value_heads": 8,
+      "output_attentions": false,
+      "output_hidden_states": false,
+      "pad_token_id": 0,
+      "problem_type": null,
+      "return_dict": true,
+      "rope_parameters": {
+        "rope_theta": 1000000.0,
+        "rope_type": "default"
+      },
+      "sequence_parallel_norm_across_tp": false,
+      "tie_word_embeddings": true,
+      "transformers_version": "5.15.1",
+      "use_cache": true,
+      "use_pos_enc": true,
+      "vocab_size": 65536
+    },
+    "dtype": "float32",
+    "frozen_parameters": 229693184,
+    "lora_dim": 774144,
+    "model_id": "LiquidAI/LFM2.5-230M",
+    "revision": "40cb2ad3b3044d5a41eee083a6103c8b523afa45",
+    "targets": [
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.0.feed_forward.w1",
+        "offset": 0,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.0.feed_forward.w2",
+        "offset": 14336,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.0.feed_forward.w3",
+        "offset": 28672,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.1.feed_forward.w1",
+        "offset": 43008,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.1.feed_forward.w2",
+        "offset": 57344,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.1.feed_forward.w3",
+        "offset": 71680,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.2.self_attn.q_proj",
+        "offset": 86016,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.2.self_attn.k_proj",
+        "offset": 94208,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.2.self_attn.v_proj",
+        "offset": 100352,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.2.self_attn.out_proj",
+        "offset": 106496,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.2.feed_forward.w1",
+        "offset": 114688,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.2.feed_forward.w2",
+        "offset": 129024,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.2.feed_forward.w3",
+        "offset": 143360,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.3.feed_forward.w1",
+        "offset": 157696,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.3.feed_forward.w2",
+        "offset": 172032,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.3.feed_forward.w3",
+        "offset": 186368,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.4.self_attn.q_proj",
+        "offset": 200704,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.4.self_attn.k_proj",
+        "offset": 208896,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.4.self_attn.v_proj",
+        "offset": 215040,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.4.self_attn.out_proj",
+        "offset": 221184,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.4.feed_forward.w1",
+        "offset": 229376,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.4.feed_forward.w2",
+        "offset": 243712,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.4.feed_forward.w3",
+        "offset": 258048,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.5.feed_forward.w1",
+        "offset": 272384,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.5.feed_forward.w2",
+        "offset": 286720,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.5.feed_forward.w3",
+        "offset": 301056,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.6.self_attn.q_proj",
+        "offset": 315392,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.6.self_attn.k_proj",
+        "offset": 323584,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.6.self_attn.v_proj",
+        "offset": 329728,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.6.self_attn.out_proj",
+        "offset": 335872,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.6.feed_forward.w1",
+        "offset": 344064,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.6.feed_forward.w2",
+        "offset": 358400,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.6.feed_forward.w3",
+        "offset": 372736,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.7.feed_forward.w1",
+        "offset": 387072,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.7.feed_forward.w2",
+        "offset": 401408,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.7.feed_forward.w3",
+        "offset": 415744,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.8.self_attn.q_proj",
+        "offset": 430080,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.8.self_attn.k_proj",
+        "offset": 438272,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.8.self_attn.v_proj",
+        "offset": 444416,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.8.self_attn.out_proj",
+        "offset": 450560,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.8.feed_forward.w1",
+        "offset": 458752,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.8.feed_forward.w2",
+        "offset": 473088,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.8.feed_forward.w3",
+        "offset": 487424,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.9.feed_forward.w1",
+        "offset": 501760,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.9.feed_forward.w2",
+        "offset": 516096,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.9.feed_forward.w3",
+        "offset": 530432,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.10.self_attn.q_proj",
+        "offset": 544768,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.10.self_attn.k_proj",
+        "offset": 552960,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.10.self_attn.v_proj",
+        "offset": 559104,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.10.self_attn.out_proj",
+        "offset": 565248,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.10.feed_forward.w1",
+        "offset": 573440,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.10.feed_forward.w2",
+        "offset": 587776,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.10.feed_forward.w3",
+        "offset": 602112,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.11.feed_forward.w1",
+        "offset": 616448,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.11.feed_forward.w2",
+        "offset": 630784,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.11.feed_forward.w3",
+        "offset": 645120,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.12.self_attn.q_proj",
+        "offset": 659456,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.12.self_attn.k_proj",
+        "offset": 667648,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          512
+        ],
+        "count": 6144,
+        "module": "model.layers.12.self_attn.v_proj",
+        "offset": 673792,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 8192,
+        "module": "model.layers.12.self_attn.out_proj",
+        "offset": 679936,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.12.feed_forward.w1",
+        "offset": 688128,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.12.feed_forward.w2",
+        "offset": 702464,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.12.feed_forward.w3",
+        "offset": 716800,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.13.feed_forward.w1",
+        "offset": 731136,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          2560,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          1024
+        ],
+        "count": 14336,
+        "module": "model.layers.13.feed_forward.w2",
+        "offset": 745472,
+        "rank": 4
+      },
+      {
+        "a_shape": [
+          1024,
+          4
+        ],
+        "alpha": 4,
+        "b_shape": [
+          4,
+          2560
+        ],
+        "count": 14336,
+        "module": "model.layers.13.feed_forward.w3",
+        "offset": 759808,
+        "rank": 4
+      }
+    ],
+    "tf32": false,
+    "tokenizer": {
+      "bos": 1,
+      "eos": 7,
+      "model_id": "LiquidAI/LFM2.5-230M",
+      "revision": "40cb2ad3b3044d5a41eee083a6103c8b523afa45",
+      "tokenizer_sha256": "7d623804ca774d3ac65e2e6b4537bb081884958a8552a518dede9d0c5f59e98f"
+    },
+    "unused_checkpoint_keys": []
+  },
+  "kind": "prefix",
+  "measurement": "resources",
+  "memory": {
+    "free_gib": 93.321533203125,
+    "peak_allocated_gib": 0.9451227188110352,
+    "peak_reserved_gib": 0.955078125,
+    "total_gib": 95.00811767578125
+  },
+  "modality": "audio",
+  "operating_conditions": {
+    "after": {
+      "default_power_limit_w": 600.0,
+      "fan_percent": "40",
+      "gpu_uuid": "GPU-a71210ca-e14a-755a-88bb-77f53a2102f6",
+      "memory_clock_mhz": 13365.0,
+      "performance_state": "P1",
+      "power_limit_w": 450.0,
+      "sm_clock_mhz": 2797.0,
+      "temperature_c": 59.0
+    },
+    "before": {
+      "default_power_limit_w": 600.0,
+      "fan_percent": "41",
+      "gpu_uuid": "GPU-a71210ca-e14a-755a-88bb-77f53a2102f6",
+      "memory_clock_mhz": 13365.0,
+      "performance_state": "P1",
+      "power_limit_w": 450.0,
+      "sm_clock_mhz": 2805.0,
+      "temperature_c": 58.0
+    }
+  },
+  "output_tokens": 32,
+  "prefix_tokens": 8,
+  "preprocessing": {
+    "median_ms": 1.2314129853621125,
+    "p10_ms": 1.2221594923175871,
+    "p90_ms": 1.253392337821424,
+    "repeats": 30,
+    "samples_ms": [
+      1.260895049199462,
+      1.2606490636244416,
+      1.246201922185719,
+      1.2406239984557033,
+      1.2437249533832073,
+      1.2586700031533837,
+      1.2416939716786146,
+      1.2331729521974921,
+      1.239551929756999,
+      1.2431140057742596,
+      1.2528059305623174,
+      1.231592963449657,
+      1.228203997015953,
+      1.2464679311960936,
+      1.2201899662613869,
+      1.219752011820674,
+      1.2242170050740242,
+      1.2252040905877948,
+      1.231233007274568,
+      1.2234890600666404,
+      1.2284950353205204,
+      1.2210929999127984,
+      1.2310059973970056,
+      1.2241839431226254,
+      1.2222779914736748,
+      1.226780004799366,
+      1.2346289586275816,
+      1.2245469260960817,
+      1.235945033840835,
+      1.2263701064512134
+    ],
+    "warmup": 5
+  },
+  "raw_sensor_to_first_token": {
+    "median_ms": 6.275065534282476,
+    "p10_ms": 6.244999391492456,
+    "p90_ms": 6.312268215697259,
+    "repeats": 30,
+    "samples_ms": [
+      6.288056029006839,
+      6.280219065956771,
+      6.292917998507619,
+      6.263463059440255,
+      6.290810997597873,
+      6.266021984629333,
+      6.267087999731302,
+      6.2881039921194315,
+      6.289307028055191,
+      6.315006059594452,
+      6.242394098080695,
+      6.27575907856226,
+      6.296944920904934,
+      6.245249998755753,
+      6.26417703460902,
+      6.267016055062413,
+      6.255273940041661,
+      6.268216064199805,
+      6.269007106311619,
+      6.274371990002692,
+      6.289337994530797,
+      6.269030971452594,
+      6.311964010819793,
+      6.3153060618788,
+      6.234009051695466,
+      6.329561001621187,
+      6.242743926122785,
+      6.293909973464906,
+      6.276202970184386,
+      6.273195031099021
+    ],
+    "warmup": 5
+  },
+  "sample_id": "5-103415-A-2.wav",
+  "scope": {
+    "cached_sensor": "Reuses generated factors/prefix; each request starts a new text cache.",
+    "cold_weights": "Checkpoint-loading time is observed with existing local files; no claim of an empty OS file cache.",
+    "decoding": "Native model cache for LFM/Qwen; mini recomputes its prefix because the released mini has no KV-cache interface.",
+    "fresh_sensor_prefill": "Feature already on GPU; regenerates adapter/prefix before 128-token prefill.",
+    "memory": "Language host, adapter and external encoder simultaneously resident; no optimizer state.",
+    "raw_input": "Already decoded in RAM; excludes file/network acquisition.",
+    "raw_sensor_to_first_token": "Preprocessing, transfer, encoder, adapter and prefill; sensor-free references omit unused sensor computation.",
+    "timing_spread": "Repeat dispersion on one isolated workstation; not uncertainty across hardware or inputs."
+  },
+  "sensor_path": {
+    "median_ms": 1.4404699904844165,
+    "p10_ms": 1.4250181033276021,
+    "p90_ms": 1.456390437670052,
+    "repeats": 30,
+    "samples_ms": [
+      1.4196509728208184,
+      1.4351500431075692,
+      1.4375130413100123,
+      1.4497910160571337,
+      1.6295439563691616,
+      1.4253630070015788,
+      1.4190739020705223,
+      1.4287200756371021,
+      1.4219139702618122,
+      1.4472859911620617,
+      1.4348109252750874,
+      1.4266649959608912,
+      1.44724000710994,
+      1.42695102840662,
+      1.4375190949067473,
+      1.4590669889003038,
+      1.4411649899557233,
+      1.4328260440379381,
+      1.4369019772857428,
+      1.4464199775829911,
+      1.445211935788393,
+      1.462804968468845,
+      1.4504319988191128,
+      1.4445269480347633,
+      1.456093043088913,
+      1.4477979857474566,
+      1.4409379800781608,
+      1.4551710337400436,
+      1.4400020008906722,
+      1.4336640015244484
+    ],
+    "warmup": 5
+  },
+  "source": {
+    "files": {
+      "__init__.py": "d5f4929cbb13266d205a42d2826b69284c3e853ed2b97fd69b129e55d5f783cb",
+      "accept.py": "a8787778af543731498cd3b2eec2f2a200584c26b1c7056503d7ee827e18f568",
+      "aggregate.py": "99df0acd4aec05c7a52c53b3ce5ecee64dfcb4ca917e36c46586d8715c0d117c",
+      "artifacts.py": "c627c34262c05f7e0c88ac52532b24819334676535a50a9b8ff0e966bbd0c34b",
+      "assets.py": "167aa4b67bd0369065b421a91ec556620d81702f68fd4d40f2c6d1770c558dd1",
+      "backend.py": "b0f2da9f4e91e676f24e72b0872214b49afd56438aa4ab68f159c985e5406ec0",
+      "bootstrap.py": "6fd429cdfd94e28515e1476c11dd8b5269635bc97d4dacea55965f9fb42449cf",
+      "canary.py": "902f163c84466b1d473f13df4b25943e944284901bfbe9e89b7103a498b6d7b6",
+      "checkpoint_eval.py": "a5d16936e248dbb274767b7a8a20647119dcfb0548ba059d5e37dbc695439ad6",
+      "checkpoints.py": "4615202fed4cd70e150885aceeffa5e88991fbe9424ec4793e1aa4e29e6a5d74",
+      "cli.py": "a8c932f861936f675b9b115542e62ed5d6d3459a22e60e073c6e43c98e29443b",
+      "composition.py": "e80e6a476de5d9e3e1bd0986d6f80a864350867837b9e2f3cb223f2a46ed93ae",
+      "encoder_audit.py": "649beff5154b282ac7c47767d70c8bce7660290853df84638652ef029c55e37d",
+      "evaluate.py": "986054f3a5275e05dcf233c826348f662c723ac3d2d1072779a291725c1c04bc",
+      "execution.py": "6b9ec687b941612bf5c768cfae2d86357b3d38ea506f8653d23d6b87fd39b9f9",
+      "generation.py": "f5aca14122e6deda446921132aeb7b0f51cc47682764ef55569305855cdc012a",
+      "generation_cached.py": "598334a3eff85e4d357d05b19abd5b4370dc1e64b931b353711855d96f1a5bac",
+      "generation_diagnostic.py": "094446d48d069d35eadec16c5eb2cc21d1114e055c73d1e126ba760cbe30bd16",
+      "gpu_limits.py": "9ab6e56406c0344a4edf244a8b32bbbeb7b12dafb08d1efa7350037ab2eaf400",
+      "grid.py": "8147a90c355e5022c1678c5ad072a6c6276078cc0793d1098b81a06b24dcd7eb",
+      "hosts.py": "99b55955751dd7a01665a9c56d64cbac59b40ba28e0e28e4afa8aac32da4acb6",
+      "job_evaluation.py": "0837cff4bb3e55bbc70547032573515f91844f62a40b5298f6e42b8d82699b1d",
+      "legacy/__init__.py": "6af5f7dcf77d66985ccf01ff469bbae7edad7ee53150e8e5fe6072e8acd4334a",
+      "legacy/audio_snapshot.py": "0fbff61ac6296016ae3309026f004434ad38390ec4932347e96fca4f202c9e1d",
+      "legacy/imu_snapshot.py": "5b32f419aab92868545f6a940895cb1684018ed2817d4e96297ff6c75b7d4a3c",
+      "legacy/runtime_lm.py": "8b3495aae84d734bc19937a401ad11d5a8afd305c70b8b998a5a752d0e277154",
+      "legacy/vision_snapshot.py": "f5edab0cb57dfd8e8b7b1b4986ed01e3d3e6fcd040efa331e2c8ab80cecd66f6",
+      "linear_probe.py": "634f2cee10faa6cb45c3e943c13f74e15e54508d228e4d0ddbc19a00b77b7908",
+      "outcomes.py": "ad8f15fd2887c6cf5ebeeedbbfc8b2e89ac36e52e500fba2c974746a8f1edaf2",
+      "portable_text.py": "456ec17925eec6e42e0a3e880f6e216bbf730ceabc6519c306fbcc9b2022df5e",
+      "provenance.py": "3c175712b8a9fb217246fcaccd1ed5a5e8a947572635b808532a13b0480affca",
+      "reconcile.py": "42bbeecd928d88ed7ca408a2f183fb5fb137b2f460812b23f07a906c31e763db",
+      "render.py": "03ff8778e0b6dd3a4b013ac6b812f157feb270fb545975c2596ef8d3725c9bb0",
+      "resources.py": "ca3db6e3ecc14f814c40a72872e26e69b7ecec4a910c325feadf6d98224004fe",
+      "scheduler.py": "03d636a9db1653ec43918c5220a2aa2585a4fe1d71fc81c26aa55c6b058e0f02",
+      "statistics.py": "7ceca220cf2e0d02774805f485c3a129c1e01a303d2fc7caeb932554cc69fa1b",
+      "supplement.py": "b2a608d08cb63091febe4a501e97b37e2122537cd0c8fed505a3b7bc92bdeec3",
+      "text.py": "88143963188c3755783bd5fbb807367a9735e96c78fc40ec2615cf43c25920e9",
+      "train.py": "ea6c46c53281320fb16b82eca6ab4d07cfbd87101dac532e5f1293648283cfbb"
+    },
+    "git_commit": "9dc1985c864aa4a73f4fa2a152153d660f45d0da",
+    "lock_sha256": "0fea89df33d552574980ca0c809190b16feb40e343ee747cfebb69ba0702fec6",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.13.0",
+      "torchvision": "0.28.0",
+      "transformers": "5.15.1"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "python": "3.14.3",
+    "source_hash": "4d613062b6f5519abadee5ef72ad873a245b59e832c03e3eb84e8f6ed60089c7"
+  },
+  "text_row": 0,
+  "text_sha256": "688f79d41fec839908d99300899d6d9e036568eef53f24591b84d1bdb7d5d2e2",
+  "text_tokens": 128
+}

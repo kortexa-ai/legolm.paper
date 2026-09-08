@@ -1,0 +1,13 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Instantiated language-host and IMU-bridge sizes. M denotes million parameters. Audio and vision change the small input projection; their exact counts are in the resource artifact. The native Qwen vision tower is excluded from these counts.}\label{tab:hosts}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Host & Host M & $D$ & Targets & Bridge M & Bridge/host \\
+\midrule
+Mini & 33.56 & 327,680 & 56 & 84.33 & 2.51 \\
+LFM 230M & 229.69 & 774,144 & 66 & 199.07 & 0.87 \\
+Qwen 0.8B & 752.39 & 1,597,440 & 96 & 410.66 & 0.55 \\
+\bottomrule
+\end{tabular}
+\end{table}\par

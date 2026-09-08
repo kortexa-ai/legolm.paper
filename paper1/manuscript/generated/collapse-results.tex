@@ -1,0 +1,32 @@
+Figure~\ref{fig:trajectories} connects each IMU P accuracy curve to effective-update cosine and fixed-text output sensitivity from the same weights. Table~\ref{tab:budget-endpoints} compares 600 with 6000 steps using only seeds 42, 1042, and 2042 at every penalty.
+
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{IMU P macro rank-1 accuracy and grouped 95\% intervals for the three shared seeds. The zero-penalty row uses the same seed subset as every other penalty; additional primary probe seeds do not enter these curves. Dashes mark unavailable full-seed estimates.}\label{tab:budget-endpoints}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Host & $\lambda$ & 600 steps [95\%] & 6000 steps [95\%] \\
+\midrule
+Mini & 0 & 0.741 [0.693, 0.784] & -- \\
+Mini & 0.01 & 0.802 [0.770, 0.830] & -- \\
+Mini & 0.05 & -- & -- \\
+Mini & 0.1 & 0.759 [0.701, 0.804] & -- \\
+Mini & 0.2 & 0.804 [0.725, 0.903] & -- \\
+LFM 230M & 0 & 0.834 [0.759, 0.911] & 0.839 [0.761, 0.913] \\
+LFM 230M & 0.01 & 0.723 [0.644, 0.809] & 0.768 [0.645, 0.869] \\
+LFM 230M & 0.05 & 0.759 [0.651, 0.908] & 0.741 [0.652, 0.802] \\
+LFM 230M & 0.1 & 0.709 [0.623, 0.794] & 0.676 [0.640, 0.729] \\
+LFM 230M & 0.2 & 0.733 [0.628, 0.820] & 0.737 [0.658, 0.840] \\
+Qwen 0.8B & 0 & 0.862 [0.747, 0.956] & 0.788 [0.655, 0.911] \\
+Qwen 0.8B & 0.01 & 0.738 [0.638, 0.833] & 0.607 [0.553, 0.649] \\
+Qwen 0.8B & 0.05 & 0.756 [0.690, 0.821] & 0.762 [0.653, 0.867] \\
+Qwen 0.8B & 0.1 & 0.667 [0.484, 0.820] & 0.762 [0.692, 0.834] \\
+Qwen 0.8B & 0.2 & 0.820 [0.680, 0.923] & 0.838 [0.718, 0.929] \\
+\bottomrule
+\end{tabular}
+\end{table}\par
+
+
+Recorded numerical stops prevent complete three-seed 6000-step estimates for Mini (5 of 5 penalty settings). These gaps do not supply a later accuracy measurement. Earlier per-seed evidence remains available. At zero penalty, the 600-to-6000-step comparison is LFM 230M 0.834 [0.759, 0.911] to 0.839 [0.761, 0.913]; Qwen 0.8B 0.862 [0.747, 0.956] to 0.788 [0.655, 0.911]. The available larger-host long-endpoint intervals lie above the six-class chance rate. They do not support a universal collapse-to-chance claim at this budget.
+
+At the largest declared penalty, $\lambda=0.2$, and 6000 P steps, the seed means are LFM 230M: factor cosine 0.145, effective-update cosine 0.694, and output KL 0.979 nats; Qwen 0.8B: factor cosine 0.009, effective-update cosine 0.790, and output KL 1.396 nats. Factor-space diversity, effective-update direction, and output variation are distinct. Cosine also does not measure update magnitude; centered energies and norms remain in the full analysis. Penalty effects differ across hosts and budgets. The full U trajectories are retained in the analysis. No penalty is selected by its test-set peak, and the short budget does not define a universal collapse threshold.

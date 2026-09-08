@@ -1,26 +1,28 @@
-# Conditional LoRA Bridges
+# LegoLM research reproductions
 
-Reproducibility artifact for **"Conditional LoRA Bridges for Modular Sensor
-Adaptation of Frozen Small Language Models"** (Franci Penov, kortexa.ai).
+Each study has its own reproduction commands and environment. All studies stay
+on `main`; paper-specific directories separate their code and artifacts.
 
-Can a frozen language model be conditioned on continuous sensor streams by
-*generating* LoRA weights at runtime? This repo contains the complete,
-controlled study: a 33.6M-parameter Qwen-style LM, three sensor modalities
-(vision, audio, IMU), and a harness where every number in the manuscript is
-rendered from a bundled result artifact.
+| Study | Reproduction | Paper |
+| --- | --- | --- |
+| Paper 1: conditional LoRA bridges | [`paper1/`](paper1/) | [`Paper 1 manuscript`](paper1/manuscript/main.pdf) |
+| Historical 230M companion to Paper 1 | [`Historical command and interpretive erratum`](paper1/REVISION_NOTES.md#impact-on-the-historical-230m-companion-note) | [`PDF`](note/main.pdf) |
+| The Latent Geometry of Meh | [`reproductions/jspace-spectrum/`](reproductions/jspace-spectrum/) | [`PDF`](jspace-spectrum-paper/main.pdf) |
+| Eight Soft Tokens Can Change a Frozen Model's Tone | [`reproductions/causal-expression/`](reproductions/causal-expression/) | [`PDF`](causal-expression-paper/main.pdf) |
+| Five Ways to Fool Yourself About Steering a Frozen Model | [`reproductions/expression-ladder/`](reproductions/expression-ladder/) | [`PDF`](expression-ladder-paper/main.pdf) |
 
-**The headline result is a clean dissociation.** Measured by validation
-bits-per-byte, conditioning contributes nothing — a capacity-matched bridge fed
-a constant feature vector matches the true-feature bridge to within the
-per-seed spread. Measured by
-task-aligned probes, conditioning is decisive — true sensor features lift
-rank-1 label accuracy to 0.80 on six-way IMU activities (chance 0.17) and 0.33
-on fifty-way audio events (chance 0.02), while shuffled, random, and
-no-bridge controls all sit at chance. Aggregate language-modeling metrics are
-the wrong instrument for detecting sensor conditioning. Diversity
-regularization governs the failure mode: unregularized hypernetworks collapse
-to input-independent weights, and at long training budgets that collapse
-can erase task-level conditioning.
+Paper 1 studies sensor-conditioned LoRA weights on frozen language models. Its
+revised protocol separates unpaired text adaptation, paired label ranking, and
+sensor-plus-instruction generation. It uses the original mini host, LFM2.5-230M,
+and Qwen3.5-0.8B. Start with the [Paper 1 guide](paper1/README.md) and
+[method contract](paper1/METHOD_CONTRACT.md).
+The [revision notes](paper1/REVISION_NOTES.md) identify corrected comparisons,
+encoder-provenance limits, and the effect on the historical 230M companion.
+
+The historical root harness and `arxiv/` remain available for the original
+33.6M release. An improvement in independently sampled text likelihood alone
+does not establish sensor use. The revision measures conditioning with matched
+checkpoint evaluations and explicit sensor interventions.
 
 ## Qwen 3.6 J-space spectrum study
 
@@ -84,26 +86,46 @@ which bounds the family.
 - Preregistration, code, tests, and result artifacts:
   [`reproductions/expression-ladder/`](reproductions/expression-ladder/)
 
-## Reproduce
+## Historical Paper 1 release
+
+These are the original runner's entry points. Use `paper1/` for the revised
+three-host protocol and new evaluations. Its input bootstrap supplies the exact
+frozen mini tokenizer; the legacy bootstrap can train a new tokenizer when its
+cache is absent, which is not a substitute for the frozen checkpoint's tokenizer.
 
 ```bash
-./setup.sh                                   # venv + tokenizer + data caches
-uv run paper-reproduce --suite smoke --quick # ~5 min sanity pass
+./setup.sh                                   # historical setup; see tokenizer note above
+uv run paper-reproduce --suite smoke --quick # historical sanity pass
 uv run paper-reproduce --suite all --include-audio-task \
   --eval-tokens 32768 --sensor-limit 64 --max-eval-items 64 \
-  --output-dir results/myrun                 # full suite, ~25 min on one GPU
+  --output-dir results/myrun                 # historical full suite
 uv run paper-figures results/myrun/summary.json --output-dir figures
-uv run paper-render-arxiv results/myrun/summary.json --output-dir arxiv
+uv run paper-render-arxiv results/myrun/summary.json --output-dir results/myrun/manuscript
 ```
 
 Runs on CUDA, Apple Silicon (MPS), or CPU. Training loops use fixed step
-counts, so a repeated run with the same seed reproduces each number exactly on
-the same hardware class. The exact commands and artifacts behind the
+counts. Numerical repeatability also depends on software, data and backend;
+the revised package records those identities explicitly. The commands and artifacts behind the
 manuscript are recorded in its Reproducibility Statement; the bundled
 artifacts live at `arxiv/summary.json` (standard budget) and
 `arxiv/summary-scaling.json` (10× budget).
 
-## Repository map
+For an artifact-only rebuild of the historical paper, supply both preserved
+result files and copy its bibliography into the new output directory first:
+
+```bash
+mkdir -p paper1/runs/historical-paper1
+cp arxiv/references.bib paper1/runs/historical-paper1/references.bib
+uv run --project paper1 --frozen python -m src.render_arxiv arxiv/summary.json \
+  --scaling-summary arxiv/summary-scaling.json \
+  --output-dir paper1/runs/historical-paper1 --figures-dir arxiv/figures --compile \
+  --package paper1/runs/historical-paper1-source.zip --verify-package
+```
+
+The old renderer does not copy the bibliography automatically. The revised
+renderer includes it and validates the source archive in a fresh directory.
+
+## Historical harness and shared assets
 
 - `arxiv/` — the manuscript (`main.tex`, **generated** by `src/render_arxiv.py`
   — edit the renderer, not the tex), figures, bibliography, result artifacts

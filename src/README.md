@@ -1,7 +1,10 @@
-# Paper Source
+# Historical Paper 1 and 230M companion source
 
-This directory is the experiment layer for the manuscript. The authoritative
-paper is `arxiv/main.tex`, which is **generated** by `src/render_arxiv.py` from
+This directory preserves the original Paper 1 and 230M companion experiment layer. The revised
+reproduction is in [`../paper1/`](../paper1/), with separate imports and commands.
+See the [revision notes and companion erratum](../paper1/REVISION_NOTES.md) before
+interpreting the historical comparisons or combining them with revised scores.
+The historical paper is `arxiv/main.tex`, which is **generated** by `src/render_arxiv.py` from
 a bundled result artifact — never hand-edit the tex; edit the renderer
 templates and re-render. `METHOD_CONTRACT.md` specifies what each experiment
 must measure.
@@ -34,7 +37,8 @@ The paper runner now also bakes in a few paper-facing guardrails:
 
 - Main bridge runs are per-example conditioned during both train and eval
 - `shuffled` uses a persistent run-level derangement instead of a minibatch-local permute
-- Audio task eval uses ESC-50 fold 5 as test, matching the encoder's held-out split
+- Audio task eval uses ESC-50 fold 5 as the bridge-fitting test split. The original
+  encoder used all clips for normalization; see the revision's exposure audit.
 - Static LoRA and bridge runs share the same default `--lr`
 - Training loops run a fixed number of optimizer steps (hardware-independent); result JSON still records elapsed time, steps/sec, and tokens seen
 - Diversity runs include a held-out IMU probe with cross-input cosine and activity-pair cosine tables for Section 6.1
@@ -57,4 +61,6 @@ bash run_all.sh --quick
 
 For a clean machine, run `./setup.sh` once to create `.venv` and populate
 `~/.cache/autoresearch` with the tokenizer, ClimbMix shards, ESC-50, and
-UCI HAR assets the paper code expects.
+UCI HAR assets the historical code expects. For frozen-mini reproduction, use
+the exact tokenizer files supplied by `paper1/` instead of training a replacement.
+The revised study's complete setup and input checks are in `paper1/README.md`.

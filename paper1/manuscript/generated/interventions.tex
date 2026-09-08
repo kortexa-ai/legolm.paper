@@ -1,0 +1,18 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Test interventions on identical true-trained P checkpoints at 6000 steps and zero penalty. Values are macro accuracy. Different-class substitution guarantees a changed class; a permutation can retain it. Paired intervals, random features, and all five permutations are in the machine-readable analysis.}\label{tab:interventions}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Host & Task & Correct & Constant & Off & Other class & Shuffle 0 \\
+\midrule
+Mini & IMU & -- & -- & -- & -- & -- \\
+Mini & Audio & 0.461 & 0.020 & 0.020 & 0.010 & 0.019 \\
+Mini & Vision & 0.582 & 0.100 & 0.100 & 0.047 & 0.101 \\
+LFM 230M & IMU & 0.839 & 0.167 & 0.167 & 0.032 & 0.152 \\
+LFM 230M & Audio & 0.386 & 0.020 & 0.020 & 0.011 & 0.018 \\
+Qwen 0.8B & IMU & 0.838 & 0.167 & 0.167 & 0.032 & 0.153 \\
+Qwen 0.8B & Audio & 0.421 & 0.020 & 0.020 & 0.013 & 0.020 \\
+Qwen 0.8B & Vision & 0.451 & 0.100 & 0.100 & 0.062 & 0.100 \\
+\bottomrule
+\end{tabular}
+\end{table}\par

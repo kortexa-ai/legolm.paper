@@ -1,0 +1,19 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Eight generated input-prefix embeddings: native BPB at initialization and both budgets. Initialization and 300 steps use 256 rows; 3000 steps use 1024. Compare each with its matching frozen panel, not across different panels. Each score includes the same 128 text positions as its reference.}\label{tab:prefix}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Host & Task & Initialized & 300 steps & 3000 steps \\
+\midrule
+Mini & IMU & 1.965 [1.928, 2.002] & 1.965 [1.928, 2.001] & 1.953 [1.934, 1.971] \\
+Mini & Audio & 1.965 [1.928, 2.002] & 1.964 [1.927, 2.001] & 1.953 [1.934, 1.971] \\
+Mini & Vision & 1.965 [1.929, 2.002] & 1.964 [1.927, 2.001] & 1.953 [1.934, 1.971] \\
+LFM 230M & IMU & 1.192 [1.158, 1.226] & 1.114 [1.082, 1.146] & 1.070 [1.055, 1.086] \\
+LFM 230M & Audio & 1.198 [1.163, 1.232] & 1.114 [1.082, 1.146] & 1.072 [1.057, 1.088] \\
+LFM 230M & Vision & 1.192 [1.158, 1.225] & 1.115 [1.083, 1.147] & 1.074 [1.058, 1.090] \\
+Qwen 0.8B & IMU & 1.299 [1.253, 1.344] & 1.004 [0.975, 1.033] & 0.962 [0.948, 0.976] \\
+Qwen 0.8B & Audio & 1.280 [1.219, 1.347] & 1.004 [0.975, 1.033] & 0.963 [0.949, 0.977] \\
+Qwen 0.8B & Vision & 1.358 [1.303, 1.414] & 1.004 [0.976, 1.033] & 0.964 [0.949, 0.978] \\
+\bottomrule
+\end{tabular}
+\end{table}\par

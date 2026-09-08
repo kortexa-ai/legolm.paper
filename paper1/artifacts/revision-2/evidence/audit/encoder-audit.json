@@ -1,0 +1,121 @@
+{
+  "features": {
+    "audio": "fa446a5ee9047a84e0d1516962817ae832d17622bced60c92afb8463c46bb73e",
+    "imu": "468ca60c3ffd47f5129d33f78fbf5d8665f0cc8af2594d1724af948dc4862adf",
+    "vision": "3bda02c8dd8283d57fbc9051323031e5fea90527795f6f073618d52dbb8c8365"
+  },
+  "modalities": {
+    "audio": {
+      "checkpoint_epoch": 1912,
+      "checkpoint_reported_best_accuracy": 0.7099999785423279,
+      "encoder_parameters": 285810,
+      "encoder_sha256": "4f76c28cf98b518a943d732930a1f193aeb2ccb5c85405bd20f54a36c89cf177",
+      "normalizer": {
+        "absolute_error_all": {
+          "mean": 3.123283386230469e-05,
+          "std": 5.91278076171875e-05
+        },
+        "absolute_error_train": {
+          "mean": 0.023923158645629883,
+          "std": 0.04675436019897461
+        },
+        "all_2000_clips": {
+          "mean": -3.9221649169921875,
+          "std": 7.114361763000488
+        },
+        "checkpoint": {
+          "mean": -3.92219614982605,
+          "std": 7.1144208908081055
+        },
+        "scope_note": "A matching all-clip normalizer includes held-out inputs; this is separate from bridge fitting and encoder gradient updates.",
+        "training_1600_clips": {
+          "mean": -3.9461193084716797,
+          "std": 7.16117525100708
+        }
+      },
+      "overlapping_groups": [
+        "209698",
+        "234879"
+      ],
+      "run_provenance_complete": false,
+      "test_groups": 310,
+      "test_items": 400,
+      "train_groups": 1216,
+      "train_items": 1600
+    },
+    "imu": {
+      "encoder_parameters": 145030,
+      "encoder_sha256": "f4f4726f129df890db9d4269fce9c71fb1acdab48171ac6f02f70344dda2496c",
+      "normalizer": {
+        "max_abs_error_from_training_mean": 5.587935447692871e-09,
+        "max_abs_error_from_training_std": 0.0
+      },
+      "overlapping_groups": [],
+      "run_provenance_complete": false,
+      "test_groups": 9,
+      "test_items": 2947,
+      "train_groups": 21,
+      "train_items": 7352
+    },
+    "vision": {
+      "bridge_dev_items": 5000,
+      "bridge_train_items": 45000,
+      "encoder_parameters": 4393248,
+      "encoder_sha256": "644245db233635b8447d79a915d873ed2231b4783f6aff580ea4b97f0649d10f",
+      "exact_train_test_image_matches": [],
+      "known_encoder_sources": [
+        "ImageNet MobileNetV3-Small",
+        "Big Buck Bunny perceiver fitting"
+      ],
+      "overlap_scope": "Exact RGB array equality only; near-duplicates and upstream ImageNet/host pretraining overlap are not excluded.",
+      "overlapping_groups": [],
+      "secondary_strict_test_excluded_ids": [],
+      "test_groups": 10000,
+      "test_items": 10000,
+      "train_groups": 50000,
+      "train_items": 50000,
+      "upstream_exposure_exhaustive": false
+    }
+  },
+  "source": {
+    "files": {
+      "__init__.py": "d5f4929cbb13266d205a42d2826b69284c3e853ed2b97fd69b129e55d5f783cb",
+      "accept.py": "a8787778af543731498cd3b2eec2f2a200584c26b1c7056503d7ee827e18f568",
+      "assets.py": "167aa4b67bd0369065b421a91ec556620d81702f68fd4d40f2c6d1770c558dd1",
+      "backend.py": "b0f2da9f4e91e676f24e72b0872214b49afd56438aa4ab68f159c985e5406ec0",
+      "canary.py": "902f163c84466b1d473f13df4b25943e944284901bfbe9e89b7103a498b6d7b6",
+      "checkpoint_eval.py": "aa72f4912bd05461a126d83891a882a89aa93151e504ab87d5435f896d47515d",
+      "cli.py": "72e16427ae6b8499431f708fa6c82c239aff6df8e61261e29c1920cdb0e7f36c",
+      "composition.py": "00dc3f2be6968b7920eaaed6af6df7d4da7b10ed1e652eba164a3439c1b6106e",
+      "encoder_audit.py": "649beff5154b282ac7c47767d70c8bce7660290853df84638652ef029c55e37d",
+      "evaluate.py": "986054f3a5275e05dcf233c826348f662c723ac3d2d1072779a291725c1c04bc",
+      "generation.py": "f5aca14122e6deda446921132aeb7b0f51cc47682764ef55569305855cdc012a",
+      "gpu_limits.py": "9ab6e56406c0344a4edf244a8b32bbbeb7b12dafb08d1efa7350037ab2eaf400",
+      "grid.py": "8147a90c355e5022c1678c5ad072a6c6276078cc0793d1098b81a06b24dcd7eb",
+      "hosts.py": "99b55955751dd7a01665a9c56d64cbac59b40ba28e0e28e4afa8aac32da4acb6",
+      "job_evaluation.py": "6d8adb5222b25c815d412f6b783ab6a109ef6b5026c822f4f6d2f96c109bc595",
+      "legacy/__init__.py": "6af5f7dcf77d66985ccf01ff469bbae7edad7ee53150e8e5fe6072e8acd4334a",
+      "legacy/audio_snapshot.py": "0fbff61ac6296016ae3309026f004434ad38390ec4932347e96fca4f202c9e1d",
+      "legacy/imu_snapshot.py": "5b32f419aab92868545f6a940895cb1684018ed2817d4e96297ff6c75b7d4a3c",
+      "legacy/runtime_lm.py": "8b3495aae84d734bc19937a401ad11d5a8afd305c70b8b998a5a752d0e277154",
+      "legacy/vision_snapshot.py": "f5edab0cb57dfd8e8b7b1b4986ed01e3d3e6fcd040efa331e2c8ab80cecd66f6",
+      "linear_probe.py": "634f2cee10faa6cb45c3e943c13f74e15e54508d228e4d0ddbc19a00b77b7908",
+      "provenance.py": "3c175712b8a9fb217246fcaccd1ed5a5e8a947572635b808532a13b0480affca",
+      "scheduler.py": "dd79072f5a3b6361a6349580b8916d27b49e4db916f706d77b4c5a4b29a8f81c",
+      "statistics.py": "7a8403cdd12de5a274ebf66aa86ccd395ec942dd57d1189a208abbebabd427f8",
+      "text.py": "88143963188c3755783bd5fbb807367a9735e96c78fc40ec2615cf43c25920e9",
+      "train.py": "ea6c46c53281320fb16b82eca6ab4d07cfbd87101dac532e5f1293648283cfbb"
+    },
+    "git_commit": "8d589a551537e7c35418f2d6684cffaaca08262f",
+    "lock_sha256": "0fea89df33d552574980ca0c809190b16feb40e343ee747cfebb69ba0702fec6",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.13.0",
+      "torchvision": "0.28.0",
+      "transformers": "5.15.1"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "python": "3.14.3",
+    "source_hash": "19f1de1bb8fa73daf3576d460aca5db5e49f6e80b2b5c01c6350e5d71064dc22"
+  }
+}

@@ -1,0 +1,448 @@
+\ifdefined\XeTeXrevision\else\pdfoutput=1\fi
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,booktabs,amsmath,amssymb,caption,enumitem,xcolor,hyperref,microtype,longtable,array}
+\usepackage[section]{placeins}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black,
+pdftitle={Conditional LoRA Bridges: Separating Adaptation Capacity from Sensor Conditioning},pdfauthor={Franci Penov}}
+\graphicspath{{figures/}}
+\setlength{\emergencystretch}{2em}
+\input{generated/release.tex}
+\title{Conditional LoRA Bridges:\\Separating Adaptation Capacity from Sensor Conditioning}
+\author{Franci Penov\\kortexa.ai\\\texttt{francip@kortexa.ai}}
+\date{\RevisionDate}
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{generated/abstract.tex}
+\end{abstract}
+
+\section{Introduction}
+A frozen language model can receive sensor information through changes to its
+effective weights. A hypernetwork can map an external encoder's features to
+low-rank updates, while both the encoder and the language model remain frozen.
+This interface is modular, but its success must be measured carefully. A bridge
+also adds trainable parameters. Better text likelihood can therefore reflect
+ordinary text adaptation even when changing the sensor input is unnecessary.
+
+We study this distinction with three separately trained cohorts. Cohort U uses
+independently sampled text and sensor features. Cohort P uses paired sensor and
+category examples. Cohort G uses paired sensors, instructions, and target
+responses. U tests text adaptation under a deliberately unpaired objective; P
+tests closed-set label ranking; G tests bounded sensor-dependent generation.
+The cohorts share an interface and controls, but their trained checkpoints and
+supervision differ. In addition, we apply several measurements and input
+interventions to each saved checkpoint. This avoids attributing a result from a
+task-trained bridge to a bridge trained only on unpaired text.
+
+The distinction concerns the data and target distribution, not an intrinsic
+defect in likelihood metrics. If a sensor and its target text are paired,
+conditioning can reduce text cross-entropy. In U, there is no designed semantic
+alignment for sensor shuffling to break. A constant-feature bridge tests whether
+variable sensor input is necessary for the observed improvement under that
+specific protocol. A small or statistically uncertain difference between true
+and constant features is not a proof of equivalence.
+
+This revision extends the original mini-model study with two pinned larger
+hosts, full held-out task populations, seed and cluster uncertainty, vision
+probes, generation tests, effective-update diagnostics, and measured resource
+costs. The contribution is a controlled account of when this interface carries
+useful sensor information, what its controls establish, and where its cost or
+behavior limits its use. It is not a general multimodal assistant benchmark.
+
+\section{Interface and controls}
+\label{sec:method}
+\paragraph{Conditional low-rank updates.}
+Let $f=e(s)$ be the feature vector of a frozen sensor encoder. The bridge
+$h_\theta$ produces $w(f)\in\mathbb{R}^{D}$, partitioned into factors
+$A_i(f)\in\mathbb{R}^{d_i^{\rm in}\times r}$ and
+$B_i(f)\in\mathbb{R}^{r\times d_i^{\rm out}}$ for each target module. The module computes
+\[
+ y=xW_i+\frac{\alpha}{r}xA_i(f)B_i(f),\qquad
+ D=r\sum_i(d_i^{\rm in}+d_i^{\rm out}).
+\]
+Each batch element receives its own factors. Candidate labels for one sensor
+share only that sensor's factors. We train the bridge through the frozen host;
+the host and external encoder parameters receive no updates.
+
+The dense bridge projects the input to 64 dimensions, concatenates a trainable
+64-dimensional vector shared across inputs, applies two width-256 hidden layers
+with GELU, and emits the flattened factors. We use rank $r=4$ and scale $\alpha=4$.
+Its last layer has $257D$ parameters, including its bias. Thus its absolute size
+grows with the adapted dimensions and target count. Its ratio to the host size need not grow.
+Table~\ref{tab:hosts} gives instantiated counts, rather than an estimate based
+only on the model's name.
+
+\paragraph{Controls.}
+The true, constant, shuffled, and random conditions use the same bridge
+architecture. The constant is the mean of the relevant training feature pool.
+It provides an architecture- and parameter-matched training control. Its input
+also stays constant in U's BPB evaluation. The shuffled paired-training condition rotates each sampled batch;
+the random condition replaces features with independent Gaussian draws. All
+trained controls receive correct features for the primary ranking test.
+Separate interventions on the same true-trained checkpoint replace its test
+features with a constant, random features, a sensor from a different class,
+five fixed permutations, or no bridge. Training corruption and inference
+intervention are distinct comparisons.
+Presenting correct features to a constant- or random-trained bridge can also
+change its input distribution. We therefore interpret these as training-signal
+controls, alongside the static adapter and interventions on the true-trained
+checkpoint, rather than as an isolated measure of the effect of test corruption.
+
+Static LoRA directly optimizes factors on the identical host target map. It
+receives no sensor input and has fewer trainable parameters than the dense
+bridge. We also test eight sensor-generated \emph{input-prefix embeddings}.
+These are concatenated before the text embeddings. This is an input-level
+soft-prompt interface, related to prompt tuning~\cite{lester2021power}; it is
+not the per-layer prefix parameterization of Li and
+Liang~\cite{li2021prefixtuning}. Both the prefix and its reference score the
+same 128 text positions. We report the initialized prefix and its trained
+endpoints. Its results apply to this parameterization, length, optimizer, and
+budget; they do not establish that prefix methods fail in general.
+
+\paragraph{Diversity and functional dependence.}
+For a batch of $N$ generated factor vectors, training can add
+\[
+ \mathcal L_{\rm div}=\frac{1}{N(N-1)}\sum_{j\ne k}
+ \cos(w(f_j),w(f_k)),\qquad
+ \mathcal L=\mathcal L_{\rm text}+\lambda\mathcal L_{\rm div}.
+\]
+The registered IMU sweep is $\lambda\in\{0,.01,.05,.10,.20\}$ for U and P.
+Factor cosine alone is insufficient: equivalent low-rank updates can have
+different factorizations. We also measure the geometry of the effective
+updates $A_iB_i$ and the KL divergence of next-token distributions from their
+mean over sensors, with the text held fixed. Neither geometric variation nor a
+nonzero KL value alone establishes correct sensor behavior.
+
+\section{Experimental protocol}
+\label{sec:protocol}
+\paragraph{Hosts.}
+We use the original 33.6M-parameter mini checkpoint,
+LFM2.5-230M~\cite{liquid2026lfm}, and the language tower of
+Qwen3.5-0.8B~\cite{qwen2026small}. LFM and Qwen are post-trained released
+models. The mini uses an 8192-token vocabulary; the larger hosts retain their
+native tokenizers and special-token policies. LFM targets include attention
+projections and feed-forward layers. Qwen targets include full-attention
+projections and feed-forward layers; its DeltaNet projections and native
+vision tower are not adapted. No native image tokens enter the vision probe.
+The feature bridge is its only image-dependent input path.
+
+\input{generated/hosts.tex}
+
+Changing the host changes architecture, tokenizer, pretraining, and post-training
+as well as parameter count. These experiments extend the comparison to larger
+hosts; they do not isolate a scaling law. The fixed recipe is not individually
+tuned for each model. We preserve the rank, bridge shape, feature encoders,
+control definitions, learning rate, optimizer, batch sizes, and step budgets.
+
+\paragraph{Frozen features and held-out units.}
+IMU uses UCI-HAR's 7352 training windows and all 2947 test windows across nine
+held-out subjects~\cite{anguita2013uci}. Audio uses ESC-50 folds 1--4 for bridge
+fitting and all 400 fold-5 clips for testing~\cite{piczak2015esc}. Audio items
+retain their original-source identifiers. Vision uses the original frozen
+ImageNet MobileNetV3-Small and Big Buck Bunny perceiver with its original BGR
+preprocessing. The paired vision task uses CIFAR-10~\cite{krizhevsky2009cifar}:
+45000 images for bridge fitting, a fixed 5000-image development subset, and all
+10000 test images. We make no development-driven selection in this fixed-recipe
+study. The unpaired vision pool remains the original video frames.
+
+The encoder audit is a material limit of the audio evidence. The stored audio
+normalization matches statistics computed over all 2000 clips, so held-out
+inputs influenced preprocessing. Two original sources also cross the supplied
+fold boundary. We preserve the original encoder for the registered replication
+and report a secondary source-disjoint test analysis. That exclusion does not
+remove prior normalization exposure. Complete original encoder run provenance
+is unavailable. IMU normalization matches its training split and its test
+subjects are disjoint. The image audit finds no exact RGB-array train/test
+duplicates, but does not exclude near-duplicates or unknown upstream
+pretraining exposure. ``Held out'' therefore refers to bridge fitting and the
+specific known encoder exposures stated here.
+
+\paragraph{Objectives and budgets.}
+U trains on ClimbMix text shards 0, 1, and 2 with independently sampled features
+from fixed 64-item pools. It uses batch 8, 128 predicted text positions, and
+checkpoints at 300 and 3000 optimizer steps. The paired label cohort P uses
+batch 4, the original mean whole-prompt-plus-label training loss, and
+checkpoints at 600 and 6000 steps. It does not use response-only generation
+training. G uses separate native-chat examples and an assistant-response-only
+loss, including native EOS, at the same paired step budgets and batch size.
+Its examples must fit within 256 tokens; overlong examples fail explicitly.
+
+All optimizers are AdamW with learning rate .001, $(\beta_1,\beta_2)=(.9,.999)$,
+$\epsilon=10^{-8}$, weight decay .01, and gradient norm clipping at 1.
+The default seeds are 42, 1042, and 2042. Mini and Qwen IMU/audio P controls add
+3042 and 4042. Vision P and generation G use three seeds. The IMU penalty sweep
+uses the three common seeds; paired comparisons with its zero-penalty reference
+use that same seed subset. Fixed checkpoints share a trajectory; they are not
+independent training replicates. Optimizer steps, examples, supervised tokens,
+and supervised bytes are retained in the artifact. Equal steps do not imply
+equal tokenization or compute across hosts.
+
+The registered matrix contains 411 trials: 406 training trajectories and five
+frozen references with zero optimizer steps. The planned training budget is
+1,896,000 optimizer updates; numerical terminations can shorten trajectories.
+
+Execution uses FP32 parameters, optimizer state, and arithmetic with autocast
+and TF32 disabled. A BF16 LFM acceptance run failed the strict batch/scalar loss
+check; the FP32 path passed without widening its tolerance. Tests cover
+per-example factor isolation, gradient flow through a frozen host, one
+next-token shift, natural prompt/label boundaries, byte accounting, cache
+reset after sensor changes, and optimizer/RNG resume. The hardware and locked
+software environment define the tested numerical envelope. A seed is not a
+promise of bitwise equality on another backend.
+
+Nonfinite loss or gradient norms before an optimizer update are recorded as
+terminal fixed-recipe outcomes. A failed norm check alone does not establish
+nonfinite gradient elements. Numerical termination alone does not show loss of
+conditioning; that claim requires finite checkpoint evaluations of task behavior
+and sensor dependence. We evaluate saved checkpoints before that failure
+and mark later endpoints unavailable. An aggregate requires all its declared seeds;
+we do not substitute earlier weights or average only successful seeds. This
+execution handling was added after the first observed numerical failure. It
+implements the preparation plan's failure-reporting rule without changing the
+registered training operations. Hardware and infrastructure errors are recorded
+separately from numerical training failures.
+
+\paragraph{Likelihood and ranking.}
+Native BPB is total negative log-likelihood divided by $\log 2$ times total
+target bytes. Special tokens contribute no bytes. The short and long panels
+contain 256 and 1024 packed validation rows from shard 6542. These panels are
+paired within a host. A separate 512-document common-byte panel scores
+identical raw-text target spans and shared prefix bytes across tokenizers.
+We keep native packing and common-byte comparisons separate.
+
+P ranking compares the mean log-likelihood of candidate label tokens after the
+original modality prompt. Natural tokenization can merge across that boundary;
+the score includes the boundary-crossing label token exactly once. Paired-label
+BPB counts that whole token's bytes, including any prompt-boundary bytes it
+contains; it is a within-host diagnostic, separate from the common-byte panel.
+Ties follow
+the fixed category order. We report macro and micro rank-1 accuracy, top-2,
+average rank, and paired-label BPB. The original 64-item procedure remains a
+secondary size diagnostic. Three fixed prompt paraphrases test robustness
+without further training. Uniform random-choice accuracy is $1/K$ for $K$
+classes; an actual frozen model's micro accuracy need not equal that reference
+on an imbalanced test set.
+
+Intermediate IMU checkpoints use the same full test ranking population and
+fixed test-feature subsets for geometry. These are descriptive trajectories;
+the declared short and long endpoints remain the primary comparisons. We
+retain every penalty and saved point, without selecting a test-set peak.
+The artifact also gives the correct-label score minus the strongest alternative
+and the entropy of the softmax-normalized candidate scores. These scores are
+mean label log-likelihoods, not calibrated class probabilities.
+
+\paragraph{Generation.}
+First, we decode Qwen P checkpoints at $\lambda=0$ without further training,
+using the original ranking prompt. We then evaluate G checkpoints on category-only responses,
+short sentences, and explicit binary rules. Each family has three training and
+three held-out prompt templates. Evaluation includes one training template and
+all held-out templates. Rule queries match the sensor category in half the
+cases; each mapping is also reversed with the same sensor. This tests whether
+the response can depend on both the sensor and the supplied rule.
+
+The generation panel uses all 400 audio clips and 300 IMU windows chosen by
+class and subject before model outputs. The P vision decoding diagnostic uses
+300 images. G has 16 instruction cases per sensor, which do not create 16
+independent sensor observations. All decoding is greedy and limited to 64 new
+tokens. G stops at the pinned model EOS (\texttt{248044}) or assistant-end
+token (\texttt{248046}). Raw P decoding retains the host's original stopping
+policy. We report semantic correctness, format compliance, and joint success
+separately, and retain every response. For category and sentence tasks, the
+semantic score is a deterministic longest-category-phrase match after case and
+underscore normalization; it can credit a category mention in an otherwise
+incorrect sentence. Joint success requires the exact normalized target and is
+the primary response score. Rule correctness requires the exact mapped word.
+We also report a secondary rule score that requires both reversed mappings for
+the same sensor and template to be correct. Repeated templates are then
+averaged within a sensor before uncertainty estimation.
+Frozen-host oracle-label and
+feature-classifier-label prompts provide separate references. These prompts
+explicitly reveal a label; they are not ordinary sensor-only inputs.
+
+\paragraph{Uncertainty.}
+Reported 95\% intervals use 10000 crossed seed/cluster bootstrap replicates,
+with equal weight per training seed. Clusters are IMU subjects, original audio
+sources, and images. Resampling is stratified by class when each cluster
+belongs to one class; subjects spanning activities are sampled jointly.
+Paired contrasts preserve the same seeds and held-out units. Likelihood uses
+byte-weighted text-unit resampling. Generation first groups repeated prompts
+by sensor. Intervals are descriptive, with no multiple-comparison significance
+claim or equivalence margin. Nine IMU test subjects still provide limited
+population coverage despite the much larger window count.
+
+\section{Results}
+\input{generated/failure-results.tex}
+\subsection{Unpaired text adaptation and input prefixes}
+\input{generated/text-results.tex}
+\input{generated/bpb.tex}
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{bpb-controls.pdf}
+\caption{Unpaired text adaptation at the two fixed budgets. Values are paired
+native-BPB differences from the frozen host on the matching evaluation panel;
+negative values improve likelihood. The 300-step panel has 256 rows and the
+3000-step panel has 1024, so these are within-panel changes, not identical test
+samples across budgets. All plotted conditions have their registered seeds.
+The common-byte table uses a separate fixed panel at both budgets.}
+\label{fig:bpb}\end{figure}
+\input{generated/prefix.tex}
+\input{generated/prefix-results.tex}
+
+\FloatBarrier
+\subsection{Held-out sensor ranking}
+\input{generated/task-results.tex}
+\input{generated/tasks.tex}
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{task-controls.pdf}
+\caption{Macro rank-1 accuracy for the separately paired-trained P adapters at
+6000 steps. The full test population and grouped intervals replace the original
+64-item primary evaluation. Frozen feature classifiers measure information
+already available in the encoder features.}
+\label{fig:tasks}\end{figure}
+\input{generated/interventions.tex}
+
+\FloatBarrier
+\subsection{Budget, regularization, and conditioning}
+\input{generated/collapse-results.tex}
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{imu-trajectories.pdf}
+\caption{IMU P trajectories with the registered diversity penalties. Accuracy,
+effective-update geometry, and output sensitivity use the same saved weights
+at each point. Intermediate checkpoints are repeated measurements of a
+trajectory, not additional seeds. All penalties use three shared seeds.
+Only complete three-seed estimates are drawn; curves end when numerical stops
+prevent later estimates. Endpoint intervals are in Table~\ref{tab:budget-endpoints}.}
+\label{fig:trajectories}\end{figure}
+
+\FloatBarrier
+\subsection{From ranking to generated responses}
+\input{generated/generation-results.tex}
+\input{generated/generation.tex}
+\FloatBarrier
+\input{generated/generation-examples.tex}
+
+A separate fixed-batch diagnostic explains the repeated exclamation marks in
+two G/audio seeds. On the first forward pass, finite but very large activations
+overflow the FP32 mean square in the final RMS normalization, which returns
+zeros. At every decoding step the logits are all zero; the greedy tie rule
+selects token zero, \texttt{!}, through the token limit. The third seed has no
+normalization overflow in this inspected batch. The hooks preserve the
+registered arithmetic and reproduce the saved responses. These observations
+cover only the first eight cases for one audio clip; they establish a numerical
+cause for those outputs, not its incidence across the generation panel or the
+effect of changing normalization arithmetic. This output degeneration should
+not be interpreted as evidence of finite, input-independent conditioning
+collapse. The public package supplies the observations and a
+\texttt{diagnose-generation} command.
+
+
+\FloatBarrier
+\subsection{Composition and resource cost}
+\label{sec:cost}
+For matched U constituents at 150 or 1500 steps, we test all seven modality
+subsets. Historical factor averaging computes
+$(\sum_j A_j/k)(\sum_j B_j/k)$, which includes cross terms. Effective-update sum
+computes $\sum_j A_jB_j$; effective mean divides that sum by $k$. These are
+different operators. We evaluate them with identical constituent checkpoints,
+text rows, and per-modality feature cycles, without rank recompression. The
+streams remain unpaired, so this is an adapter-interference test, not evidence
+of semantic multi-sensor reasoning.
+\input{generated/composition.tex}
+
+\input{generated/resource-results.tex}
+\input{generated/resources.tex}
+Batch-one timings use one isolated RTX PRO 6000, 128 input text tokens, and
+32 generated tokens. Raw inputs are already decoded in memory. The artifact
+separates preprocessing, encoding, adapter generation, prefill, and generation,
+and distinguishes a fresh sensor from cached factors. It records the device
+power limit, temperature, and clocks around each case. Native LFM/Qwen decoding
+uses a new text cache for each request; the released mini implementation
+recomputes its prefix. Repeat dispersion measures variability in this setup,
+not uncertainty across devices or applications. No edge-device efficiency
+claim follows from these workstation measurements.
+
+\section{Related work}
+Hypernetworks generate the parameters of another network~\cite{ha2016hypernetworks}.
+Adapters~\cite{houlsby2019adapters}, LoRA~\cite{hu2021lora}, shared
+hypernetwork adapters~\cite{mahabadi2021hyperformer}, and
+HyperTuning~\cite{phang2022hypertuning} motivate adapting frozen hosts through
+smaller trainable interfaces. The bridge studied here conditions generated
+LoRA factors on continuous external encoder features. Its dense output head
+is substantial, so ``frozen host'' and ``parameter efficient'' are separate
+properties. Prompt tuning becomes more competitive with scale in the T5
+experiments of Lester et al.~\cite{lester2021power}; our fixed input-prefix
+comparison is narrower in architecture and optimization.
+
+The earlier 230M companion note (Paper 2 in this series) used the historical
+protocol~\cite{penov2026bridges230m}. This revision supplies new LFM comparisons
+with corrected evaluation and seed coverage; the companion's artifacts remain
+separate. The compression study (Paper 3) replaces the dense output head with
+coefficients over a learned or frozen basis of LoRA
+directions~\cite{penov2026compressed}. We retain the dense head here to measure
+its cost and behavior under the shared recipe. The compression study's results
+describe its separate architecture and protocol.
+
+Multimodal systems such as Flamingo~\cite{alayrac2022flamingo} and
+LLaVA~\cite{liu2023llava} study broader visual-language behavior with different
+interfaces and supervision. Our closed-set ranking and deterministic response
+tasks do not establish comparable capability. Weight-space composition is
+related to task arithmetic~\cite{ilharco2023task}, but separately generated
+low-rank factors require care: factor averaging is not addition of their
+effective updates.
+
+\section{Limitations and interpretation}
+The bridge can be modular while remaining expensive. It still requires paired
+examples for P and G and does not eliminate supervision for a new sensor task.
+The external encoders already expose strong label information; a linear
+classifier and label-in-text baseline are essential practical comparisons.
+Label ranking and short generated responses establish bounded behavior, not
+open-ended descriptions, compositional cross-modal reasoning, or robust
+real-world sensor use.
+
+The larger-host comparison remains below one billion nominal language-model
+parameters and changes several host properties together. One shared optimizer
+recipe is useful for a controlled replication but cannot establish each
+interface's best achievable performance. Unpaired-text results should not be
+generalized to paired likelihood objectives. Prefix observations should not be
+generalized to all soft prompts or per-layer prefixes. Geometric diversity
+should not be equated with correct conditioning.
+
+Audio normalization exposure and incomplete original encoder provenance limit
+the strength of end-to-end holdout claims. The source-disjoint sensitivity
+analysis addresses a narrower overlap only. Fixed test subjects, one audio
+holdout fold, image-domain transfer, and unknown host pretraining exposure
+further bound generalization. We retain negative outcomes and all declared
+budgets; the study does not choose a checkpoint or penalty from test accuracy.
+
+\section{Reproducibility and revision record}
+The public reproduction package is
+\url{https://github.com/kortexa-ai/legolm.paper/tree/main/paper1}.
+All papers remain on the main branch with explicit per-paper entry points.
+The package has its own namespace and dependency lock. It includes the exact
+mini tokenizer, pinned input identities, all recipes, checkpoint hashes,
+per-item evaluation evidence, and an artifact-only verification command.
+Model execution and artifact verification are separate documented workflows.
+The verified summary drives the primary empirical tables, figures, and result
+text. The separate fixed-batch normalization observations are supplied in
+\href{https://github.com/kortexa-ai/legolm.paper/blob/main/paper1/artifacts/revision-2/diagnostics/g-audio-normalization.json}{the generation diagnostic artifact}. Exact FP32 adapter checkpoints have a separate
+download index with immutable URLs, sizes, and hashes. The same index supplies
+the exact frozen feature caches, so encoder arithmetic on another device need
+not change a checkpoint's input features. Checkpoints can be evaluated without
+repeating training. Regenerating them from scratch requires the
+documented input assets and compute.
+
+A revision audit found that the initial native-chat decoder inherited only
+the model EOS and continued past valid assistant endings. A saved-checkpoint
+replay reproduced repeated answers. We corrected the stopping rule and
+rescored the saved checkpoints. Source-version reconciliation excludes the
+earlier decoding results from reported scores.
+
+\input{generated/revision-notes.tex}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\clearpage
+\appendix
+\section{Complete registered comparisons}
+\input{generated/appendix.tex}
+\end{document}

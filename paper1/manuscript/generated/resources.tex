@@ -1,0 +1,19 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Batch-one resource measurements on the isolated RTX PRO 6000. Parameters are trainable adapter millions; VRAM is peak allocated GiB with host, adapter, and external encoder resident. First is raw-sensor-to-first-token median milliseconds; 32-token is median generation time with cached sensor factors and a fresh text cache. Both use 128 input text tokens. Frozen/static paths omit unused sensor work. The appendix contains every modality and prefix case.}\label{tab:resources}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Host & Task & Interface & Params M & VRAM GiB & First ms & 32-token ms \\
+\midrule
+Mini & IMU & Bridge & 84.33 & 0.49 & 3.7 & 90.0 \\
+Mini & IMU & None & 0.00 & 0.17 & 1.8 & 49.8 \\
+Mini & IMU & Static & 0.33 & 0.17 & 2.7 & 82.3 \\
+LFM 230M & IMU & Bridge & 199.07 & 1.67 & 6.5 & 161.0 \\
+LFM 230M & IMU & None & 0.00 & 0.93 & 4.2 & 113.4 \\
+LFM 230M & IMU & Static & 0.77 & 0.93 & 5.7 & 158.6 \\
+Qwen 0.8B & IMU & Bridge & 410.66 & 4.52 & 50.6 & 440.1 \\
+Qwen 0.8B & IMU & None & 0.00 & 2.99 & 46.8 & 359.8 \\
+Qwen 0.8B & IMU & Static & 1.60 & 2.99 & 49.4 & 423.0 \\
+\bottomrule
+\end{tabular}
+\end{table}\par

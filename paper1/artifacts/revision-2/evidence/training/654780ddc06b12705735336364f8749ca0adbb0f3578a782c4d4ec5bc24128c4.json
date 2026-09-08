@@ -1,0 +1,5068 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 0.0,
+      "exposure": {
+        "examples": 0,
+        "supervised_bytes": 0,
+        "supervised_tokens": 0
+      },
+      "path": "step-000000.pt",
+      "sha256": "214e5e9cfd089eb48e73ccb1a33a6c84e2594708312a84b16fd9da7fe134ecfd",
+      "step": 0,
+      "variation": {
+        "effective_centered_energy": 1.961961970664561e-06,
+        "effective_cosine": 0.8090659379959106,
+        "effective_mean_squared_norm": 8.705917025508825e-06,
+        "factor_cosine": 0.896992564201355,
+        "factor_variance": 1.4354701427521377e-08,
+        "modules": [
+          {
+            "mean_squared_frobenius": 1.729392096194715e-07,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7884075020901946e-07,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7051760892172751e-07,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.738324897360144e-07,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.781283742730011e-07,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.8454693417879753e-07,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.103454180423796e-08,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.372042201021941e-08,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.3910730223851715e-08,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 7.06436935615784e-08,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.7135465668616234e-07,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7720981304591987e-07,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7541906061069312e-07,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.7639091254295636e-07,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.8369152599007066e-07,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7611652936011524e-07,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.207503216477562e-08,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.4552677163901535e-08,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.6209936382647356e-08,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 7.199478346819888e-08,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.748796591982682e-07,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.766046580087277e-07,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.777396789748309e-07,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.7812021724239457e-07,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.827411608701368e-07,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7997783174905635e-07,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.31633988948488e-08,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.573404683265835e-08,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.436970530401595e-08,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 7.162751103351184e-08,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.7795321127778152e-07,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7573898958289647e-07,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7497637827545987e-07,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.807913321272281e-07,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.6840880334711983e-07,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7800094553876988e-07,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 6.950501330038605e-08,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.642506740675344e-08,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.6440788164782134e-08,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 6.942945418586532e-08,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.775954387994716e-07,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.8810450796991063e-07,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7716911315801553e-07,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.7868077861749043e-07,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7585645650797233e-07,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7862691947811982e-07,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 6.897331417121677e-08,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.511387092203222e-08,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.483897614842135e-08,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 7.176598160185677e-08,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.8516884381369891e-07,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7417994513380108e-07,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7696496001917694e-07,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.7719949596539664e-07,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7780654104626592e-07,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7240652994132688e-07,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.054624973079626e-08,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.496720069051662e-08,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.2978014985474147e-08,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 7.119700740076951e-08,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.7222635051439283e-07,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.8029167847544159e-07,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7488753201178042e-07,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.804889251388886e-07,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.6904361643810262e-07,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7308127553405939e-07,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 5.117906667059287,
+      "exposure": {
+        "examples": 240,
+        "supervised_bytes": 140086,
+        "supervised_tokens": 30720
+      },
+      "path": "step-000030.pt",
+      "sha256": "9621a1f43273c42aa02805ea1924aa4fd51491e83daa142b8c87c3cfbf577efc",
+      "step": 30,
+      "variation": {
+        "effective_centered_energy": 13.846809387207031,
+        "effective_cosine": 0.8287658095359802,
+        "effective_mean_squared_norm": 34.42215347290039,
+        "factor_cosine": 0.5233161449432373,
+        "factor_variance": 0.00010951682634186,
+        "modules": [
+          {
+            "mean_squared_frobenius": 0.5496174097061157,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.5811306238174438,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.47107455134391785,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.5883087515830994,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.647185742855072,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.4250994920730591,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.26040786504745483,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.132734477519989,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.13874328136444092,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.32509249448776245,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7843217253684998,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.8226227760314941,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.7442095279693604,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.6701029539108276,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.9438965320587158,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.0963921546936035,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.34655052423477173,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.1912095546722412,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.20382457971572876,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.3287675976753235,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.620632529258728,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.5068178176879883,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.4689716696739197,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.6448891758918762,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.4026334285736084,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.9177416563034058,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.2750433087348938,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.12600934505462646,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.20414875447750092,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.20585164427757263,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5598359107971191,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.5586305856704712,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.47736871242523193,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.997776210308075,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.43811434507369995,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.5417641997337341,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.23867946863174438,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.149339497089386,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.09927070140838623,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.1806809902191162,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.592390239238739,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.577508807182312,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.7402359843254089,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.7790874242782593,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.5790302753448486,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.7835774421691895,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.22235147655010223,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.09506761282682419,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.09828775376081467,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.15559881925582886,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8149677515029907,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.43479976058006287,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.1147114038467407,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.43038344383239746,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.5201888084411621,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.6496392488479614,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.21806983649730682,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.14870736002922058,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.1231362521648407,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.28081807494163513,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5395950675010681,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.111734390258789,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.48522767424583435,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.535902202129364,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 0.7544805407524109,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 0.7711629271507263,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 15.843386942986399,
+      "exposure": {
+        "examples": 800,
+        "supervised_bytes": 472548,
+        "supervised_tokens": 102400
+      },
+      "path": "step-000100.pt",
+      "sha256": "defe912b085e38dc49a5081b2a13ee8d82e16a3bfb3c100d0c47a6de76227ed9",
+      "step": 100,
+      "variation": {
+        "effective_centered_energy": 61.147010803222656,
+        "effective_cosine": 0.7871707081794739,
+        "effective_mean_squared_norm": 118.92448425292969,
+        "factor_cosine": 0.570513904094696,
+        "factor_variance": 0.00019597045320551842,
+        "modules": [
+          {
+            "mean_squared_frobenius": 2.9296021461486816,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.7005956172943115,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.0634846687316895,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.6053318977355957,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.736419677734375,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.5897889137268066,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.3519271612167358,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5796257853507996,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.25268617272377014,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.877419650554657,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.278641700744629,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.2910094261169434,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.817626953125,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.0919642448425293,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.8894891738891602,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.6603444814682007,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.8742620348930359,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5316194891929626,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.33008208870887756,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.6366352438926697,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.6335959434509277,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.03886604309082,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.6732933521270752,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.7033469676971436,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.591524839401245,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.7319307327270508,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.0400981903076172,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.41825294494628906,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.3077571988105774,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.39098021388053894,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.316580057144165,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.7988171577453613,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.5935335159301758,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 4.979188919067383,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.4788874387741089,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.0297632217407227,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.6646683812141418,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.28798794746398926,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.23146264255046844,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5406156778335571,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.7327003479003906,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.9885257482528687,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.8835824728012085,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.648359775543213,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.0921196937561035,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.335951089859009,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.9017236232757568,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.29365456104278564,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.2844739556312561,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7264651656150818,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.4076125621795654,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.5920982360839844,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.9058358669281006,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.331925868988037,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.058959484100342,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.50785756111145,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.6860227584838867,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.41761988401412964,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.32577836513519287,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8956084251403809,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.7599332332611084,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.67606782913208,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.159177780151367,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 3.644249439239502,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.897423267364502,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 7.231040954589844,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 23.474164638726506,
+      "exposure": {
+        "examples": 1200,
+        "supervised_bytes": 707747,
+        "supervised_tokens": 153600
+      },
+      "path": "step-000150.pt",
+      "sha256": "fea193bb94d1421b9426c24b1f0c4faf7eda9fa4903e01b7e35ea6d7d1a261db",
+      "step": 150,
+      "variation": {
+        "effective_centered_energy": 73.53274536132812,
+        "effective_cosine": 0.7526777982711792,
+        "effective_mean_squared_norm": 127.525634765625,
+        "factor_cosine": 0.6085495948791504,
+        "factor_variance": 0.0001918814959935844,
+        "modules": [
+          {
+            "mean_squared_frobenius": 3.5239198207855225,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.806088924407959,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.5759825706481934,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 3.2393577098846436,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.861777663230896,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.9609798192977905,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.7483470439910889,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.6363753080368042,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.2288539707660675,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8857287764549255,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.7106375694274902,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.423021078109741,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.956432580947876,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.5066983699798584,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.9072935581207275,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.821613073348999,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.021320104598999,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5278565287590027,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.2966342568397522,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5560428500175476,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.112654447555542,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.365354061126709,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.8454092741012573,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 3.2108676433563232,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.216622829437256,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.8555331230163574,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.2292145490646362,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.4787672162055969,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.28093284368515015,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.3961581885814667,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.7174391746520996,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.9947046041488647,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.751369833946228,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 4.8382158279418945,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.6461749076843262,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.2544431686401367,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.693862795829773,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.2921060621738434,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.22321586310863495,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5438565015792847,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.076693296432495,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.0941109657287598,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 1.963937520980835,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.7987060546875,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.2813572883605957,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.411412000656128,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.0571362972259521,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.2839162349700928,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.259549617767334,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8148514628410339,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.7493064403533936,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 1.8083561658859253,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.7662816047668457,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.837796688079834,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.3718833923339844,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.6356301307678223,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 0.7332582473754883,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.36857128143310547,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.3435560166835785,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.9477388262748718,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.898343563079834,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.569429397583008,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 2.523604393005371,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 3.9442362785339355,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.871979236602783,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.972127437591553,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 46.477249387593474,
+      "exposure": {
+        "examples": 2400,
+        "supervised_bytes": 1420629,
+        "supervised_tokens": 307200
+      },
+      "path": "step-000300.pt",
+      "sha256": "29124ab3896c2f14b6fbfadeb2b921bcd10fa9e0a891b16c80258276880c5a76",
+      "step": 300,
+      "variation": {
+        "effective_centered_energy": 119.74178314208984,
+        "effective_cosine": 0.7023612260818481,
+        "effective_mean_squared_norm": 224.2950439453125,
+        "factor_cosine": 0.6508727073669434,
+        "factor_variance": 0.00023764667275827378,
+        "modules": [
+          {
+            "mean_squared_frobenius": 7.515387535095215,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.574876308441162,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 5.465231895446777,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 8.642783164978027,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.5781421661376953,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.203258037567139,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 4.858149528503418,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8782042264938354,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.3744807243347168,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.2419203519821167,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 5.037596702575684,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.789076328277588,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.249340772628784,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.870650291442871,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.382783889770508,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.208921432495117,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.1033670902252197,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7672871351242065,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.46920156478881836,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8027489185333252,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 5.913005828857422,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.218688011169434,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.0458438396453857,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.50398588180542,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.5290000438690186,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.2835612297058105,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.173212766647339,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7273070812225342,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.513071596622467,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.6751425266265869,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 5.560665130615234,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.356100082397461,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.163482666015625,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.847327709197998,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.8933799266815186,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.5267233848571777,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.1880075931549072,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5107960104942322,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.31408461928367615,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7613226175308228,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 5.323498725891113,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.433643341064453,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.2537848949432373,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.543194770812988,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.3166680335998535,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.919220447540283,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.7756352424621582,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.45960113406181335,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.3754817843437195,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.3396155834197998,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 6.618801116943359,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.9664981365203857,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.300238609313965,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 4.924970626831055,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.9615859985351562,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.44281005859375,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.2883964776992798,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5113517045974731,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.529747486114502,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.5206990242004395,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 4.72189998626709,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.579540967941284,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.113740921020508,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 8.546748161315918,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.291194915771484,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 10.518356323242188,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 139.55443100829143,
+      "exposure": {
+        "examples": 8000,
+        "supervised_bytes": 4735927,
+        "supervised_tokens": 1024000
+      },
+      "path": "step-001000.pt",
+      "sha256": "96a9b72f95dd7f72eaf74b55f9735f1e3980f08e7ca7892311162779b7345922",
+      "step": 1000,
+      "variation": {
+        "effective_centered_energy": 22.664535522460938,
+        "effective_cosine": 0.9038585424423218,
+        "effective_mean_squared_norm": 219.9128875732422,
+        "factor_cosine": 0.9498746991157532,
+        "factor_variance": 3.218323035980575e-05,
+        "modules": [
+          {
+            "mean_squared_frobenius": 7.104881286621094,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.7714850902557373,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.923678874969482,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 8.044692993164062,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.525850296020508,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.983302593231201,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 4.484397888183594,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.2333736419677734,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.48507341742515564,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.3245232105255127,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 6.832622051239014,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.0812296867370605,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.077550411224365,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 8.811586380004883,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.706881523132324,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.5035741329193115,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.6796172857284546,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8461745977401733,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.524427056312561,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.842540442943573,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 6.551748275756836,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.95229434967041,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.454331874847412,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.068637847900391,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.2089290618896484,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 4.059556007385254,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.6056759357452393,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7443026900291443,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.570131778717041,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7727071642875671,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 5.601898193359375,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.679973602294922,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.971012830734253,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.247564315795898,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.810127019882202,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.883531093597412,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.0382689237594604,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.609411358833313,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.4094485938549042,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.7145807147026062,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 4.891474723815918,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.991119861602783,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.4398438930511475,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.454073905944824,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.1654677391052246,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.9087748527526855,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.4370731115341187,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.6702688932418823,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.4943285882472992,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.1727908849716187,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 5.452109336853027,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 2.550018787384033,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.8390636444091797,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 4.7539825439453125,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.503477096557617,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.8599891662597656,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.174252986907959,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.6166307926177979,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.4766474664211273,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.553419589996338,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 4.255998134613037,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.026578426361084,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 3.976909637451172,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 7.741058349609375,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.581188678741455,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.184759140014648,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 213.09102628502296,
+      "exposure": {
+        "examples": 12000,
+        "supervised_bytes": 7105505,
+        "supervised_tokens": 1536000
+      },
+      "path": "step-001500.pt",
+      "sha256": "81c13492af0679132d417de65ceb1f17faf226fc289776346e593159e5d05eb4",
+      "step": 1500,
+      "variation": {
+        "effective_centered_energy": 16.065704345703125,
+        "effective_cosine": 0.9586880207061768,
+        "effective_mean_squared_norm": 373.04022216796875,
+        "factor_cosine": 0.9797295331954956,
+        "factor_variance": 1.730832809698768e-05,
+        "modules": [
+          {
+            "mean_squared_frobenius": 9.816377639770508,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.411313533782959,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 7.168637752532959,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 11.144502639770508,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.620938301086426,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.812857627868652,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 6.787141799926758,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.2453746795654297,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.169442892074585,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.3659422397613525,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 12.521903991699219,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 6.735260963439941,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.576415061950684,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 14.449918746948242,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.393107891082764,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 5.657588958740234,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.670621395111084,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.7145864963531494,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8169896006584167,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.3179113864898682,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 13.329986572265625,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.9158124923706055,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 5.610560417175293,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 12.936732292175293,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.967807769775391,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.974842071533203,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.938962459564209,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.285081148147583,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8336261510848999,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.1472117900848389,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 12.454608917236328,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 6.024906158447266,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.923874855041504,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 11.092735290527344,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.805163383483887,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.912266731262207,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.838719129562378,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.0526108741760254,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.5718921422958374,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.9569207429885864,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 9.7911376953125,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.760651111602783,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.641395568847656,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 10.834693908691406,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.062078475952148,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.665729522705078,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 2.43601655960083,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.2403658628463745,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.8190519213676453,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.0817506313323975,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 10.227677345275879,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 3.9700839519500732,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.342120170593262,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 8.485095977783203,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 5.084352493286133,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.71027135848999,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 1.9970850944519043,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.186824083328247,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 0.9067952036857605,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 4.081361293792725,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 7.5995917320251465,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 4.472336769104004,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 6.643020153045654,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 12.47871208190918,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 6.155742168426514,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 10.395111083984375,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    },
+    {
+      "checkpoint_bytes": 796313414,
+      "elapsed_s": 416.5817180411541,
+      "exposure": {
+        "examples": 24000,
+        "supervised_bytes": 14206616,
+        "supervised_tokens": 3072000
+      },
+      "path": "step-003000.pt",
+      "sha256": "5b45163cf53c2e0b17d48a932a2b83ae2483571271c760eb8e8a9dcfcbce6925",
+      "step": 3000,
+      "variation": {
+        "effective_centered_energy": 22.15802001953125,
+        "effective_cosine": 0.9698249697685242,
+        "effective_mean_squared_norm": 673.1488037109375,
+        "factor_cosine": 0.9862250089645386,
+        "factor_variance": 1.7117858078563586e-05,
+        "modules": [
+          {
+            "mean_squared_frobenius": 15.769699096679688,
+            "module": "model.layers.0.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 7.278277397155762,
+            "module": "model.layers.0.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 9.794718742370605,
+            "module": "model.layers.0.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 17.30622673034668,
+            "module": "model.layers.1.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 7.691897392272949,
+            "module": "model.layers.1.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 10.553535461425781,
+            "module": "model.layers.1.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 14.490438461303711,
+            "module": "model.layers.2.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 4.897118091583252,
+            "module": "model.layers.2.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.310055732727051,
+            "module": "model.layers.2.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 4.31683349609375,
+            "module": "model.layers.2.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 24.251209259033203,
+            "module": "model.layers.2.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 10.067022323608398,
+            "module": "model.layers.2.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 10.348501205444336,
+            "module": "model.layers.2.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 27.17214012145996,
+            "module": "model.layers.3.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 7.992399215698242,
+            "module": "model.layers.3.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 8.989882469177246,
+            "module": "model.layers.3.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.196868419647217,
+            "module": "model.layers.4.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.0406856536865234,
+            "module": "model.layers.4.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.6844213008880615,
+            "module": "model.layers.4.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.2167415618896484,
+            "module": "model.layers.4.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 25.621288299560547,
+            "module": "model.layers.4.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 9.84732723236084,
+            "module": "model.layers.4.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 10.70788860321045,
+            "module": "model.layers.4.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 26.354412078857422,
+            "module": "model.layers.5.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 10.691558837890625,
+            "module": "model.layers.5.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 13.58167839050293,
+            "module": "model.layers.5.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 6.092162132263184,
+            "module": "model.layers.6.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.0334219932556152,
+            "module": "model.layers.6.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.6467304229736328,
+            "module": "model.layers.6.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.11518931388855,
+            "module": "model.layers.6.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 28.193923950195312,
+            "module": "model.layers.6.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 10.260713577270508,
+            "module": "model.layers.6.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 13.88829231262207,
+            "module": "model.layers.6.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 24.08586883544922,
+            "module": "model.layers.7.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 8.247625350952148,
+            "module": "model.layers.7.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 12.251083374023438,
+            "module": "model.layers.7.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 3.870154857635498,
+            "module": "model.layers.8.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.3062736988067627,
+            "module": "model.layers.8.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.2364287376403809,
+            "module": "model.layers.8.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.7908616065979004,
+            "module": "model.layers.8.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 21.043575286865234,
+            "module": "model.layers.8.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 8.462066650390625,
+            "module": "model.layers.8.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 12.512603759765625,
+            "module": "model.layers.8.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 22.82534408569336,
+            "module": "model.layers.9.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 9.044089317321777,
+            "module": "model.layers.9.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 12.741634368896484,
+            "module": "model.layers.9.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.612148284912109,
+            "module": "model.layers.10.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.669890880584717,
+            "module": "model.layers.10.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.845280408859253,
+            "module": "model.layers.10.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 3.888772487640381,
+            "module": "model.layers.10.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 20.399906158447266,
+            "module": "model.layers.10.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 6.120253562927246,
+            "module": "model.layers.10.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 10.552059173583984,
+            "module": "model.layers.10.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 14.23796272277832,
+            "module": "model.layers.11.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 8.051501274108887,
+            "module": "model.layers.11.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 11.58735179901123,
+            "module": "model.layers.11.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 5.0742692947387695,
+            "module": "model.layers.12.self_attn.q_proj"
+          },
+          {
+            "mean_squared_frobenius": 2.63901424407959,
+            "module": "model.layers.12.self_attn.k_proj"
+          },
+          {
+            "mean_squared_frobenius": 1.7944691181182861,
+            "module": "model.layers.12.self_attn.v_proj"
+          },
+          {
+            "mean_squared_frobenius": 6.830336570739746,
+            "module": "model.layers.12.self_attn.out_proj"
+          },
+          {
+            "mean_squared_frobenius": 13.78180980682373,
+            "module": "model.layers.12.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 6.9134368896484375,
+            "module": "model.layers.12.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 11.39089584350586,
+            "module": "model.layers.12.feed_forward.w3"
+          },
+          {
+            "mean_squared_frobenius": 17.204364776611328,
+            "module": "model.layers.13.feed_forward.w1"
+          },
+          {
+            "mean_squared_frobenius": 10.212625503540039,
+            "module": "model.layers.13.feed_forward.w2"
+          },
+          {
+            "mean_squared_frobenius": 14.521553039550781,
+            "module": "model.layers.13.feed_forward.w3"
+          }
+        ],
+        "n": 192,
+        "sample_ids": [
+          "uci-har/test/00698",
+          "uci-har/test/02877",
+          "uci-har/test/00242",
+          "uci-har/test/01797",
+          "uci-har/test/00250",
+          "uci-har/test/01142",
+          "uci-har/test/02334",
+          "uci-har/test/00996",
+          "uci-har/test/02333",
+          "uci-har/test/02133",
+          "uci-har/test/01628",
+          "uci-har/test/02341",
+          "uci-har/test/01790",
+          "uci-har/test/02322",
+          "uci-har/test/01792",
+          "uci-har/test/00384",
+          "uci-har/test/01285",
+          "uci-har/test/01469",
+          "uci-har/test/00547",
+          "uci-har/test/02876",
+          "uci-har/test/01799",
+          "uci-har/test/00563",
+          "uci-har/test/02510",
+          "uci-har/test/00862",
+          "uci-har/test/00086",
+          "uci-har/test/00397",
+          "uci-har/test/02865",
+          "uci-har/test/02684",
+          "uci-har/test/01132",
+          "uci-har/test/01143",
+          "uci-har/test/00854",
+          "uci-har/test/00852",
+          "uci-har/test/02926",
+          "uci-har/test/00742",
+          "uci-har/test/00446",
+          "uci-har/test/00443",
+          "uci-har/test/02391",
+          "uci-har/test/02732",
+          "uci-har/test/01186",
+          "uci-har/test/00726",
+          "uci-har/test/02174",
+          "uci-har/test/02739",
+          "uci-har/test/01834",
+          "uci-har/test/02542",
+          "uci-har/test/00886",
+          "uci-har/test/01518",
+          "uci-har/test/02383",
+          "uci-har/test/00595",
+          "uci-har/test/01182",
+          "uci-har/test/00599",
+          "uci-har/test/02199",
+          "uci-har/test/02916",
+          "uci-har/test/01845",
+          "uci-har/test/00727",
+          "uci-har/test/00725",
+          "uci-har/test/02016",
+          "uci-har/test/02371",
+          "uci-har/test/01192",
+          "uci-har/test/00287",
+          "uci-har/test/01686",
+          "uci-har/test/00463",
+          "uci-har/test/01179",
+          "uci-har/test/00462",
+          "uci-har/test/02557",
+          "uci-har/test/01159",
+          "uci-har/test/01329",
+          "uci-har/test/01642",
+          "uci-har/test/02716",
+          "uci-har/test/00903",
+          "uci-har/test/01330",
+          "uci-har/test/00588",
+          "uci-har/test/02533",
+          "uci-har/test/00425",
+          "uci-har/test/00420",
+          "uci-har/test/00749",
+          "uci-har/test/01817",
+          "uci-har/test/00117",
+          "uci-har/test/02523",
+          "uci-har/test/01984",
+          "uci-har/test/00573",
+          "uci-har/test/00124",
+          "uci-har/test/01646",
+          "uci-har/test/02897",
+          "uci-har/test/00265",
+          "uci-har/test/02165",
+          "uci-har/test/01493",
+          "uci-har/test/02539",
+          "uci-har/test/00734",
+          "uci-har/test/02706",
+          "uci-har/test/01816",
+          "uci-har/test/00263",
+          "uci-har/test/02171",
+          "uci-har/test/01482",
+          "uci-har/test/02161",
+          "uci-har/test/00434",
+          "uci-har/test/01023",
+          "uci-har/test/00335",
+          "uci-har/test/02435",
+          "uci-har/test/00197",
+          "uci-har/test/02802",
+          "uci-har/test/01565",
+          "uci-har/test/00951",
+          "uci-har/test/00031",
+          "uci-har/test/02084",
+          "uci-har/test/01562",
+          "uci-har/test/00798",
+          "uci-har/test/01408",
+          "uci-har/test/02821",
+          "uci-har/test/00505",
+          "uci-har/test/00932",
+          "uci-har/test/02427",
+          "uci-har/test/00945",
+          "uci-har/test/00347",
+          "uci-har/test/02622",
+          "uci-har/test/02606",
+          "uci-har/test/00803",
+          "uci-har/test/02816",
+          "uci-har/test/01729",
+          "uci-har/test/00644",
+          "uci-har/test/00033",
+          "uci-har/test/01898",
+          "uci-har/test/00810",
+          "uci-har/test/00641",
+          "uci-har/test/00649",
+          "uci-har/test/01723",
+          "uci-har/test/01415",
+          "uci-har/test/01740",
+          "uci-har/test/01417",
+          "uci-har/test/02235",
+          "uci-har/test/02425",
+          "uci-har/test/02401",
+          "uci-har/test/01372",
+          "uci-har/test/02056",
+          "uci-har/test/02590",
+          "uci-har/test/01527",
+          "uci-har/test/01875",
+          "uci-har/test/01712",
+          "uci-har/test/02406",
+          "uci-har/test/00918",
+          "uci-har/test/02230",
+          "uci-har/test/00491",
+          "uci-har/test/00626",
+          "uci-har/test/00005",
+          "uci-har/test/00328",
+          "uci-har/test/01704",
+          "uci-har/test/01864",
+          "uci-har/test/00927",
+          "uci-har/test/00766",
+          "uci-har/test/02772",
+          "uci-har/test/01213",
+          "uci-har/test/01383",
+          "uci-har/test/02765",
+          "uci-har/test/00471",
+          "uci-har/test/02754",
+          "uci-har/test/02047",
+          "uci-har/test/00314",
+          "uci-har/test/00920",
+          "uci-har/test/02567",
+          "uci-har/test/02775",
+          "uci-har/test/02414",
+          "uci-har/test/01126",
+          "uci-har/test/01111",
+          "uci-har/test/00077",
+          "uci-har/test/00375",
+          "uci-har/test/01765",
+          "uci-har/test/00680",
+          "uci-har/test/01268",
+          "uci-har/test/00963",
+          "uci-har/test/00222",
+          "uci-har/test/00370",
+          "uci-har/test/01599",
+          "uci-har/test/01122",
+          "uci-har/test/02124",
+          "uci-har/test/00975",
+          "uci-har/test/01431",
+          "uci-har/test/02486",
+          "uci-har/test/02459",
+          "uci-har/test/02461",
+          "uci-har/test/02303",
+          "uci-har/test/02836",
+          "uci-har/test/01598",
+          "uci-har/test/00378",
+          "uci-har/test/02466",
+          "uci-har/test/02485",
+          "uci-har/test/00529",
+          "uci-har/test/01945",
+          "uci-har/test/02294",
+          "uci-har/test/01266",
+          "uci-har/test/02301",
+          "uci-har/test/00674",
+          "uci-har/test/00372",
+          "uci-har/test/00815"
+        ]
+      }
+    }
+  ],
+  "elapsed_s": 416.5817180411541,
+  "exposure": {
+    "examples": 24000,
+    "supervised_bytes": 14206616,
+    "supervised_tokens": 3072000
+  },
+  "identity": {
+    "backend": {
+      "compute_capability": [
+        12,
+        0
+      ],
+      "cpu_machine": "x86_64",
+      "cuda_version": "13.0",
+      "cudnn_version": 92000,
+      "deterministic_algorithms": false,
+      "device_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "device_total_bytes": 102014189568,
+      "device_type": "cuda",
+      "execution": "FP32, autocast disabled, TF32 disabled",
+      "interop_threads": 24,
+      "intraop_threads": 4,
+      "torch_version": "2.13.0+cu130"
+    },
+    "features_sha256": "468ca60c3ffd47f5129d33f78fbf5d8665f0cc8af2594d1724af948dc4862adf",
+    "host": {
+      "autocast": false,
+      "config": {
+        "_name_or_path": "LiquidAI/LFM2.5-230M",
+        "architectures": [
+          "Lfm2ForCausalLM"
+        ],
+        "block__name_mlp": "parallel_mlp_merged",
+        "block_auto_adjust_ff_dim": false,
+        "block_dim": 1024,
+        "block_ffn_dim_multiplier": 1.0,
+        "block_ffn_te_autocast": false,
+        "block_ffn_use_quantized_params": false,
+        "block_mlp_init_scale": 1.0,
+        "block_multiple_of": 256,
+        "block_norm_eps": 1e-05,
+        "block_out_init_scale": 1.0,
+        "block_sequence_parallel_norm_across_tp": false,
+        "block_use_swiglu": true,
+        "block_use_xavier_init": true,
+        "bos_token_id": 1,
+        "chunk_size_feed_forward": 0,
+        "conv_L_cache": 3,
+        "conv_bias": false,
+        "conv_dim": 1024,
+        "conv_use_xavier_init": true,
+        "dtype": "float32",
+        "eos_token_id": 7,
+        "ffn_te_autocast": false,
+        "ffn_use_quantized_params": false,
+        "full_attn_idxs": null,
+        "hidden_size": 1024,
+        "id2label": {
+          "0": "LABEL_0",
+          "1": "LABEL_1"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 2560,
+        "is_encoder_decoder": false,
+        "label2id": {
+          "LABEL_0": 0,
+          "LABEL_1": 1
+        },
+        "layer_types": [
+          "conv",
+          "conv",
+          "full_attention",
+          "conv",
+          "full_attention",
+          "conv",
+          "full_attention",
+          "conv",
+          "full_attention",
+          "conv",
+          "full_attention",
+          "conv",
+          "full_attention",
+          "conv"
+        ],
+        "max_position_embeddings": 128000,
+        "model_type": "lfm2",
+        "norm_eps": 1e-05,
+        "num_attention_heads": 16,
+        "num_heads": 16,
+        "num_hidden_layers": 14,
+        "num_key_value_heads": 8,
+        "output_attentions": false,
+        "output_hidden_states": false,
+        "pad_token_id": 0,
+        "problem_type": null,
+        "return_dict": true,
+        "rope_parameters": {
+          "rope_theta": 1000000.0,
+          "rope_type": "default"
+        },
+        "sequence_parallel_norm_across_tp": false,
+        "tie_word_embeddings": true,
+        "transformers_version": "5.15.1",
+        "use_cache": true,
+        "use_pos_enc": true,
+        "vocab_size": 65536
+      },
+      "dtype": "float32",
+      "frozen_parameters": 229693184,
+      "lora_dim": 774144,
+      "model_id": "LiquidAI/LFM2.5-230M",
+      "revision": "40cb2ad3b3044d5a41eee083a6103c8b523afa45",
+      "targets": [
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.0.feed_forward.w1",
+          "offset": 0,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.0.feed_forward.w2",
+          "offset": 14336,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.0.feed_forward.w3",
+          "offset": 28672,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.1.feed_forward.w1",
+          "offset": 43008,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.1.feed_forward.w2",
+          "offset": 57344,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.1.feed_forward.w3",
+          "offset": 71680,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.2.self_attn.q_proj",
+          "offset": 86016,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.2.self_attn.k_proj",
+          "offset": 94208,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.2.self_attn.v_proj",
+          "offset": 100352,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.2.self_attn.out_proj",
+          "offset": 106496,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.2.feed_forward.w1",
+          "offset": 114688,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.2.feed_forward.w2",
+          "offset": 129024,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.2.feed_forward.w3",
+          "offset": 143360,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.3.feed_forward.w1",
+          "offset": 157696,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.3.feed_forward.w2",
+          "offset": 172032,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.3.feed_forward.w3",
+          "offset": 186368,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.4.self_attn.q_proj",
+          "offset": 200704,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.4.self_attn.k_proj",
+          "offset": 208896,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.4.self_attn.v_proj",
+          "offset": 215040,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.4.self_attn.out_proj",
+          "offset": 221184,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.4.feed_forward.w1",
+          "offset": 229376,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.4.feed_forward.w2",
+          "offset": 243712,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.4.feed_forward.w3",
+          "offset": 258048,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.5.feed_forward.w1",
+          "offset": 272384,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.5.feed_forward.w2",
+          "offset": 286720,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.5.feed_forward.w3",
+          "offset": 301056,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.6.self_attn.q_proj",
+          "offset": 315392,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.6.self_attn.k_proj",
+          "offset": 323584,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.6.self_attn.v_proj",
+          "offset": 329728,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.6.self_attn.out_proj",
+          "offset": 335872,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.6.feed_forward.w1",
+          "offset": 344064,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.6.feed_forward.w2",
+          "offset": 358400,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.6.feed_forward.w3",
+          "offset": 372736,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.7.feed_forward.w1",
+          "offset": 387072,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.7.feed_forward.w2",
+          "offset": 401408,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.7.feed_forward.w3",
+          "offset": 415744,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.8.self_attn.q_proj",
+          "offset": 430080,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.8.self_attn.k_proj",
+          "offset": 438272,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.8.self_attn.v_proj",
+          "offset": 444416,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.8.self_attn.out_proj",
+          "offset": 450560,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.8.feed_forward.w1",
+          "offset": 458752,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.8.feed_forward.w2",
+          "offset": 473088,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.8.feed_forward.w3",
+          "offset": 487424,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.9.feed_forward.w1",
+          "offset": 501760,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.9.feed_forward.w2",
+          "offset": 516096,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.9.feed_forward.w3",
+          "offset": 530432,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.10.self_attn.q_proj",
+          "offset": 544768,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.10.self_attn.k_proj",
+          "offset": 552960,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.10.self_attn.v_proj",
+          "offset": 559104,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.10.self_attn.out_proj",
+          "offset": 565248,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.10.feed_forward.w1",
+          "offset": 573440,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.10.feed_forward.w2",
+          "offset": 587776,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.10.feed_forward.w3",
+          "offset": 602112,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.11.feed_forward.w1",
+          "offset": 616448,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.11.feed_forward.w2",
+          "offset": 630784,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.11.feed_forward.w3",
+          "offset": 645120,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.12.self_attn.q_proj",
+          "offset": 659456,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.12.self_attn.k_proj",
+          "offset": 667648,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            512
+          ],
+          "count": 6144,
+          "module": "model.layers.12.self_attn.v_proj",
+          "offset": 673792,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 8192,
+          "module": "model.layers.12.self_attn.out_proj",
+          "offset": 679936,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.12.feed_forward.w1",
+          "offset": 688128,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.12.feed_forward.w2",
+          "offset": 702464,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.12.feed_forward.w3",
+          "offset": 716800,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.13.feed_forward.w1",
+          "offset": 731136,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            2560,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            1024
+          ],
+          "count": 14336,
+          "module": "model.layers.13.feed_forward.w2",
+          "offset": 745472,
+          "rank": 4
+        },
+        {
+          "a_shape": [
+            1024,
+            4
+          ],
+          "alpha": 4,
+          "b_shape": [
+            4,
+            2560
+          ],
+          "count": 14336,
+          "module": "model.layers.13.feed_forward.w3",
+          "offset": 759808,
+          "rank": 4
+        }
+      ],
+      "tf32": false,
+      "tokenizer": {
+        "bos": 1,
+        "eos": 7,
+        "model_id": "LiquidAI/LFM2.5-230M",
+        "revision": "40cb2ad3b3044d5a41eee083a6103c8b523afa45",
+        "tokenizer_sha256": "7d623804ca774d3ac65e2e6b4537bb081884958a8552a518dede9d0c5f59e98f"
+      },
+      "unused_checkpoint_keys": []
+    },
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "clip_norm": 1.0,
+      "eps": 1e-08,
+      "lr": 0.001,
+      "type": "AdamW",
+      "weight_decay": 0.01
+    },
+    "precision": "FP32 parameters, optimizer and execution; TF32 and autocast disabled",
+    "recipe": {
+      "batch_size": 8,
+      "cohort": "U",
+      "diversity": 0.1,
+      "feature_mode": "true",
+      "host": "lfm230m",
+      "kind": "bridge",
+      "lr": 0.001,
+      "modality": "imu",
+      "prefix_length": 8,
+      "protocol": "p1-corrected-v2",
+      "rank": 4,
+      "seed": 1042,
+      "steps": 3000,
+      "text_length": 128
+    },
+    "source": {
+      "files": {
+        "__init__.py": "d5f4929cbb13266d205a42d2826b69284c3e853ed2b97fd69b129e55d5f783cb",
+        "accept.py": "a8787778af543731498cd3b2eec2f2a200584c26b1c7056503d7ee827e18f568",
+        "aggregate.py": "99df0acd4aec05c7a52c53b3ce5ecee64dfcb4ca917e36c46586d8715c0d117c",
+        "artifacts.py": "c627c34262c05f7e0c88ac52532b24819334676535a50a9b8ff0e966bbd0c34b",
+        "assets.py": "167aa4b67bd0369065b421a91ec556620d81702f68fd4d40f2c6d1770c558dd1",
+        "backend.py": "b0f2da9f4e91e676f24e72b0872214b49afd56438aa4ab68f159c985e5406ec0",
+        "bootstrap.py": "6fd429cdfd94e28515e1476c11dd8b5269635bc97d4dacea55965f9fb42449cf",
+        "canary.py": "902f163c84466b1d473f13df4b25943e944284901bfbe9e89b7103a498b6d7b6",
+        "checkpoint_eval.py": "a5d16936e248dbb274767b7a8a20647119dcfb0548ba059d5e37dbc695439ad6",
+        "checkpoints.py": "4615202fed4cd70e150885aceeffa5e88991fbe9424ec4793e1aa4e29e6a5d74",
+        "cli.py": "a795990f9b5c063628862376d6515b16b8d4d218ef9b278ed4a0acd6a9239954",
+        "composition.py": "e80e6a476de5d9e3e1bd0986d6f80a864350867837b9e2f3cb223f2a46ed93ae",
+        "encoder_audit.py": "649beff5154b282ac7c47767d70c8bce7660290853df84638652ef029c55e37d",
+        "evaluate.py": "986054f3a5275e05dcf233c826348f662c723ac3d2d1072779a291725c1c04bc",
+        "execution.py": "6b9ec687b941612bf5c768cfae2d86357b3d38ea506f8653d23d6b87fd39b9f9",
+        "generation.py": "f5aca14122e6deda446921132aeb7b0f51cc47682764ef55569305855cdc012a",
+        "generation_cached.py": "598334a3eff85e4d357d05b19abd5b4370dc1e64b931b353711855d96f1a5bac",
+        "gpu_limits.py": "9ab6e56406c0344a4edf244a8b32bbbeb7b12dafb08d1efa7350037ab2eaf400",
+        "grid.py": "8147a90c355e5022c1678c5ad072a6c6276078cc0793d1098b81a06b24dcd7eb",
+        "hosts.py": "99b55955751dd7a01665a9c56d64cbac59b40ba28e0e28e4afa8aac32da4acb6",
+        "job_evaluation.py": "0837cff4bb3e55bbc70547032573515f91844f62a40b5298f6e42b8d82699b1d",
+        "legacy/__init__.py": "6af5f7dcf77d66985ccf01ff469bbae7edad7ee53150e8e5fe6072e8acd4334a",
+        "legacy/audio_snapshot.py": "0fbff61ac6296016ae3309026f004434ad38390ec4932347e96fca4f202c9e1d",
+        "legacy/imu_snapshot.py": "5b32f419aab92868545f6a940895cb1684018ed2817d4e96297ff6c75b7d4a3c",
+        "legacy/runtime_lm.py": "8b3495aae84d734bc19937a401ad11d5a8afd305c70b8b998a5a752d0e277154",
+        "legacy/vision_snapshot.py": "f5edab0cb57dfd8e8b7b1b4986ed01e3d3e6fcd040efa331e2c8ab80cecd66f6",
+        "linear_probe.py": "634f2cee10faa6cb45c3e943c13f74e15e54508d228e4d0ddbc19a00b77b7908",
+        "outcomes.py": "ad8f15fd2887c6cf5ebeeedbbfc8b2e89ac36e52e500fba2c974746a8f1edaf2",
+        "portable_text.py": "456ec17925eec6e42e0a3e880f6e216bbf730ceabc6519c306fbcc9b2022df5e",
+        "provenance.py": "3c175712b8a9fb217246fcaccd1ed5a5e8a947572635b808532a13b0480affca",
+        "reconcile.py": "42bbeecd928d88ed7ca408a2f183fb5fb137b2f460812b23f07a906c31e763db",
+        "render.py": "fca84e3e3852377878e26a914d97e6b7f6922cda9f34d1b460b70c5b918d608c",
+        "resources.py": "ca3db6e3ecc14f814c40a72872e26e69b7ecec4a910c325feadf6d98224004fe",
+        "scheduler.py": "03d636a9db1653ec43918c5220a2aa2585a4fe1d71fc81c26aa55c6b058e0f02",
+        "statistics.py": "7ceca220cf2e0d02774805f485c3a129c1e01a303d2fc7caeb932554cc69fa1b",
+        "supplement.py": "b2a608d08cb63091febe4a501e97b37e2122537cd0c8fed505a3b7bc92bdeec3",
+        "text.py": "88143963188c3755783bd5fbb807367a9735e96c78fc40ec2615cf43c25920e9",
+        "train.py": "ea6c46c53281320fb16b82eca6ab4d07cfbd87101dac532e5f1293648283cfbb"
+      },
+      "git_commit": "f4ff5330dc2ad2d5abf6994b51b2dc1b6cf98150",
+      "lock_sha256": "0fea89df33d552574980ca0c809190b16feb40e343ee747cfebb69ba0702fec6",
+      "packages": {
+        "numpy": "2.4.6",
+        "torch": "2.13.0",
+        "torchvision": "0.28.0",
+        "transformers": "5.15.1"
+      },
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+      "python": "3.14.3",
+      "source_hash": "a7a91dd38a4d9ab2b6d265750741d57c7231ed57e5d92f5431711e1ad9b9c689"
+    },
+    "text_sha256": "688f79d41fec839908d99300899d6d9e036568eef53f24591b84d1bdb7d5d2e2"
+  },
+  "memory": {
+    "free_gib": 65.29949951171875,
+    "peak_allocated_gib": 5.043154716491699,
+    "peak_reserved_gib": 6.76171875,
+    "total_gib": 95.00811767578125
+  },
+  "peak_process_rss_bytes": 4014399488,
+  "recipe": {
+    "batch_size": 8,
+    "cohort": "U",
+    "diversity": 0.1,
+    "feature_mode": "true",
+    "host": "lfm230m",
+    "kind": "bridge",
+    "lr": 0.001,
+    "modality": "imu",
+    "prefix_length": 8,
+    "protocol": "p1-corrected-v2",
+    "rank": 4,
+    "seed": 1042,
+    "steps": 3000,
+    "text_length": 128
+  },
+  "status": "complete",
+  "successful_attempt_wall_s": 459.63973253499717,
+  "trainable_parameters": 199070336,
+  "training_id": "654780ddc06b12705735336364f8749ca0adbb0f3578a782c4d4ec5bc24128c4"
+}

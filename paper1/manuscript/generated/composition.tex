@@ -1,0 +1,19 @@
+\begin{table}[!htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{All three U modalities composed at 1500 constituent steps. Negative changes from frozen improve BPB. Positive nonadditivity means combined BPB is worse than the prediction from summing standalone BPB improvements. That prediction is a descriptive reference, not a required law. All subsets and both budgets are in the analysis.}\label{tab:composition}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Host & Operator & BPB [95\%] & $\Delta$ frozen [95\%] & Nonadditivity [95\%] \\
+\midrule
+Mini & Update mean & 1.945 [1.927, 1.963] & -0.009 [-0.010, -0.009] & 0.010 [0.009, 0.011] \\
+Mini & Update sum & 2.000 [1.981, 2.018] & 0.046 [0.043, 0.048] & 0.065 [0.063, 0.066] \\
+Mini & Factor mean & 1.949 [1.931, 1.967] & -0.005 [-0.005, -0.005] & 0.014 [0.013, 0.016] \\
+LFM 230M & Update mean & 1.059 [1.044, 1.075] & -0.085 [-0.088, -0.083] & 0.145 [0.141, 0.150] \\
+LFM 230M & Update sum & 1.193 [1.177, 1.210] & 0.049 [0.044, 0.053] & 0.279 [0.273, 0.286] \\
+LFM 230M & Factor mean & 1.070 [1.055, 1.086] & -0.074 [-0.077, -0.072] & 0.156 [0.151, 0.162] \\
+Qwen 0.8B & Update mean & 0.965 [0.951, 0.979] & -0.033 [-0.035, -0.031] & 0.009 [0.005, 0.013] \\
+Qwen 0.8B & Update sum & 1.103 [1.088, 1.118] & 0.105 [0.100, 0.110] & 0.147 [0.142, 0.152] \\
+Qwen 0.8B & Factor mean & 0.966 [0.951, 0.980] & -0.032 [-0.034, -0.031] & 0.010 [0.005, 0.014] \\
+\bottomrule
+\end{tabular}
+\end{table}\par
